@@ -1,4 +1,4 @@
-library(grid)
+#library(grid)
 ## subsetting the information from the example, but I am not using this as example, but I will create a new 3-d plot
 #example(persp)
 #x <- recordPlot()
@@ -7,7 +7,7 @@ library(grid)
 #y = unlist(info[3])
 #z = info[4][[1]]
 ##polygon version
-#setwd('H:/Documents/mproject')
+setwd('C:/Users/yeamin/Desktop/master/MasterProject')
 #setwd('C:/Users/yeamin/Desktop/project/mproject')
 
 source('function.r')
@@ -20,7 +20,8 @@ z <- outer(x, y, f)
 par(mar = c(0,0,0,0))
 system.time(trans <- persp(x, y, z, theta = 20, phi = 30, expand = 0.5, col = "NA"))
 
-system.time(per(x,y,z))
+source('function.r')
+system.time(per())
 
 
 
