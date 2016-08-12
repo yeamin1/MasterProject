@@ -1,13 +1,8 @@
-#library(grid)
-## subsetting the information from the example, but I am not using this as example, but I will create a new 3-d plot
-#example(persp)
-#x <- recordPlot()
-#info = x[[1]][[3]][[2]]
-#x = unlist(info[2])
-#y = unlist(info[3])
-#z = info[4][[1]]
-##polygon version
-setwd('H:/Documents/MasterProject-master')
+##school
+#setwd('H:/Documents/MasterProject-master')
+##home
+setwd('C:/Users/yeamin/Desktop/master/MasterProject')
+##laptop
 #setwd('C:/Users/yeamin/Desktop/project/mproject')
 
 
@@ -19,9 +14,12 @@ z <- outer(x, y, f)
 
 source('function.r')
 par(mar = c(0,0,0,0))
-trans <- persp(x, y, z, theta = 20, phi = 30, expand = 0.5, col = "NA", box = TRUE)
-plot = recordPlot()
-per(newpage = FALSE)
+trans <- persp(x, y, z, theta = 20, phi = 30, expand = 0.5, col = "white", box = TRUE)
+system.time(per(newpage = FALSE))
+system.time(per(x = x, y = y, z = z, grid.newpage = TRUE,))
 
 
-per(x = x, y = y, z = z, grid.newpage = TRUE)
+
+
+a = trans3d(xR,yR,zR,trans)
+plot(a$x, a$y)
