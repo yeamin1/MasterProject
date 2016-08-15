@@ -107,7 +107,7 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
 					yCoor[oo],
 					zCoor[oo], trans)  
 
-	out = cbind(xyCoor$x, xyCoor$y)
+	out <<- cbind(xyCoor$x, xyCoor$y)
 	grid.id = rep(1:(dim(out)[1] / 4 ), each = 4)
 	grid.polygon(out[,1], out[,2], id = grid.id,
 					default.units = 'native',

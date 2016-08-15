@@ -9,14 +9,15 @@
 ##polygon version
 #setwd('H:/Documents/MasterProject-master')
 #setwd('C:/Users/yeamin/Desktop/project/mproject')
-setwd('H:/Documents/mproject/MasterProject-master')
+#setwd('H:/Documents/mproject/MasterProject-master')
+setwd('C:/Users/yeamin/Desktop/mproject/MasterProject')
 
 
 x = seq(-10,10,length = 55)
 y = seq(-10,10,length = 55)
 f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 z <- outer(x, y, f)
-
+z[is.na(z)] <- 1
 
 source('function.r')
 par(mar = c(0,0,0,0))
@@ -26,3 +27,14 @@ per(newpage = FALSE)
 
 
 per(x = x, y = y, z = z, grid.newpage = TRUE)
+
+
+##polypath
+grid.newpage()
+vp = plotViewport(mar, xscale = lim[1:2], yscale = lim[3:4])
+pushViewport(vp)
+n = length(out[,1])
+x = out[1:n,1]
+y = out[1:n,2]
+id = grid.id[1:n]
+grid.path(x, y, id=id, gp=gpar(fill="grey"), default.units="native", rule = 'evenodd')
