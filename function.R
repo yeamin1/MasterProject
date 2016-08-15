@@ -1,25 +1,19 @@
 cat('loading', sep = '\n')
 library(grid)
-per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
+per = function(x = 0, y = 0, z = 0, newpage = TRUE, ...)
 {
   ## box parameters
+  dbox = FALSE
   xx = yy = zz = NULL
   
   if(newpage == TRUE){
     par(mar = c(4,4,4,4))
     grid.newpage()
-	xr = range(x)
-	yr = range(y)
-	zr = range(z, na.rm = TRUE)
-	rCoor = c(xr, yr, zr)
     
-    lim = trans3d(rCoor[1:2],
-                  rCoor[3:4],
-                  rCoor[5:6], trans)
+    lim = trans3d(range(x),
+                  range(y),
+                  range(z, na.rm = TRUE), trans)
     lim = unlist(lim)
-	
-	
-	
   }else{
     plot = recordPlot()[[1]][[3]][[2]]
     x = plot[[2]]
@@ -27,11 +21,11 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
     z = plot[[4]]
     dbox = plot[[19]]
     lim = par('usr')
+    print(lim)
   }
   
   mar = par('mar')
   ## initialize and getting the information from the 'Basic' plot
-  par(usr = lim)
   vp = plotViewport(mar, xscale = lim[1:2], yscale = lim[3:4])
   pushViewport(vp)
 
@@ -39,7 +33,7 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
   
   ## the total number of polygon that we need to draw
   s = length(x)
-  total = (length(z) - s - 1) + 100
+  total = length(z) - s - 1
   
   ## set the temp value for x,y,z prepare for subsetting
   xTmp = rep(x, s)
@@ -58,7 +52,6 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
   ## draw the box if required
   if(dbox == TRUE)
   {
-	
     rLength = length(which(yBreak %in% range(yBreak)))
     xRan = which(xBreak %in% range(xBreak))[1:2]
     yRan = which(yBreak %in% range(yBreak))[c(1, rLength)]
@@ -95,21 +88,6 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
   xCoor = xBreak[c(plot.index, xx)][-dp]
   yCoor = yBreak[c(plot.index, yy)][-dp]
   zCoor = zBreak[c(plot.index, zz)][-dp]
-  
-  ## break the range into sequence
-  xt = rep(seq(rCoor[1], rCoor[2], length.out = 20), 4)
-  yt = rep(seq(rCoor[3], rCoor[4], length.out = 20), each = 4)
-  zt = rep(seq(rCoor[5], rCoor[6], length.out = 20), 4)
-  
-  
-  xR <<- rep(xt, 4)
-  yR <<- rep(rCoor[3:4], 2 * length(xt))
-  zR <<- rep(rCoor[5:6], 2 * length(xt))
-
-  
-  xCoor = c(xCoor, xR)
-  yCoor = c(yCoor, yR)
-  zCoor = c(zCoor, zR)
   
   ## use the first corner of every polygon to determind the order for drawing
   xm = matrix(xCoor, nr = 4, byrow = FALSE)
