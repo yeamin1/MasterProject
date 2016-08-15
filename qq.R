@@ -21,9 +21,11 @@ z[is.na(z)] <- 1
 
 source('function.r')
 par(mar = c(0,0,0,0))
-trans <- persp(x, y, z, theta = 20, phi = 30, expand = 0.5, col = "orange", box = TRUE)
+trans <- persp(x, y, z, theta = 20, 
+               phi = 30, expand = 0.5, 
+               col = "orange", box = TRUE)
 plot = recordPlot()
-per(newpage = FALSE)
+per(x,y,z, newpage = FALSE)
 
 
 per(x = x, y = y, z = z, grid.newpage = TRUE)
@@ -37,4 +39,4 @@ n = length(out[,1])
 x = out[1:n,1]
 y = out[1:n,2]
 id = grid.id[1:n]
-grid.path(x, y, id=id, gp=gpar(fill="grey"), default.units="native", rule = 'evenodd')
+a = grid.path(x, y, id=id, gp=gpar(fill="orange"), default.units="native", rule = 'winding')

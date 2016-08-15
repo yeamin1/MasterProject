@@ -4,16 +4,15 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
 {
 	## box parameters
 	xx = yy = zz = NULL
-	
-	
-	xr = range(x)
-	yr = range(y)
-	zr = range(z, na.rm = TRUE)
-
+    
+    
 	if(newpage == TRUE)
 	{
 		par(mar = c(4,4,4,4))
 		grid.newpage()
+        xr = range(x)
+        yr = range(y)
+        zr = range(z, na.rm = TRUE)
 		lim = unlist(
 					trans3d(xr, yr, zr, trans)
 					)
@@ -22,6 +21,9 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
 		x = plot[[2]]
 		y = plot[[3]]
 		z = plot[[4]]
+        xr = range(x)
+        yr = range(y)
+        zr = range(z, na.rm = TRUE)
 		dbox = plot[[19]]
 		lim = par('usr')
 	}
@@ -60,7 +62,7 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
 		yRan = yr[ye.i]
 		zRan = zr[ze.i]
 
-		axes = trans3d(xRan, yRan, zRan, trans)
+		axes <<- trans3d(xRan, yRan, zRan, trans)
 		axes.id = rep(1:12, each = 2)
 		grid.polygon(axes$x, axes$y, id = axes.id,
 		default.units = 'native',
