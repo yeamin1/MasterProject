@@ -7,8 +7,9 @@
 #y = unlist(info[3])
 #z = info[4][[1]]
 ##polygon version
-setwd('H:/Documents/MasterProject-master')
+#setwd('H:/Documents/MasterProject-master')
 #setwd('C:/Users/yeamin/Desktop/project/mproject')
+setwd('H:/Documents/mproject/MasterProject-master')
 
 
 x = seq(-10,10,length = 55)
@@ -19,7 +20,7 @@ z <- outer(x, y, f)
 
 source('function.r')
 par(mar = c(0,0,0,0))
-trans <- persp(x, y, z, theta = 20, phi = 30, expand = 0.5, col = "NA", box = TRUE)
+trans <- persp(x, y, z, theta = 20, phi = 30, expand = 0.5, col = "orange", box = TRUE)
 plot = recordPlot()
 per(newpage = FALSE)
 
