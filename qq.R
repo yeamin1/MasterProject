@@ -10,7 +10,8 @@
 #setwd('H:/Documents/MasterProject-master')
 #setwd('C:/Users/yeamin/Desktop/project/mproject')
 #setwd('H:/Documents/mproject/MasterProject-master')
-setwd('C:/Users/yeamin/Desktop/mproject/MasterProject')
+#setwd('C:/Users/yeamin/Desktop/mproject/MasterProject')
+setwd('H:/Documents/MasterProject-master/MasterProject')
 
 
 x = seq(-10,10,length = 55)
@@ -19,15 +20,19 @@ f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 z <- outer(x, y, f)
 z[is.na(z)] <- 1
 
+
 source('function.r')
 par(mar = c(0,0,0,0))
 trans <- persp(x, y, z, theta = 20, 
                phi = 30, expand = 0.5, 
                col = "orange", box = TRUE)
 plot = recordPlot()
-per(x,y,z, newpage = FALSE)
+perInit(plot)
+per(x = x,y = y,z = z, newpage = FALSE, plot = plot)
+perFinal()
 
 
+source('function.r')
 per(x = x, y = y, z = z, grid.newpage = TRUE)
 
 

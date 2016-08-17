@@ -1,37 +1,53 @@
 cat('loading', sep = '\n')
 library(grid)
-per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
+
+## initialize and create a viewport prepare for drawing
+perInit = function(newpage = TRUE)
 {
-	## box parameters
-	xx = yy = zz = NULL
-    
-    
-	if(newpage == TRUE)
+	##[[1]] is the all the grapical information that transfer into grid
+	##[[3]] is the persp call information
+	##[[2]] is the plot details
+	info = plot[[1]][[3]][[2]]
+	## create a list that store all information from the persp
+	## then pass the information to per for drawing.
+	out = list(x = info[[2]], y = info[[3]], z = info[[4]],
+				xr = info[[5]], yr = info[[6]], zr = info[[7]],
+				fill = info[[14]], dbox = info[[19]], 
+				lim = par('usr'), mar = par('mar'), newpage = newpage
+				)
+				
+	vp = plotViewport(out$mar, xscale = out$lim[1:2], 
+							   yscale = out$lim[3:4])
+	pushViewport(vp)
+	plot <<- out	
+}
+
+
+per = function(x = 0, y = 0, z = 0, plot = NULL, dbox = TRUE, ...)
+{
+	if(is.null(plot))
 	{
 		par(mar = c(4,4,4,4))
 		grid.newpage()
-        xr = range(x)
+		xr = range(x)
         yr = range(y)
         zr = range(z, na.rm = TRUE)
 		lim = unlist(
 					trans3d(xr, yr, zr, trans)
 					)
-	}else{
-		plot = recordPlot()[[1]][[3]][[2]]
-		x = plot[[2]]
-		y = plot[[3]]
-		z = plot[[4]]
-        xr = range(x)
-        yr = range(y)
-        zr = range(z, na.rm = TRUE)
-		dbox = plot[[19]]
-		lim = par('usr')
+		print(lim)
+	}else
+	{
+		x = plot$x
+		y = plot$y
+		z = plot$z
+		xr = plot$xr
+		yr = plot$yr
+		zr = plot$zr
+		dbox = plot$dbox
+		lim = plot$lim
+		mar = plot$mar
 	}
-	mar = par('mar')
-	## initialize and getting the information from the 'Basic' plot
-	vp = plotViewport(mar, xscale = lim[1:2], yscale = lim[3:4])
-	pushViewport(vp)
-
 	## the total number of polygon that we need to draw
 	s = length(x)
 	total = length(z) - s - 1
@@ -90,15 +106,13 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
 	zCoor = zBreak[c(plot.index)][-dp]
 
 	## use the first corner of every polygon to determind the order for drawing
-	xm = matrix(xCoor, nr = 4, byrow = FALSE)
-	ym = matrix(yCoor, nr = 4, byrow = FALSE)
-	zm = matrix(zCoor, nr = 4, byrow = FALSE)
-	xc = xm[1,]
-	yc = ym[1,]
-	zc = zm[1,]
+	corn.id = 4* 1:(length(xCoor)/4)
+	xc = xCoor[corn.id]
+	yc = yCoor[corn.id]
+	zc = zCoor[corn.id]
 
 	## method for using the zdepth for changing the drawing order for every polygon
-	orderTemp = cbind(xc, yc, zc, rep(1, length(xc))) %*% trans 
+	orderTemp = cbind(xc, yc, 0, 1) %*% trans 
 	zdepth = orderTemp[, 4]
 
 	## the zdepth of a set of 4 points of each polygon
@@ -109,11 +123,16 @@ per = function(x = 0, y = 0, z = 0, newpage = TRUE, dbox = TRUE, ...)
 					yCoor[oo],
 					zCoor[oo], trans)  
 
-	out <<- cbind(xyCoor$x, xyCoor$y)
+	out = cbind(xyCoor$x, xyCoor$y)
 	grid.id = rep(1:(dim(out)[1] / 4 ), each = 4)
 	grid.polygon(out[,1], out[,2], id = grid.id,
 					default.units = 'native',
 					gp = gpar(col =2,fill = 'Blue'))
-	popViewport()
 }
+
+perFinal = function()
+{
+	upViewport()
+}
+
 cat('done', sep = '\n')
