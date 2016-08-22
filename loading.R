@@ -1,0 +1,5 @@
+cat('loading', sep = '\n')
+    library(grid)
+    source('function.R')
+    source('method.R')
+cat('done', sep = '\n')
