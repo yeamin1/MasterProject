@@ -1,0 +1,37 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{Sweave}
+\begin{document}
+\input{PreReport-concordance}
+
+\section{Introduction}
+\subsection{Background}
+R can provide more statistical graph. The core graphics system can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S. It is fast and it can provide traditional graphics. The newer package is the grid package. It is actually slower but is has more power on flexibility and additional features than the graphics package. \\\\
+The graph is drawn by using grid can been editing in many more ways than the graph been drawn on the basic graphics package. However, there is a new package, called gridGrahics, which allows us to convert the plot been draw by graphics package to grid graphics. So that the plot can been manipulated by any function on the grid package in order to provide more statistical plot. \\\\
+The main function on the gridGrahics is called grid.echo(), which allows any plot been drawn in the current graphics device convert to the grid graphics. The following codes provide a quick example of the demonstration. We generate 25 random number of x and y. First, we draw a scatter plot by using the function plot() from the basic graphic package, then we redraw it by using the grid.echo() from the gridGraphic package with grid.
+\begin{Schunk}
+\begin{Sinput}
+> x = runif(25)
+> y = runif(25)
+> plot(x,y, pch = 16)
+> grid.echo()
+\end{Sinput}
+\end{Schunk}
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 5cm, width = 6cm]{figure/Bplot.pdf}
+  \includegraphics[height = 5cm, width = 6cm]{figure/Gplot.pdf}
+  \caption{The left plot drawn by using plot(), the Right plot is redraw it by using grid.echo() on grid graphic system, overall, they are identical to each other(no~~)}
+  	\label{figure1}
+\end{center}
+\end{figure}
+
+\subsection{The problem}
+The grid.echo() can replicate most of plot that drawn by the graphics package. However, there are few functions on the graphics package that cannot replicate. One will the the persp() which for drawing 3-dimemtional surfaces. It leads to our aim of this project. Firstable, it is necessary to understand some important theory behind the 3-dimentional plot, such as the transformation from 3-D to 2-D, the drawing order of each ploygons (will be explained later). ect. Then we try to redraw it by using the grid package and we can replicate this function on grid by using the grid.echo().
+
+\begin{figure}[h]
+  \includegraphics[height = 2.5cm, width = 8.5cm]{figure/warning.png}
+  \caption{an example shows that the grid.echo() cannot replicate the persp() on grid}
+  	\label{figure2}
+\end{figure}
+
+\end{document}
