@@ -1,5 +1,5 @@
 ## initialize and create a viewport prepare for drawing
-perInit = function(plot, newpage = FALSE, dbox = TRUE)
+perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
 {
         ##[[1]] is the all the grapical information that transfer into grid
         ##[[3]] is the persp call information
@@ -10,7 +10,8 @@ perInit = function(plot, newpage = FALSE, dbox = TRUE)
         out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                     xr = info[[5]], yr = info[[6]], zr = info[[7]],
                     fill = info[[14]], dbox = info[[19]], 
-                    lim = par('usr'), mar = par('mar'), newpage = newpage
+                    lim = par('usr'), mar = par('mar'), newpage = newpage,
+                    trans = trans
                     )
 					
     if(out$newpage == TRUE)
@@ -29,6 +30,7 @@ perInit = function(plot, newpage = FALSE, dbox = TRUE)
 ## only simple function call and few calculation are been done on this function
 per = function(plot = NULL, ...)
 {
+    trans = plot$trans
     pout = dPolygon(plot)
     boxInfo = per.box(plot$xr, plot$yr, plot$zr, trans)
 
@@ -45,6 +47,10 @@ per = function(plot = NULL, ...)
         boxF.id = bout$boxF.id
         boxB.id = bout$boxB.id
         frontCount = bout$frontCount
+        
+        PerspAxes(x = plot$xr, y = plot$yr, z = plot$zr, 
+            xlab = 'x', xenc = 5, ylab = 'y', yenc = 5, zlab = 'z', zenc = 5, 
+            nTicks = 5, tickType = '1', pGEDevDesc = 1, dd = 1, VT = trans)
     }else
     {
         bfront = bbehind = cbind(0,0)
@@ -67,9 +73,9 @@ per = function(plot = NULL, ...)
     grid.polygon(bfront[,1], bfront[,2], id = boxF.id,
                     default.units = 'native',
                     gp = gpar(col = 1, fill = 'NA', lty = 'dotted')
-                    )                                        
+                    )
 }
-                                        
+
 perFinal = function()
 {
     upViewport()
