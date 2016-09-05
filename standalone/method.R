@@ -1,5 +1,4 @@
-dBox = function(boxInfo, pMax)
-{
+dBox = function(boxInfo, pMax){
     frontCount = 6 - sum(boxInfo$Near)
     boxPoints = boxInfo$O
 
@@ -31,8 +30,8 @@ dBox = function(boxInfo, pMax)
     bout
 } 
 
-dPolygon = function(plot)
-{
+dPolygon = function(plot){
+
     x = plot$x; y = plot$y; z = plot$z
     xr = plot$xr; yr = plot$yr; zr = plot$zr
     dbox = plot$dbox; lim = plot$lim; mar = plot$mar
@@ -106,8 +105,7 @@ dPolygon = function(plot)
 ## front or behind. and a vector of points order as: x1, y1, z1, x2, y2, z2 and so on 
 
 ## still need to understand this algorithm... 
-per.box = function(xlim, ylim, zlim, trans)
-{
+per.box = function(xlim, ylim, zlim, trans){
         
     Near = vector(length = 6)
     o1 = o2 = o3 = o4 = numeric(0)
@@ -148,8 +146,8 @@ per.box = function(xlim, ylim, zlim, trans)
 
 
 
-TransVector = function(u, T, v = 0)
-{
+TransVector = function(u, T, v = 0){
+
 	for (i in 1:4) {
 		sum = 0
 		for (j in 1:4)
@@ -159,32 +157,27 @@ TransVector = function(u, T, v = 0)
 	v
 }
 	
-lowest = function(y1, y2, y3, y4)
-{
+lowest = function(y1, y2, y3, y4){
 	(y1 <= y2) && (y1 <= y3) && (y1 <= y4)		
 }
 
-labelAngle = function(x1, y1, x2, y2)
-{
+labelAngle = function(x1, y1, x2, y2){
+
 	dx = abs(x2 - x1)
-	if(x2 > x1)
-	{
+	if ( x2 > x1 ) {
 		dy = y2 - y1
-	}else{
+	} else {
 		dy = y1 - y2
 	}
 	
-	if(dx == 0)
-	{
-		if(dy > 0)
-		{
+	if (dx == 0) {
+		if( dy > 0 ) {
 			angle = 90
-		}else
-		{
+		} else {
 			angle = 270
 		}
-	}else{
-		angle = 180 * atan2(dy, dx)
+	} else {
+		angle = 180/pi * atan2(dy, dx)
 	}
 	angle
 }	
@@ -192,8 +185,8 @@ labelAngle = function(x1, y1, x2, y2)
 
 PerspAxis = function(x, y, z, axis, axisType, 
                         nTicks, tickType, label, 
-                        encm, dd, VT)
-{
+                        encm, dd, VT){
+
     ## don't know how to use numeric on the switch...
     axisType = as.character(axisType)
     tickType = as.character(tickType)
@@ -211,18 +204,20 @@ PerspAxis = function(x, y, z, axis, axisType,
 	nint = nTicks - 1
 	if(!nint) nint = nint + 1
     
-    ## pretty is not working...
+    ## pretty seems working...
 	i = nint
-	pretty(c(min, max), nint)
-	
-	while((min < range[1] - d_frac || range[2] + d_frac < max) && i < 20) 
-	{
+    range = range(axisTicks(c(min, max), FALSE, nint = nint))
+    min = range[1]
+    max = range[2]
+    
+    ## but maybe not this one... haven't test yet...
+	while((min < range[1] - d_frac || range[2] + d_frac < max) && i < 20) {
 		nint = nint + i
 		min = range[1]
 		max = range[2]
-		#pretty(c(min, max), nint)
+		range = range(axisTicks(c(min, max), FALSE))
     }
-    
+
     ## axp is not working..
 	axp = 0
 	axp[1] = min
@@ -234,7 +229,7 @@ PerspAxis = function(x, y, z, axis, axisType,
     # AxisStart is a vector of length 8
     # axis is a output 
     # u1, u2 are the vectors in 3-d 
-        # the range of x,y,z
+    # the range of x,y,z
 	switch (axisType,
         '1' = {
           u1[1] = min
@@ -322,62 +317,79 @@ PerspAxis = function(x, y, z, axis, axisType,
     srt = labelAngle(v1[1], v1[2], v2[1], v2[2])
 	#text(v3[1], v3[2], label, 0.5, srt = srt)
     grid.text(label = label, x = v3[1], y = v3[2],
-          just = "centre", rot = srt * 360,
+          just = "centre", rot = srt,
           default.units = "native",
-          gp = gpar(col = 'red')
+          gp = gpar(col = 1)
           )
 
     ## tickType is not working.. when = '2'
 	switch(tickType,
     '1' = {
-    arrow = arrow(angle = 10, length = unit(0.01, "native"),
+    arrow = arrow(angle = 10, length = unit(0.1, "in"),
                     ends = "last", type = "open")  
     grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
           default.units = "native", arrow = arrow,
-          gp = gpar(col = 'red')
+          gp = gpar(col = 1)
           )
-		   },
+       },
     ## '2' is not working...
-    '2' = 
-	{
-		for(i in 1:length(at))
-		{
+    '2' = {
+        at = axisTicks(range, FALSE, axp = axp, 6)
+		for(i in 1:length(at)){
 			switch(axisType, 
 				'1' = {
-				u1[0] = REAL(at)[i]
-				u1[1] = y[Vertex[AxisStart[axis]][1]]
-				u1[2] = z[Vertex[AxisStart[axis]][2]]
+				u1[1] = at[i]
+				u1[2] = y[Vertex[AxisStart[axis], 2]]
+				u1[3] = z[Vertex[AxisStart[axis], 3]]
 				},
 				'2' = {
-				u1[0] = x[Vertex[AxisStart[axis]][0]]
-				u1[1] = REAL(at)[i]
-				u1[2] = z[Vertex[AxisStart[axis]][2]]
+				u1[1] = x[Vertex[AxisStart[axis], 1]]
+				u1[2] = at[i]
+				u1[3] = z[Vertex[AxisStart[axis], 3]]
 				},
 				'3' = {
-				u1[0] = x[Vertex[AxisStart[axis]][0]]
-				u1[1] = y[Vertex[AxisStart[axis]][1]]
-				u1[2] = REAL(at)[i]
+				u1[1] = x[Vertex[AxisStart[axis], 1]]
+				u1[2] = y[Vertex[AxisStart[axis], 2]]
+				u1[3] = at[i]
 				}
 			)
+            
 			u1[4] = 1
-			u2[1] = u1[1] + tickLength*(x[2]-x[1])*TickVector[axis][1]
-			u2[2] = u1[2] + tickLength*(y[2]-y[1])*TickVector[axis][2]
-			u2[3] = u1[3] + tickLength*(z[2]-z[1])*TickVector[axis][3]
+			u2[1] = u1[1] + tickLength*(x[2]-x[1])*TickVector[axis, 1]
+			u2[2] = u1[2] + tickLength*(y[2]-y[1])*TickVector[axis, 2]
+			u2[3] = u1[3] + tickLength*(z[2]-z[1])*TickVector[axis, 3]
 			u2[4] = 1
-			u3[1] = u2[1] + tickLength*(x[2]-x[1])*TickVector[axis][1]
-			u3[2] = u2[2] + tickLength*(y[2]-y[1])*TickVector[axis][2]
-			u3[3] = u2[3] + tickLength*(z[2]-z[1])*TickVector[axis][3]
+			u3[1] = u2[1] + tickLength*(x[2]-x[1])*TickVector[axis, 1]
+			u3[2] = u2[2] + tickLength*(y[2]-y[1])*TickVector[axis, 2]
+			u3[3] = u2[3] + tickLength*(z[2]-z[1])*TickVector[axis, 3]
 			u3[4] = 1
-			v1 = TransVector(u1[1], u1[2], u1[3] , VT)
-			v2 = TransVector(u2[1], u2[2], u2[3] , VT)
-			v3 = TransVector(u2[1], u2[2], u2[3] , VT)
-			## Draw tick line			
-			  lines(c(v1[1]/v1[4], v2[1]/v2[4]), c(v1[2]/v1[4], v2[2]/v2[4]))
+			v1 = TransVector(u1, VT)
+			v2 = TransVector(u2, VT)
+			v3 = TransVector(u2, VT)
+                        
+            v1 = v1/v1[4]
+            v2 = v2/v2[4]
+            v3 = v3/v3[4]
+            
+			## Draw tick line
+            grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
+                default.units = "native",
+                gp = gpar(col = 2)
+                )
 
+            
+            lines(c(v1[1], v2[1]), c(v1[2], v2[2]))
+            
 			## Draw tick label
-			text(v3[1]/v3[4], v3[2]/v3[4], lab, .5, .5, 0,);
-		}
-	}
+            lab = at[i]
+            #text(v3[1], v3[2], label, 0.5, srt = srt)
+            grid.text(label = lab, x = v3[1], y = v3[2],
+                  just = "centre",
+                  default.units = "native",
+                  gp = gpar(col = 2, adj = 0.5, pos = 0.5, cex = 0.5)
+                  )
+            }
+        }
 	)
 	
 	
@@ -422,8 +434,7 @@ PerspAxes = function(x, y, z,
     
     ## Figure out which X and Y axis to draw
     ## but not sure how it works..
-    if (lowest(v0[2], v1[2], v2[2], v3[2]))
-	{
+    if (lowest(v0[2], v1[2], v2[2], v3[2])) {
 		xAxis = 1
 		yAxis = 2
     } else if (lowest(v1[2], v0[2], v2[2], v3[2])) {
@@ -442,9 +453,8 @@ PerspAxes = function(x, y, z,
     PerspAxis(x, y, z, yAxis, '2', nTicks, tickType, ylab, yenc, dd, VT)
 	
     ## Figure out which Z axis to draw
-    if (lowest(v0[1], v1[1], v2[1], v3[1])) 
-	{
-		zAxis = 5
+    if (lowest(v0[1], v1[1], v2[1], v3[1])) {
+            zAxis = 5
 		}else if (lowest(v1[1], v0[1], v2[1], v3[1])) {
 			zAxis = 6
 		}else if (lowest(v2[1], v1[1], v0[1], v3[1])) {

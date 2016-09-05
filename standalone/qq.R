@@ -13,12 +13,14 @@ z[is.na(z)] <- 1
 
 ## main example
 source('loading.R')
-par(mar = c(0,0,0,0))
+par(mar = c(2,2,2,2))
 trans <- persp(x, y, z, theta = 20, 
                phi = 30, expand = 0.5, 
-               col = "orange", box = TRUE)
+               col = "orange", box = TRUE, border = 'black', 
+               ticktype = 'detailed')
+
 plot = recordPlot()
-plotInfo = perInit(plot, trans, newpage = TRUE)
+plotInfo = perInit(plot, trans, newpage = FALSE)
 per(plot = plotInfo)
 perFinal()
 
@@ -31,3 +33,7 @@ plot = recordPlot()
 plotInfo = perInit(plot, trans, newpage = FALSE)
 per(plot = plotInfo)
 perFinal()
+
+
+##null
+axisTicks(range, FALSE, axp = axp, 6)

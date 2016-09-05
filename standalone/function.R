@@ -7,9 +7,12 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
         info = plot[[1]][[3]][[2]]
         ## create a list that store all information from the persp
         ## then pass the information to per for drawing.
+        ## x is [[2]]; y is [[3]]; z is [[4]]
+        ## xr is [[5]]; yr is [[6]]; zr is [[7]]
+        ## col is [[14]]; border is [[15]]; box is [[19]]
         out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                     xr = info[[5]], yr = info[[6]], zr = info[[7]],
-                    fill = info[[14]], dbox = info[[19]], 
+                    col = info[[14]], border = info[[15]], dbox = info[[19]],
                     lim = par('usr'), mar = par('mar'), newpage = newpage,
                     trans = trans
                     )
@@ -37,10 +40,13 @@ per = function(plot = NULL, ...)
     ## polygon Information extraction
     xyCoor = pout$xyCoor
     pMax = pout$pMax
+    
+    ##col/border
+    col = plot$col
+    border = plot$border
 
     ## box Information extraction
-    if(plot$dbox == TRUE)
-    {
+    if (plot$dbox == TRUE) {
         bout = dBox(boxInfo,pMax)
         bfront = bout$bfront
         bbehind = bout$bbehind
@@ -48,11 +54,12 @@ per = function(plot = NULL, ...)
         boxB.id = bout$boxB.id
         frontCount = bout$frontCount
         
+        ## I used 'nTicks = 6', then the axes works, but no idea why...
+        ## not know how to fix...
         PerspAxes(x = plot$xr, y = plot$yr, z = plot$zr, 
             xlab = 'x', xenc = 5, ylab = 'y', yenc = 5, zlab = 'z', zenc = 5, 
-            nTicks = 5, tickType = '1', pGEDevDesc = 1, dd = 1, VT = trans)
-    }else
-    {
+            nTicks = 6, tickType = '2', pGEDevDesc = 1, dd = 1, VT = trans)
+    } else {
         bfront = bbehind = cbind(0,0)
         boxF.id = boxB.id = 0	
         frontCount = 0
@@ -68,7 +75,7 @@ per = function(plot = NULL, ...)
                     )
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
                     default.units = 'native',
-                    gp = gpar(col = 'black', fill = 'gray')
+                    gp = gpar(col = border, fill = col)
                     )
     grid.polygon(bfront[,1], bfront[,2], id = boxF.id,
                     default.units = 'native',
