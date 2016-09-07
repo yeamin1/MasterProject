@@ -10,10 +10,11 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
         ## x is [[2]]; y is [[3]]; z is [[4]]
         ## xr is [[5]]; yr is [[6]]; zr is [[7]]
         ## col is [[14]]; border is [[15]]; box is [[19]]
+        ## nTicks is [[21]]
         out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                     xr = info[[5]], yr = info[[6]], zr = info[[7]],
                     col = info[[14]], border = info[[15]], dbox = info[[19]],
-                    lim = par('usr'), mar = par('mar'), newpage = newpage,
+                    lim = par('usr'), mar = par('mar'), newpage = newpage, nTicks = info[[21]],
                     trans = trans
                     )
 					
@@ -44,6 +45,7 @@ per = function(plot = NULL, ...)
     ##col/border
     col = plot$col
     border = plot$border
+    nTicks = plot$nTicks
 
     ## box Information extraction
     if (plot$dbox == TRUE) {
@@ -54,11 +56,13 @@ per = function(plot = NULL, ...)
         boxB.id = bout$boxB.id
         frontCount = bout$frontCount
         
+        
+        
         ## I used 'nTicks = 6', then the axes works, but no idea why...
         ## not know how to fix...
         PerspAxes(x = plot$xr, y = plot$yr, z = plot$zr, 
             xlab = 'x', xenc = 5, ylab = 'y', yenc = 5, zlab = 'z', zenc = 5, 
-            nTicks = 6, tickType = '2', pGEDevDesc = 1, dd = 1, VT = trans)
+            nTicks = nTicks, tickType = '2', pGEDevDesc = 1, dd = 1, VT = trans)
     } else {
         bfront = bbehind = cbind(0,0)
         boxF.id = boxB.id = 0	

@@ -146,16 +146,11 @@ per.box = function(xlim, ylim, zlim, trans){
 
 
 
-TransVector = function(u, T, v = 0){
 
-	for (i in 1:4) {
-		sum = 0
-		for (j in 1:4)
-			sum = sum + u[j] * T[j,i]
-		v[i] = sum
-    }
-	v
+TransVector = function(u, T) {
+    u %*% T
 }
+
 	
 lowest = function(y1, y2, y3, y4){
 	(y1 <= y2) && (y1 <= y3) && (y1 <= y4)		
@@ -274,7 +269,6 @@ PerspAxis = function(x, y, z, axis, axisType,
     )
 	u2[4] = 1
     
-    
     ## ticktype is not working...
 	switch(tickType,
 		'1' = { 
@@ -334,7 +328,7 @@ PerspAxis = function(x, y, z, axis, axisType,
        },
     ## '2' is not working...
     '2' = {
-        at = axisTicks(range, FALSE, axp = axp, 6)
+        at = axisTicks(range, FALSE, nint = nint)
 		for(i in 1:length(at)){
 			switch(axisType, 
 				'1' = {
@@ -354,6 +348,8 @@ PerspAxis = function(x, y, z, axis, axisType,
 				}
 			)
             
+            tickLength = 0.03
+            
 			u1[4] = 1
 			u2[1] = u1[1] + tickLength*(x[2]-x[1])*TickVector[axis, 1]
 			u2[2] = u1[2] + tickLength*(y[2]-y[1])*TickVector[axis, 2]
@@ -365,7 +361,7 @@ PerspAxis = function(x, y, z, axis, axisType,
 			u3[4] = 1
 			v1 = TransVector(u1, VT)
 			v2 = TransVector(u2, VT)
-			v3 = TransVector(u2, VT)
+			v3 = TransVector(u3, VT)
                         
             v1 = v1/v1[4]
             v2 = v2/v2[4]
@@ -377,16 +373,13 @@ PerspAxis = function(x, y, z, axis, axisType,
                 gp = gpar(col = 2)
                 )
 
-            
-            lines(c(v1[1], v2[1]), c(v1[2], v2[2]))
-            
 			## Draw tick label
             lab = at[i]
             #text(v3[1], v3[2], label, 0.5, srt = srt)
             grid.text(label = lab, x = v3[1], y = v3[2],
                   just = "centre",
                   default.units = "native",
-                  gp = gpar(col = 2, adj = 0.5, pos = 0.5, cex = 0.5)
+                  gp = gpar(col = 2, adj = 1, pos = 0.5, cex = 1)
                   )
             }
         }
