@@ -1,30 +1,30 @@
 ## initialize and create a viewport prepare for drawing
 perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
 {
-        ##[[1]] is the all the grapical information that transfer into grid
-        ##[[3]] is the persp call information
-        ##[[2]] is the plot details eg: x, y, z, xlim, ylim, zlim, col ...
-        info = plot[[1]][[3]][[2]]
-        ## create a list that store all information from the persp
-        ## then pass the information to per for drawing.
-        ## x is [[2]]; y is [[3]]; z is [[4]]
-        ## xr is [[5]]; yr is [[6]]; zr is [[7]]
-        ## col is [[14]]; border is [[15]]; box is [[19]]
-        ## nTicks is [[21]]
-        out = list(x = info[[2]], y = info[[3]], z = info[[4]],
-                    xr = info[[5]], yr = info[[6]], zr = info[[7]],
-                    col = info[[14]], border = info[[15]], dbox = info[[19]],
-                    lim = par('usr'), mar = par('mar'), newpage = newpage, nTicks = info[[21]],
-                    trans = trans
-                    )
-					
+    ##[[1]] is the all the grapical information that transfer into grid
+    ##[[3]] is the persp call information
+    ##[[2]] is the plot details eg: x, y, z, xlim, ylim, zlim, col ...
+    info = plot[[1]][[3]][[2]]
+    ## create a list that store all information from the persp
+    ## then pass the information to per for drawing.
+    ## x is [[2]]; y is [[3]]; z is [[4]]
+    ## xr is [[5]]; yr is [[6]]; zr is [[7]]
+    ## col is [[14]]; border is [[15]]; box is [[19]]
+    ## nTicks is [[21]]
+    out = list(x = info[[2]], y = info[[3]], z = info[[4]],
+                xr = info[[5]], yr = info[[6]], zr = info[[7]],
+                col = info[[14]], border = info[[15]], dbox = info[[19]],
+                lim = par('usr'), mar = par('mar'), newpage = newpage, nTicks = info[[21]],
+                trans = trans
+                )
+                
     if(out$newpage == TRUE)
-        grid.newpage()
-        
+    grid.newpage()
+
     vp = plotViewport(out$mar, 
-                        xscale = out$lim[1:2], 
-                        yscale = out$lim[3:4]
-                        )
+                    xscale = out$lim[1:2], 
+                    yscale = out$lim[3:4]
+                    )
     pushViewport(vp)
     out
 }
@@ -41,7 +41,7 @@ per = function(plot = NULL, ...)
     ## polygon Information extraction
     xyCoor = pout$xyCoor
     pMax = pout$pMax
-    
+
     ##col/border
     col = plot$col
     border = plot$border
@@ -71,7 +71,7 @@ per = function(plot = NULL, ...)
 
     polygons = cbind(xyCoor$x, xyCoor$y)
     polygon.id = rep(1:pMax, each = 4) + frontCount
-    
+
     ## order: behind-polygon-front
     grid.polygon(bbehind[,1], bbehind[,2], id = boxB.id,
                     default.units = 'native',
