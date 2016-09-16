@@ -25,7 +25,7 @@ dBox = function(boxInfo, pMax){
     boxF.id = rep(1:frontCount, each = 4)	
     boxB.id = rep((pMax + 1):(pMax + 6 - frontCount), each = 4)
 
-    bout = list(bfront = bfront, bbehind = bbehind, 
+    bout <<- list(bfront = bfront, bbehind = bbehind, 
                 boxF.id = boxF.id, boxB.id = boxB.id, frontCount = frontCount)
     bout
 } 
@@ -196,15 +196,20 @@ PerspAxis = function(x, y, z, axis, axisType,
             )
             
     d_frac = 0.1 * (max - min)
-    nint = nTicks - 1
-    if(!nint) nint = nint + 1
-
+    nint = nTicks - 1  
+    
+    if(!nint)nint = nint + 1
+    
     ## pretty seems working...
     i = nint
-    range = range(axisTicks(c(min, max), FALSE, nint = nint))
-    min = range[1]
-    max = range[2]
-
+    ticks = pretty(c(min, max), nint, 1, .25, c(.8, 1.7), 2)
+    min = ticks[1]
+    max = ticks[length(ticks)]
+    nint = length(ticks) - 1
+    
+    print(ticks)
+    range = c(min,max)
+    
     ## but maybe not this one... haven't test yet...
     while((min < range[1] - d_frac || range[2] + d_frac < max) && i < 20) {
         nint = nint + i
@@ -218,6 +223,7 @@ PerspAxis = function(x, y, z, axis, axisType,
     axp[1] = min
     axp[2] = max
     axp[3] = nint
+    
 
     # Do the following calculations for both ticktypes
     # Vertex is a 8*3 matrix; i.e. the vertex of a box
@@ -328,7 +334,7 @@ PerspAxis = function(x, y, z, axis, axisType,
        },
     ## '2' is not working...
     '2' = {
-        at = axisTicks(range, FALSE, nint = nint)
+        at <<- axisTicks(range, FALSE, axp, nint = nint)
         for(i in 1:length(at)){
             switch(axisType, 
                 '1' = {

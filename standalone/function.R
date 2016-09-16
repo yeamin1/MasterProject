@@ -11,10 +11,11 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
     ## xr is [[5]]; yr is [[6]]; zr is [[7]]
     ## col is [[14]]; border is [[15]]; box is [[19]]
     ## nTicks is [[21]]
+    ## tickType is [[22]]
     out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                 xr = info[[5]], yr = info[[6]], zr = info[[7]],
                 col = info[[14]], border = info[[15]], dbox = info[[19]],
-                lim = par('usr'), mar = par('mar'), newpage = newpage, nTicks = info[[21]],
+                lim = par('usr'), mar = par('mar'), newpage = newpage, nTicks = info[[21]], tickType = info[[22]],
                 trans = trans
                 )
                 
@@ -46,6 +47,7 @@ per = function(plot = NULL, ...)
     col = plot$col
     border = plot$border
     nTicks = plot$nTicks
+    tickType = plot$tickType
 
     ## box Information extraction
     if (plot$dbox == TRUE) {
@@ -57,7 +59,7 @@ per = function(plot = NULL, ...)
         frontCount = bout$frontCount
         
         
-        
+        if(tickType == 2)
         ## I used 'nTicks = 6', then the axes works, but no idea why...
         ## not know how to fix...
         PerspAxes(x = plot$xr, y = plot$yr, z = plot$zr, 

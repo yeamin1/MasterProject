@@ -17,7 +17,7 @@ par(mar = c(2,2,2,2))
 trans <- persp(x, y, z, theta = 20, 
                phi = 30, expand = 0.5, 
                col = "orange", box = TRUE, border = 'black', 
-               ticktype = 'detailed', nticks = 10)
+               ticktype = 'simple', nticks = 10)
 
 plot = recordPlot()
 plotInfo = perInit(plot, trans, newpage = FALSE)
@@ -40,7 +40,7 @@ f = function()
   trans <- persp(x, y, z, theta = 20, 
                  phi = 30, expand = 0.5, 
                  col = "orange", box = TRUE, border = 'black', 
-                 ticktype = 'detailed', nticks = 10)
+                 ticktype = 'detailed', nticks = 5)
   
   plot = recordPlot()
   plotInfo = perInit(plot, trans, newpage = FALSE)
@@ -50,3 +50,9 @@ f = function()
 
 windows()
 system.time(f())
+
+f()
+
+source('loading.R')
+plot(0,0, xlim = c(-0.5, 0.5), ylim = c(-0.5, 0.5))
+PerspBox(1, x = range(x), y = range(y), z = range(z), VT = trans)
