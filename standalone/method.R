@@ -3,11 +3,12 @@ dBox = function(boxInfo, pMax){
     boxPoints = boxInfo$O
 
     ## first case
-    initial = rep(rep(1:3,4) + rep((0:3) * (length(boxInfo$O)/4), each = 3), 6)
+    initial <<- rep(rep(1:3,4) + rep((0:3) * (length(boxInfo$O)/4), each = 3), 6)
     ## movement  
-    move = rep(seq(0,by = 3, length = 6), each = 12)
+    move <<- rep(seq(0,by = 3, length = 6), each = 6)
+    
     projection = initial + move
-
+    
     boxPolygon = boxPoints[projection]
     bpoints = matrix(boxPolygon, nc = 3, byrow = TRUE)
 
@@ -207,7 +208,6 @@ PerspAxis = function(x, y, z, axis, axisType,
     max = ticks[length(ticks)]
     nint = length(ticks) - 1
     
-    print(ticks)
     range = c(min,max)
     
     ## but maybe not this one... haven't test yet...

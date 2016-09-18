@@ -75,18 +75,30 @@ per = function(plot = NULL, ...)
     polygon.id = rep(1:pMax, each = 4) + frontCount
 
     ## order: behind-polygon-front
-    grid.polygon(bbehind[,1], bbehind[,2], id = boxB.id,
-                    default.units = 'native',
-                    gp = gpar(col = 1, fill = 'NA')
-                    )
-    grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
-                    default.units = 'native',
-                    gp = gpar(col = border, fill = col)
-                    )
-    grid.polygon(bfront[,1], bfront[,2], id = boxF.id,
-                    default.units = 'native',
-                    gp = gpar(col = 1, fill = 'NA', lty = 'dotted')
-                    )
+    #grid.polygon(bbehind[,1], bbehind[,2], id = boxB.id,
+    #                default.units = 'native',
+    #                gp = gpar(col = 1, fill = 'NA')
+    #                )
+    
+    PerspBox(0, plot$xr, plot$yr, plot$zr, VT = plot$trans, lty = 1)
+
+    
+    #grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
+    #                default.units = 'native',
+    #                gp = gpar(col = border, fill = col)
+    #               )
+                    
+    PerspBox(1, plot$xr, plot$yr, plot$zr, VT = plot$trans, lty = 'dotted')
+    #tt = -c()
+    #bfront = bfront[tt,]
+    #boxF.id = boxF.id[tt]
+        
+    #grid.polygon(bfront[,1], bfront[,2], id = boxF.id,
+    #                default.units = 'native',
+    #                gp = gpar(col = c('red'), fill = 'NA', lty = 'dotted')
+    #                )
+    print(boxF.id)
+    bfront <<- bfront
 }
 
 perFinal = function()

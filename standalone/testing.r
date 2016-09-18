@@ -1,7 +1,8 @@
-PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT)
+PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty)
 {
-   u0 = u1 = u2 = u3 = 0
-   v0 = v1 = v2 = v3 = 0
+    EdgeDone[1:12] = 0
+    u0 = u1 = u2 = u3 = 0
+    v0 = v1 = v2 = v3 = 0
     for (f in 1:6) {
         p0 = Face[f, 1]
         p1 = Face[f, 2]
@@ -39,11 +40,6 @@ PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT)
         nearby = (d[1]*e[2] - d[2]*e[1]) < 0
         
         
-        for(i in 1:12)
-        {
-            EdgeDone[i] = 0
-        }
-        
         v0 = v0/v0[4]
         v1 = v1/v1[4]
         v2 = v2/v2[4]
@@ -51,22 +47,28 @@ PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT)
         
         if ((front && nearby) || (!front && !nearby)) {
             if (!EdgeDone[Edge[f, 1]]){
-                lines(c(v0[1], v1[1]), c(v0[2], v1[2]), lty = 'dotted')
+                grid.lines(c(v0[1], v1[1]), c(v0[2], v1[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
                 EdgeDone[Edge[f, 1]] = EdgeDone[Edge[f, 1]] + 1
                 }
             if (!EdgeDone[Edge[f, 2]]){
-                lines(c(v1[1], v2[1]), c(v1[2], v2[2]), lty = 'dotted')
+                grid.lines(c(v1[1], v2[1]), c(v1[2], v2[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
                 EdgeDone[Edge[f, 2]] = EdgeDone[Edge[f, 2]] + 1
                 }
             if (!EdgeDone[Edge[f, 3]]){
-                lines(c(v2[1], v3[1]), c(v2[2], v3[2]), lty = 'dotted')
+                grid.lines(c(v2[1], v3[1]), c(v2[2], v3[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
                 EdgeDone[Edge[f, 3]] = EdgeDone[Edge[f, 3]] + 1
                 }
             if (!EdgeDone[Edge[f, 4]]){
-                lines(c(v3[1], v0[1]), c(v3[2], v0[2]), lty = 'dotted')
+                grid.lines(c(v3[1], v0[1]), c(v3[2], v0[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
                 EdgeDone[Edge[f, 4]] = EdgeDone[Edge[f, 4]] + 1
                 }
+            
      
         }
+        print(EdgeDone)
     }
 }
