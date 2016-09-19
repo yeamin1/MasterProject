@@ -1,35 +1,79 @@
-dBox = function(boxInfo, pMax){
-    frontCount = 6 - sum(boxInfo$Near)
-    boxPoints = boxInfo$O
 
-    ## first case
-    initial <<- rep(rep(1:3,4) + rep((0:3) * (length(boxInfo$O)/4), each = 3), 6)
-    ## movement  
-    move <<- rep(seq(0,by = 3, length = 6), each = 6)
-    
-    projection = initial + move
-    
-    boxPolygon = boxPoints[projection]
-    bpoints = matrix(boxPolygon, nc = 3, byrow = TRUE)
+## font = 1 -> draw front face
+## x, y, z are the range of x, y, z-axis
+## EdgeDone is not been used in this time
+## VT = trans
+## lty = lty..
+## a function from C
+PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty)
+{
+    EdgeDone[1:12] = 0
+    u0 = u1 = u2 = u3 = 0
+    v0 = v1 = v2 = v3 = 0
+    for (f in 1:6) {
+        p0 = Face[f, 1]
+        p1 = Face[f, 2]
+        p2 = Face[f, 3]
+        p3 = Face[f, 4]
 
-    ## trans to 2d
-    e = trans3d(bpoints[,1], bpoints[,2], bpoints[,3], trans)
-    box.id = rep(1:6, each = 4)
+        u0[1] = x[Vertex[p0, 1]]
+        u0[2] = y[Vertex[p0, 2]]
+        u0[3] = z[Vertex[p0, 3]]
+        u0[4] = 1
+        u1[1] = x[Vertex[p1, 1]]
+        u1[2] = y[Vertex[p1, 2]]
+        u1[3] = z[Vertex[p1, 3]]
+        u1[4] = 1
+        u2[1] = x[Vertex[p2, 1]]
+        u2[2] = y[Vertex[p2, 2]]
+        u2[3] = z[Vertex[p2, 3]]
+        u2[4] = 1
+        u3[1] = x[Vertex[p3, 1]]
+        u3[2] = y[Vertex[p3, 2]]
+        u3[3] = z[Vertex[p3, 3]]
+        u3[4] = 1
 
-    ##figure out which faces are front/behind.
-    bPoint = cbind(x = e$x, y = e$y)
-    bOrder = rep(boxInfo$Near, each = 4)
-
-    bfront = bPoint[bOrder == 1, ]
-    bbehind = bPoint[bOrder == 0, ]
-
-    boxF.id = rep(1:frontCount, each = 4)	
-    boxB.id = rep((pMax + 1):(pMax + 6 - frontCount), each = 4)
-
-    bout <<- list(bfront = bfront, bbehind = bbehind, 
-                boxF.id = boxF.id, boxB.id = boxB.id, frontCount = frontCount)
-    bout
-} 
+        v0 = TransVector(u0, VT)
+        v1 = TransVector(u1, VT)
+        v2 = TransVector(u2, VT)
+        v3 = TransVector(u3, VT)
+        
+        v0 = v0/v0[4]
+        v1 = v1/v1[4]
+        v2 = v2/v2[4]
+        v3 = v3/v3[4]
+        
+        d = v1 - v0
+        e = v2 - v1
+        
+        nearby = (d[1]*e[2] - d[2]*e[1]) < 0
+        
+        ## draw the face line by line rather than polygon
+        if ((front && nearby) || (!front && !nearby)) {
+            if (!EdgeDone[Edge[f, 1]]){
+                grid.lines(c(v0[1], v1[1]), c(v0[2], v1[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
+                EdgeDone[Edge[f, 1]] = EdgeDone[Edge[f, 1]] + 1
+                }
+            if (!EdgeDone[Edge[f, 2]]){
+                grid.lines(c(v1[1], v2[1]), c(v1[2], v2[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
+                EdgeDone[Edge[f, 2]] = EdgeDone[Edge[f, 2]] + 1
+                }
+            if (!EdgeDone[Edge[f, 3]]){
+                grid.lines(c(v2[1], v3[1]), c(v2[2], v3[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
+                EdgeDone[Edge[f, 3]] = EdgeDone[Edge[f, 3]] + 1
+                }
+            if (!EdgeDone[Edge[f, 4]]){
+                grid.lines(c(v3[1], v0[1]), c(v3[2], v0[2]), default.units = 'native',
+                    gp = gpar(lty = lty))
+                EdgeDone[Edge[f, 4]] = EdgeDone[Edge[f, 4]] + 1
+                }
+                print(EdgeDone)
+        }
+    }
+}
 
 dPolygon = function(plot){
 
@@ -197,34 +241,35 @@ PerspAxis = function(x, y, z, axis, axisType,
             )
             
     d_frac = 0.1 * (max - min)
-    nint = nTicks - 1  
+    nint = nTicks - 1
     
     if(!nint)nint = nint + 1
-    
-    ## pretty seems working...
     i = nint
-    ticks = pretty(c(min, max), nint, 1, .25, c(.8, 1.7), 2)
+
+    #ticks <<- pretty(c(min, max), nint, 1, .25, c(.8, 1.7), 2)
+    #min = ticks[1]
+    #max = ticks[length(ticks)]
+    #nint = length(ticks) - 1
+    
+    ticks = axisTicks(c(min, max), FALSE, nint = nint)
     min = ticks[1]
     max = ticks[length(ticks)]
     nint = length(ticks) - 1
-    
-    range = c(min,max)
-    
+            
     ## but maybe not this one... haven't test yet...
     while((min < range[1] - d_frac || range[2] + d_frac < max) && i < 20) {
-        nint = nint + i
-        min = range[1]
-        max = range[2]
-        range = range(axisTicks(c(min, max), FALSE))
+        nint = i + 1
+        ticks = axisTicks(c(min, max), FALSE)
+        range = range(ticks)
+        nint = length(ticks) - 1
     }
-
-    ## axp is not working..
+    
+    ## axp seems working...
     axp = 0
     axp[1] = min
     axp[2] = max
     axp[3] = nint
     
-
     # Do the following calculations for both ticktypes
     # Vertex is a 8*3 matrix; i.e. the vertex of a box
     # AxisStart is a vector of length 8
@@ -332,9 +377,9 @@ PerspAxis = function(x, y, z, axis, axisType,
           gp = gpar(col = 1)
           )
        },
-    ## '2' is not working...
+    ## '2' seems working
     '2' = {
-        at <<- axisTicks(range, FALSE, axp, nint = nint)
+        at = axisTicks(range, FALSE, axp, nint = nint)
         for(i in 1:length(at)){
             switch(axisType, 
                 '1' = {

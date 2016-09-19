@@ -20,7 +20,7 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
                 )
                 
     if(out$newpage == TRUE)
-    grid.newpage()
+        grid.newpage()
 
     vp = plotViewport(out$mar, 
                     xscale = out$lim[1:2], 
@@ -51,54 +51,32 @@ per = function(plot = NULL, ...)
 
     ## box Information extraction
     if (plot$dbox == TRUE) {
-        bout = dBox(boxInfo,pMax)
-        bfront = bout$bfront
-        bbehind = bout$bbehind
-        boxF.id = bout$boxF.id
-        boxB.id = bout$boxB.id
-        frontCount = bout$frontCount
-        
-        
-        if(tickType == 2)
-        ## I used 'nTicks = 6', then the axes works, but no idea why...
-        ## not know how to fix...
-        PerspAxes(x = plot$xr, y = plot$yr, z = plot$zr, 
+        xr = plot$xr
+        yr = plot$yr
+        zr = plot$zr
+
+        PerspAxes(x = xr, y = yr, z = zr, 
             xlab = 'x', xenc = 5, ylab = 'y', yenc = 5, zlab = 'z', zenc = 5, 
-            nTicks = nTicks, tickType = '2', pGEDevDesc = 1, dd = 1, VT = trans)
+            nTicks = nTicks, tickType = tickType, pGEDevDesc = 1, dd = 1, VT = trans)
     } else {
-        bfront = bbehind = cbind(0,0)
-        boxF.id = boxB.id = 0	
-        frontCount = 0
+        xr = yr = zr = c(0,0)
     }
 
     polygons = cbind(xyCoor$x, xyCoor$y)
-    polygon.id = rep(1:pMax, each = 4) + frontCount
+    polygon.id = rep(1:pMax, each = 4)
 
-    ## order: behind-polygon-front
-    #grid.polygon(bbehind[,1], bbehind[,2], id = boxB.id,
-    #                default.units = 'native',
-    #                gp = gpar(col = 1, fill = 'NA')
-    #                )
-    
-    PerspBox(0, plot$xr, plot$yr, plot$zr, VT = plot$trans, lty = 1)
+    ## draw the behind face first
+    PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1)
 
     
-    #grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
-    #                default.units = 'native',
-    #                gp = gpar(col = border, fill = col)
-    #               )
-                    
-    PerspBox(1, plot$xr, plot$yr, plot$zr, VT = plot$trans, lty = 'dotted')
-    #tt = -c()
-    #bfront = bfront[tt,]
-    #boxF.id = boxF.id[tt]
-        
-    #grid.polygon(bfront[,1], bfront[,2], id = boxF.id,
-    #                default.units = 'native',
-    #                gp = gpar(col = c('red'), fill = 'NA', lty = 'dotted')
-    #                )
-    print(boxF.id)
-    bfront <<- bfront
+    grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
+                    default.units = 'native',
+                    gp = gpar(col = border, fill = col)
+                   )
+    
+    ## then draw the front with 'dotted'
+    PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted')
+
 }
 
 perFinal = function()
