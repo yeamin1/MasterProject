@@ -70,7 +70,6 @@ PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty)
                     gp = gpar(lty = lty))
                 EdgeDone[Edge[f, 4]] = EdgeDone[Edge[f, 4]] + 1
                 }
-                print(EdgeDone)
         }
     }
 }
@@ -80,7 +79,9 @@ dPolygon = function(plot){
     x = plot$x; y = plot$y; z = plot$z
     xr = plot$xr; yr = plot$yr; zr = plot$zr
     dbox = plot$dbox; lim = plot$lim; mar = plot$mar
+    col = plot$col
         
+
     ## the total number of polygon that we need to draw
     s = length(x)
     total = length(z) - s - 1
@@ -89,15 +90,17 @@ dPolygon = function(plot){
     xTmp = rep(x, s)
     yTmp = rep(y,each = s)
     zTmp = as.numeric(z)
+    
 
     ## the drawing order is along x-axis, and then along y-axis
     ## then create a vector like a 4Xn matrix, 
     ## i.e the first column contain all the first points for every polygons
     ## the second column contain all the second points for every polygons and so on 
-    pBreak = c(1:total, 1 + 1:total, 1 + s + 1:total, s + 1:total)
-    xBreak = xTmp[pBreak]
+    pBreak <<- c(1:total, 1 + 1:total, 1 + s + 1:total, s + 1:total)
+    xBreak <<- xTmp[pBreak]
     yBreak = yTmp[pBreak]
     zBreak = zTmp[pBreak]
+    
 
     ## draw the box if required
     ## the vectors now has four paths, every paths contain the information of every points of every polygon
@@ -116,15 +119,19 @@ dPolygon = function(plot){
     dp = rep((4 * seq(s,total,s)), each = 4) - (3:0)
 
     ## final subsetting
-    xCoor = xBreak[c(plot.index)][-dp]
+    xCoor <<- xBreak[c(plot.index)][-dp]
     yCoor = yBreak[c(plot.index)][-dp]
     zCoor = zBreak[c(plot.index)][-dp]
+    
+    ## vectorize the cols
+    colRep = rep_len(col, length(xCoor))
 
     ## use the first corner of every polygon to determind the order for drawing
     corn.id = 4* 1:(length(xCoor)/4)
     xc = xCoor[corn.id]
     yc = yCoor[corn.id]
     zc = zCoor[corn.id]
+    
 
     ## method for using the zdepth for changing the drawing order for every polygon
     orderTemp = cbind(xc, yc, 0, 1) %*% trans 
@@ -138,10 +145,12 @@ dPolygon = function(plot){
                     yCoor[oo],
                     zCoor[oo], trans)
                     
+    colRep = colRep[a]
+                    
     ## record the total number of polygon
     pMax = length(xyCoor$x) / 4
 
-    pout = list(xyCoor = xyCoor, pMax = pMax)
+    pout = list(xyCoor = xyCoor, pMax = pMax, colRep = colRep)
     pout
 }
 
