@@ -430,7 +430,7 @@ PerspAxis = function(x, y, z, axis, axisType,
             ## Draw tick line
             grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
                 default.units = "native",
-                gp = gpar(col = 2)
+                gp = gpar(col = 1)
                 )
 
             ## Draw tick label
@@ -439,7 +439,7 @@ PerspAxis = function(x, y, z, axis, axisType,
             grid.text(label = lab, x = v3[1], y = v3[2],
                   just = "centre",
                   default.units = "native",
-                  gp = gpar(col = 2, adj = 1, pos = 0.5, cex = 1)
+                  gp = gpar(col = 1, adj = 1, pos = 0.5, cex = 1)
                   )
             }
         }

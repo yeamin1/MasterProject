@@ -13,12 +13,14 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
     ## axes is [[20]], nTicks is [[21]]
     ## tickType is [[22]]
     ## xlab/ylab/zlab = [[23]]/[[24]]/[[25]]
+	## main is in plot[[1]][[4]][[2]][[2]]
     out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                 xr = info[[5]], yr = info[[6]], zr = info[[7]],
                 col = info[[14]], border = info[[15]], dbox = info[[19]],
                 lim = par('usr'), mar = par('mar'), newpage = newpage, 
                 axes = info[[20]], nTicks = info[[21]], tickType = info[[22]],
-                trans = trans, xlab = info[[23]], ylab = info[[24]], zlab = info[[25]]
+                trans = trans, xlab = info[[23]], ylab = info[[24]], zlab = info[[25]]
+				#main = plot[[1]][[4]][[2]][[2]]
                 )
                 
     if(out$newpage == TRUE)
@@ -40,6 +42,8 @@ per = function(plot = NULL, ...)
     trans = plot$trans
     pout = dPolygon(plot)
     boxInfo = per.box(plot$xr, plot$yr, plot$zr, trans)
+	
+	main = plot$main
 
     ## polygon Information extraction
     xyCoor = pout$xyCoor
