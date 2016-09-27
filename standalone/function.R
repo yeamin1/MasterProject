@@ -46,10 +46,10 @@ per = function(plot = NULL, ...)
 	
 	main = plot$main
     
+    ## lty and lwd 
     lwd = plot$lwd
     if(is.null(lwd))
         lwd = 1
-
     lty = plot$lty
     if(is.null(lty))
         lty = 1
@@ -80,7 +80,6 @@ per = function(plot = NULL, ...)
         zr = plot$zr
         
         if(axes == TRUE){
-        print(lty)
         PerspAxes(x = xr, y = yr, z = zr, 
             xlab = xlab, xenc = 5, ylab = ylab, yenc = 5, zlab = zlab, zenc = 5, 
             nTicks = nTicks, tickType = tickType, pGEDevDesc = 1, dd = 1, VT = trans, lwd = lwd,
@@ -95,9 +94,7 @@ per = function(plot = NULL, ...)
 
     ## draw the behind face first
     PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd)
-    
-    print(length(polygons[,1]))
-    
+        
     cols = rep_len(plot$col, length(polygons[,1]))
     
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
