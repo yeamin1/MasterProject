@@ -17,8 +17,9 @@ testPersp = function(theta=120, phi = 20, expand = 0.5, col = 'White',
 
 echoTest = function(trans = trans) {
     plot = recordPlot()
-    plotInfo = perInit(plot, trans = trans, newpage = FALSE)
+    plotInfo = perInit(plot, trans = trans, newpage = TRUE)
     per(plot = plotInfo)
+    grid.text('grid', 0.1, 0.9)
     perFinal()
 }
 
@@ -91,6 +92,7 @@ echoTest = function(trans = trans) {
 	echoTest(trans)
 
 ## test on lim
+## Bug on here...........................................................................
 	trans = testPersp(xlim = c(-5,5))
 	echoTest(trans)
 
@@ -187,3 +189,22 @@ echoTest = function(trans = trans) {
 ## test on ticktype
 	trans = testPersp(ticktype = 'detail', axes = TRUE, box = FALSE)
 	echoTest(trans)
+    
+    
+## test on lty
+	trans = testPersp(lty = 'dotted')
+	echoTest(trans)
+    
+    trans = testPersp(lty = '1331')
+	echoTest(trans)
+    
+    
+## test on lwd
+	trans = testPersp(lwd = 2)
+	echoTest(trans)
+    
+    trans = testPersp(lwd = 3)
+	echoTest(trans)
+    
+## other bugs:
+    ## 1. pty = 's'

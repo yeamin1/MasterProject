@@ -5,7 +5,7 @@
 ## VT = trans
 ## lty = lty..
 ## a function from C
-PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty)
+PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty, lwd = lwd )
 {
     EdgeDone[1:12] = 0
     u0 = u1 = u2 = u3 = 0
@@ -52,22 +52,22 @@ PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty)
         if ((front && nearby) || (!front && !nearby)) {
             if (!EdgeDone[Edge[f, 1]]){
                 grid.lines(c(v0[1], v1[1]), c(v0[2], v1[2]), default.units = 'native',
-                    gp = gpar(lty = lty))
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 1]] = EdgeDone[Edge[f, 1]] + 1
                 }
             if (!EdgeDone[Edge[f, 2]]){
                 grid.lines(c(v1[1], v2[1]), c(v1[2], v2[2]), default.units = 'native',
-                    gp = gpar(lty = lty))
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 2]] = EdgeDone[Edge[f, 2]] + 1
                 }
             if (!EdgeDone[Edge[f, 3]]){
                 grid.lines(c(v2[1], v3[1]), c(v2[2], v3[2]), default.units = 'native',
-                    gp = gpar(lty = lty))
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 3]] = EdgeDone[Edge[f, 3]] + 1
                 }
             if (!EdgeDone[Edge[f, 4]]){
                 grid.lines(c(v3[1], v0[1]), c(v3[2], v0[2]), default.units = 'native',
-                    gp = gpar(lty = lty))
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 4]] = EdgeDone[Edge[f, 4]] + 1
                 }
         }
@@ -234,7 +234,7 @@ labelAngle = function(x1, y1, x2, y2){
 
 PerspAxis = function(x, y, z, axis, axisType, 
                         nTicks, tickType, label, 
-                        encm, dd, VT){
+                        encm, dd, VT, lwd = 1, lty = lty){
 
     ## don't know how to use numeric on the switch...
     axisType = as.character(axisType)
@@ -373,7 +373,7 @@ PerspAxis = function(x, y, z, axis, axisType,
     grid.text(label = label, x = v3[1], y = v3[2],
           just = "centre", rot = srt,
           default.units = "native",
-          gp = gpar(col = 1)
+          gp = gpar(col = 1, lwd = lwd )
           )
 
     ## tickType is not working.. when = '2'
@@ -383,7 +383,7 @@ PerspAxis = function(x, y, z, axis, axisType,
                     ends = "last", type = "open")  
     grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
           default.units = "native", arrow = arrow,
-          gp = gpar(col = 1)
+          gp = gpar(col = 1, lwd = lwd )
           )
        },
     ## '2' seems working
@@ -430,7 +430,7 @@ PerspAxis = function(x, y, z, axis, axisType,
             ## Draw tick line
             grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
                 default.units = "native",
-                gp = gpar(col = 1)
+                gp = gpar(col = 1, lwd = lwd, lty = lty)
                 )
 
             ## Draw tick label
@@ -453,7 +453,8 @@ PerspAxes = function(x, y, z,
                     xlab, xenc, 
                     ylab, yenc, 
                     zlab, zenc, 
-                    nTicks, tickType, pGEDevDesc, dd, VT)
+                    nTicks, tickType, pGEDevDesc, dd, VT, 
+                    lwd = 1, lty = 1)
 {
     xAxis = yAxis = zAxis = 0 ## -Wall 
     u0 = u1 = u2 = u3 = 0
@@ -502,8 +503,8 @@ PerspAxes = function(x, y, z,
     } else
         warning("Axis orientation not calculated")
     ## drawing x and y axes
-    PerspAxis(x, y, z, xAxis, '1', nTicks, tickType, xlab, xenc, dd, VT)
-    PerspAxis(x, y, z, yAxis, '2', nTicks, tickType, ylab, yenc, dd, VT)
+    PerspAxis(x, y, z, xAxis, '1', nTicks, tickType, xlab, xenc, dd, VT, lwd = lwd, lty = lty)
+    PerspAxis(x, y, z, yAxis, '2', nTicks, tickType, ylab, yenc, dd, VT, lwd = lwd, lty = lty)
 
     ## Figure out which Z axis to draw
     if (lowest(v0[1], v1[1], v2[1], v3[1])) {
@@ -518,5 +519,5 @@ PerspAxes = function(x, y, z,
     warning("Axis orientation not calculated")
 
     ## drawing the z-axis
-    PerspAxis(x, y, z, zAxis, '3', nTicks, tickType, zlab, zenc, dd, VT)
+    PerspAxis(x, y, z, zAxis, '3', nTicks, tickType, zlab, zenc, dd, VT, lwd = lwd, lty = lty)
 }

@@ -19,7 +19,8 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
                 col = info[[14]], border = info[[15]], dbox = info[[19]],
                 lim = par('usr'), mar = par('mar'), newpage = newpage, 
                 axes = info[[20]], nTicks = info[[21]], tickType = info[[22]],
-                trans = trans, xlab = info[[23]], ylab = info[[24]], zlab = info[[25]]
+                trans = trans, xlab = info[[23]], ylab = info[[24]], zlab = info[[25]],
+                lwd = info$lwd, lty = info$lty
 				#main = plot[[1]][[4]][[2]][[2]]
                 )
                 
@@ -44,7 +45,15 @@ per = function(plot = NULL, ...)
     boxInfo = per.box(plot$xr, plot$yr, plot$zr, trans)
 	
 	main = plot$main
+    
+    lwd = plot$lwd
+    if(is.null(lwd))
+        lwd = 1
 
+    lty = plot$lty
+    if(is.null(lty))
+        lty = 1
+        
     ## polygon Information extraction
     xyCoor = pout$xyCoor
     pMax = pout$pMax
@@ -71,9 +80,11 @@ per = function(plot = NULL, ...)
         zr = plot$zr
         
         if(axes == TRUE){
+        print(lty)
         PerspAxes(x = xr, y = yr, z = zr, 
             xlab = xlab, xenc = 5, ylab = ylab, yenc = 5, zlab = zlab, zenc = 5, 
-            nTicks = nTicks, tickType = tickType, pGEDevDesc = 1, dd = 1, VT = trans)
+            nTicks = nTicks, tickType = tickType, pGEDevDesc = 1, dd = 1, VT = trans, lwd = lwd,
+            lty = lty)
             }
     } else {
         xr = yr = zr = c(0,0)
@@ -83,7 +94,7 @@ per = function(plot = NULL, ...)
     polygon.id = rep(1:pMax, each = 4)
 
     ## draw the behind face first
-    PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1)
+    PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd)
     
     print(length(polygons[,1]))
     
@@ -91,10 +102,10 @@ per = function(plot = NULL, ...)
     
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
                     default.units = 'native',
-                    gp = gpar(col = border, fill = colRep)
+                    gp = gpar(col = border, fill = colRep, lty = lty, lwd = lwd)
                    )
     ## then draw the front with 'dotted'
-    PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted')
+    PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted', lwd = lwd )
 
 }
 
