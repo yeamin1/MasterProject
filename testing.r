@@ -20,7 +20,6 @@ echoTest = function(trans = trans) {
     plotInfo = perInit(plot, trans = trans, newpage = TRUE)
     per(plot = plotInfo)
     grid.text('gird', x = unit(0.01, 'npc'), y = unit(0.9, 'npc'))
-    perFinal()
 }
 
 ## test on theta

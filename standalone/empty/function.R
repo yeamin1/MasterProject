@@ -28,15 +28,11 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
     if(out$newpage == TRUE)
         grid.newpage()
 
-    vp = plotViewport(out$mar, xscale = out$lim[1:2], yscale = out$lim[3:4],name = 'clipon',
-                    clip = 'on')
+    vp = plotViewport(out$mar, 
+                    xscale = out$lim[1:2], 
+                    yscale = out$lim[3:4]
+                    )
     pushViewport(vp)
-    upViewport()
-    
-    vp = plotViewport(out$mar, xscale = out$lim[1:2], yscale = out$lim[3:4],name = 'clipoff',
-                    clip = 'off')
-    pushViewport(vp)
-    upViewport()
     out
 }
 
@@ -91,7 +87,6 @@ per = function(plot = NULL, ...)
         yr = plot$yr
         zr = plot$zr
         
-        
         if(axes == TRUE){
         PerspAxes(x = xr, y = yr, z = zr, 
             xlab = xlab, xenc = 5, ylab = ylab, yenc = 5, zlab = zlab, zenc = 5, 
@@ -106,15 +101,21 @@ per = function(plot = NULL, ...)
     polygon.id = rep(1:pMax, each = 4)
 
     ## draw the behind face first
-    #PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd)
+    PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd)
         
     cols = rep_len(plot$col, length(polygons[,1]))
     
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
-                    default.units = 'native', vp = 'clipon',
+                    default.units = 'native',
                     gp = gpar(col = border, fill = colRep, lty = lty, lwd = lwd)
                    )
     ## then draw the front with 'dotted'
-    PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted', lwd = lwd)
+    PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted', lwd = lwd )
 
+}
+
+perFinal = function()
+{
+    upViewport()
+    print('compeleted')
 }

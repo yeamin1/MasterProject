@@ -52,22 +52,22 @@ PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty, lwd = lwd )
         if ((front && nearby) || (!front && !nearby)) {
             if (!EdgeDone[Edge[f, 1]]){
                 grid.lines(c(v0[1], v1[1]), c(v0[2], v1[2]), default.units = 'native',
-                    gp = gpar(lty = lty, lwd = lwd), vp = 'clipon')
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 1]] = EdgeDone[Edge[f, 1]] + 1
                 }
             if (!EdgeDone[Edge[f, 2]]){
                 grid.lines(c(v1[1], v2[1]), c(v1[2], v2[2]), default.units = 'native',
-                    gp = gpar(lty = lty, lwd = lwd), vp = 'clipon')
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 2]] = EdgeDone[Edge[f, 2]] + 1
                 }
             if (!EdgeDone[Edge[f, 3]]){
                 grid.lines(c(v2[1], v3[1]), c(v2[2], v3[2]), default.units = 'native',
-                    gp = gpar(lty = lty, lwd = lwd), vp = 'clipon')
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 3]] = EdgeDone[Edge[f, 3]] + 1
                 }
             if (!EdgeDone[Edge[f, 4]]){
                 grid.lines(c(v3[1], v0[1]), c(v3[2], v0[2]), default.units = 'native',
-                    gp = gpar(lty = lty, lwd = lwd), vp = 'clipon')
+                    gp = gpar(lty = lty, lwd = lwd))
                 EdgeDone[Edge[f, 4]] = EdgeDone[Edge[f, 4]] + 1
                 }
         }
@@ -375,7 +375,7 @@ PerspAxis = function(x, y, z, axis, axisType,
     #text(v3[1], v3[2], label, 0.5, srt = srt)
     grid.text(label = label, x = v3[1], y = v3[2],
           just = "centre", rot = srt,
-          default.units = "native", vp = 'clipoff',
+          default.units = "native",
           gp = gpar(col = col.lab, lwd = lwd, cex = cex.lab)
           )
 
@@ -386,7 +386,7 @@ PerspAxis = function(x, y, z, axis, axisType,
                     ends = "last", type = "open")  
 	## drawing the tick..
     grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
-          default.units = "native", arrow = arrow, vp = 'clipoff',
+          default.units = "native", arrow = arrow,
           gp = gpar(col = 1, lwd = lwd , lty = lty )
           )
        },
@@ -433,7 +433,7 @@ PerspAxis = function(x, y, z, axis, axisType,
             
             ## Draw tick line
             grid.lines(x = c(v1[1], v2[1]), y = c(v1[2], v2[2]),
-                default.units = "native", vp = 'clipoff',
+                default.units = "native",
                 gp = gpar(col = col.axis, lwd = lwd, lty = lty)
                 )
 
@@ -442,7 +442,7 @@ PerspAxis = function(x, y, z, axis, axisType,
             #text(v3[1], v3[2], label, 0.5, srt = srt)
             grid.text(label = lab, x = v3[1], y = v3[2],
                   just = "centre",
-                  default.units = "native", vp = 'clipoff',
+                  default.units = "native",
                   gp = gpar(col = col.axis, adj = 1, pos = 0.5, cex = 1)
                   )
             }

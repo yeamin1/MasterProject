@@ -17,17 +17,26 @@ source('loading.R')
 par(mar = c(2,2,2,2))
 trans = persp(x, y, z, theta = 20, 
                phi = 20, expand = 0.5, 
-               col = 'White', box = TRUE, border = 'orange')
+               col = 'White', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
+              col.lab = 'red')
 plot = recordPlot()
 plotInfo = perInit(plot, trans, newpage = TRUE)
 per(plot = plotInfo)
-perFinal()
-
 
 windows()
-vp = viewport(0.5,0.5)
-pushViewport(vp)
-grid.rect(gp = gpar(col = 'red'))
+source('loading.R')
+trans = testPersp(col.axis = 'blue', ticktype = 'detail', cex.lab = 2)
+echoTest(trans)
 
-grid.ls()
 
+
+trans = testPersp(expand = 100)
+echoTest(trans)
+
+source('loading.R')
+trans = testPersp(xlim = c(-5,5),col = 2)
+echoTest(trans)
+
+
+trans = testPersp(xlim = c(-10,10),col = 2)
+echoTest(trans)
