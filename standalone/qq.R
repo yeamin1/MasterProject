@@ -40,3 +40,11 @@ echoTest(trans)
 
 trans = testPersp(xlim = c(-10,10),col = 2)
 echoTest(trans)
+
+
+
+###
+aa = rbind(c(1,2,3,4),c(1,2,3,4),c(1,2,3,4),c(1,2,3,4))
+
+source('random/shade.R')
+DrawFacets(tz, tx, ty, sqrt(length(tz)), sqrt(length(tz)), indx = 1:length(tz), 1, 1, 1, col = 'red', ncol = length(col))

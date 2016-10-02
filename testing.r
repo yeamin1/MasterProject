@@ -1,8 +1,8 @@
 testPersp = function(theta=120, phi = 20, expand = 0.5, col = 'White',
                         box = TRUE, border = 'orange', 
                         ticktype = 'simple', nticks = 5, ...) {
-    x = seq(-10,10,length = 60)
-    y = seq(-10,10,length = 60)
+    x = seq(-10,10,length = 10)
+    y = seq(-10,10,length = 10)
     f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
     z <- outer(x, y, f)
     z[is.na(z)] <- 1
