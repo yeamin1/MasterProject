@@ -120,13 +120,6 @@ DrawFacets = function(z, x, y, nx, ny, indx = 1:length(z), xs = 0, ys = 0, zs = 
 	    v[1] = xs * (x[i+1] - x[i])
 	    v[2] = ys * (y[j+1] - y[j])
 	    v[3] = zs * (z[(i+1)+(j+1)*nx] - z[i+j*nx])
-               
-        #print(u)
-        print(k)
-        print((i+1)+(j+1)*nx)
-       print(z[(i+1)+(j+1)*nx] )
-
-       
        
 	    shade <<- FacetShade(u, v)
         if(nv > 2)
