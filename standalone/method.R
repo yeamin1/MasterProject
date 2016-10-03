@@ -96,8 +96,8 @@ dPolygon = function(plot){
     ## then create a vector like a 4Xn matrix, 
     ## i.e the first column contain all the first points for every polygons
     ## the second column contain all the second points for every polygons and so on 
-    pBreak <<- c(1:total, 1 + 1:total, 1 + s + 1:total, s + 1:total)
-    xBreak <<- xTmp[pBreak]
+    pBreak = c(1:total, 1 + 1:total, 1 + s + 1:total, s + 1:total)
+    xBreak = xTmp[pBreak]
     yBreak = yTmp[pBreak]
     zBreak = zTmp[pBreak]
     
@@ -119,7 +119,7 @@ dPolygon = function(plot){
     dp = rep((4 * seq(s,total,s)), each = 4) - (3:0)
 
     ## final subsetting
-    xCoor <<- xBreak[c(plot.index)][-dp]
+    xCoor = xBreak[c(plot.index)][-dp]
     yCoor = yBreak[c(plot.index)][-dp]
     zCoor = zBreak[c(plot.index)][-dp]
     
@@ -138,18 +138,17 @@ dPolygon = function(plot){
     zdepth = orderTemp[, 4]
 
     ## the zdepth of a set of 4 points of each polygon
-    a = order(zdepth, decreasing = TRUE)
-    oo = rep(1:4, length(a)) + rep(a - 1, each = 4) * 4
+    a <<- order(zdepth, decreasing = TRUE)
+    oo <<- rep(1:4, length(a)) + rep(a - 1, each = 4) * 4
 
     xyCoor = trans3d(xCoor[oo],
                     yCoor[oo],
                     zCoor[oo], trans)
                     
+    colRep <<- colll
     colRep = colRep[a]
     
-    tx = xCoor[oo]
-    ty = yCoor[oo]
-    tz = zCoor[oo]
+
     ## record the total number of polygon
     pMax = length(xyCoor$x) / 4
 

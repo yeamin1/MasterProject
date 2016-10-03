@@ -44,14 +44,24 @@ echoTest(trans)
 
 
 ###
-
-tx = seq(-10,10,length = 5)
-ty = seq(-10,10,length = 5)
+n = 50
+tx = seq(-10,10,length = n)
+ty = seq(-10,10,length = n)
 f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
-tz <- outer(tx, y, f)
+tz <- outer(tx, ty, f)
 tz[is.na(tz)] <- 1
+
+windows()
+source('loading.R')
+trans = persp(tx, ty, tz, col = 'gray', shade = 0.5, phi = 30, theta = 40)
+plot = recordPlot()
+plotInfo = perInit(plot, trans, newpage = TRUE)
+per(plot = plotInfo)
 
 source('random/shade.R')
 SetUpLight(30,40)
 source('random/shade.R')
-DrawFacets(tz, tx, ty, sqrt(length(tz)), sqrt(length(tz)), indx = 0:(length(tz) - 1), 0.05, 0.25, 0.25, col = 'red', ncol = length(col))
+colll = DrawFacets(tz, tx, ty, n, n, indx = 0:(length(tz) - 1), 0.5, 0.25, 0.25, col = 'red', ncol = length(col))
+
+source('random/shade.R')
+a = DepthOrder(tz, tx, ty, nrow(tz), ncol(tz), 1:16, 1:16)

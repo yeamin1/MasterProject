@@ -106,13 +106,17 @@ per = function(plot = NULL, ...)
     polygon.id = rep(1:pMax, each = 4)
 
     ## draw the behind face first
-    #PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd)
+    PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd)
         
     cols = rep_len(plot$col, length(polygons[,1]))
     
+    ##testing for change the colos
+    colRep <<- colll[oo]
+    
+    
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
                     default.units = 'native', vp = 'clipon',
-                    gp = gpar(col = border, fill = colRep, lty = lty, lwd = lwd)
+                    gp = gpar(col = border, fill = colll[a], lty = lty, lwd = lwd)
                    )
     ## then draw the front with 'dotted'
     PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted', lwd = lwd)
