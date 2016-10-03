@@ -44,7 +44,14 @@ echoTest(trans)
 
 
 ###
-aa = rbind(c(1,2,3,4),c(1,2,3,4),c(1,2,3,4),c(1,2,3,4))
+
+tx = seq(-10,10,length = 5)
+ty = seq(-10,10,length = 5)
+f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
+tz <- outer(tx, y, f)
+tz[is.na(tz)] <- 1
 
 source('random/shade.R')
-DrawFacets(tz, tx, ty, sqrt(length(tz)), sqrt(length(tz)), indx = 1:length(tz), 1, 1, 1, col = 'red', ncol = length(col))
+SetUpLight(30,40)
+source('random/shade.R')
+DrawFacets(tz, tx, ty, sqrt(length(tz)), sqrt(length(tz)), indx = 0:(length(tz) - 1), 0.05, 0.25, 0.25, col = 'red', ncol = length(col))

@@ -99,9 +99,9 @@ FacetShade = function(u, v, Shade = 0.5)
     sum^Shade   
 }
 
-DrawFacets = function(z, x, y, nx, ny, indx = 1:length(z), xs = 0, ys = 0, zs = 0, col, ncol, border)
+DrawFacets = function(z, x, y, nx, ny, indx = 0:(length(z)), xs = 0, ys = 0, zs = 0, col, ncol, border)
 {
-    
+    shade = 0
     u = v = 0
     nx1 = nx - 1
     ny1 = ny - 1
@@ -109,26 +109,28 @@ DrawFacets = function(z, x, y, nx, ny, indx = 1:length(z), xs = 0, ys = 0, zs = 
     n = nx1 * ny1
     for(k in 1:n){
         nv = 0
-        i = indx[k] %% nx1
-        j = indx[k] %/% nx1
-        icol = (i + j * nx1) %% ncol
-        i = i + 1
-        j = j + 1
-	    u[1] = xs * (x[i+1] - x[i])
-	    u[2] = ys * (y[j] - y[j+1])
-	    u[3] = zs * (z[(i+1)+j*nx] - z[i+(j+1)*nx])
-	    v[1] = xs * (x[i+1] - x[i])
-	    v[2] = ys * (y[j+1] - y[j])
-	    v[3] = zs * (z[(i+1)+(j+1)*nx] - z[i+j*nx])
-       
-	    shade <<- FacetShade(u, v)
-        if(nv > 2)
-        {
-            newcol = col[icol]
-            cols[k] <<- rgb(shade * newcol, shade * newcol, shade * newcol)
-        }
+        i = (indx[k]) %% nx1 
+        j = (indx[k]) %/% nx1
+        icol = (i + j * nx1) %% ncol + 1
+
+	    u[1] = xs * (x[i+1+1] - x[i+1])
+	    u[2] = ys * (y[j+1] - y[j+1+1])
+	    u[3] = zs * (z[(i+1)+j*nx+1] - z[i+(j+1)*nx]+1)
+	    v[1] = xs * (x[i+1+1] - x[i+1])
+	    v[2] = ys * (y[j+1+1] - y[j+1])
+	    v[3] = zs * (z[(i+1)+(j+1)*nx+1] - z[i+j*nx+1])
+        
+
+	    shade = FacetShade(u, v)
+                    print(FacetShade(u, v))
+
+        #if(nv > 2)
+        
+            newcol = col2rgb(col[icol]) / 255
+            #print(newcol)
+            cols[k] <<- rgb(shade * newcol[1], shade * newcol[2], shade * newcol[3])
+        
         
     }
-    cols <<- cols
 
 }

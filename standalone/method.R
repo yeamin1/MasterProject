@@ -147,9 +147,9 @@ dPolygon = function(plot){
                     
     colRep = colRep[a]
     
-    tx <<- xCoor[oo]
-    ty <<- yCoor[oo]
-    tz <<- zCoor[oo]
+    tx = xCoor[oo]
+    ty = yCoor[oo]
+    tz = zCoor[oo]
     ## record the total number of polygon
     pMax = length(xyCoor$x) / 4
 
