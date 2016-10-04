@@ -5,9 +5,8 @@
 ## VT = trans
 ## lty = lty..
 ## a function from C
-PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty, lwd = lwd )
+PerspBox = function(front = 1, x, y, z, EdgeDone, VT, lty, lwd = lwd )
 {
-    EdgeDone[1:12] = 0
     u0 = u1 = u2 = u3 = 0
     v0 = v1 = v2 = v3 = 0
     for (f in 1:6) {
@@ -72,6 +71,7 @@ PerspBox = function(front = 1, x, y, z, EdgeDone = 0, VT, lty, lwd = lwd )
                 }
         }
     }
+    EdgeDone
 }
 
 dPolygon = function(plot){

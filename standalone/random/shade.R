@@ -1,5 +1,6 @@
-SetToIdentity = function(TT)
-    VT <<- diag(1, 4)
+SetToIdentity = function(){
+    diag(1, 4)
+}
 
     
 Accumulate = function(TT)
@@ -30,57 +31,56 @@ Accumulates = function(TT)
     
 XRotate = function(angle)
 {
-    SetToIdentity(TT)
+    TT = SetToIdentity()
     rad = angle * pi / 180
     c = cos(rad)
     s = sin(rad)
-    TT = rbind(c(1, 0, 0, 0),
-              c(0, c, s, 0),
-              c(0, -s, c, 0),
-              c(0, 0, 0, 1))
+    TT[2, 2] = c;
+    TT[3, 2] = -s;
+    TT[3, 3] = c;
+    TT[2, 3] = s;
+    TT
     
-    Accumulate(TT)
 }
 
 YRotate = function(angle)
 {
-    SetToIdentity(TT)
+    TT = SetToIdentity()
     rad = angle * pi / 180
     c = cos(rad)
     s = sin(rad)
-    TT = rbind(c(c, 0, -s, 0),
-              c(0, 1, 0, 0),
-              c(s, 0, c, 0),
-              c(0, 0, 0, 1))
-    
-    Accumulate(TT)
+    TT[1, 1] = c;
+    TT[3, 0] = s;
+    TT[3, 3] = c;
+    TT[1, 3] = -s;
+    TT
+
 }
 
 ZRotate = function(angle)
 {
-    SetToIdentity(TT)
+    TT = SetToIdentity()
     rad = angle * pi / 180
     c = cos(rad)
     s = sin(rad)
-    TT = rbind(c(c, s, 0, 0),
-              c(-s, c, 0, 0),
-              c(0, 0, 1, 0),
-              c(0, 0, 0, 1))
-    
-    Accumulate(TT)
+    TT[1, 1] = c;
+    TT[2, 1] = -s;
+    TT[2, 2] = c;
+    TT[1, 2] = s;
+    TT
 }
         
 SetUpLight = function(theta, phi)
 {
     u = c(0, -1, 0, 1)
-    SetToIdentity(VT)
-    XRotate(-phi)
-    ZRotate(theta)
-    Light <<- TransVector(u, VT)
+    VT = SetToIdentity()
+    VT = VT %*% XRotate(-phi)
+    VT = VT %*% ZRotate(theta)
+    Light = TransVector(u, VT)
 }
 
 
-FacetShade = function(u, v, Shade = 0.3)
+FacetShade = function(u, v, Shade = 0.3, Light)
 {
     nx = u[2] * v[3] - u[3] * v[2]
     ny = u[3] * v[1] - u[1] * v[3]
@@ -88,20 +88,27 @@ FacetShade = function(u, v, Shade = 0.3)
     
     sum = sqrt(nx * nx + ny * ny + nz * nz)
     
-    #print(sum)
     if (sum == 0) sum = 1
     nx = nx/sum
     ny = ny/sum
     nz = nz/sum
     
     sum = 0.5 * (nx * Light[1] + ny * Light[2] + nz * Light[3] + 1)
-    
-    #print(Shade)
+    print(sum)
     
     sum^Shade   
 }
 
-DrawFacets = function(z, x, y, nx, ny, indx = 0:(length(z)), xs = 0, ys = 0, zs = 0, col, ncol, border)
+Scale = function(x, y, z)
+{
+    SetToIdentity(VT)
+    T[1, 1] = x;
+    T[2, 2] = y;
+    T[3, 3] = z;
+    Accumulate(T);
+}
+
+DrawFacets = function(z, x, y, nx, ny, indx = 0:(length(z)), xs = 0, ys = 0, zs = 0, col, ncol, border, Light)
 {
     aa = b = 0 ## testing 
     shade = 0
@@ -114,7 +121,7 @@ DrawFacets = function(z, x, y, nx, ny, indx = 0:(length(z)), xs = 0, ys = 0, zs 
         nv = 0
         i = (indx[k]) %% nx1 
         j = (indx[k]) %/% nx1
-        icol = (i + j * nx1) %% ncol + 1
+        #icol = (i + j * nx1) %% ncol + 1
 
         u[1] = xs * (x[i+1+1] - x[i+1])
 	    u[2] = ys * (y[j+1] - y[j+1+1])
@@ -123,25 +130,25 @@ DrawFacets = function(z, x, y, nx, ny, indx = 0:(length(z)), xs = 0, ys = 0, zs 
 	    v[2] = ys * (y[j+1+1] - y[j+1])
 	    v[3] = zs * (z[(i+1)+(j+1)*nx+1] - z[i+j*nx+1])
         
-        #print(x)
+        #i = (indx[k] - 1) %% nx1 + 1
+        #j = (indx[k] - 1) %/% nx1 + 1
         
-        #u[1] = xs * x[4*(k-1) + 4] - x[4*(k - 1) + 1]
-        #u[2] = ys * x[4*(k-1) + 1] - x[4 + 4*(k - 1)]
-        #u[3] = zs * (z[(i+1)+j*nx+1] - z[i+(j+1)*nx]+1)
+        icol = (i + j * nx1) %% ncol
+        #print(k)
         
-        
-        #v[1] = xs * x[4*(k-1) + 4] - x[4*(k - 1) + 1]
-        #v[2] = ys * x[4*(k-1) + 4] - x[4*(k - 1) + 1]
-	    #v[3] = zs * (z[(i+1)+(j+1)*nx+1] - z[i+j*nx+1])
+        #u[1] = xs * (x[i+1] - x[i]);
+	    #u[2] = ys * (y[j] - y[j+1]);
+	    #u[3] = zs * (z[(i+1)+j*nx] - z[i+(j+1)*nx]);
+	    #v[1] = xs * (x[i+1] - x[i]);
+	    #v[2] = ys * (y[j+1] - y[j]);
+	    #v[3] = zs * (z[(i+1)+(j+1)*nx] - z[i+j*nx]);
 
-        #print(n)
-	    shade = FacetShade(u, v)
+       # print(v)
+	    shade = FacetShade(u, v, Light = Light)
         #print(FacetShade(u, v))
-        aa[i] <<- shade
         #if(nv > 2)
         #print(icol)
-        newcol <<- col2rgb(col[icol]) / 255
-        b[i] <<- shade * newcol[1]
+        newcol <<- col2rgb(col) / 255
         cols[k] = rgb(shade * newcol[1], shade * newcol[2], shade * newcol[3])
         
     }

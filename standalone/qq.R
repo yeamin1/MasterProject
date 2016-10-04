@@ -15,7 +15,7 @@ z[is.na(z)] <- 1
 source('loading.R')
 #windows()
 par(mar = c(2,2,2,2))
-trans = persp(x, y, z, theta = 20, 
+trans = persp(x, y, z, theta = 20, xlim = c(-5,5),
                phi = 20, expand = 0.5, 
                col = 'White', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
               col.lab = 'red')
@@ -53,15 +53,18 @@ tz[is.na(tz)] <- 1
 
 windows()
 source('loading.R')
-trans = persp(tx, ty, tz, col = 'gray', shade = 0.5, phi = 30, theta = 40)
+ltheta = -135; lphi = 0
+trans = persp(tx, ty, tz, col = 'grey', shade = 0.3, phi = 30, theta = 40, ltheta = ltheta, lphi = lphi, scale = TRUE)
 plot = recordPlot()
 plotInfo = perInit(plot, trans, newpage = TRUE)
 per(plot = plotInfo)
 
 source('random/shade.R')
-SetUpLight(30,40)
-source('random/shade.R')
-colll = DrawFacets(tz, tx, ty, n, n, indx = 0:(length(tz) - 1), 0.5, 0.25, 0.25, col = 'red', ncol = length(col))
+Light = SetUpLight(theta = ltheta,phi =lphi)
+colll = DrawFacets(tz, tx, ty, n, n, indx = 0:(length(tz) - 1), 1, 1, 1, col = 'grey', ncol = length(col), Light = Light)
+per(plot = plotInfo)
 
-source('random/shade.R')
-a = DepthOrder(tz, tx, ty, nrow(tz), ncol(tz), 1:16, 1:16)
+SetUpLight(theta = 30,phi =40)
+
+2353
+
