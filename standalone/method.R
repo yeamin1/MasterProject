@@ -138,21 +138,20 @@ dPolygon = function(plot){
     zdepth = orderTemp[, 4]
 
     ## the zdepth of a set of 4 points of each polygon
-    a <<- order(zdepth, decreasing = TRUE)
-    oo <<- rep(1:4, length(a)) + rep(a - 1, each = 4) * 4
+    a = order(zdepth, decreasing = TRUE)
+    oo = rep(1:4, length(a)) + rep(a - 1, each = 4) * 4
 
     xyCoor = trans3d(xCoor[oo],
                     yCoor[oo],
                     zCoor[oo], trans)
                     
-    colRep <<- colll
     colRep = colRep[a]
     
 
     ## record the total number of polygon
     pMax = length(xyCoor$x) / 4
 
-    pout = list(xyCoor = xyCoor, pMax = pMax, colRep = colRep)
+    pout = list(xyCoor = xyCoor, pMax = pMax, colRep = colRep, polygonOrder = a)
     pout
 }
 

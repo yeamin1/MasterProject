@@ -14,6 +14,7 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
     ## tickType is [[22]]
     ## xlab/ylab/zlab = [[23]]/[[24]]/[[25]]
 	## main is in plot[[1]][[4]][[2]][[2]]
+    ## shade is 0.8, ltheta/lphi = [[16]]/[[17]]
     out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                 xr = info[[5]], yr = info[[6]], zr = info[[7]],
                 col = info[[14]], border = info[[15]], dbox = info[[19]],
@@ -22,7 +23,8 @@ perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
                 trans = trans, xlab = info[[23]], ylab = info[[24]], zlab = info[[25]],
 				## parameters in 'par' that need added to per
                 lwd = info$lwd, lty = info$lty, col.axis = info$col.axis,
-				col.lab = info$col.lab, cex.lab = info$cex.lab
+				col.lab = info$col.lab, cex.lab = info$cex.lab, 
+                shade = info[[18]], ltheta = info[[16]], lphi = info[[17]]
 				#main = plot[[1]][[4]][[2]][[2]]
                 )
     if(out$newpage == TRUE)
@@ -105,20 +107,45 @@ per = function(plot = NULL, ...)
     polygons = cbind(xyCoor$x, xyCoor$y)
     polygon.id = rep(1:pMax, each = 4)
 
+    
+    
+    
+    ##shade
+    shade = plot$shade
+    print(shade)
+    if(!is.na(shade))
+    {
+        ltheta = plot$ltheta
+        lphi = plot$lphi
+        
+        print(plot$z)
+        colOrder = plot
+        shadedCol = shadeCol(plot$z, plot$x, plot$x, xs = 1, ys = 1, zs = 1, 
+                    col = plot$col[1], ncol = 1, ##multiple color is not working for now..
+                    ltheta = ltheta, lphi = lphi, Shade = shade)
+                    
+        polygonOrder = pout$polygonOrder
+        
+        cols = shadedCol[polygonOrder]
+    }else
+    {
+        cols = rep_len(plot$col, length(polygons[,1]))
+    }
+    
+    
+    
     ## draw the behind face first
     ## return the EdgeDone inorder to not drawing the same Edege two times.
     EdgeDone = rep(0, 12)
     EdgeDone = PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd, EdgeDone = EdgeDone)
         
-    cols = rep_len(plot$col, length(polygons[,1]))
     
     ##testing for change the colos
-    colRep <<- colll[oo]
     
     
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
                     default.units = 'native', vp = 'clipon',
-                    gp = gpar(col = border, fill = colRep, lty = lty, lwd = lwd)
+                    gp = gpar(col = border, fill = cols, lty = lty, lwd = lwd)
                    )
     ## then draw the front with 'dotted'
     PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted', lwd = lwd, EdgeDone = EdgeDone)

@@ -53,18 +53,18 @@ tz[is.na(tz)] <- 1
 
 windows()
 source('loading.R')
-ltheta = -135; lphi = 0
-trans = persp(tx, ty, tz, col = 'grey', shade = 0.3, phi = 30, theta = 40, ltheta = ltheta, lphi = lphi, scale = TRUE)
-plot = recordPlot()
-plotInfo = perInit(plot, trans, newpage = TRUE)
-per(plot = plotInfo)
+ltheta = -135; lphi = 90
+trans = persp(tx, ty, tz, col = 'grey', shade = 0.8, phi = 30, theta = 40, ltheta = ltheta, lphi = lphi, scale = TRUE)
+
+
 
 source('random/shade.R')
-Light = SetUpLight(theta = ltheta,phi =lphi)
-colll = DrawFacets(tz, tx, ty, n, n, indx = 0:(length(tz) - 1), 1, 1, 1, col = 'grey', ncol = length(col), Light = Light)
+source('loading.R')
+trans = testPersp(shade = 0.5)
+plot = recordPlot()
+plotInfo = perInit(plot, trans = trans, newpage = TRUE)
 per(plot = plotInfo)
 
-SetUpLight(theta = 30,phi =40)
 
-2353
-
+##n = 16
+25
