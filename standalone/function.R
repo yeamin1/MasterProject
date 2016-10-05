@@ -51,20 +51,13 @@ per = function(plot = NULL, ...)
     pout = dPolygon(plot)
     boxInfo = per.box(plot$xr, plot$yr, plot$zr, trans)
 	
+    ## title(not use yet...)
 	main = plot$main
     
     ## lty and lwd 
-    lwd = plot$lwd
-    if(is.null(lwd))
-        lwd = 1
-    lty = plot$lty
-    if(is.null(lty))
-        lty = 1
+    if(is.null(plot$lwd)) lwd = 1 else lwd = plot$lwd
+    if(is.null(plot$lty)) lty = 1 else lty = plot$lty
         
-    ## polygon Information extraction
-    xyCoor = pout$xyCoor
-    pMax = pout$pMax
-
     ##col/border
     colRep = pout$colRep
 	col.axis = plot$col.axis
@@ -76,78 +69,62 @@ per = function(plot = NULL, ...)
 	#print(col.axis)
     ## the border just using the frist from persp
     border = plot$border[1]
-    nTicks = plot$nTicks
-    tickType = plot$tickType
 
-    ##x,y,z labels
-    xlab = plot$xlab
-    ylab = plot$ylab
-    zlab = plot$zlab
-    
-    ##axes
-    axes = plot$axes
-    
     ## box Information extraction
     if (plot$dbox == TRUE) {
+        axes = plot$axes
+        if(axes == TRUE){
+        ##axes information
         xr = plot$xr
         yr = plot$yr
         zr = plot$zr
+        xlab = plot$xlab
+        ylab = plot$ylab
+        zlab = plot$zlab
+        nTicks = plot$nTicks
+        tickType = plot$tickType
         
-        
-        if(axes == TRUE){
-        PerspAxes(x = xr, y = yr, z = zr, 
-            xlab = xlab, xenc = 5, ylab = ylab, yenc = 5, zlab = zlab, zenc = 5, 
-            nTicks = nTicks, tickType = tickType, pGEDevDesc = 1, dd = 1, VT = trans, lwd = lwd, col.axis = col.axis,
-            lty = lty, col.lab = col.lab, cex.lab = cex.lab)
+        PerspAxes(xr, yr, zr, ##x, y, z
+            xlab, ylab, zlab, ## xlab, xenc, ylab, yenc, zlab, zenc
+            nTicks, tickType, trans, ## nTicks, tickType, VT
+            lwd, lty, col.axis, col.lab, cex.lab) ## lwd, lty, col.axis, col.lab, cex.lab
             }
     } else {
         xr = yr = zr = c(0,0)
     }
 
+    ## polygon Information extraction
+    xyCoor = pout$xyCoor
+    pMax = pout$pMax
     polygons = cbind(xyCoor$x, xyCoor$y)
     polygon.id = rep(1:pMax, each = 4)
-
-    
-    
     
     ##shade
     shade = plot$shade
-    print(shade)
-    if(!is.na(shade))
-    {
+    if(!is.na(shade)){
         ltheta = plot$ltheta
         lphi = plot$lphi
-        
-        print(plot$z)
         colOrder = plot
-        shadedCol = shadeCol(plot$z, plot$x, plot$x, xs = 1, ys = 1, zs = 1, 
-                    col = plot$col[1], ncol = 1, ##multiple color is not working for now..
-                    ltheta = ltheta, lphi = lphi, Shade = shade)
-                    
+        shadedCol = shadeCol(plot$z, plot$x, plot$x,    ##x, y, z
+                            1, 1, 1,                    ##xs, ys, zs 
+                            plot$col[1], 1,             ##col, ncol   ##multiple color is not working for now..
+                            ltheta, lphi, shade)        ## ltheta, lphi, Shade(not shade)
         polygonOrder = pout$polygonOrder
-        
         cols = shadedCol[polygonOrder]
-    }else
-    {
+    }else{
         cols = rep_len(plot$col, length(polygons[,1]))
     }
-    
-    
-    
+
     ## draw the behind face first
     ## return the EdgeDone inorder to not drawing the same Edege two times.
     EdgeDone = rep(0, 12)
-    EdgeDone = PerspBox(0, xr, yr, zr, VT = plot$trans, lty = 1, lwd = lwd, EdgeDone = EdgeDone)
-        
-    
-    ##testing for change the colos
-    
+    EdgeDone = PerspBox(0, xr, yr, zr, EdgeDone, trans, 1, lwd)
     
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
                     default.units = 'native', vp = 'clipon',
                     gp = gpar(col = border, fill = cols, lty = lty, lwd = lwd)
                    )
     ## then draw the front with 'dotted'
-    PerspBox(1, xr, yr, zr, VT = plot$trans, lty = 'dotted', lwd = lwd, EdgeDone = EdgeDone)
+    PerspBox(1, xr, yr, zr, EdgeDone, trans, 'dotted', lwd)
 
 }

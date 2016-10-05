@@ -91,7 +91,6 @@ dPolygon = function(plot){
     yTmp = rep(y,each = s)
     zTmp = as.numeric(z)
     
-
     ## the drawing order is along x-axis, and then along y-axis
     ## then create a vector like a 4Xn matrix, 
     ## i.e the first column contain all the first points for every polygons
@@ -234,9 +233,9 @@ labelAngle = function(x1, y1, x2, y2){
 
 
 PerspAxis = function(x, y, z, axis, axisType, 
-                        nTicks, tickType, label, 
-                        encm, dd, VT, lwd = 1, lty = lty, col.axis = 1,
-						col.lab = 1, cex.lab = 1){
+                    nTicks, tickType, label, 
+                    VT, lwd = 1, lty, col.axis = 1,
+                    col.lab = 1, cex.lab = 1){
 
 						
     ## don't know how to use numeric on the switch...
@@ -455,10 +454,10 @@ PerspAxis = function(x, y, z, axis, axisType,
 
 
 PerspAxes = function(x, y, z, 
-                    xlab, xenc, 
-                    ylab, yenc, 
-                    zlab, zenc, 
-                    nTicks, tickType, pGEDevDesc, dd, VT, 
+                    xlab, 
+                    ylab, 
+                    zlab, 
+                    nTicks, tickType, VT, 
 					## parameters in par
                     lwd = 1, lty = 1, col.axis = 1, col.lab = 1, cex.lab = 1)
 {
@@ -509,8 +508,8 @@ PerspAxes = function(x, y, z,
     } else
         warning("Axis orientation not calculated")
     ## drawing x and y axes
-    PerspAxis(x, y, z, xAxis, '1', nTicks, tickType, xlab, xenc, dd, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
-    PerspAxis(x, y, z, yAxis, '2', nTicks, tickType, ylab, yenc, dd, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
+    PerspAxis(x, y, z, xAxis, '1', nTicks, tickType, xlab, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
+    PerspAxis(x, y, z, yAxis, '2', nTicks, tickType, ylab, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
 
     ## Figure out which Z axis to draw
     if (lowest(v0[1], v1[1], v2[1], v3[1])) {
@@ -525,6 +524,6 @@ PerspAxes = function(x, y, z,
     warning("Axis orientation not calculated")
 
     ## drawing the z-axis
-    PerspAxis(x, y, z, zAxis, '3', nTicks, tickType, zlab, zenc, dd, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
+    PerspAxis(x, y, z, zAxis, '3', nTicks, tickType, zlab, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
 	
 }

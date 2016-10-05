@@ -60,7 +60,6 @@ FacetShade = function(u, v, Shade = 0.5, Light)
     ny = ny/sum
     nz = nz/sum
     sum = 0.5 * (nx * Light[1] + ny * Light[2] + nz * Light[3] + 1)
-    
     sum^Shade   
 }
 
