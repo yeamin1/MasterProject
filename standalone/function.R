@@ -1,6 +1,5 @@
 ## initialize and create a viewport prepare for drawing
-perInit = function(plot, trans, newpage = FALSE, dbox = TRUE)
-{
+perInit = function ( plot, trans, newpage = FALSE, dbox = TRUE ) {
     ##[[1]] is the all the grapical information that transfer into grid
     ##[[3]] is the persp call information
     ##[[2]] is the plot details eg: x, y, z, xlim, ylim, zlim, col ...

@@ -1,0 +1,25 @@
+2016/10/16
+
+DONE(maybe):
+
+    + uploaded a persp() example
+    
+    + add lty, lwd, col.lab, cex.lab, col.axis testing on qq.Read
+    
+    + fixed the 'lim' problem by fixing the 'EdgeDone' on the 'PerspBox()' function.
+    
+    + fixed the 'expand' problem by using two viewport (clipping on for drawing the shape, 
+                                                        off for drawing axis/label)
+                                                
+    + emulated the shade parameters
+    
+Not DONE
+    +  Read Chapt 11 of "Computer Graphics" to understand how 3D transformation
+    matrices work   
+    
+    
+Wish to discuss:
+    + Bug on the filling the shade (colors are similiar, but not identical) 
+    + need vectoriztion for calculation the color for shading.
+    + need to figure out what happen if we passing multiple colors when doing the shading
+    ...

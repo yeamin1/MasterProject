@@ -1,5 +1,4 @@
-XRotate = function(angle)
-{
+XRotate = function ( angle ) {
     TT = diag(1, 4)
     rad = angle * pi / 180
     c = cos(rad)
@@ -9,11 +8,9 @@ XRotate = function(angle)
     TT[3, 3] = c;
     TT[2, 3] = s;
     TT
-    
 }
 
-YRotate = function(angle)
-{
+YRotate = function ( angle ) {
     TT = diag(1, 4)
     rad = angle * pi / 180
     c = cos(rad)
@@ -23,11 +20,9 @@ YRotate = function(angle)
     TT[3, 3] = c;
     TT[1, 3] = -s;
     TT
-
 }
 
-ZRotate = function(angle)
-{
+ZRotate = function ( angle ) {
     TT = diag(1, 4)
     rad = angle * pi / 180
     c = cos(rad)
@@ -39,8 +34,7 @@ ZRotate = function(angle)
     TT
 }
         
-SetUpLight = function(theta, phi)
-{
+SetUpLight = function ( theta, phi ) {
     u = c(0, -1, 0, 1)
     VT = diag(1, 4)
     VT = VT %*% XRotate(-phi)
@@ -49,8 +43,7 @@ SetUpLight = function(theta, phi)
 }
 
 
-FacetShade = function(u, v, Shade = 0.5, Light)
-{
+FacetShade = function( u, v, Shade = 0.5, Light ) {
     nx = u[2] * v[3] - u[3] * v[2]
     ny = u[3] * v[1] - u[1] * v[3]
     nz = u[1] * v[2] - u[2] * v[1]
@@ -65,8 +58,7 @@ FacetShade = function(u, v, Shade = 0.5, Light)
 
 
 
-shadeCol = function(z, x, y, xs, ys, zs, col, ncol, ltheta, lphi, Shade)
-{
+shadeCol = function ( z, x, y, xs, ys, zs, col, ncol, ltheta, lphi, Shade ) {
     u = v = 0
     nx = nrow(z)
     ny = ncol(z)
@@ -75,9 +67,7 @@ shadeCol = function(z, x, y, xs, ys, zs, col, ncol, ltheta, lphi, Shade)
     cols = 0
     
     indx = 0:(length(z))
-    
     Light = SetUpLight(ltheta, lphi)
-    
     ## need vectorized
     for(k in 1:(nx1 * ny1)){
         nv = 0
@@ -93,18 +83,13 @@ shadeCol = function(z, x, y, xs, ys, zs, col, ncol, ltheta, lphi, Shade)
 	    v[1] = xs * (x[i+1+1] - x[i+1])
 	    v[2] = ys * (y[j+1+1] - y[j+1])
 	    v[3] = zs * (z[(i+1)+(j+1)*nx+1] - z[i+j*nx+1])
-        
         icol = (i + j * nx1) %% ncol
-
 	    shade = FacetShade(u, v, Shade = Shade, Light = Light)
-        
         ##one condiction here..if any bugs then check here...
         #
         #
-        
         newcol = col2rgb(col) / 255
         cols[k] = rgb(shade * newcol[1], shade * newcol[2], shade * newcol[3])
-        
     }
         cols
 }
