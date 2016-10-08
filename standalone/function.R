@@ -23,7 +23,8 @@ perInit = function ( plot, trans, newpage = FALSE, dbox = TRUE ) {
 				## parameters in 'par' that need added to per
                 lwd = info$lwd, lty = info$lty, col.axis = info$col.axis,
 				col.lab = info$col.lab, cex.lab = info$cex.lab, 
-                shade = info[[18]], ltheta = info[[16]], lphi = info[[17]]
+                shade = info[[18]], ltheta = info[[16]], lphi = info[[17]],
+                expand = info[[13]], scale = info[[12]]
 				#main = plot[[1]][[4]][[2]][[2]]
                 )
     if(out$newpage == TRUE)
@@ -62,6 +63,11 @@ per = function(plot = NULL, ...)
 	col.axis = plot$col.axis
 	col.lab = plot$col.lab
 	
+    ##x, y, z lim
+    xr = plot$xr
+    yr = plot$yr
+    zr = plot$zr
+    
 	## cex
 	cex.lab = plot$cex.lab
 	
@@ -74,9 +80,6 @@ per = function(plot = NULL, ...)
         axes = plot$axes
         if(axes == TRUE){
         ##axes information
-        xr = plot$xr
-        yr = plot$yr
-        zr = plot$zr
         xlab = plot$xlab
         ylab = plot$ylab
         zlab = plot$zlab
@@ -98,14 +101,28 @@ per = function(plot = NULL, ...)
     polygons = cbind(xyCoor$x, xyCoor$y)
     polygon.id = rep(1:pMax, each = 4)
     
+    
+    
     ##shade
     shade = plot$shade
     if(!is.na(shade)){
+    
+        expand = plot$expand
+        scale = plot$scale
         ltheta = plot$ltheta
         lphi = plot$lphi
         colOrder = plot
+        
+        xs = LimitCheck(xr)[1]
+        ys = LimitCheck(yr)[1]
+        zs = LimitCheck(zr)[1]
+        
+        
+        if(!scale) xs = ys = zs = max(xs, ys, zs)
+        
+        
         shadedCol = shadeCol(plot$z, plot$x, plot$x,    ##x, y, z
-                            1, 1, 1,                    ##xs, ys, zs 
+                            1/xs, 1/ys, expand/zs,                    ##xs, ys, zs 
                             plot$col[1], 1,             ##col, ncol   ##multiple color is not working for now..
                             ltheta, lphi, shade)        ## ltheta, lphi, Shade(not shade)
         polygonOrder = pout$polygonOrder

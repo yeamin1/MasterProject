@@ -9,10 +9,8 @@ setwd('H:/Documents/MasterProject-master/MasterProject-0.0000001/standalone')
 ## quick example
 source('random/shade.R')
 source('loading.R')
-
-
 ## shading
-trans = testPersp(col = 'orange', border = 'NA', shade =0.2, ltheta = 10)
+trans = testPersp(col = 'orange', border = 'NA', shade =0.2, ltheta = 30, scale = FALSE)
 echoTest(trans)
 
 ## lty/lwd
@@ -35,7 +33,7 @@ z[is.na(z)] <- 1
 source('loading.R')
 par(mar = c(2,2,2,2))
 trans = persp(x, y, z, theta = 20, xlim = c(-5,5),
-              phi = 20, expand = 0.5, 
+              phi = 20, expand = 0.32, scale = 0.99,  
               col = 'White', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
               col.lab = 'red')
 plot = recordPlot()

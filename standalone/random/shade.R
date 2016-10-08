@@ -1,3 +1,11 @@
+LimitCheck = function(lim)
+{
+    s = 0.5 * abs(lim[2] - lim[1])
+    c = 0.5 * (lim[2] + lim[1])
+    c(s, c)
+}
+
+
 XRotate = function ( angle ) {
     TT = diag(1, 4)
     rad = angle * pi / 180
