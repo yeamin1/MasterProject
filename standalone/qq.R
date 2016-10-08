@@ -9,8 +9,7 @@ setwd('H:/Documents/MasterProject-master/MasterProject-0.0000001/standalone')
 ## quick example
 source('random/shade.R')
 source('loading.R')
-## shading
-trans = testPersp(col = 'orange', border = 'NA', shade =0.2, ltheta = 30, scale = FALSE)
+trans = testPersp(col = 1:10, border = 'NA', shade =0.2, box = FALSE, scale = FALSE)
 echoTest(trans)
 
 ## lty/lwd

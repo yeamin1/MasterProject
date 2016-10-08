@@ -66,7 +66,7 @@ FacetShade = function( u, v, Shade = 0.5, Light ) {
 
 
 
-shadeCol = function ( z, x, y, xs, ys, zs, col, ncol, ltheta, lphi, Shade ) {
+shadeCol = function ( z, x, y, xs, ys, zs, col, ncol = length(col), ltheta, lphi, Shade, Light) {
     u = v = 0
     nx = nrow(z)
     ny = ncol(z)
@@ -96,7 +96,8 @@ shadeCol = function ( z, x, y, xs, ys, zs, col, ncol, ltheta, lphi, Shade ) {
         ##one condiction here..if any bugs then check here...
         #
         #
-        newcol = col2rgb(col) / 255
+        print(icol + 1)
+        newcol = col2rgb(col[icol + 1])/ 255
         cols[k] = rgb(shade * newcol[1], shade * newcol[2], shade * newcol[3])
     }
         cols

@@ -47,99 +47,67 @@ perInit = function ( plot, trans, newpage = FALSE, dbox = TRUE ) {
 ## only simple function call and few calculation are been done on this function
 per = function(plot = NULL, ...)
 {
+    #information extraction
     trans = plot$trans
-    pout = dPolygon(plot)
-    boxInfo = per.box(plot$xr, plot$yr, plot$zr, trans)
-	
-    ## title(not use yet...)
-	main = plot$main
+    xr = plot$xr; yr = plot$yr; zr = plot$zr
+    xlab = plot$xlab; ylab = plot$ylab; zlab = plot$zlab
+    col.axis = plot$col.axis; col.lab = plot$col.lab; cex.lab = plot$cex.lab   
+    nTicks = plot$nTicks; tickType = plot$tickType
+    expand = plot$expand ;scale = plot$scale
+    ltheta = plot$ltheta; lphi = plot$lphi
+    main = plot$main; axes = plot$axes
+    dbox = plot$dbox; shade = plot$shade
     
-    ## lty and lwd 
+    border = plot$border[1]; 
     if(is.null(plot$lwd)) lwd = 1 else lwd = plot$lwd
     if(is.null(plot$lty)) lty = 1 else lty = plot$lty
-        
-    ##col/border
-    colRep = pout$colRep
-	col.axis = plot$col.axis
-	col.lab = plot$col.lab
-	
-    ##x, y, z lim
-    xr = plot$xr
-    yr = plot$yr
-    zr = plot$zr
+    if(any(!(is.numeric(xr) & is.numeric(yr) & is.numeric(zr)))) stop("invalid limits")
+    if(any(!(is.finite(xr) & is.finite(yr) & is.finite(zr)))) stop("invalid limits")
     
-	## cex
-	cex.lab = plot$cex.lab
-	
-	#print(col.axis)
-    ## the border just using the frist from persp
-    border = plot$border[1]
-
-    ## box Information extraction
-    if (plot$dbox == TRUE) {
-        axes = plot$axes
-        if(axes == TRUE){
-        ##axes information
-        xlab = plot$xlab
-        ylab = plot$ylab
-        zlab = plot$zlab
-        nTicks = plot$nTicks
-        tickType = plot$tickType
-        
-        PerspAxes(xr, yr, zr, ##x, y, z
-            xlab, ylab, zlab, ## xlab, xenc, ylab, yenc, zlab, zenc
-            nTicks, tickType, trans, ## nTicks, tickType, VT
-            lwd, lty, col.axis, col.lab, cex.lab) ## lwd, lty, col.axis, col.lab, cex.lab
-            }
-    } else {
-        xr = yr = zr = c(0,0)
-    }
-
-    ## polygon Information extraction
+    ## few calculation
+    pout = dPolygon(plot)
     xyCoor = pout$xyCoor
-    pMax = pout$pMax
+    pMax = pout$pMax; colRep = pout$colRep
+    polygonOrder = pout$polygonOrder
     polygons = cbind(xyCoor$x, xyCoor$y)
     polygon.id = rep(1:pMax, each = 4)
+    boxInfo = per.box(xr, yr, zr, trans)
+    xs = LimitCheck(xr)[1]
+    ys = LimitCheck(yr)[1]
+    zs = LimitCheck(zr)[1]
+    if(!scale) xs = ys = zs = max(xs, ys, zs)  
+    if(is.finite(ltheta) && is.finite(lphi) && is.finite(shade)) 
+        DoLighting = TRUE else DoLighting = FALSE
+    if (DoLighting) Light = SetUpLight(ltheta, lphi)
     
-    
-    
-    ##shade
-    shade = plot$shade
-    if(!is.na(shade)){
-    
-        expand = plot$expand
-        scale = plot$scale
-        ltheta = plot$ltheta
-        lphi = plot$lphi
-        colOrder = plot
-        
-        xs = LimitCheck(xr)[1]
-        ys = LimitCheck(yr)[1]
-        zs = LimitCheck(zr)[1]
-        
-        
-        if(!scale) xs = ys = zs = max(xs, ys, zs)
-        
-        
+    if (!is.na(shade)) {
+        if(is.finite(shade) && shade <= 0 ) shade = 1
         shadedCol = shadeCol(plot$z, plot$x, plot$x,    ##x, y, z
                             1/xs, 1/ys, expand/zs,                    ##xs, ys, zs 
-                            plot$col[1], 1,             ##col, ncol   ##multiple color is not working for now..
-                            ltheta, lphi, shade)        ## ltheta, lphi, Shade(not shade)
-        polygonOrder = pout$polygonOrder
+                            plot$col, length(plot$col),         ##col, ncol   ##multiple color is not working for now..
+                            ltheta, lphi, shade, Light = Light)        ## ltheta, lphi, Shade(not shade)
+                            
         cols = shadedCol[polygonOrder]
-    }else{
+        } else {
         cols = rep_len(plot$col, length(polygons[,1]))
+        }
+    if (dbox == TRUE) {
+        EdgeDone = rep(0, 12)
+        if(axes == TRUE){
+            PerspAxes(xr, yr, zr, ##x, y, z
+                    xlab, ylab, zlab, ## xlab, xenc, ylab, yenc, zlab, zenc
+                    nTicks, tickType, trans, ## nTicks, tickType, VT
+                    lwd, lty, col.axis, col.lab, cex.lab) } ## lwd, lty, col.axis, col.lab, cex.lab
+    } else {
+    EdgeDone = rep(1, 12)
+    xr = yr = zr = c(0,0)
     }
-
     ## draw the behind face first
     ## return the EdgeDone inorder to not drawing the same Edege two times.
-    EdgeDone = rep(0, 12)
     EdgeDone = PerspBox(0, xr, yr, zr, EdgeDone, trans, 1, lwd)
-    
     grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
                     default.units = 'native', vp = 'clipon',
-                    gp = gpar(col = border, fill = cols, lty = lty, lwd = lwd)
-                   )
+                    gp = gpar(col = border, fill = cols, lty = lty, lwd = lwd))
     ## then draw the front with 'dotted'
     PerspBox(1, xr, yr, zr, EdgeDone, trans, 'dotted', lwd)
 
