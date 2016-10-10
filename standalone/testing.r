@@ -1,3 +1,5 @@
+
+
 ## test on theta
 	trans = testPersp(15)
 	echoTest(trans)
@@ -183,3 +185,22 @@
     
 ## other bugs:
     ## 1. pty = 's'
+    
+## test on shade
+    ## single colors
+    trans = testPersp(col = 'orange', border = 'NA', shade =0.2, box = FALSE, scale = TRUE)
+    echoTest(trans)
+    ## multiplue colors:
+    trans = testPersp(col = 1:10, border = 'NA', shade =0.2, box = FALSE, scale = TRUE)
+    echoTest(trans)
+    ## changing the scale 
+    trans = testPersp(col = 1:10, border = 'NA', shade =0.2, box = FALSE, scale = FALSE)
+    echoTest(trans)
+    
+## lty/lwd
+    trans = testPersp(lty = 5, lwd = 2)
+    echoTest(trans)
+
+## col.lab/cex.lab/col.axis
+    trans = testPersp(col.lab = 'red', cex.lab = 1.5, col.axis = 'green', ticktype = 'detail')
+    echoTest(trans)

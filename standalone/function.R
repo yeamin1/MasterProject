@@ -14,6 +14,7 @@ perInit = function ( plot, trans, newpage = FALSE, dbox = TRUE ) {
     ## xlab/ylab/zlab = [[23]]/[[24]]/[[25]]
 	## main is in plot[[1]][[4]][[2]][[2]]
     ## shade is 0.8, ltheta/lphi = [[16]]/[[17]]
+    ## expand is [[13]], scale is [[12]]
     out = list(x = info[[2]], y = info[[3]], z = info[[4]],
                 xr = info[[5]], yr = info[[6]], zr = info[[7]],
                 col = info[[14]], border = info[[15]], dbox = info[[19]],
@@ -30,15 +31,18 @@ perInit = function ( plot, trans, newpage = FALSE, dbox = TRUE ) {
     if(out$newpage == TRUE)
         grid.newpage()
 
+    ## clip is on when drawing polygons shade
     vp = plotViewport(out$mar, xscale = out$lim[1:2], yscale = out$lim[3:4],name = 'clipon',
                     clip = 'on')
     pushViewport(vp)
     upViewport()
     
+    ## clip is off when drawing text/label/tickmarks..
     vp = plotViewport(out$mar, xscale = out$lim[1:2], yscale = out$lim[3:4],name = 'clipoff',
                     clip = 'off')
     pushViewport(vp)
     upViewport()
+    
     out
 }
 
@@ -64,14 +68,14 @@ per = function(plot = NULL, ...)
     if(any(!(is.numeric(xr) & is.numeric(yr) & is.numeric(zr)))) stop("invalid limits")
     if(any(!(is.finite(xr) & is.finite(yr) & is.finite(zr)))) stop("invalid limits")
     
-    ## few calculation
+    ## few calculation for pout
     pout = dPolygon(plot)
     xyCoor = pout$xyCoor
     pMax = pout$pMax; colRep = pout$colRep
     polygonOrder = pout$polygonOrder
     polygons = cbind(xyCoor$x, xyCoor$y)
     polygon.id = rep(1:pMax, each = 4)
-    boxInfo = per.box(xr, yr, zr, trans)
+
     xs = LimitCheck(xr)[1]
     ys = LimitCheck(yr)[1]
     zs = LimitCheck(zr)[1]

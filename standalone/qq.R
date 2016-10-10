@@ -1,13 +1,10 @@
 #setwd('H:/Documents/mproject/MasterProject-master')
 setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/standalone/') ##at uni
 setwd('H:/Documents/MasterProject-master/MasterProject') ## at home
-setwd('H:/Documents/MasterProject-master/MasterProject/standalone')
-setwd('H:/Documents/MasterProject-master/MasterProject-0.0000001/standalone')
 ##################################################################################
 
 
 ## quick example
-source('random/shade.R')
 source('loading.R')
 trans = testPersp(col = 1:10, border = 'NA', shade =0.2, box = FALSE, scale = FALSE)
 echoTest(trans)
@@ -18,6 +15,10 @@ echoTest(trans)
 
 ## col.lab/cex.lab/col.axis
 trans = testPersp(col.lab = 'red', cex.lab = 1.5, col.axis = 'green', ticktype = 'detail')
+echoTest(trans)
+
+
+trans = testPersp(col = 'orange', border = 'NA', shade =0.2, box = FALSE, scale = FALSE)
 echoTest(trans)
 
 

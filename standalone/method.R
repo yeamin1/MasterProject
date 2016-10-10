@@ -1,3 +1,103 @@
+####Shade function
+#####################################################################
+LimitCheck = function ( lim ) {
+    s = 0.5 * abs(lim[2] - lim[1])
+    c = 0.5 * (lim[2] + lim[1])
+    c(s, c)
+}
+
+
+XRotate = function ( angle ) {
+    TT = diag(1, 4)
+    rad = angle * pi / 180
+    c = cos(rad)
+    s = sin(rad)
+    TT[2, 2] = c;
+    TT[3, 2] = -s;
+    TT[3, 3] = c;
+    TT[2, 3] = s;
+    TT
+}
+
+YRotate = function ( angle ) {
+    TT = diag(1, 4)
+    rad = angle * pi / 180
+    c = cos(rad)
+    s = sin(rad)
+    TT[1, 1] = c;
+    TT[3, 0] = s;
+    TT[3, 3] = c;
+    TT[1, 3] = -s;
+    TT
+}
+
+ZRotate = function ( angle ) {
+    TT = diag(1, 4)
+    rad = angle * pi / 180
+    c = cos(rad)
+    s = sin(rad)
+    TT[1, 1] = c;
+    TT[2, 1] = -s;
+    TT[2, 2] = c;
+    TT[1, 2] = s;
+    TT
+}
+        
+SetUpLight = function ( theta, phi ) {
+    u = c(0, -1, 0, 1)
+    VT = diag(1, 4)
+    VT = VT %*% XRotate(-phi)
+    VT = VT %*% ZRotate(theta)
+    Light = u %*% VT
+}
+
+FacetShade = function( u, v, Shade = 0.5, Light ) {
+    nx = u[2] * v[3] - u[3] * v[2]
+    ny = u[3] * v[1] - u[1] * v[3]
+    nz = u[1] * v[2] - u[2] * v[1]
+    sum = sqrt(nx * nx + ny * ny + nz * nz)
+    if (sum == 0) sum = 1
+    nx = nx/sum
+    ny = ny/sum
+    nz = nz/sum
+    sum = 0.5 * (nx * Light[1] + ny * Light[2] + nz * Light[3] + 1)
+    sum^Shade   
+}
+
+shadeCol = function ( z, x, y, xs, ys, zs, col, ncol = length(col), ltheta, lphi, Shade, Light) {
+    u = v = 0
+    nx = nrow(z)
+    ny = ncol(z)
+    nx1 = nx - 1
+    ny1 = ny - 1
+    cols = 0
+    
+    indx = 0:(length(z))
+    Light = SetUpLight(ltheta, lphi)
+    for(k in 1:(nx1 * ny1)){
+        nv = 0
+        i = (indx[k]) %% nx1 
+        j = (indx[k]) %/% nx1
+       icol = (i + j * nx1) %% ncol + 1
+
+        u[1] = xs * (x[i+1+1] - x[i+1])
+	    u[2] = ys * (y[j+1] - y[j+1+1])
+	    u[3] = zs * (z[(i+1)+j*nx+1] - z[i+(j+1)*nx+1])
+	    v[1] = xs * (x[i+1+1] - x[i+1])
+	    v[2] = ys * (y[j+1+1] - y[j+1])
+	    v[3] = zs * (z[(i+1)+(j+1)*nx+1] - z[i+j*nx+1])
+        icol = (i + j * nx1) %% ncol
+	    shade = FacetShade(u, v, Shade = Shade, Light = Light)
+        ##one condiction here..if any bugs then check here...
+        #
+        #
+        newcol = col2rgb(col[icol + 1])/ 255
+        cols[k] = rgb(shade * newcol[1], shade * newcol[2], shade * newcol[3])
+    }
+        cols
+}
+## shade end...
+#####################################################################
 
 ## font = 1 -> draw front face
 ## x, y, z are the range of x, y, z-axis
@@ -100,7 +200,6 @@ dPolygon = function(plot){
     yBreak = yTmp[pBreak]
     zBreak = zTmp[pBreak]
     
-
     ## draw the box if required
     ## the vectors now has four paths, every paths contain the information of every points of every polygon
     ## now we need to change the order of this vector, so that the first four index should be the order for drawing 
@@ -124,14 +223,14 @@ dPolygon = function(plot){
     
     ## vectorize the cols
     colRep = rep_len(col, length(xCoor))
-
+    
     ## use the first corner of every polygon to determind the order for drawing
     corn.id = 4* 1:(length(xCoor)/4)
     xc = xCoor[corn.id]
     yc = yCoor[corn.id]
-    zc = zCoor[corn.id]
+    zc = zCoor[corn.id] 
     
-
+    
     ## method for using the zdepth for changing the drawing order for every polygon
     orderTemp = cbind(xc, yc, 0, 1) %*% trans 
     zdepth = orderTemp[, 4]
@@ -153,6 +252,7 @@ dPolygon = function(plot){
     pout = list(xyCoor = xyCoor, pMax = pMax, colRep = colRep, polygonOrder = a)
     pout
 }
+
 
 ## method for check wheater the axes is front or behind.
 ## return a boxInfo that contain a vector of logical value that tells which face is
@@ -198,15 +298,11 @@ per.box = function(xlim, ylim, zlim, trans){
     out
 }
 
-
-
-
 TransVector = function(u, T) {
     u %*% T
 }
 
-	
-lowest = function(y1, y2, y3, y4){
+lowest = function (y1, y2, y3, y4) {
     (y1 <= y2) && (y1 <= y3) && (y1 <= y4)		
 }
 
@@ -231,21 +327,17 @@ labelAngle = function(x1, y1, x2, y2){
     angle
 }	
 
-
 PerspAxis = function(x, y, z, axis, axisType, 
                     nTicks, tickType, label, 
                     VT, lwd = 1, lty, col.axis = 1,
                     col.lab = 1, cex.lab = 1){
 
-						
     ## don't know how to use numeric on the switch...
     axisType = as.character(axisType)
     tickType = as.character(tickType)
-
     u1 = u2 = u3 = c(0.,0.,0.,0.)
     tickLength = .03
 
-	
     switch(axisType,
            '1' = {min = x[1]; max = x[2]; range = x},
            '2' = {min = y[1]; max = y[2]; range = y},
@@ -258,11 +350,6 @@ PerspAxis = function(x, y, z, axis, axisType,
     if(!nint)nint = nint + 1
     i = nint
 
-    #ticks <<- pretty(c(min, max), nint, 1, .25, c(.8, 1.7), 2)
-    #min = ticks[1]
-    #max = ticks[length(ticks)]
-    #nint = length(ticks) - 1
-    
     ticks = axisTicks(c(min, max), FALSE, nint = nint)
     min = ticks[1]
     max = ticks[length(ticks)]
@@ -448,8 +535,6 @@ PerspAxis = function(x, y, z, axis, axisType,
             }
         }
     )
-
-
 }
 
 
@@ -464,22 +549,10 @@ PerspAxes = function(x, y, z,
     xAxis = yAxis = zAxis = 0 ## -Wall 
     u0 = u1 = u2 = u3 = 0
 
-    u0[1] = x[1]
-    u0[2] = y[1]
-    u0[3] = z[1]
-    u0[4] = 1
-    u1[1] = x[2]
-    u1[2] = y[1]
-    u1[3] = z[1]
-    u1[4] = 1
-    u2[1] = x[1]
-    u2[2] = y[2]
-    u2[3] = z[1]
-    u2[4] = 1
-    u3[1] = x[2]
-    u3[2] = y[2]
-    u3[3] = z[1]
-    u3[4] = 1
+    u0[1] = x[1]; u0[2] = y[1]; u0[3] = z[1]; u0[4] = 1
+    u1[1] = x[2]; u1[2] = y[1]; u1[3] = z[1]; u1[4] = 1
+    u2[1] = x[1]; u2[2] = y[2]; u2[3] = z[1]; u2[4] = 1
+    u3[1] = x[2]; u3[2] = y[2]; u3[3] = z[1]; u3[4] = 1
 
     v0 = TransVector(u0, VT)
     v1 = TransVector(u1, VT)
@@ -491,8 +564,6 @@ PerspAxes = function(x, y, z,
     v2 = v2/v2[4]
     v3 = v3/v3[4]
 
-    ## Figure out which X and Y axis to draw
-    ## but not sure how it works..
     if (lowest(v0[2], v1[2], v2[2], v3[2])) {
         xAxis = 1
         yAxis = 2
@@ -525,5 +596,4 @@ PerspAxes = function(x, y, z,
 
     ## drawing the z-axis
     PerspAxis(x, y, z, zAxis, '3', nTicks, tickType, zlab, VT, lwd = lwd, lty = lty, col.axis = col.axis, col.lab = col.lab, cex.lab = cex.lab)
-	
 }
