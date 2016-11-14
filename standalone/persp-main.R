@@ -68,14 +68,6 @@ per = function(plot = NULL, ...)
     if(any(!(is.numeric(xr) & is.numeric(yr) & is.numeric(zr)))) stop("invalid limits")
     if(any(!(is.finite(xr) & is.finite(yr) & is.finite(zr)))) stop("invalid limits")
     
-    ## few calculation for pout
-    pout = dPolygon(plot)
-    xyCoor = pout$xyCoor
-    pMax = pout$pMax; colRep = pout$colRep
-    polygonOrder = pout$polygonOrder
-    polygons = cbind(xyCoor$x, xyCoor$y)
-    polygon.id = rep(1:pMax, each = 4)
-
     xs = LimitCheck(xr)[1]
     ys = LimitCheck(yr)[1]
     zs = LimitCheck(zr)[1]
@@ -84,17 +76,6 @@ per = function(plot = NULL, ...)
         DoLighting = TRUE else DoLighting = FALSE
     if (DoLighting) Light = SetUpLight(ltheta, lphi)
     
-    if (!is.na(shade)) {
-        if(is.finite(shade) && shade <= 0 ) shade = 1
-        shadedCol = shadeCol(plot$z, plot$x, plot$x,    ##x, y, z
-                            1/xs, 1/ys, expand/zs,                    ##xs, ys, zs 
-                            plot$col, length(plot$col),         ##col, ncol   ##multiple color is not working for now..
-                            ltheta, lphi, shade, Light = Light)        ## ltheta, lphi, Shade(not shade)
-                            
-        cols = shadedCol[polygonOrder]
-        } else {
-        cols = rep_len(plot$col, length(polygons[,1]))
-        }
     if (dbox == TRUE) {
         EdgeDone = rep(0, 12)
         if(axes == TRUE){
@@ -103,16 +84,17 @@ per = function(plot = NULL, ...)
                     nTicks, tickType, trans, ## nTicks, tickType, VT
                     lwd, lty, col.axis, col.lab, cex.lab) } ## lwd, lty, col.axis, col.lab, cex.lab
     } else {
-    EdgeDone = rep(1, 12)
-    xr = yr = zr = c(0,0)
+        EdgeDone = rep(1, 12)
+        xr = yr = zr = c(0,0)
     }
     ## draw the behind face first
     ## return the EdgeDone inorder to not drawing the same Edege two times.
     EdgeDone = PerspBox(0, xr, yr, zr, EdgeDone, trans, 1, lwd)
-    grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
-                    default.units = 'native', vp = 'clipon',
-                    gp = gpar(col = border, fill = cols, lty = lty, lwd = lwd))
-    ## then draw the front with 'dotted'
+    DrawFacets(plot = plot, z = plot$z, x = plot$x, y = plot$y,     ## basic
+                xs = 1/xs, ys = 1/ys, zs = expand/zs,               ## Light
+                col = plot$col, length(plot$col),                   ## cols
+                ltheta = ltheta, lphi = lphi, Shade = shade, Light = Light) 
+
     PerspBox(1, xr, yr, zr, EdgeDone, trans, 'dotted', lwd)
 
 }

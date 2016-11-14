@@ -254,6 +254,33 @@ dPolygon = function(plot){
 }
 
 
+
+DrawFacets = function(plot, z, x, y, xs, ys, zs, col, ncol = length(col), ltheta, lphi, Shade, Light)
+{
+    pout = dPolygon(plot)
+    xyCoor = pout$xyCoor
+    pMax = pout$pMax; colRep = pout$colRep
+    polygonOrder = pout$polygonOrder
+    polygons = cbind(xyCoor$x, xyCoor$y)
+    polygon.id = rep(1:pMax, each = 4)
+    
+    if (!is.na(Shade)) {
+        if(is.finite(Shade) && Shade <= 0 ) Shade = 1
+        shadedCol = shadeCol(z, x, y,                       ## x, y, z
+                xs, ys, zs,                                 ## xs, ys, zs 
+                plot$col, length(plot$col),                 ## col, ncol
+                ltheta, lphi, Shade, Light = Light)         ## ltheta, lphi, Shade(not shade)
+        cols = shadedCol[polygonOrder]
+
+    } else {
+        cols = rep_len(plot$col, length(polygons[,1]))
+    }
+
+    grid.polygon(polygons[,1], polygons[,2], id = polygon.id,
+                    default.units = 'native', vp = 'clipon',
+                    gp = gpar(col = plot$border, fill = cols, lty = plot$lty, lwd = plot$lwd))
+
+}
 ## method for check wheater the axes is front or behind.
 ## return a boxInfo that contain a vector of logical value that tells which face is
 ## front or behind. and a vector of points order as: x1, y1, z1, x2, y2, z2 and so on 
