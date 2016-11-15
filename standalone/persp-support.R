@@ -91,8 +91,8 @@ shadeCol = function ( z, x, y, xs, ys, zs, col, ncol = length(col), ltheta, lphi
         ##one condiction here..if any bugs then check here...
         #
         #
-        newcol = col2rgb(col[icol + 1])/ 255
-        cols[k] = rgb(shade * newcol[1], shade * newcol[2], shade * newcol[3])
+        shadedCol = col2rgb(col[icol + 1])/ 255
+        cols[k] = rgb(shade * shadedCol[1], shade * shadedCol[2], shade * shadedCol[3])
     }
         cols
 }

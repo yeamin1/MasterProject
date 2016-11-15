@@ -19,6 +19,6 @@ testPersp = function(theta=120, phi = 20, expand = 0.5, col = 'White',
 echoTest = function(trans = trans) {
     plot = recordPlot()
     plotInfo = perInit(plot, trans = trans, newpage = FALSE)
-    per(plot = plotInfo)
+    R_persp(plot = plotInfo)
     grid.text('grid', 0.1, 0.9)
 }
