@@ -39,3 +39,8 @@ trans = persp(x, y, z, theta = 20, xlim = c(-5,5),
 plot = recordPlot()
 plotInfo = perInit(plot, trans, newpage = TRUE)
 per(plot = plotInfo)
+
+
+
+
+
