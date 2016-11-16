@@ -34,19 +34,15 @@ The \texttt{grid.echo()} can replicate most of plot that drawn by the graphics p
   	\label{figure2}
 \end{figure}
 
-It leads to our aim of this project. Firstable, it is necessary to understand some important theory behind the 3-dimentional plot, such as the transformation from 3-D to 2-D, the drawing order of each ploygons (will be explained later). ect. 
-Then we try to redraw it by using the grid package and we can replicate this function on grid by using the grid.echo().
-
-
 \subsection{Aim of the project}
 This project has following aims:
-1. understanding the details of theory of the transformation from 3-D to 2-D, In order to do that, the fast way is go through and understand the C code that already build in the graphic package.
-2. After we have some knowledge about the theory, then It is a good idea that translate the C code to R code as simliar as possible.
-3. rewrite the R code in a more efficiency way.
+1. replicate the persp plot on grid by translate the C code directly.
+2. rewrite the translated R code in a more effifiency way that R behaved.
+3. ...
 
 \section{Methodology}
 \subsection{standalone}
-Drawing a 3-dimemsion object on a 2-dimemsion plane requires a transformation. that is, the 3-D transformation matrix. However, the \texttt{persp()} will return the transformation matrix.
+Drawing a 3-dimemsion object on a 2-dimemsion plane requires a transformation. The most important information is the trasnformation matrix. However, the \texttt{persp()} will return the transformation matrix for adding to the perspecive plots.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -67,4 +63,38 @@ Drawing a 3-dimemsion object on a 2-dimemsion plane requires a transformation. t
 [4,]  1.697562e-17 -0.30082519 -2.84154222  3.84154222
 \end{Soutput}
 \end{Schunk}
+
+
+with this transformation matrix, we can now transform a 3-dimemsion points into 2-dimemsion points by multifying the 4D coordinates \texttf{(x, y, z, 1)} of points to the transformation matrix. Note that there is a function called \texttt{trans3d()} can do this computation easily.
+
+\begin{Schunk}
+\begin{Sinput}
+> trans3d(1,1,1, trans)
+\end{Sinput}
+\begin{Soutput}
+$x
+[1] 0.009933232
+
+$y
+[1] -0.07320118
+\end{Soutput}
+\end{Schunk}
+
+The code will transform a 3-D point \textf{(1,1,1)} into 2-D by using the transformation matrix.
+
+Drawing a perspective plot is more likely that drawing a surface over the x-y plane. The surface can been decomposed as a finite number of polygons. These polygons will the the following properties:
+1. Each polygons are Convex Polygon. (all its interior anges will less than 180 degrees.)
+
+2. Each polygons will have 4 points.
+
+The number of polygons required to been drawn can be calculated as follows:
+Suppose given the length of x, y is n and m, the function that defined the surface is f, i.e z = f(x, y).
+Then the length of z is n * m. The number of polygons to been drawn is (n - 1) * (m - 1) in total.
+
+Suppose we have a set of coordinates x and y. where the length of x is n, the length of y is m, f is a surface function of x and y, then firstible we compute all possible combination of x and y, then evaluative the z coordinates with the function f by using the R function \texxtt{outer()} so that we have a all 3-D points. The next step is transform the 3-D points into 2-D points by multifying a given transformation matrix. Then instead connecting the points line by line, we draw (n - 1) * (m - 1) number of polygons such that each polygons used 4 set of points.
+
+There an issue that it can cause the problems, which is the drawing order. It is not a good idea to draw the points without figure out that the ordering of 
+
 \end{document}
+
+
