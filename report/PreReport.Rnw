@@ -8,83 +8,103 @@ library(grid)
 library(gridGraphics)
 @
 \subsection{Background}
-R can provide more statistical graph. The core graphics system can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S. It is fast and it can provide traditional graphics. The newer package is the grid package. It is actually slower but is has more power on flexibility and additional features than the graphics package. \\\\
-The graph is drawn by using grid can been editing in many more ways than the graph been drawn on the basic graphics package. However, there is a new package, called gridGrahics, which allows us to convert the plot been draw by graphics package to grid graphics. So that the plot can been manipulated by any function on the grid package in order to provide more statistical plot. \\\\
-The main function on the gridGrahics is called \texttt{grid.echo()}, which allows any plot been drawn in the current graphics device convert to the grid graphics. The following codes provide a quick example of the demonstration. We generate 25 random number of x and y. First, we draw a scatter plot by using the function plot() from the basic graphic package, then we redraw it by using the grid.echo() from the gridGraphic package with grid.
+The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\\\
+A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called gridGrahics, which allows us to convert a plot that has been drawn by the graphics package to an equivalent plot drawn by grid graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the graphics package. \\\\
+
+\subsection{The \texttt{gridGraphic} package}
+\texttt{gridGraphic} is like a 'translator' that translate the plot which been drawn by using the basic graphics package to the plot which been drawn by using grid package. 
+The \texttt{gridGraphic} package has a main function called \textt{grid.echo()}, which takes a recorded plot (or NULL for the current plot of the current graphic dervice) as an argument. Then it replicate the 
+plot by using grid so that the user may edites the plot in more way than the plot drawn by bacis graphic package.
+The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function plot() from the basic graphic package, then we redraw it using grid.echo() from the gridGraphic package with grid.
 <<R1, echo=TRUE, eval = FALSE>>=
+setwd(110)
 x = runif(25)
 y = runif(25)
 plot(x,y, pch = 16)
 grid.echo()
 @
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
   \includegraphics[height = 5cm, width = 6cm]{figure/basic.pdf}
   \includegraphics[height = 5cm, width = 6cm]{figure/echo.pdf}
-  \caption{The left plot drawn by using plot(), the Right plot is redraw it by using \texttt{grid.echo()} on grid graphic system, overall, they are identical to each other}
+  \caption{The left plot drawn by using plot(), the Right plot is redraw it by using grid.echo() on grid graphic system, overall, they are identical to each other}
   	\label{figure1}
 \end{center}
 \end{figure}
 
-\subsection{The problem}
-The \texttt{grid.echo()} can replicate most of plot that drawn by the graphics package. However, there are few functions on the graphics package that cannot replicate. One will the the \texttt{persp()} which for drawing 3-dimemtional surfaces on the basic graphics. 
 
-\begin{figure}[h]
-  \includegraphics[height = 2.5cm, width = 8.5cm]{figure/warning.png}
-  \caption{an example shows that the \texttt{grid.echo()} cannot replicate the \texttt{persp()} on grid}
-  	\label{figure2}
+Alternatively, one example that shows the advantage of drawing the plot using grid rather than basic is that there is an object, called grid grobs, which recored a list of the details of each components of the plot that been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\\\
+
+<<R5, eval = FALSE>>=
+
+graphics-background
+graphics-plot-1-points-1
+graphics-plot-1-bottom-axis-line-1
+graphics-plot-1-bottom-axis-ticks-1
+graphics-plot-1-bottom-axis-labels-1
+graphics-plot-1-left-axis-line-1
+graphics-plot-1-left-axis-ticks-1
+graphics-plot-1-left-axis-labels-1
+graphics-plot-1-box-1
+graphics-plot-1-xlab-1
+graphics-plot-1-ylab-1
+@
+
+As we see, the \texttt{grid.ls()} returns a list of grid grobs of the pervious plot that been redrawn by grid. there is one element called "graphics-plot-1-bottom-axis-labels-1" which is the element of the label of the bottom axis. There are several function on the \texttt{grid} package that used for mainpulate this grob. For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code mainpulate this changes.
+
+<<R5, eval=FALSE>>=
+grid.edit("graphics-plot-1-bottom-axis-labels-1", 
+          rot=30, gp=gpar(col="orange"))
+@
+
+\begin{figure}[H]
+\begin{center}
+  \includegraphics[height = 5cm, width = 6cm]{figure/gridedit.pdf}
+  \caption{The angel and the color of the bottom axis of the previous plot been change by 30 degree and orange}
+  	\label{figure3}
+\end{center}
 \end{figure}
 
-\subsection{Aim of the project}
-This project has following aims:
-1. replicate the persp plot on grid by translate the C code directly.
-2. rewrite the translated R code in a more effifiency way that R behaved.
-3. ...
 
-\section{Methodology}
+
+
+
+\subsection{The problem}
+The grid.echo() function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that grid.echo() cannot replicate. One such function is persp() which draws 3-dimemtional surfaces, the other one is the filled.contour(). This leads to the aim of this project. If we can draw a plot with persp() or filled.countour(), the result from calling grid.echo() is a blank screen 
+
+<<R6, eval=FALSE>>=
+x <- y <- seq(-4*pi, 4*pi, len = 27)
+r <- sqrt(outer(x^2, y^2, "+"))
+filled.contour(cos(r^2)*exp(-r/(2*pi)), frame.plot = FALSE, plot.axes = {})
+@
+
+\begin{figure}[H]
+\begin{center}
+  \includegraphics[height = 5cm, width = 6cm]{figure/filled-contour.pdf}
+  \includegraphics[height = 5cm, width = 6cm]{figure/filled-contour-gridecho.pdf}
+  \caption{The left plot been drawn by using \texttt{filled.contour} and the right plot been redrawn by calling grid.echo(). There is a "blank" page on the right plot because the grid.echo cannot emulate filled.contour()}
+  	\label{figure4}
+\end{center}
+\end{figure}
+
+\subsection{Aim of this project}
+The functions persp() and filled.contour() are wrote by C. However, it is very hard to debug and track the C code. One possible solution will be: 
+1. read and understand the C code, do the direct translation from C code to R code.
+2. ....
+
+
+NOTE to Jason: explain how gridGraphics works first: graphics display list; gridGraphics implements an R version of each low-level C function on the display list (e.g., for C\_plot\_xy there is an R function called C\_plot\_xy in the gridGraphics package). THEN maybe write about 3D to 2D transformations, but only maybe.
+
+
+\section{Solution}
+There are many way for solving this problem, one possible solution will be translate the C code to R code such that as simliar as possible. The reason for doing this direct translation because: \\\\
+1. It is hard to debug and track the C code.
+2. It is very simple to debug the R code. If the R code is almost identical to the C code, then we can debug the R code to ensure that the R code can also provide the same result.
+
 \subsection{standalone}
-Drawing a 3-dimemsion object on a 2-dimemsion plane requires a transformation. The most important information is the trasnformation matrix. However, the \texttt{persp()} will return the transformation matrix for adding to the perspecive plots.
+The functions that provides the persp() are huge, hence this section will only described some key step for building the functions.
 
-<<R3, echo=TRUE, eval = FALSE>>=
-x = y = seq(-10,10,length = 60)
-f = function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
-z = outer(x, y, f); z[is.na(z)] <- 1
-trans <- persp(x, y, z, theta=120, phi = 20, expand = 0.5)
-trans
-@
+\
 
-<<R3, echo = FALSE>>=
-x = y = seq(-10,10,length = 60)
-f = function(x, y) { r = sqrt(x^2+y^2); 10 * sin(r)/r }
-z = outer(x, y, f)
-z[is.na(z)] <- 1
-trans = persp(x, y, z, theta = 120, phi = 20, expand = 0.5)
-trans
-@
-
-
-with this transformation matrix, we can now transform a 3-dimemsion points into 2-dimemsion points by multifying the 4D coordinates \texttf{(x, y, z, 1)} of points to the transformation matrix. Note that there is a function called \texttt{trans3d()} can do this computation easily.
-
-<<R3, echo = TRUE>>=
-trans3d(1,1,1, trans)
-@
-
-The code will transform a 3-D point \textf{(1,1,1)} into 2-D by using the transformation matrix.
-
-Drawing a perspective plot is more likely that drawing a surface over the x-y plane. The surface can been decomposed as a finite number of polygons. These polygons will the the following properties:
-
-1. Each polygons are Convex Polygon. (all its interior anges will less than 180 degrees.)
-
-2. Each polygons will have 4 Vertexs (points).
-
-The number of polygons required to been drawn can be calculated as follows:
-Suppose given the length of x, y is n and m, the function that defined the surface is f, i.e z = f(x, y).
-Then the length of z is n * m. The number of polygons to been drawn is (n - 1) * (m - 1) in total.
-
-Suppose we have a set of coordinates x and y. where the length of x is n, the length of y is m, f is a surface function of x and y, then firstible we compute all possible combination of x and y, then evaluative the z coordinates with the function f by using the R function \texxtt{outer()} so that we have a all 3-D points. The next step is transform the 3-D points into 2-D points by multifying a given transformation matrix. Then instead connecting the points line by line, we draw (n - 1) * (m - 1) number of polygons such that each polygons used 4 set of Vertexs.
-
-There an issue that it can cause the problems, which is the drawing order. It is not a good idea to draw the points without figure out that the ordering of 
 
 \end{document}
-
-

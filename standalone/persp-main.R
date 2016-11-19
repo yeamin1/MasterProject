@@ -49,7 +49,7 @@ perInit = function ( plot, trans, newpage = FALSE, dbox = TRUE ) {
 ## actual drawing by passing the plot into the function
 ## calculation are done from the function of the 'method.r' file
 ## only simple function call and few calculation are been done on this function
-R_persp = function(plot = NULL, ...)
+C_persp = function(plot = NULL, ...)
 {
     #information extraction
     trans = plot$trans

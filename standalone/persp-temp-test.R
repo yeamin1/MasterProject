@@ -1,6 +1,6 @@
 #setwd('H:/Documents/mproject/MasterProject-master')
 setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/standalone/') ##at uni
-setwd('C:/Users/yeamin/Desktop/master/MasterProject/MasterProject/standalone/') ## at home
+setwd('H:/Documents/MasterProject-master/MasterProject') ## at home
 ##################################################################################
 
 
@@ -39,3 +39,8 @@ trans = persp(x, y, z, theta = 20, xlim = c(-5,5),
 plot = recordPlot()
 plotInfo = perInit(plot, trans, newpage = TRUE)
 per(plot = plotInfo)
+
+
+
+
+

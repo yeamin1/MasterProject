@@ -1,0 +1,62 @@
+
+library(gridGraphics)
+
+set.seed(110)
+x = runif(25)
+y = runif(25)
+plot(x,y, pch = 16)
+grid.echo()
+
+
+## setup
+dev.control("enable")
+
+## basic plot
+pdf("model.pdf")
+dev.control("enable")
+plot(x, y, pch = 16)
+reco <- recordPlot()
+dev.off()
+
+## grid.echo
+pdf("grid.edit.pdf")
+grid.echo(x)
+dev.off()
+
+
+## grid edit
+set.seed(110)
+x = runif(25)
+y = runif(25)
+plot(x,y, pch = 16)
+reco <- recordPlot()
+
+
+grid.ls()
+pdf("grid.edits.pdf")
+grid.echo(reco)
+grid.edit("graphics-plot-1-bottom-axis-labels-1", rot=30, gp=gpar(col="orange"))
+dev.off()
+
+
+## 'blank screem'
+x <- y <- seq(-4*pi, 4*pi, len = 27)
+r <- sqrt(outer(x^2, y^2, "+"))
+filled.contour(cos(r^2)*exp(-r/(2*pi)), frame.plot = FALSE, plot.axes = {})
+
+
+
+## setup
+    dev.control("enable")
+## basic plot
+    pdf("filled-contour.pdf")
+    dev.control("enable")
+    x <- y <- seq(-4*pi, 4*pi, len = 27)
+    r <- sqrt(outer(x^2, y^2, "+"))
+    filled.contour(cos(r^2)*exp(-r/(2*pi)), frame.plot = FALSE, plot.axes = {})
+    reco <- recordPlot()
+    dev.off()
+## grid.echo
+    pdf("filled-contour-gridecho.pdf")
+    grid.echo(reco)
+    dev.off()
