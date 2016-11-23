@@ -56,13 +56,14 @@
 
 \subsection{Background}
 The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\\\
-A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called gridGrahics, which allows us to convert a plot that has been drawn by the graphics package to an equivalent plot drawn by grid graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the graphics package. 
+A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the \texttt{graphics} package. 
 
-\subsection{The \texttt{gridGraphic} package}
-\texttt{gridGraphic} is like a 'translator' that translate the plot which been drawn by using the basic graphics package to the plot which been drawn by using grid package. 
-The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot (or NULL for the current plot of the current graphic dervice) as an argument. Then it replicate the 
-plot by using grid so that the user may edites the plot in more way than the plot drawn by bacis graphic package.
-The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function plot() from the basic graphic package, then we redraw it using grid.echo() from the gridGraphic package with grid.
+\newpage
+
+\subsection{The \texttt{gridGraphics} package}
+\texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. 
+The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates theplot using grid so that the user may edite the plot in more ways than they can with the original plot drawn by bacis graphic package.
+The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with grid.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -76,13 +77,13 @@ The following code provides a quick example. We generate 25 random numbers for x
 \end{knitrout}
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 3.5cm, width = 5cm]{figure/basic.pdf}
-  \includegraphics[height = 3.5cm, width = 5cm]{figure/echo.pdf}
-  \caption{The left plot drawn by using plot(), the Right plot is redraw it by using grid.echo() on grid graphic system, overall, they are identical to each other}
+  \includegraphics[height = 6cm, width = 6cm]{figure/basic.pdf}
+  \includegraphics[height = 6cm, width = 6cm]{figure/echo.pdf}
+  \caption{The left plot is drawn by using plot(); the Right plot is redrawn using grid.echo(). Overall, two plots are identical to each other}
   	\label{figure1}
 \end{center}
 \end{figure}
-Alternatively, one example that shows the advantage of drawing the plot using grid rather than basic is that there is an object, called grid grobs, which recored a list of the details of each components of the plot that been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\
+One example that shows the advantage of drawing the plot using grid rather than basic graphics is that there are objects, called grid grobs, which recored a list of the details of each components of the plot that has been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -101,7 +102,7 @@ Alternatively, one example that shows the advantage of drawing the plot using gr
 \end{kframe}
 \end{knitrout}
 
-As we see, the \texttt{grid.ls()} returns a list of grid grobs of the pervious plot that been redrawn by grid. there is one element called "graphics-plot-1-bottom-axis-labels-1" which is the element of the label of the bottom axis. There are several function on the \texttt{grid} package that used for mainpulate this grob. For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code mainpulate this changes.
+As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \texttt{grid}. There is one element called "graphics-plot-1-bottom-axis-labels-1" which represents the labels of the bottom axis. In \texttt{grid}, there are several functions that can be used to mainpulate this grob. For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -114,18 +115,15 @@ As we see, the \texttt{grid.ls()} returns a list of grid grobs of the pervious p
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 5cm, width = 6cm]{figure/gridedit.pdf}
-  \caption{The angel and the color of the bottom axis of the previous plot been change by 30 degree and orange}
+  \includegraphics[height = 10cm, width = 10cm]{figure/gridedit.pdf}
+  \caption{The angle and the color of the bottom axis of the previous plot have been changed by 30 degrees and orange}
   	\label{figure3}
 \end{center}
 \end{figure}
 
 
-
-
-
 \subsection{The problem}
-The grid.echo() function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that grid.echo() cannot replicate. One such function is persp() which draws 3-dimemtional surfaces, the other one is the filled.contour(). This leads to the aim of this project. If we can draw a plot with persp() or filled.countour(), the result from calling grid.echo() is a blank screen 
+The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is persp() which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -139,27 +137,29 @@ The grid.echo() function can replicate most plots that are drawn by the graphics
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 5cm, width = 6cm]{figure/filled-contour.pdf}
-  \includegraphics[height = 5cm, width = 6cm]{figure/filled-contour-gridecho.pdf}
-  \caption{The left plot been drawn by using \texttt{filled.contour} and the right plot been redrawn by calling grid.echo(). There is a "blank" page on the right plot because the grid.echo cannot emulate filled.contour()}
+  \includegraphics[height = 6cm, width = 6cm]{figure/filled-contour.pdf}
+  \includegraphics[height = 6cm, width = 6cm]{figure/filled-contour-gridecho.pdf}
+  \caption{The left plot been drawn by using \texttt{filled.contour} and the right plot been redrawn by calling \texttt{grid.echo()}. There is a "blank" page on the right plot because the grid.echo cannot emulate filled.contour()}
   	\label{figure4}
 \end{center}
 \end{figure}
 
 \subsection{Aim of this project}
-The functions persp() and filled.contour() are wrote by C. However, it is very hard to debug and track the C code. One possible solution will be: 
-1. read and understand the C code, do the direct translation from C code to R code.
-2. ....
+The functions \texttt{persp()} and \texttt{filled.contour()} are written in C. However, it is very hard to debug and track the C code. One possible solution will be:  \\
 
+\begin{enumerate}
+  \item  read and understand the C code, then do the direct translation from C code to R code. \\
+  \item ...
+\end{enumerate}
 
 NOTE to Jason: explain how gridGraphics works first: graphics display list; gridGraphics implements an R version of each low-level C function on the display list (e.g., for C\_plot\_xy there is an R function called C\_plot\_xy in the gridGraphics package). THEN maybe write about 3D to 2D transformations, but only maybe.
 
 
 \section{The graphics engine display list}
-The information of evey plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis.
-This information is called the graphics engine display list. This is the list that contain the informations so that user can access and use for further work. In this paper, we use this graphics engine display list for replicate the persp() plot and contour() plot by using grid.
+The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis.
+This information is called the graphics engine display list. In this paper, we use this graphics engine display list to replicate the \texttt{persp()} plot and texttt{filled.contour()} plot using grid.
 
-To access the graphics engine display list, the \texttt{recordPlot()} function been used. This is the function for saving the plot in an R object. 
+The \texttt{recordPlot()} function can be used to access the graphics engine display list, the \texttt{recordPlot()} function been used. This function saves the plot in an R object. 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -194,17 +194,13 @@ To access the graphics engine display list, the \texttt{recordPlot()} function b
 \end{kframe}
 \end{knitrout}
 
-This example shows that: suppose we have a data set called \texttt{cars}, which contain two columns, the speed of the cars and the distance of travel. We have a plot which plotted the speed againist to the distance of travel. the \texttt{recordPlot()} will save this plot as an R object. As result, we can access the information of this plot. For example, the x-coordinate and the y-coordinate, or the x-label and the y-label.
+This example shows that: suppose we have a data set called \texttt{cars}, which contain two columns, the speed of the cars and the distance of travel. We have a plot which plotted the speed againist to the distance of travel. The \texttt{recordPlot()} will save this plot as an R object. As result, we can access the information of this plot. The last line of the code will access the x-coordinate and the y-coordinate, or the x-label and the y-label. \\
 
-
-There are many way for solving this problem, one possible solution will be translate the C code to R code such that as simliar as possible. The reason for doing this direct translation because: \\\\
-1. It is hard to debug and track the C code.
-2. It is very simple to debug the R code. If the R code is almost identical to the C code, then we can debug the R code to ensure that the R code can also provide the same result.
+There are many way for solving this problem, one possible solution will be translate the C code to R code such that they are as simliar as possible. The reason for doing this direct translation include: \\\\
+1. It is hard to debug and track the C code. \\
+2. It is very simple to debug the R code. If the R code is almost identical to the C code, then we can debug the R code to ensure that the R code can also provide the same result. \\
 
 \subsection{standalone}
 The functions that provides the persp() are huge, hence this section will only described some key step for building the functions.
-
-\
-
 
 \end{document}

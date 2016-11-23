@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  22 NOV 2016 14:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  23 NOV 2016 15:57
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -154,73 +154,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 61.
-Package color Info: Redefining color shadecolor on input line 67.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 63.
+Package color Info: Redefining color shadecolor on input line 68.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 69.
-<figure/basic.pdf, id=1, 505.89pt x 505.89pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 70.
+
+<figure/basic.pdf, id=8, 505.89pt x 505.89pt>
 File: figure/basic.pdf Graphic file (type pdf)
  <use figure/basic.pdf>
-Package pdftex.def Info: figure/basic.pdf used on input line 79.
-(pdftex.def)             Requested size: 142.26576pt x 99.57831pt.
+Package pdftex.def Info: figure/basic.pdf used on input line 80.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/echo.pdf, id=2, 505.89pt x 505.89pt>
+<figure/echo.pdf, id=9, 505.89pt x 505.89pt>
 File: figure/echo.pdf Graphic file (type pdf)
  <use figure/echo.pdf>
-Package pdftex.def Info: figure/echo.pdf used on input line 80.
-(pdftex.def)             Requested size: 142.26576pt x 99.57831pt.
-Package color Info: Redefining color shadecolor on input line 87.
- [1
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./figure/basic.pdf> <./fi
-gure/echo.pdf>]
-Package color Info: Redefining color shadecolor on input line 107.
+Package pdftex.def Info: figure/echo.pdf used on input line 81.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+Package color Info: Redefining color shadecolor on input line 88.
+ [2 <./figure/basic.pdf> <./figure/echo.pdf>]
+Package color Info: Redefining color shadecolor on input line 108.
 
 
 pdfTeX warning: pdflatex.exe (file ./figure/gridedit.pdf): PDF inclusion: found
  PDF version <1.7>, but at most version <1.5> allowed
-<figure/gridedit.pdf, id=23, 505.89pt x 505.89pt>
+<figure/gridedit.pdf, id=26, 505.89pt x 505.89pt>
 File: figure/gridedit.pdf Graphic file (type pdf)
  <use figure/gridedit.pdf>
-Package pdftex.def Info: figure/gridedit.pdf used on input line 117.
-(pdftex.def)             Requested size: 170.71892pt x 142.26576pt.
+Package pdftex.def Info: figure/gridedit.pdf used on input line 118.
+(pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
 
-[2 <./figure/gridedit.pdf>]
-Package color Info: Redefining color shadecolor on input line 131.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 135
+[3 <./figure/gridedit.pdf>]
+Package color Info: Redefining color shadecolor on input line 129.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 133
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 135.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 133.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 135.
+(Font)              for symbol `textbraceleft' on input line 133.
 
 
-Overfull \hbox (48.24669pt too wide) in paragraph at lines 135--135
+Overfull \hbox (48.24669pt too wide) in paragraph at lines 133--133
 [][]\OT1/cmtt/m/n/10 filled.contour[][]([][]cos[][](r[][]^[][]2[][])[][]*[][]ex
 p[][]([][]-[][]r[][]/[][]([][]2[][]*[][]pi)),[] []frame.plot[] []=[] []FALSE[][
 ],[] []plot.axes[] []= \OMS/cmtt/m/n/10 fg\OT1/cmtt/m/n/10 )[][] 
  []
 
-<figure/filled-contour.pdf, id=33, 505.89pt x 505.89pt>
+<figure/filled-contour.pdf, id=36, 505.89pt x 505.89pt>
 File: figure/filled-contour.pdf Graphic file (type pdf)
 
 <use figure/filled-contour.pdf>
-Package pdftex.def Info: figure/filled-contour.pdf used on input line 142.
-(pdftex.def)             Requested size: 170.71892pt x 142.26576pt.
+Package pdftex.def Info: figure/filled-contour.pdf used on input line 140.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/filled-contour-gridecho.pdf, id=34, 505.89pt x 505.89pt>
+<figure/filled-contour-gridecho.pdf, id=37, 505.89pt x 505.89pt>
 File: figure/filled-contour-gridecho.pdf Graphic file (type pdf)
 
 <use figure/filled-contour-gridecho.pdf>
 Package pdftex.def Info: figure/filled-contour-gridecho.pdf used on input line 
-143.
-(pdftex.def)             Requested size: 170.71892pt x 142.26576pt.
+141.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
+
+ []
+
+[4 <./figure/filled-contour.pdf> <./figure/filled-contour-gridecho.pdf>]
 Package color Info: Redefining color shadecolor on input line 165.
- [3 <./figure/filled-contour.pdf> <./figure/filled-contour-gridecho.pdf>]
-<figure/R8-1.pdf, id=49, 505.89pt x 505.89pt>
+
+<figure/R8-1.pdf, id=52, 505.89pt x 505.89pt>
 File: figure/R8-1.pdf Graphic file (type pdf)
  <use figure/R8-1.pdf>
 Package pdftex.def Info: figure/R8-1.pdf used on input line 171.
@@ -260,12 +272,22 @@ Overfull \hbox (27.74675pt too wide) in paragraph at lines 193--193
  93 120  85[] 
  []
 
-[4 <./figure/R8-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 200--203
+[5 <./figure/R8-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
  []
 
-[5] (PreReport.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--202
+
+ []
+
+[6] (PreReport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -277,16 +299,16 @@ Here is how much of TeX's memory you used:
  5178 multiletter control sequences out of 15000+200000
  5355 words of font info for 21 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,25p,537b,276s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,6n,25p,549b,278s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (5 pages, 154570 bytes).
+Output written on PreReport.pdf (6 pages, 155775 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 85 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
