@@ -1,31 +1,35 @@
 \documentclass[a4paper,10pt]{article}
+\usepackage{Sweave}
 \begin{document}
-\SweaveOpts{concordance=TRUE}
+\input{PreReport-concordance}
 
 \section{Introduction}
-<<R0, echo = FALSE>>=
-library(grid)
-library(gridGraphics)
-@
 \subsection{Background}
 The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\\\
 A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the \texttt{graphics} package. 
 
+\newpage
 
 \subsection{The \texttt{gridGraphics} package}
 \texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. 
 The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates theplot using grid so that the user may edite the plot in more ways than they can with the original plot drawn by bacis graphic package.
 The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with grid.
-<<R1, echo=TRUE, eval = TRUE>>=
-pdf("figure/report_basic_demo_%0d.pdf", onefile=FALSE)
-dev.control("enable")
-set.seed(110)
-x = runif(25)
-y = runif(25)
-plot(x,y, pch = 16)
-grid.echo()
-dev.off()
-@
+\begin{Schunk}
+\begin{Sinput}
+> pdf("figure/report_basic_demo_%0d.pdf", onefile=FALSE)
+> dev.control("enable")
+> set.seed(110)
+> x = runif(25)
+> y = runif(25)
+> plot(x,y, pch = 16)
+> grid.echo()
+> dev.off()
+\end{Sinput}
+\begin{Soutput}
+null device 
+          1 
+\end{Soutput}
+\end{Schunk}
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 6cm, width = 6cm]{figure/report_basic_demo_1.pdf}
@@ -34,44 +38,40 @@ dev.off()
   	\label{figure1}
 \end{center}
 \end{figure}
-\newpage
 One example that shows the advantage of drawing the plot using grid rather than basic graphics is that there are objects, called grid grobs, which recored a list of the details of each components of the plot that has been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\
-<<R5, eval = FALSE>>=
-graphics-background
-graphics-plot-1-points-1
-graphics-plot-1-bottom-axis-line-1
-graphics-plot-1-bottom-axis-ticks-1
-graphics-plot-1-bottom-axis-labels-1
-graphics-plot-1-left-axis-line-1
-graphics-plot-1-left-axis-ticks-1
-graphics-plot-1-left-axis-labels-1
-graphics-plot-1-box-1
-graphics-plot-1-xlab-1
-graphics-plot-1-ylab-1
-@
+\begin{Schunk}
+\begin{Sinput}
+> graphics-background
+> graphics-plot-1-points-1
+> graphics-plot-1-bottom-axis-line-1
+> graphics-plot-1-bottom-axis-ticks-1
+> graphics-plot-1-bottom-axis-labels-1
+> graphics-plot-1-left-axis-line-1
+> graphics-plot-1-left-axis-ticks-1
+> graphics-plot-1-left-axis-labels-1
+> graphics-plot-1-box-1
+> graphics-plot-1-xlab-1
+> graphics-plot-1-ylab-1
+\end{Sinput}
+\end{Schunk}
 
 As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \texttt{grid}. There is one element called "graphics-plot-1-bottom-axis-labels-1" which represents the labels of the bottom axis. In \texttt{grid}, there are several functions that can be used to mainpulate this grob. For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.
 
-<<R6.1,eval = TRUE, echo=FALSE>>=
-pdf("figure/report_basic_demo_4.pdf", onefile=FALSE)
-dev.control("enable")
-set.seed(110)
-plot(x,y, pch = 16)
-grid.echo(newpage = FALSE)
-@
 
-<<R6, eval=TRUE>>=
-grid.edit("graphics-plot-1-bottom-axis-labels-1", 
-          rot=30, gp=gpar(col="orange"))
-grid.edit("graphics-plot-1-left-axis-labels-1", 
-          rot=30, gp=gpar(col="orange"))
-dev.off()
-@
+\begin{Schunk}
+\begin{Sinput}
+> grid.edit("graphics-plot-1-bottom-axis-labels-1", 
++           rot=30, gp=gpar(col="orange"))
+> grid.edit("graphics-plot-1-left-axis-labels-1", 
++           rot=30, gp=gpar(col="orange"))
+> dev.off()
+\end{Sinput}
+\end{Schunk}
 
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 10cm, width = 10cm]{figure/report_basic_demo_4.pdf}
-  \caption{The angle and the color of the bottom and left axis of the previous plot have been changed by 30 degrees and orange}
+  \caption{The angle and the color of the bottom axis of the previous plot have been changed by 30 degrees and orange}
   	\label{figure3}
 \end{center}
 \end{figure}
@@ -80,42 +80,29 @@ dev.off()
 \subsection{The problem}
 The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is persp() which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. 
 
-<<R7.1, eval = TRUE, echo = FALSE>>=
-pdf("figure/report_fill_%0d.pdf", onefile=FALSE)
-dev.control("enable")
-@
+\begin{Schunk}
+\begin{Sinput}
+> x <- y <- seq(-4*pi, 4*pi, len = 27)
+> r <- sqrt(outer(x^2, y^2, "+"))
+> filled.contour(cos(r^2)*exp(-r/(2*pi)), frame.plot = FALSE, plot.axes = {})
+\end{Sinput}
+\end{Schunk}
 
-<<R7, eval = TRUE>>=
-x <- y <- seq(-4*pi, 4*pi, len = 27)
-r <- sqrt(outer(x^2, y^2, "+"))
-filled.contour(cos(r^2)*exp(-r/(2*pi)), frame.plot = FALSE, plot.axes = {})
-grid.echo()
-@
-
-<<R7.2, eval = TRUE, echo = FALSE, results = hide>>=
-dev.off()
-@
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 6cm, width = 6cm]{figure/report_fill_1}
-  \includegraphics[height = 6cm, width = 6cm]{figure/report_fill_2}
+  \includegraphics[height = 6cm, width = 6cm]{figure/filled-contour.pdf}
+  \includegraphics[height = 6cm, width = 6cm]{figure/filled-contour-gridecho.pdf}
   \caption{The left plot been drawn by using \texttt{filled.contour} and the right plot been redrawn by calling \texttt{grid.echo()}. There is a "blank" page on the right plot because the grid.echo cannot emulate filled.contour()}
   	\label{figure4}
 \end{center}
 \end{figure}
 
-\newpage
 \subsection{Aim of this project}
 The functions \texttt{persp()} and \texttt{filled.contour()} are written in C. However, it is very hard to debug and track the C code. One possible solution will be:  \\
 
 \begin{enumerate}
-  \item emulate the \texttt{persp()} function on \texttt{grid} separate from the \texttt{gridGraphics} package (standalone):
-    \begin{enumerate}
-      \item Extract the information from the graphics engine display list.
-      \item Understanding and translating the calculation that been done by C code from the \texttt{graphics} package to R code
-      \item Draw the Perspective Plot on \texttt{grid}.
-    \end{enumerate}
-  \item Connect the standalone to the \texttt{gridGraphics}
+  \item  read and understand the C code, then do the direct translation from C code to R code. \\
+  \item ...
 \end{enumerate}
 
 NOTE to Jason: explain how gridGraphics works first: graphics display list; gridGraphics implements an R version of each low-level C function on the display list (e.g., for C\_plot\_xy there is an R function called C\_plot\_xy in the gridGraphics package). THEN maybe write about 3D to 2D transformations, but only maybe.
@@ -127,23 +114,18 @@ This information is called the graphics engine display list. In this paper, we u
 
 The \texttt{recordPlot()} function can be used to access the graphics engine display list, the \texttt{recordPlot()} function been used. This function saves the plot in an R object. 
 
-<<R8.1, echo = FALSE>>=
-pdf("figure/%0d.pdf", onefile=FALSE)
-dev.control("enable")
-@
-
-<<R8>>=
-plot(cars$speed, cars$dist, col = 'orange', 
-      pch = 16, xlab = 'speed', ylab = 'dist')
-
-reco = recordPlot()
-## Displays the inputs 
-reco[[1]][[4]][[2]][[2]]
-@
-
-<<R8.2, echo = FALSE, results = hide>>=
-dev.off()
-@
+\begin{Schunk}
+\begin{Sinput}
+> plot(cars$speed, cars$dist, col = 'orange', 
++       pch = 16, xlab = 'speed', ylab = 'dist')
+> reco = recordPlot()
+> ## Displays the inputs 
+> reco[[1]][[4]][[2]][[2]]
+\end{Sinput}
+\begin{Soutput}
+NULL
+\end{Soutput}
+\end{Schunk}
 
 This example shows that: suppose we have a data set called \texttt{cars}, which contain two columns, the speed of the cars and the distance of travel. We have a plot which plotted the speed againist to the distance of travel. The \texttt{recordPlot()} will save this plot as an R object. As result, we can access the information of this plot. The last line of the code will access the x-coordinate and the y-coordinate, or the x-label and the y-label. \\
 
@@ -152,33 +134,6 @@ There are many way for solving this problem, one possible solution will be trans
 2. It is very simple to debug the R code. If the R code is almost identical to the C code, then we can debug the R code to ensure that the R code can also provide the same result. \\
 
 \subsection{standalone}
-The Perspective Plots is used to draw a surface over the x-y plane. Usually, it has three main argument, \emph{x, y z}. \emph{x} and \emph{y} are the locations of grid line which the value z been measured, \emph{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The following example shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot.
-
-<<standalone_1.1, echo = FALSE>>=
-pdf("figure/standalone_1.pdf", onefile=FALSE)
-dev.control("enable")
-par(mar = c(0,0,0,0))
-@
-
-<<standalone_1, echo = TRUE>>=
-x = y = seq(-10, 10, length= 30)
-f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
-z <- outer(x, y, f)
-z[is.na(z)] <- 1
-persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "orange")
-@
-
-<<standalone_1.2, echo = FALSE>>=
-dev.off()
-@
-
-\begin{figure}[h]
-\begin{center}
-  \includegraphics[height = 10cm, width = 10cm]{figure/standalone_1}
-  \caption{An example of Perspective Plot been drawn by \texttt{persp()}}
-  	\label{figure4}
-\end{center}
-\end{figure}
-
+The functions that provides the persp() are huge, hence this section will only described some key step for building the functions.
 
 \end{document}

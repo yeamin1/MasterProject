@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  23 NOV 2016 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  9 FEB 2017 14:29
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -20,6 +20,12 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
+)
+(C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\Sweave.sty
+Package: Sweave 
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
@@ -53,57 +59,156 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2008/02/07
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2016/01/02 v1.6 sample color configuration
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count88
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count89
+\FV@StepNumber=\count90
+\FV@OutFile=\write3
 )
-Package color Info: Driver file: pdftex.def on input line 147.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\framed\framed.sty"
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip43
-\fb@frw=\dimen105
-\fb@frh=\dimen106
-\FrameRule=\dimen107
-\FrameSep=\dimen108
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
-Package: alltt 1997/06/16 v2.0g defines alltt environment
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\ae.sty"
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\upquote\upquote.sty"
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-)
-(PreReport.aux)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))) (PreReport.aux)
 \openout1 = `PreReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 3.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count88
-\scratchdimen=\dimen109
-\scratchbox=\box26
-\nofMPsegments=\count89
-\nofMParguments=\count90
+\scratchcounter=\count91
+\scratchdimen=\dimen105
+\scratchbox=\box27
+\nofMPsegments=\count92
+\nofMParguments=\count93
 \everyMPshowfont=\toks15
-\MPscratchCnt=\count91
-\MPscratchDim=\dimen110
-\MPnumerator=\count92
-\makeMPintoPDFobject=\count93
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen106
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
 \everyMPtoPDFconversion=\toks16
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -150,165 +255,132 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+(PreReport-concordance.tex)
+LaTeX Font Info:    Try loading font information for T1+aett on input line 9.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 8--10
 
  []
+
+
+LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
+(Font)              using `T1/aett/m/n' instead on input line 12.
+
+<figure/report_basic_demo_1.pdf, id=2, 505.89pt x 505.89pt>
+File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
+
+<use figure/report_basic_demo_1.pdf>
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 34.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
+ <use figure/report_basic_demo_1.pdf>
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 35.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 63.
-Package color Info: Redefining color shadecolor on input line 68.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 70.
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
-<figure/basic.pdf, id=8, 505.89pt x 505.89pt>
-File: figure/basic.pdf Graphic file (type pdf)
- <use figure/basic.pdf>
-Package pdftex.def Info: figure/basic.pdf used on input line 80.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+ []
 
-<figure/echo.pdf, id=9, 505.89pt x 505.89pt>
-File: figure/echo.pdf Graphic file (type pdf)
- <use figure/echo.pdf>
-Package pdftex.def Info: figure/echo.pdf used on input line 81.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
-Package color Info: Redefining color shadecolor on input line 88.
- [2 <./figure/basic.pdf> <./figure/echo.pdf>]
-Package color Info: Redefining color shadecolor on input line 108.
+[2 <./figure/report_basic_demo_1.pdf>]
+<figure/report_basic_demo_4.pdf, id=20, 505.89pt x 505.89pt>
+File: figure/report_basic_demo_4.pdf Graphic file (type pdf)
 
-
-pdfTeX warning: pdflatex.exe (file ./figure/gridedit.pdf): PDF inclusion: found
- PDF version <1.7>, but at most version <1.5> allowed
-<figure/gridedit.pdf, id=26, 505.89pt x 505.89pt>
-File: figure/gridedit.pdf Graphic file (type pdf)
- <use figure/gridedit.pdf>
-Package pdftex.def Info: figure/gridedit.pdf used on input line 118.
+<use figure/report_basic_demo_4.pdf>
+Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 77.
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
 
-[3 <./figure/gridedit.pdf>]
-Package color Info: Redefining color shadecolor on input line 129.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 133
+<figure/report_fill_1.pdf, id=21, 505.89pt x 505.89pt>
+File: figure/report_fill_1.pdf Graphic file (type pdf)
+
+<use figure/report_fill_1.pdf>
+Package pdftex.def Info: figure/report_fill_1.pdf used on input line 99.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+<figure/report_fill_2.pdf, id=22, 505.89pt x 505.89pt>
+File: figure/report_fill_2.pdf Graphic file (type pdf)
+
+<use figure/report_fill_2.pdf>
+Package pdftex.def Info: figure/report_fill_2.pdf used on input line 100.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./figure/report_basic_demo_4.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+[4 <./figure/report_fill_1.pdf> <./figure/report_fill_2.pdf>]
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 132
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 133.
+
+(C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aett.fd
+File: ts1aett.fd 
+)
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 132
+.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
+File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `TS1/aett/m/sl' in size <10> not available
+(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 132.
 
 
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 133.
-
-
-Overfull \hbox (48.24669pt too wide) in paragraph at lines 133--133
-[][]\OT1/cmtt/m/n/10 filled.contour[][]([][]cos[][](r[][]^[][]2[][])[][]*[][]ex
-p[][]([][]-[][]r[][]/[][]([][]2[][]*[][]pi)),[] []frame.plot[] []=[] []FALSE[][
-],[] []plot.axes[] []= \OMS/cmtt/m/n/10 fg\OT1/cmtt/m/n/10 )[][] 
- []
-
-<figure/filled-contour.pdf, id=36, 505.89pt x 505.89pt>
-File: figure/filled-contour.pdf Graphic file (type pdf)
-
-<use figure/filled-contour.pdf>
-Package pdftex.def Info: figure/filled-contour.pdf used on input line 140.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
-
-<figure/filled-contour-gridecho.pdf, id=37, 505.89pt x 505.89pt>
-File: figure/filled-contour-gridecho.pdf Graphic file (type pdf)
-
-<use figure/filled-contour-gridecho.pdf>
-Package pdftex.def Info: figure/filled-contour-gridecho.pdf used on input line 
-141.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-
- []
-
-[4 <./figure/filled-contour.pdf> <./figure/filled-contour-gridecho.pdf>]
-Package color Info: Redefining color shadecolor on input line 165.
-
-<figure/R8-1.pdf, id=52, 505.89pt x 505.89pt>
-File: figure/R8-1.pdf Graphic file (type pdf)
- <use figure/R8-1.pdf>
-Package pdftex.def Info: figure/R8-1.pdf used on input line 171.
-(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 171--172
-[][] 
- []
-
-
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 193--193
-[]\OT1/cmtt/m/n/10 ##  [1]  4  4  7  7  8  9 10 10 10 11 11 12 12 12 12 13 13 1
-3 13 14 14 14 14[] 
- []
-
-
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 193--193
-[]\OT1/cmtt/m/n/10 ## [24] 15 15 15 16 16 17 17 17 18 18 18 18 19 19 19 20 20 2
-0 20 20 22 23 24[] 
- []
-
-
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 193--193
-[]\OT1/cmtt/m/n/10 ##  [1]   2  10   4  22  16  10  18  26  34  17  28  14  20 
- 24  28  26  34[] 
- []
-
-
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 193--193
-[]\OT1/cmtt/m/n/10 ## [18]  34  46  26  36  60  80  20  26  54  32  40  32  40 
- 50  42  56  76[] 
- []
-
-
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 193--193
-[]\OT1/cmtt/m/n/10 ## [35]  84  36  46  68  32  48  52  56  64  66  54  70  92 
- 93 120  85[] 
- []
-
-[5 <./figure/R8-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 159--162
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--202
+Underfull \hbox (badness 10000) in paragraph at lines 159--162
 
  []
 
+[5] <figure/standalone_1.pdf, id=49, 505.89pt x 505.89pt>
+File: figure/standalone_1.pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--202
-
- []
-
-[6] (PreReport.aux)
+<use figure/standalone_1.pdf>
+Package pdftex.def Info: figure/standalone_1.pdf used on input line 186.
+(pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
+ [6 <./figure/standalone_1.pdf>] (PreReport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1658 strings out of 493335
- 24128 string characters out of 3147021
- 85504 words of memory out of 3000000
- 5178 multiletter control sequences out of 15000+200000
- 5355 words of font info for 21 fonts, out of 3000000 for 9000
+ 2743 strings out of 493335
+ 40113 string characters out of 3147021
+ 92454 words of memory out of 3000000
+ 6212 multiletter control sequences out of 15000+200000
+ 20448 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,25p,549b,278s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (6 pages, 155775 bytes).
+ 40i,5n,25p,569b,284s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmslt
+t10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pf
+b>
+Output written on PreReport.pdf (6 pages, 179423 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 30 words of extra memory for PDF output out of 10000 (max. 10000000)
 
