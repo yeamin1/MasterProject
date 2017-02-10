@@ -161,7 +161,7 @@ There are many way for solving this problem, one possible solution will be trans
 2. It is very simple to debug the R code. If the R code is almost identical to the C code, then we can debug the R code to ensure that the R code can also provide the same result. \\
 
 \subsection{standalone}
-The Perspective Plots is used to draw a surface over the x-y plane. Usually, it has three main argument, \emph{x, y z}. \emph{x} and \emph{y} are the locations of grid line which the value z been measured, \emph{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions.
+The Perspective Plots is used to draw a surface over the x-y plane. Usually, it has three main argument, \emph{x, y z}. \emph{x} and \emph{y} are the locations of grid line which the value z been measured, \emph{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The following example shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot.
 
 
 \begin{Schunk}
@@ -170,24 +170,63 @@ The Perspective Plots is used to draw a surface over the x-y plane. Usually, it 
 > f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 > z <- outer(x, y, f)
 > z[is.na(z)] <- 1
-> persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "orange")
+> persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "yellow")
 \end{Sinput}
 \end{Schunk}
 
-\begin{Schunk}
-\begin{Soutput}
-null device 
-          1 
-\end{Soutput}
-\end{Schunk}
+
 
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 10cm, width = 10cm]{figure/standalone_1}
   \caption{An example of Perspective Plot been drawn by \texttt{persp()}}
-  	\label{figure5}
+  	\label{figure4}
 \end{center}
 \end{figure}
 
+From the pervious example, we discovered that the Perspective Plots is formed by a finite number of "polygon", each polygons have 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. 
+Inorder to emulate this plot, we need to access the some information from the graphics engine display list. However, the value of the vertices are not in the display list, therefore the plot can not been reproduce directly. But we can access value of \emph{x}, \emph{y} and \emph{z}, therefore we have to re-do the calculation inorder to get values of all vertices. The folowing codes show that the value of \emph{x}, \emph{y} and \emph{z} which inputted by the user can been "catched" from the display list.
+
+\begin{Schunk}
+\begin{Sinput}
+> reco = recordPlot()
+> info = reco[[1]][[3]][[2]]
+> ## print the values of x
+> head(info[[2]])
+\end{Sinput}
+\begin{Soutput}
+[1] -10.000000  -9.310345  -8.620690  -7.931034  -7.241379  -6.551724
+\end{Soutput}
+\begin{Sinput}
+> ## print the values of y
+> head(info[[3]])
+\end{Sinput}
+\begin{Soutput}
+[1] -10.000000  -9.310345  -8.620690  -7.931034  -7.241379  -6.551724
+\end{Soutput}
+\begin{Sinput}
+> ## print the values of z
+> info[[4]][1:6, 1:2]
+\end{Sinput}
+\begin{Soutput}
+           [,1]       [,2]
+[1,]  0.7070981  0.6512071
+[2,]  0.6512071  0.4291166
+[3,]  0.4502042  0.0960367
+[4,]  0.1532827 -0.2695253
+[5,] -0.1766027 -0.5910827
+[6,] -0.4800328 -0.8127730
+\end{Soutput}
+\end{Schunk}
+
+
+
+\subsection{The translation from 3-dimension points into 2-dimension points}
+The values of \emph{x}, \emph{y} and \emph{z} can been recored from the display list, which been explained by the pervious section, the next task is to use this information to reproduce the vertics in 3-dimensions.\\
+As we know, the matrix, \emph{z} is computed by a specific functions, given two inputs, \emph{x} and \emph{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \emph{y} and the dimenstion of \empth{z} is $dim(x) \times dim(y)$.\\
+One 3-dimenstions points contains a set values of $(x, y, z)$, but \empth{z} is $dim(x) \times dim(y)$ matrix, x is a vector which has length of $length(x)$ and y is a vector which has length of $length(y)$. Inorder to produce the points, the dimension of \emph{x}, \emph{y} and \emph{z} need to be matched and also in a right order.\\
+First step is the reduce the \emph{z} $dim(x) \times dim(y)$ matrix into a one dimension vector which has length of $dim(x) \times dim(y)$. It can been reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of z. Since z is reduced along the x direction say $z_p$, hence we repeat x until the length of y say $x_p$, and we repeat each y by the length of x, say $y_p$. \\
+At last, the combination of $x_p$, $y_p$, $z_p$ is the points for computing the ver
+ 
 
 \end{document}
