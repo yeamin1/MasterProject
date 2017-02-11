@@ -1,4 +1,6 @@
 
+source('loading.R')
+source('C:/Users/yeamin/Desktop/mproject/loading.r')
 
 ## test on theta
 	trans = testPersp(15)

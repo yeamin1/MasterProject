@@ -185,6 +185,7 @@ dPolygon = function(plot){
     ## the total number of polygon that we need to draw
     s = length(x)
     total = length(z) - s - 1
+    print(total)
 
     ## set the temp value for x,y,z prepare for subsetting
     xTmp = rep(x, s)
