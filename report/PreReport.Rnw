@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{report}
 \usepackage{mathtools}
 \begin{document}
 \SweaveOpts{concordance=TRUE}
@@ -184,7 +184,7 @@ trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
 
 From the pervious example, It is clearly to see that the Perspective Plots is formed by a finite number of "polygon", each polygons have 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. \\
 
-Inorder to emulate this plot, we need to access the some information from the graphics engine display list. However, the value of the vertices are not in the display list, therefore the plot can not been reproduce directly. But we can access value of \emph{x}, \emph{y} and \emph{z}, therefore we have to re-do the calculation in order to get values of all vertices. The following codes show that the value of \emph{x}, \emph{y} and \emph{z} which inputted by the user can been "catched" from the display list.
+Inorder to emulate this plot, we need to access the some information from the graphics engine display list. However, the value of the vertices are not in the display list, therefore the plot can not been reproduce directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we have to re-do the calculation in order to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been "catched" from the display list.
 
 <<standalone_2.1, echo = TRUE>>=
 reco = recordPlot()
@@ -202,16 +202,16 @@ info[[4]][1:6, 1:2]
 dev.off()
 @
 
-\subsection{The translation from 3-dimension points into 2-dimension points}
-The values of \emph{x}, \emph{y} and \emph{z} can been recored from the display list, which been explained by the pervious section, the next task is to use this information to reproduce the vertics in 3-dimensions.\\
+\subsection{The translation from 3-D points into 2-D points}
+The values of \textbf{x}, \textbf{y} and \textbf{z} can been recored from the display list, which been explained by the pervious section, the next task is to use this information to reproduce the vertics in 3-D.\\
 
-As we know, the matrix, \emph{z} is computed by a specific functions, given two inputs, \emph{x} and \emph{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \emph{y} and the dimenstion of \empth{z} is $dim(x) \times dim(y)$.\\
+As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimenstion of \textbf{z} is $ \textbf{dim(x)} \times \textbf{dim(y)}$.\\
 
 
 
-One 3-dimenstions points contains a set values of $(x, y, z)$, but \empth{z} is $dim(x) \times dim(y)$ matrix, x is a vector which has length of $length(x)$ and y is a vector which has length of $length(y)$. Inorder to produce the points, the dimension of \emph{x}, \emph{y} and \emph{z} need to be matched and also in a right order.\\
+One 3-dimenstions points contains a set values of $(x, y, z)$, but \textbf{z} is $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. Inorder to produce the points, the D of \textbf{x}, \textbf{y} and \textbf{z} need to be matched and also in a right order.\\
 
-First step is the reduce the \emph{z} $dim(x) \times dim(y)$ matrix into a one dimension vector which has length of $dim(x) \times dim(y)$. It can been reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of z. Since z is reduced along the x direction say $z_p$, hence we repeat x until the length of y say $x_p$, and we repeat each y by the length of x, say $y_p$. At last, the combination of $x_p$, $y_p$, $z_p$ is the 3-dimensions points which prepare for computing the vertices. \\
+First step is the reduce the \textbf{z} $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix into a one D vector which has length of $\textbf{dim(x)} \times \textbf{dim(y)}$. It can been reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of \textbf{z}. Since \textbf{z} is reduced along the x direction say $z_p$, hence we repeat x until the length of y say $x_p$, and we repeat each y by the length of \textbf{x}, say $y_p$. At last, the combination of $\x_p$, $y_p$, $z_p$ is the 3-D points which prepare for computing the vertices. \\
 <<standalone_2.1>>=
 xTmp = rep(x, length(y))
 yTmp = rep(y,each = length(x))
@@ -219,11 +219,9 @@ zTmp = as.numeric(z)
 length(xTmp) == length(zTmp) & length(yTmp) == length(zTmp)
 @
 
-The idea of transform the points into vertices is repeating the points in a right order. From pervious section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon have 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \emph{x} and the length of input \emph{y}, that is, $total = (length(x) - 1) \times (length(y) - 1)$. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-rigth to top-right, lastly, connect top-right to top-left. Every polygon are been drawn in this order. The surface of Perspective Plots is  formed until all the polygons are been drawn. 
+The idea of transform the points into vertices is repeating the points in a right order. From pervious section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon have 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, \textbf{total = (length(x) - 1) $\times$ (length(y) - 1)}. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-rigth to top-right, lastly, connect top-right to top-left. Every polygon are been drawn in this order. The surface of Perspective Plots is  formed until all the polygons are been drawn. \\
 
-
- 
-Before drawing the surface, the transformation of 3-dimensions vertices into 2-dimension vertices is required. This transformation required two main variables, the 3-dimension vertices and $4 \times 4$ viewing transformation matrix $p$. The 3-dimenstion vertices are computed, the matrix \emph{p} can been recored from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
+Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and $4 \times 4$ viewing transformation matrix \textbf{p}. The 3-dimenstion vertices are computed, the matrix \textbf{p} can been recored from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
 
 <<standalone_2.2>>=
 points3d = trans3d(xTmp, yTmp, zTmp, trans)
@@ -231,7 +229,7 @@ head(points3d$x)
 head(points3d$y)
 @
 
-Because of we are drawing a 3-dimension surface in a 2-dimension plane, some polygons that stay 'behind' can not been seen, It is necessary to draw the polygons in a right order. The order defined by using the \emph{x} and \emph{y} coordinate of the 3-d vertices (but ignore the \emph{z} coordinate) combinding an other column \textbf{1}, then do the matrix multiplication with the viewing transformation \emph{p}. The fourth column from this multiplication is the drawing order of the polygons.
+Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' can not been seen, It is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combinding an other column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{p}. The fourth column from this multiplication is the drawing order of the polygons.
 <<standalone_2.3>>=
 orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
 zdepth = orderTemp[, 4]
