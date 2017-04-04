@@ -390,6 +390,8 @@ However, this process cannot be reproduce on \texttt{R} because \texttt{R} does 
 # ...
 @
 
+\subsubsection{Array}
+The other main difference is that \texttt{C} dose not have matrix data type. 
 
 \newpage
 The best way to reproduce this behaviours on \texttt{grid} is by translating the \texttt{C} code to \texttt{R} code directly. However, it is not as simliar as "copy-and-paste" since the structure of \texttt{C} is quite different from \texttt{R}. The following example shows the different structure between \texttt{C} and \texttt{R}.  
