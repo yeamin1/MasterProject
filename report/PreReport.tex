@@ -5,13 +5,12 @@
 \input{PreReport-concordance}
 
 
-\title{UNDIFINED}
+\title{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}
 \maketitle
 \section{Introduction}
 \subsection{Background}
 The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\
 A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the \texttt{graphics} package. \\
-
 
 \subsection{The \texttt{gridGraphics} package}
 \texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. \\
@@ -290,11 +289,84 @@ The following figures shows how does this paper approximate to the solution. The
 \end{figure}
 
 \subsection{lighting}
-  
+The other main benifit supported by \texttt{persp()} is that it can shade the surface by assuming the surface being illuminate from a given direction.....
+In \texttt{persp()}, the main parameters that user need to specify for produce a shaded perspective plots are: \textbf{ltheta}, \textbf{lphi} and \texbf{shade}
+\textbf{ltheta} and \textbf{lphi} are used for setting up the direction of the light source. In particular, \textbf{ltheta} specified the angle in z direction, \textbf{lphi} specified the angle in x direction. 
+\textbf{shade} is the parameter that specified the shade at each facets of the surface, the shades will compute as follows:
+
+\begin{equation}
+\big(\frac{1 + d}{2}\big)^{shade}
+\end{equation}\\
+
+Where \textbf{d} is the dot product of the unit vector normal to each of the facet(\texbf{u}) and the unit vector of the direction of the light(\texbf{v}). \\
+
+The color of each facet will been calculated by the color that recored from the graphics engine display list multiply by the \textbf{shade}. Finally, the surface been drawn by filling the colors for every facets.
+
+If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker, the brightness and darkness will depend on the value of the \textbf{shade} if shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will close to 1. Therefore it will looks similar to non-shading plot. Simiarlly, if shade gets larger, the term close to 0 and the plot gets more darker.
+
+\begin{Schunk}
+\begin{Sinput}
+> trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
++  col = 'White', border = 'NA', shade = 0.5, ltheta = 30, lphi = 20)
+> grid.echo()
+\end{Sinput}
+\end{Schunk}
+
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 6cm, width = 6cm]{figure/Lighting_1.pdf}
+  \includegraphics[height = 6cm, width = 6cm]{figure/Lighting_2.pdf}
+  \caption{Adding a light source to the perspective plot from the same angel of view. The left figure been drawn by \texttt{graphics} and the right figure been drawn by \texttt{grid}, they are identical to each other.}
+  	\label{figure7}
+\end{center}
+\end{figure}
 
 \newpage
+\subsection{Difference beween \texttt{C} and \texttt{R}}
+As we know, most base functions of \texttt{R} are been written by \texttt{C} include \texttt{persp} and \texttt{fill.contour}. Although the structure of \texttt{C} code are quite simliar to \texttt{R} code in some special case, there are some \texttt{C} code structures which behave compeletely different to \texttt{R}, therefore translate \texttt{C} code to \texttt{R} code is not just "copy-and-paste", even just doing direct translation.\\
+
+\subsubsection{Pointers}
+One main data structure in \texttt{C} is the pointers, which is a type of reference that records the address/location of an global object or a local variable in a function. Pointers can be manipulated by using assignment or pointer arithmetic.
+
+\begin{Schunk}
+\begin{Sinput}
+> # static int LimitCheck(double *lim, double *c, double *s)
+> # {
+> #     if (!R_FINITE(lim[0]) || !R_FINITE(lim[1]) || lim[0] >= lim[1])
+> # 	return 0;
+> #     *s = 0.5 * fabs(lim[1] - lim[0]);
+> #     *c = 0.5 * (lim[1] + lim[0]);
+> #     return 1;
+> # }
+\end{Sinput}
+\end{Schunk}
+
+The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multifying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{*c} and \texttt{s*} are the pointer which will pointing to the mechine memory of \texttt{s} and \texttt{c} and multify them.
+However, this process cannot be reproduce on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multify \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as xs ad ys for further calculation.
+
+\begin{Schunk}
+\begin{Sinput}
+> # LimitCheck = function ( lim ) {
+> #     ## not finished yet...
+> #     s = 0.5 * abs(lim[2] - lim[1])
+> #     c = 0.5 * (lim[2] + lim[1])
+> #     c(s, c)
+> # }
+> # xs = LimitCheck(xr)[1]
+> # xc = LimitCheck(xr)[2]
+> # ...
+\end{Sinput}
+\end{Schunk}
 
 
+\newpage
+The best way to reproduce this behaviours on \texttt{grid} is by translating the \texttt{C} code to \texttt{R} code directly. However, it is not as simliar as "copy-and-paste" since the structure of \texttt{C} is quite different from \texttt{R}. The following example shows the different structure between \texttt{C} and \texttt{R}.  
 
+\texttt{C} allows programmer to access the address of memory location for every variable, but we have no permission on \texttt{R}, hence we need to do a bit more work. The functions on \texttt{C} (\texttt{SetToIdentity}, \texttt{XRotate} and \texttt{ZRotate}) are all accessing the memory of the variable \texttt{VT} and eidting it. The last part of \texttt{R} code is to approch the setp as \texttt{C} doee, that is, updating the matrix \texttt{VT} by keep multifying with other rotation matrix.
+
+
+\subsection{Box and axes}
+\newpage
 
 \end{document}

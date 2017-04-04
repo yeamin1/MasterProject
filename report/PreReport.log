@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  14 FEB 2017 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  4 APR 2017 13:29
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -357,46 +357,46 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 (PreReport-concordance.tex)
+LaTeX Font Info:    Try loading font information for T1+aett on input line 9.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
 
 LaTeX Warning: No \author given.
 
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+aett on input line 13.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
 Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 16.
+(Font)              using `T1/aett/m/n' instead on input line 15.
 
-<figure/report_basic_demo_1.pdf, id=8, 505.89pt x 505.89pt>
+<figure/report_basic_demo_1.pdf, id=9, 505.89pt x 505.89pt>
 File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
 
 <use figure/report_basic_demo_1.pdf>
-Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 33.
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 32.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
  <use figure/report_basic_demo_1.pdf>
-Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 34.
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 33.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--41
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
  []
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
@@ -404,14 +404,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--60
 File: figure/report_basic_demo_4.pdf Graphic file (type pdf)
 
 <use figure/report_basic_demo_4.pdf>
-Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 73.
+Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 72.
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
@@ -420,43 +420,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--82
 File: figure/report_fill_1.pdf Graphic file (type pdf)
 
 <use figure/report_fill_1.pdf>
-Package pdftex.def Info: figure/report_fill_1.pdf used on input line 95.
+Package pdftex.def Info: figure/report_fill_1.pdf used on input line 94.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 <figure/report_fill_2.pdf, id=27, 505.89pt x 505.89pt>
 File: figure/report_fill_2.pdf Graphic file (type pdf)
 
 <use figure/report_fill_2.pdf>
-Package pdftex.def Info: figure/report_fill_2.pdf used on input line 96.
+Package pdftex.def Info: figure/report_fill_2.pdf used on input line 95.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [3 <./figure/report_basic_demo_4.pdf>]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 127
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 126
 .
 
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aett.fd
 File: ts1aett.fd 
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 127
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 126
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `TS1/aett/m/sl' in size <10> not available
-(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 127.
+(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 126.
 
  [4 <./figure/report_fill_1.pdf> <./figure/report_fill_2.pdf>]
 <figure/report_3.pdf, id=49, 505.89pt x 505.89pt>
 File: figure/report_3.pdf Graphic file (type pdf)
  <use figure/report_3.pdf>
-Package pdftex.def Info: figure/report_3.pdf used on input line 150.
+Package pdftex.def Info: figure/report_3.pdf used on input line 149.
 (pdftex.def)             Requested size: 227.62523pt x 227.62523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
@@ -465,20 +465,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--162
 File: figure/standalone_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_1.pdf>
-Package pdftex.def Info: figure/standalone_1.pdf used on input line 179.
+Package pdftex.def Info: figure/standalone_1.pdf used on input line 178.
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
  [6 <./figure/standalone_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
 ! Undefined control sequence.
-l.228 ... the values for all combination of \empth
+l.227 ... the values for all combination of \empth
                                                   {x} and \textbf{y} and the...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -487,19 +487,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 ! Undefined control sequence.
 <recently read> \x 
                    
-l.234 ...ay $y_p$. At last, the combination of $\x
+l.233 ...ay $y_p$. At last, the combination of $\x
                                                   _p$, $y_p$, $z_p$ is the 3...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -508,17 +508,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--236
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
@@ -526,34 +526,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 281--282
 File: figure/standalone_p_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_1.pdf>
-Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 284.
+Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 283.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 <figure/standalone_p_2.pdf, id=80, 505.89pt x 505.89pt>
 File: figure/standalone_p_2.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_2.pdf>
-Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 285.
+Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 284.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 <figure/standalone_p_3.pdf, id=81, 505.89pt x 505.89pt>
 File: figure/standalone_p_3.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_3.pdf>
-Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 286.
+Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 285.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 <figure/standalone_p_4.pdf, id=82, 505.89pt x 505.89pt>
 File: figure/standalone_p_4.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_4.pdf>
-Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 287.
+Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 286.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.288 ...left figure is drawn in a correct order.}
+l.287 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -564,7 +564,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.288 ...left figure is drawn in a correct order.}
+l.287 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -575,8 +575,17 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.288 ...left figure is drawn in a correct order.}
+l.287 ...left figure is drawn in a correct order.}
                                                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.293 ...\textbf{ltheta}, \textbf{lphi} and \texbf
+                                                  {shade}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -584,7 +593,67 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [9 <./figure/standalone_p_1.pdf> <./figure/standalone_p_2.pdf> <./figure/standa
-lone_p_3.pdf> <./figure/standalone_p_4.pdf>] (PreReport.aux)
+lone_p_3.pdf> <./figure/standalone_p_4.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+! Undefined control sequence.
+l.301 ...vector normal to each of the facet(\texbf
+                                                  {u}) and the unit vector o...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.301 ...ctor of the direction of the light(\texbf
+                                                  {v}). \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+<figure/Lighting_1.pdf, id=98, 505.89pt x 505.89pt>
+File: figure/Lighting_1.pdf Graphic file (type pdf)
+
+<use figure/Lighting_1.pdf>
+Package pdftex.def Info: figure/Lighting_1.pdf used on input line 318.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+<figure/Lighting_2.pdf, id=99, 505.89pt x 505.89pt>
+File: figure/Lighting_2.pdf Graphic file (type pdf)
+
+<use figure/Lighting_2.pdf>
+Package pdftex.def Info: figure/Lighting_2.pdf used on input line 319.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+! Undefined control sequence.
+l.345 ... It also multifying the variable \textttt
+                                                  {c} and \texttt{s} for fur...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[11 <./figure/Lighting_1.pdf> <./figure/Lighting_2.pdf>] [12] [13]
+(PreReport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -593,28 +662,30 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3977 strings out of 493335
- 57903 string characters out of 3147021
- 117445 words of memory out of 3000000
- 7389 multiletter control sequences out of 15000+200000
- 34652 words of font info for 72 fonts, out of 3000000 for 9000
+ 3991 strings out of 493335
+ 58238 string characters out of 3147021
+ 117454 words of memory out of 3000000
+ 7399 multiletter control sequences out of 15000+200000
+ 35500 words of font info for 75 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,25p,849b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi
-10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (10 pages, 613282 bytes).
+bx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex
+10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PreReport.pdf (14 pages, 827350 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
+ 170 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 55 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
