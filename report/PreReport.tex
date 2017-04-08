@@ -1,20 +1,23 @@
-\documentclass[a4paper,10pt]{report}
+\documentclass[9pt]{report}
 \usepackage{mathtools}
 \usepackage{Sweave}
 \begin{document}
 \input{PreReport-concordance}
-
+\setlength{\parindent}{0}
 
 \title{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}
 \maketitle
 \section{Introduction}
-\subsection{Background}
+\subsection*{Background}
 The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\
+
 A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the \texttt{graphics} package. \\
 
-\subsection{The \texttt{gridGraphics} package}
+\subsection*{The \texttt{gridGraphics} package}
 \texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. \\
+
 The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates the plot using grid so that the user may edited the plot in more ways than they can with the original plot drawn by basic graphic package.\\
+
 The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with grid.
 \begin{Schunk}
 \begin{Sinput}
@@ -69,14 +72,12 @@ As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the 
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 10cm, width = 10cm]{figure/report_basic_demo_4.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/report_basic_demo_4.pdf}
   \caption{The angle and the color of the bottom and left axis of the previous plot have been changed by 30 degrees and orange}
   	\label{figure3}
 \end{center}
 \end{figure}
-
-
-\subsection{The problem}
+\subsection*{The problem}
 The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is persp() which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. \\
 
 
@@ -116,9 +117,11 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
 % NOTE to Jason: explain how gridGraphics works first: graphics display list; gridGraphics implements an R version of each low-level C function on the display list (e.g., for C\_plot\_xy there is an R function called C\_plot\_xy in the gridGraphics package). THEN maybe write about 3D to 2D transformations, but only maybe.% 
 
 
-\section{The graphics engine display list}
+\section*{The graphics engine display list}
 The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis.\\
+
 This information is called the graphics engine display list. In this paper, we use this graphics engine display list to replicate the \texttt{persp()} plot and texttt{filled.contour()} plot using grid.\\
+
 The \texttt{recordPlot()} function can be used to access the graphics engine display list, the \texttt{recordPlot()} function been used. This function saves the plot in an R object. 
 
 \begin{Schunk}
@@ -152,11 +155,11 @@ $ylab
 \end{center}
 \end{figure}
 
-The example demonstrate how to access the graphics engine display list of a plot drawn by \texttt{plot}. The values of x and y, the labels of x-axis and y-axis been displayed.
+The example demonstrates how to access the graphics engine display list of a plot drawn by \texttt{plot}. The values of x and y, the labels of x-axis and y-axis been displayed.
 
 
 
-\section{standalone}
+\section*{Standalone}
 The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y plane. Usually, it has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} are the locations of grid line which the value z been measured, \textbf{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The following example shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot.\\
 
 
@@ -183,10 +186,9 @@ The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y pl
 
 \newpage
 
-From the pervious example, It is clearly to see that the Perspective Plots is formed by a finite number of "polygon", each polygons have 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. \\
+From the previous example, it is clearly to see that the Perspective Plots is formed by a finite number of "polygon", each polygon has 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. \\
 
-Inorder to emulate this plot, we need to access the some information from the graphics engine display list. However, the value of the vertices are not in the display list, therefore the plot can not been reproduce directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we have to re-do the calculation in order to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been "catched" from the display list.
-
+Inorder to emulate this plot, we need to access some information from the graphics engine display list. However, the value of the vertices is not in the display list, therefore the plot cannot be reproduced directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we should re-do the calculation to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been "catched" from the display list.
 \begin{Schunk}
 \begin{Sinput}
 > reco = recordPlot()
@@ -218,19 +220,14 @@ Inorder to emulate this plot, we need to access the some information from the gr
 [6,] 0.3225432 0.1356653
 \end{Soutput}
 \end{Schunk}
-
-
-
-\subsection{The translation from 3-D points into 2-D points}
+\subsection*{The translation from 3-D points into 2-D points}
 The values of \textbf{x}, \textbf{y} and \textbf{z} can been recored from the display list, which been explained by the pervious section, the next task is to use this information to reproduce the vertics in 3-D.\\
 
 As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimenstion of \textbf{z} is $ \textbf{dim(x)} \times \textbf{dim(y)}$.\\
 
+One 3-dimenstions points contains a set values of $(x, y, z)$, but \textbf{z} is $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. Inorder to produce the points, the D of \textbf{x}, \textbf{y} and \textbf{z} need to be matched and in a right order.\\
 
-
-One 3-dimenstions points contains a set values of $(x, y, z)$, but \textbf{z} is $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. Inorder to produce the points, the D of \textbf{x}, \textbf{y} and \textbf{z} need to be matched and also in a right order.\\
-
-First step is the reduce the \textbf{z} $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix into a one D vector which has length of $\textbf{dim(x)} \times \textbf{dim(y)}$. It can been reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of \textbf{z}. Since \textbf{z} is reduced along the x direction say $z_p$, hence we repeat x until the length of y say $x_p$, and we repeat each y by the length of \textbf{x}, say $y_p$. At last, the combination of $\x_p$, $y_p$, $z_p$ is the 3-D points which prepare for computing the vertices. \\
+First step is the reduce the \textbf{z} $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix into a one D vector which has length of $\textbf{dim(x)} \times \textbf{dim(y)}$. It can be reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of \textbf{z}. Since \textbf{z} is reduced along the x direction say $z_p$, hence we repeat x until the length of y say $x_p$, and we repeat each y by the length of \textbf{x}, say $y_p$. At last, the combination of $\x_p$, $y_p$, $z_p$ is the 3-D points which prepare for computing the vertices. \\
 \begin{Schunk}
 \begin{Sinput}
 > xTmp = rep(x, length(y))
@@ -243,7 +240,7 @@ First step is the reduce the \textbf{z} $\textbf{dim(x)} \times \textbf{dim(y)}$
 \end{Soutput}
 \end{Schunk}
 
-The idea of transform the points into vertices is repeating the points in a right order. From pervious section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon have 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, \textbf{total = (length(x) - 1) $\times$ (length(y) - 1)}. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-rigth to top-right, lastly, connect top-right to top-left. Every polygon are been drawn in this order. The surface of Perspective Plots is  formed until all the polygons are been drawn. \\
+The idea of transform the points into vertices is repeating the points in a right order. From pervious section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, \textbf{total = (length(x) - 1) $\times$ (length(y) - 1)}. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-rigth to top-right, lastly, connect top-right to top-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
 
 Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and $4 \times 4$ viewing transformation matrix \textbf{p}. The 3-dimenstion vertices are computed, the matrix \textbf{p} can been recored from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
 
@@ -263,7 +260,7 @@ Before drawing the surface, the transformation of 3-D vertices into 2-D vertices
 \end{Soutput}
 \end{Schunk}
 
-Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' can not been seen, It is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combinding an other column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{p}. The fourth column from this multiplication is the drawing order of the polygons.
+Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combinding another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{p}. The fourth column from this multiplication is the drawing order of the polygons.
 \begin{Schunk}
 \begin{Sinput}
 > orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
@@ -277,32 +274,33 @@ Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 
 \end{Soutput}
 \end{Schunk}
 
-The following figures shows how does this paper approximate to the solution. The top-left figure is drawn by plotting the transformed 2-dimenstion points, the shape of the Perspective Plots been presented. The top-right figure is drawn by connecting the points line-by-line, the shape become more obvious. The bottom-left figure is drawn by using the \texttt{grid.polygon}. By default, the origin order of the polygons is drawn along x-axis, then along y-axis. Clearly this is not the correct order. Finally, the bottom-right figure shows the true Perspective Plots by fixing the order. \\
+The following figures shows how does this paper approximate to the solution. The top-left figure is drawn by plotting the transformed 2-dimenstion points, the shape of the Perspective Plots been presented. The top-right figure is drawn by connecting the points line-by-line, the shape become more obvious. The bottom-left figure is drawn by using the \texttt{grid.polygon}. By default, the origin order of the polygons is drawn along x-axis, then along y-axis. Clearly this is not the correct order. Finally, the bottom-right figure shows the true Perspective Plots by fixing the order. 
 
 \begin{figure}[h]
   \includegraphics[height = 6cm, width = 6cm]{figure/standalone_p_1.pdf}
   \includegraphics[height = 6cm, width = 6cm]{figure/standalone_p_2.pdf}
   \includegraphics[height = 6cm, width = 6cm]{figure/standalone_p_3.pdf}
   \includegraphics[height = 6cm, width = 6cm]{figure/standalone_p_4.pdf}
-  \caption{The top-left figure is only plotting the transformed 2-dimenstion points. The top-right figure is been drawn by connecting the points line-by-line. The top-right figure is drawn unorderly by using the \testtt{grid.polygon}. Finally, the bottom-left figure is drawn in a correct order.}
+  \caption{The top-left figure is only plotting the transformed 2-dimenstion points. The top-right figure is being drawn by connecting the points line-by-line. The top-right figure is drawn unorderly by using the \testtt{grid.polygon}. Finally, the bottom-left figure is drawn in a correct order.}
   	\label{figure4}
 \end{figure}
 
-\subsection{lighting}
-The other main benifit supported by \texttt{persp()} is that it can shade the surface by assuming the surface being illuminate from a given direction.....
-In \texttt{persp()}, the main parameters that user need to specify for produce a shaded perspective plots are: \textbf{ltheta}, \textbf{lphi} and \texbf{shade}
-\textbf{ltheta} and \textbf{lphi} are used for setting up the direction of the light source. In particular, \textbf{ltheta} specified the angle in z direction, \textbf{lphi} specified the angle in x direction. 
-\textbf{shade} is the parameter that specified the shade at each facets of the surface, the shades will compute as follows:
+\subsection*{Lighting}
+The other main benifit supported by \texttt{persp()} is the shadding which it shades the surface by assuming the surface being illuminate from a given direction.\\
 
+In \texttt{persp()}, the main parameters that user need to specify for produce a shaded perspective plots are: $ltheta$, $lphi$ and $shade$.\\
+
+$ltheta$ and $lphi$ are used for setting up the direction of the light source. In particular, $ltheta$ specified the angle in z direction, $lphi$ specified the angle in x direction. \\
+
+$shade$ is the parameter that specified the shade at each facets of the surface, the shades will compute as follows:
 \begin{equation}
 \big(\frac{1 + d}{2}\big)^{shade}
-\end{equation}\\
+\end{equation}
+Where $d$ is the dot product of the unit vector normal to each of the facet($u$) and the unit vector of the direction of the light($v$). \\
 
-Where \textbf{d} is the dot product of the unit vector normal to each of the facet(\texbf{u}) and the unit vector of the direction of the light(\texbf{v}). \\
+The color of each facet will be calculated by the color that recored from the graphics engine display list multiply by the \textbf{shade}. Finally, the surface been drawn by filling the colors for every facet.\\
 
-The color of each facet will been calculated by the color that recored from the graphics engine display list multiply by the \textbf{shade}. Finally, the surface been drawn by filling the colors for every facets.
-
-If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker, the brightness and darkness will depend on the value of the \textbf{shade} if shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will close to 1. Therefore it will looks similar to non-shading plot. Simiarlly, if shade gets larger, the term close to 0 and the plot gets more darker.
+If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker, the brightness and darkness will depend on the value of the \textbf{shade} if shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will close to 1. Therefore, it will look similar to non-shading plot. Simiarlly, if shade gets larger, the term close to 0 and the plot gets darker.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -323,12 +321,11 @@ If the normal vector is perpendicular to the direction of the light source, then
 \end{figure}
 
 \newpage
-\subsection{Difference beween \texttt{C} and \texttt{R}}
-As we know, most base functions of \texttt{R} are been written by \texttt{C} include \texttt{persp} and \texttt{fill.contour}. Although the structure of \texttt{C} code are quite simliar to \texttt{R} code in some special case, there are some \texttt{C} code structures which behave compeletely different to \texttt{R}, therefore translate \texttt{C} code to \texttt{R} code is not just "copy-and-paste", even just doing direct translation.\\
+\subsection*{Difference beween \texttt{C} and \texttt{R}}
+As we know, most base functions of \texttt{R} are been written by \texttt{C} include \texttt{persp} and \texttt{fill.contour}. Although the structure of \texttt{C} code is quite similar to \texttt{R} code in some special case, there are some \texttt{C} code structures which behave completely different to \texttt{R}, therefore translate \texttt{C} code to \texttt{R} code is not just "copy-and-paste", even just doing direct translation.\\
 
 \subsubsection{Pointers}
-One main data structure in \texttt{C} is the pointers, which is a type of reference that records the address/location of an global object or a local variable in a function. Pointers can be manipulated by using assignment or pointer arithmetic.
-
+One main data structure in \texttt{C} is the pointers, which is a type of reference that records the address/location of a global object or a local variable in a function. Pointers can be manipulated by using assignment or pointer arithmetic.
 \begin{Schunk}
 \begin{Sinput}
 > # static int LimitCheck(double *lim, double *c, double *s)
@@ -341,10 +338,9 @@ One main data structure in \texttt{C} is the pointers, which is a type of refere
 > # }
 \end{Sinput}
 \end{Schunk}
+The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multifying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{*c} and \texttt{s*} are the pointer which will pointing to the mechine memory of \texttt{s} and \texttt{c} and multify them.\\
 
-The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multifying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{*c} and \texttt{s*} are the pointer which will pointing to the mechine memory of \texttt{s} and \texttt{c} and multify them.
-However, this process cannot be reproduce on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multify \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as xs ad ys for further calculation.
-
+However, this process cannot be reproduced on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multify \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as xs ad ys for further calculation.
 \begin{Schunk}
 \begin{Sinput}
 > # LimitCheck = function ( lim ) {
@@ -358,15 +354,161 @@ However, this process cannot be reproduce on \texttt{R} because \texttt{R} does 
 > # ...
 \end{Sinput}
 \end{Schunk}
+\subsubsection{Array}
+The other main difference is that \texttt{C} use array data format rather than matrix data format in \texttt{R}. However, the indexing of elements in matrix is identical to the indexing of elements in array. 
+\begin{Schunk}
+\begin{Sinput}
+> #...
+> 
+> # FindPolygonVertices(c[k - 1], c[k],
+> #         x[i - 1], x[i],
+> #         y[j - 1], y[j],
+> #         z[i - 1 + (j - 1) * nx],
+> #         z[i + (j - 1) * nx],
+> #         z[i - 1 + j * nx],
+> #         z[i + j * nx],
+> #         px, py, pz, &npt);
+> 	    
+> 
+> #out = FindPolygonVertices(sc[k], sc[k + 1],
+> #        x[i], x[i + 1],
+> #        y[j], y[j + 1],
+> #        z[i + (j - 1) * nx],
+> #        z[i + 1 + (j - 1) * nx],
+> #        z[i + (j) * nx],
+> #        z[i + 1 + (j) * nx],
+> #        px, py, pz, npt, iii = iii)
+> #...
+\end{Sinput}
+\end{Schunk}
+To get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
+
+The top piece of codes is both calling the \texttt{FindPolygonVertices} function by feeding parameter into it. However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
+
+The best way to reproduce this behaviours on \texttt{grid} is by translating the \texttt{C} code to \texttt{R} code directly. However, it is not as simliar as "copy-and-paste" since the structure of \texttt{C} is quite different from \texttt{R}. The following example shows the different structure between \texttt{C} and \texttt{R}.  \\
+
+\texttt{C} allows programmer to access the address of memory location for every variable, but we have no permission on \texttt{R}, hence we need to do a bit more work. The functions on \texttt{C} (\texttt{SetToIdentity}, \texttt{XRotate} and \texttt{ZRotate}) are all accessing the memory of the variable \texttt{VT} and eidting it. The last part of \texttt{R} code is to approch the setp as \texttt{C} doee, that is, updating the matrix \texttt{VT} by keep multifying with another rotation matrix.\\
+
+\subsection*{Box and other features}
+One feather that \texttt{persp} supported is whether draw a container (box) around the surface. In Figure 5, both surface and box been drawn in the plot. However, it is necessary to find out whether the edge of the box in front of the surface or behind the surface. \\
+
+The solution will be that translates the \texttt{C} code to \texttt{R} code directly. The reason for doing this directly translation is that R is sensitive on drawing the dot lines. More specifically, it may cause difference if we connect two points with a dotted line in different direction. Due to the purpose of this paper, the plot should be drawn as identical as possible. Therefore, the direct translation is required.\\
 
 
-\newpage
-The best way to reproduce this behaviours on \texttt{grid} is by translating the \texttt{C} code to \texttt{R} code directly. However, it is not as simliar as "copy-and-paste" since the structure of \texttt{C} is quite different from \texttt{R}. The following example shows the different structure between \texttt{C} and \texttt{R}.  
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 6cm, width = 6cm]{figure/box_example_1.pdf}
+  \includegraphics[height = 6cm, width = 6cm]{figure/box_example_2.pdf}
+  \caption{The surace been drawn by ignore the box in the left plot, right plot drawn the surface as well as box}
+  	\label{figure8}
+\end{center}
+\end{figure}
 
-\texttt{C} allows programmer to access the address of memory location for every variable, but we have no permission on \texttt{R}, hence we need to do a bit more work. The functions on \texttt{C} (\texttt{SetToIdentity}, \texttt{XRotate} and \texttt{ZRotate}) are all accessing the memory of the variable \texttt{VT} and eidting it. The last part of \texttt{R} code is to approch the setp as \texttt{C} doee, that is, updating the matrix \texttt{VT} by keep multifying with other rotation matrix.
+Other feather that \texttt{persp} supported is the detail of the axis. More specifily, the axis has three type, no axes, simple axes which only contain the label of axes, or showing the scale of each axes. These feathers are required to be reproduced by \texttt{grid}, The solution to this problem by translating the \texttt{C} code to \texttt{R} code directly.
 
 
-\subsection{Box and axes}
-\newpage
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 3.5cm, width = 3.5cm]{figure/axis_example_1.pdf}
+  \includegraphics[height = 3.5cm, width = 3.5cm]{figure/axis_example_2.pdf}
+  \includegraphics[height = 3.5cm, width = 3.5cm]{figure/axis_example_3.pdf}
+  \caption{The Perspective surfaces are been ignored in this example, the left plot shows no axis been drawn, the simple axes been drawn in the middle plot and the right plot shows more detail for each axis.}
+  	\label{figure8}
+\end{center}
+\end{figure}
+
+\subsection*{The Filled Contour Plot}
+The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{filled.contour}) from \texttt{graphics} to \texttt{grid}. As pervious section, the first step to emulate \texttt{filled.contour} is to access the information from the graphics engine display list. \\
+
+\begin{Schunk}
+\begin{Sinput}
+> x <- 10*1:nrow(volcano)
+> y <- 10*1:ncol(volcano)
+> filled.contour(x, y, volcano, color = terrain.colors,
++     plot.title = title(main = "The Topography of Maunga Whau",
++     xlab = "Meters North", ylab = "Meters West"),
++     plot.axes = { axis(1, seq(100, 800, by = 100))
++                   axis(2, seq(100, 600, by = 100)) },
++     key.title = title(main = "Height\n(meters)"),
++     key.axes = axis(4, seq(90, 190, by = 10)))
+> xx = recordPlot()
+> info = xx[[1]][[12]][[2]]
+> ## print the values of x
+> head(info[[2]])
+\end{Sinput}
+\begin{Soutput}
+[1] 10 20 30 40 50 60
+\end{Soutput}
+\begin{Sinput}
+> ## print the values of y
+> head(info[[3]])
+\end{Sinput}
+\begin{Soutput}
+[1] 10 20 30 40 50 60
+\end{Soutput}
+\begin{Sinput}
+> ## print the dimension of z
+> dim(info[[4]])
+\end{Sinput}
+\begin{Soutput}
+[1] 87 61
+\end{Soutput}
+\begin{Sinput}
+> ## print the length of s
+> length(info[[5]])
+\end{Sinput}
+\begin{Soutput}
+[1] 22
+\end{Soutput}
+\end{Schunk}
+
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 8cm, width = 8cm]{figure/filled_example_1.pdf}
+  \caption{The topography of the Maunga Whau been drawn by using the \texttt{filled.contour}}
+  	\label{figure8}
+\end{center}
+\end{figure}
+The example shows the plot of topography of Maunga Whau and also the information from the \texttt{filled.contour} call in the graphics engine display list. Same problem as \texttt{persp()}, there is no way to reproduce this plot directly by only using the coordinates of x, y and z.\\
+
+There is an algorithm to create this contour plot in the \texttt{graphics} package written by \texttt{C}. The first step of the solution will be translated the \texttt{C} code directly to maximize the accuracy.\\
+
+\begin{Schunk}
+\begin{Sinput}
+> # static void
+> # FindPolygonVertices(..., double *x, double *y, double *z, int *npt, ...)
+> # {
+> #   *npt = 0;
+> #   FindCutPoints(low, high, x1,  y1,  z11, x2,  y1,  z21, x, y, z, npt);
+> #   FindCutPoints(low, high, y1,  x2,  z21, y2,  x2,  z22, y, x, z, npt);
+> #   FindCutPoints(low, high, x2,  y2,  z22, x1,  y2,  z12, x, y, z, npt);
+> #   FindCutPoints(low, high, y2,  x1,  z12, y1,  x1,  z11, y, x, z, npt);
+> # }
+\end{Sinput}
+\end{Schunk}
+This piece of \texttt{C} code is the algorithm used for calculate the coordinates of the vertex of each polygon in the level contour plot. The parameters $*x$, $*y$, $*z$ are the array pointers which have length of 8 individually, $*npc$ is also a pointer has length of 1. If the \texttt{FindCutPoints} is called, the elements in the arrays of $x$, $y$, $z$ will be modified. In general, we feed the location of memory of $x$, $y$, $z$ and $npt$ to \texttt{FindPolygonVertices()} and modify the values of $x$, $y$, $z$ and $npt$ within the \texttt{FindCutPoints}.\\
+
+For example, the first call of \texttt{FindCutPoints()} modifies the elements in the pointer arrays of $x$, $y$, $z$. The location of elements in arrays been modified will depend on the parameter $*npt$. More specifically, the $*x$ as a function of $x1$ and $x2$, $y$ as a function of $y1$ and so on. The second \texttt{FindCutPoints()} is slightly different, $x$ will depend on a function of $x2$, $y$ as a function of $y1$ and $y2$. In the third \texttt{FindCutPoints()} call, $x$ will depend on a function of $x2$ and $x1$, $y$ will depend on a function of $y2$. Finally, $x$ will depend on a function of $x1$, $y$ depend on the function of $y2$ and $y1$. \\
+
+There is no pointer data structure in \texttt{R} hence we cannot produce the same action as \texttt{C}. One approximation to this action will be as follows:
+\begin{Schunk}
+\begin{Sinput}
+> # lFindPolygonVertices = function(...)
+> # {
+> #     out = list(); npt = 0
+> #     out1 = lFindCutPoints(...)
+> #     x = y = z = numeric(8); npt = out1$npt
+> #     ...
+> #     out$x = out1$x + out2$y + out3$x + out4$y
+> #     out$y = out1$y + out2$x + out3$y + out4$x
+> #     out$npt = out4$npt
+> #     out
+> # }
+\end{Sinput}
+\end{Schunk}
+Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, record the values for $x$, $y$, $z$ and $npt$ outside the \texttt{lFindCutPoints()} call in \texttt{R} every time. At last, I combined each individual $x$ and $y$ together as the pervious \texttt{C} code behave. 
+
 
 \end{document}
