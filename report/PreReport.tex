@@ -1,19 +1,25 @@
-\documentclass[9pt]{report}
+\documentclass[paper=a4, fontsize=11pt]{report}
 \usepackage{mathtools}
+\usepackage[a4paper,bindingoffset=0.2in,%
+            left=1in,right=1in,top=1in,bottom=1in,%
+            footskip=.25in]{geometry}
+
+
 \usepackage{Sweave}
 \begin{document}
 \input{PreReport-concordance}
 \setlength{\parindent}{0}
+\noindent
 
 \title{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}
 \maketitle
-\section{Introduction}
-\subsection*{Background}
+\chapter{Introduction}
+\section{Background}
 The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\
 
 A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the \texttt{graphics} package. \\
 
-\subsection*{The \texttt{gridGraphics} package}
+\section{The \texttt{gridGraphics} package}
 \texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. \\
 
 The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates the plot using grid so that the user may edited the plot in more ways than they can with the original plot drawn by basic graphic package.\\
@@ -30,11 +36,12 @@ The following code provides a quick example. We generate 25 random numbers for x
 > grid.echo()
 \end{Sinput}
 \end{Schunk}
+\newpage
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 6cm, width = 6cm]{figure/report_basic_demo_1.pdf}
   \includegraphics[height = 6cm, width = 6cm]{figure/report_basic_demo_1.pdf}
-  \caption{The left plot is drawn by using plot(); the Right plot is redrawn using grid.echo(). Overall, two plots are identical to each other}
+  \caption{The left plot is drawn by using plot(); the Right plot is redrawn using \texttt{grid.echo()}. Two plots are identical to each other}
   	\label{figure1}
 \end{center}
 \end{figure}
@@ -58,9 +65,9 @@ graphics-plot-1-ylab-1
 \end{Schunk}
 
 
-As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \texttt{grid}. There is one element called "graphics-plot-1-bottom-axis-labels-1" which represents the labels of the bottom axis. In \texttt{grid}, there are several functions that can be used to manipulate this grob. For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.\\
+As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \texttt{grid}. There is one element called \textit{graphics-plot-1-bottom-axis-labels-1} which represents the labels of the bottom axis. In \texttt{grid}, there are several functions that can be used to manipulate this grob. \\
 
-
+For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.
 \begin{Schunk}
 \begin{Sinput}
 > grid.edit("graphics-plot-1-bottom-axis-labels-1", 
@@ -69,7 +76,6 @@ As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the 
 +           rot=30, gp=gpar(col="orange"))
 \end{Sinput}
 \end{Schunk}
-
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 7cm, width = 7cm]{figure/report_basic_demo_4.pdf}
@@ -77,10 +83,8 @@ As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the 
   	\label{figure3}
 \end{center}
 \end{figure}
-\subsection*{The problem}
-The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is persp() which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. \\
-
-
+\section{The problem}
+The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is \texttt{persp()} which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. 
 \begin{Schunk}
 \begin{Sinput}
 > x <- y <- seq(-4*pi, 4*pi, len = 27)
@@ -89,7 +93,6 @@ The \texttt{grid.echo()} function can replicate most plots that are drawn by the
 > grid.echo()
 \end{Sinput}
 \end{Schunk}
-
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 6cm, width = 6cm]{figure/report_fill_1}
@@ -99,14 +102,13 @@ The \texttt{grid.echo()} function can replicate most plots that are drawn by the
 \end{center}
 \end{figure}
 
-\newpage
-\subsection{Aim of this project}
+\section{Aim of this project}
 The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and Level (Contour) Plots, \texttt{filled.contour()} into \texttt{grid} package. However, these two functions are written by C, which is difficult for debugging and tracking. The solution of this paper as follows: 
 \begin{enumerate}
-  \item emulate the \texttt{persp()} function on \texttt{grid} separate from the \texttt{gridGraphics} package (standalone):
+  \item Emulate the \texttt{persp()} function on \texttt{grid} separate from the \texttt{gridGraphics} package (standalone):
     \begin{enumerate}
       \item Extract the information from the graphics engine display list.
-      \item Understanding and translating the calculation that been done by C code from the \texttt{graphics} package to R code
+      \item Understanding and translating the calculation that been done by \texttt{C} code from the \texttt{graphics} package to \texttt{R} code
       \item Draw the Perspective Plot on \texttt{grid}.
     \end{enumerate}
   \item Connect the standalone to the \texttt{gridGraphics}
@@ -117,7 +119,7 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
 % NOTE to Jason: explain how gridGraphics works first: graphics display list; gridGraphics implements an R version of each low-level C function on the display list (e.g., for C\_plot\_xy there is an R function called C\_plot\_xy in the gridGraphics package). THEN maybe write about 3D to 2D transformations, but only maybe.% 
 
 
-\section*{The graphics engine display list}
+\chapter{The graphics engine display list}
 The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis.\\
 
 This information is called the graphics engine display list. In this paper, we use this graphics engine display list to replicate the \texttt{persp()} plot and texttt{filled.contour()} plot using grid.\\
@@ -126,30 +128,38 @@ The \texttt{recordPlot()} function can be used to access the graphics engine dis
 
 \begin{Schunk}
 \begin{Sinput}
-> plot(cars$speed[1:25], cars$dist[1:25], col = 'orange', 
+> plot(cars$speed, cars$dist, col = 'orange', 
 +       pch = 16, xlab = 'speed', ylab = 'dist')
-> reco = recordPlot()
-> reco[[1]][[4]][[2]][[2]]
+> reco = recordPlot()[[1]][[4]][[2]][[2]]
+> head(reco[[1]]) #x
 \end{Sinput}
 \begin{Soutput}
-$x
- [1]  4  4  7  7  8  9 10 10 10 11 11 12 12 12 12 13 13 13 13 14 14 14 14 15 15
-
-$y
- [1]  2 10  4 22 16 10 18 26 34 17 28 14 20 24 28 26 34 34 46 26 36 60 80 20 26
-
-$xlab
-[1] "cars$speed[1:25]"
-
-$ylab
-[1] "cars$dist[1:25]"
+[1] 4 4 7 7 8 9
+\end{Soutput}
+\begin{Sinput}
+> head(reco[[2]]) #y
+\end{Sinput}
+\begin{Soutput}
+[1]  2 10  4 22 16 10
+\end{Soutput}
+\begin{Sinput}
+> reco$xlab
+\end{Sinput}
+\begin{Soutput}
+[1] "cars$speed"
+\end{Soutput}
+\begin{Sinput}
+> reco$ylab
+\end{Sinput}
+\begin{Soutput}
+[1] "cars$dist"
 \end{Soutput}
 \end{Schunk}
 
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 8cm, width = 8cm]{figure/report_3}
+  \includegraphics[height = 8cm, width = 8cm]{figure/report_3.pdf}
   \caption{The details of the plot of dist vs speed displayed by the graphics engine display list}
   	\label{figure4}
 \end{center}
@@ -159,10 +169,9 @@ The example demonstrates how to access the graphics engine display list of a plo
 
 
 
-\section*{Standalone}
-The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y plane. Usually, it has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} are the locations of grid line which the value z been measured, \textbf{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The following example shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot.\\
-
-
+\chapter{Standalone}
+\section{The Perspective Plots \texttt{persp()}}
+The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y plane. Usually, it has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} are the locations of grid line which the value z been measured, \textbf{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The following example shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot.
 \begin{Schunk}
 \begin{Sinput}
 > x = y = seq(-10, 10, length= 60)
@@ -173,18 +182,13 @@ The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y pl
 +               col = 'White', border = 'orange')
 \end{Sinput}
 \end{Schunk}
-
-
-
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 10cm, width = 10cm]{figure/standalone_1}
+  \includegraphics[height = 7cm, width = 7cm]{figure/standalone_1.pdf}
   \caption{An example of Perspective Plot been drawn by \texttt{persp()}}
   	\label{figure4}
 \end{center}
 \end{figure}
-
-\newpage
 
 From the previous example, it is clearly to see that the Perspective Plots is formed by a finite number of "polygon", each polygon has 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. \\
 
@@ -220,7 +224,7 @@ Inorder to emulate this plot, we need to access some information from the graphi
 [6,] 0.3225432 0.1356653
 \end{Soutput}
 \end{Schunk}
-\subsection*{The translation from 3-D points into 2-D points}
+\subsection{The translation from 3-D points into 2-D points}
 The values of \textbf{x}, \textbf{y} and \textbf{z} can been recored from the display list, which been explained by the pervious section, the next task is to use this information to reproduce the vertics in 3-D.\\
 
 As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimenstion of \textbf{z} is $ \textbf{dim(x)} \times \textbf{dim(y)}$.\\
@@ -242,7 +246,7 @@ First step is the reduce the \textbf{z} $\textbf{dim(x)} \times \textbf{dim(y)}$
 
 The idea of transform the points into vertices is repeating the points in a right order. From pervious section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, \textbf{total = (length(x) - 1) $\times$ (length(y) - 1)}. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-rigth to top-right, lastly, connect top-right to top-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
 
-Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and $4 \times 4$ viewing transformation matrix \textbf{p}. The 3-dimenstion vertices are computed, the matrix \textbf{p} can been recored from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
+Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and $4 \times 4$ viewing transformation matrix \textbf{P}. The 3-dimenstion vertices are computed, the matrix \textbf{P} can been recored from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -260,7 +264,7 @@ Before drawing the surface, the transformation of 3-D vertices into 2-D vertices
 \end{Soutput}
 \end{Schunk}
 
-Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combinding another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{p}. The fourth column from this multiplication is the drawing order of the polygons.
+Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combinding another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the drawing order of the polygons.
 \begin{Schunk}
 \begin{Sinput}
 > orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
@@ -274,7 +278,7 @@ Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 
 \end{Soutput}
 \end{Schunk}
 
-The following figures shows how does this paper approximate to the solution. The top-left figure is drawn by plotting the transformed 2-dimenstion points, the shape of the Perspective Plots been presented. The top-right figure is drawn by connecting the points line-by-line, the shape become more obvious. The bottom-left figure is drawn by using the \texttt{grid.polygon}. By default, the origin order of the polygons is drawn along x-axis, then along y-axis. Clearly this is not the correct order. Finally, the bottom-right figure shows the true Perspective Plots by fixing the order. 
+The following figures shows how does this paper approximate to the solution. The top-left figure is drawn by plotting the transformed 2-dimenstion points, the shape of the Perspective Plots been presented. The top-right figure is drawn by connecting the points line-by-line, the shape become more obvious. The bottom-left figure is drawn by using the \texttt{grid.polygon()}. By default, the origin order of the polygons is drawn along x-axis, then along y-axis. Clearly this is not the correct order. Finally, the bottom-right figure shows the true Perspective Plots by fixing the order. 
 
 \begin{figure}[h]
   \includegraphics[height = 6cm, width = 6cm]{figure/standalone_p_1.pdf}
@@ -285,18 +289,18 @@ The following figures shows how does this paper approximate to the solution. The
   	\label{figure4}
 \end{figure}
 
-\subsection*{Lighting}
+\subsection{Lighting}
 The other main benifit supported by \texttt{persp()} is the shadding which it shades the surface by assuming the surface being illuminate from a given direction.\\
 
-In \texttt{persp()}, the main parameters that user need to specify for produce a shaded perspective plots are: $ltheta$, $lphi$ and $shade$.\\
+In \texttt{persp()}, the main parameters that user need to specify for produce a shaded perspective plots are: \textit{ltheta}, \textit{lphi} and \textit{shade}.\\
 
-$ltheta$ and $lphi$ are used for setting up the direction of the light source. In particular, $ltheta$ specified the angle in z direction, $lphi$ specified the angle in x direction. \\
+\textit{ltheta} and \textit{lphi} are used for setting up the direction of the light source. In particular, \textit{ltheta} specified the angle in z direction, \textit{lphi} specified the angle in x direction. \\
 
-$shade$ is the parameter that specified the shade at each facets of the surface, the shades will compute as follows:
+\textit{shade} is the parameter that specified the shade at each facets of the surface, the shades will compute as follows:
 \begin{equation}
 \big(\frac{1 + d}{2}\big)^{shade}
 \end{equation}
-Where $d$ is the dot product of the unit vector normal to each of the facet($u$) and the unit vector of the direction of the light($v$). \\
+Where \textit{d} is the dot product of the unit vector normal to each of the facet(\textit{u}) and the unit vector of the direction of the light(\textit{v}). \\
 
 The color of each facet will be calculated by the color that recored from the graphics engine display list multiply by the \textbf{shade}. Finally, the surface been drawn by filling the colors for every facet.\\
 
@@ -321,7 +325,7 @@ If the normal vector is perpendicular to the direction of the light source, then
 \end{figure}
 
 \newpage
-\subsection*{Difference beween \texttt{C} and \texttt{R}}
+\subsection{Difference beween \texttt{C} and \texttt{R}}
 As we know, most base functions of \texttt{R} are been written by \texttt{C} include \texttt{persp} and \texttt{fill.contour}. Although the structure of \texttt{C} code is quite similar to \texttt{R} code in some special case, there are some \texttt{C} code structures which behave completely different to \texttt{R}, therefore translate \texttt{C} code to \texttt{R} code is not just "copy-and-paste", even just doing direct translation.\\
 
 \subsubsection{Pointers}
@@ -383,18 +387,19 @@ The other main difference is that \texttt{C} use array data format rather than m
 \end{Schunk}
 To get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
 
-The top piece of codes is both calling the \texttt{FindPolygonVertices} function by feeding parameter into it. However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
+The top piece of codes is both calling the \texttt{FindPolygonVertices()} function by feeding parameter into it. However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
 
 The best way to reproduce this behaviours on \texttt{grid} is by translating the \texttt{C} code to \texttt{R} code directly. However, it is not as simliar as "copy-and-paste" since the structure of \texttt{C} is quite different from \texttt{R}. The following example shows the different structure between \texttt{C} and \texttt{R}.  \\
 
-\texttt{C} allows programmer to access the address of memory location for every variable, but we have no permission on \texttt{R}, hence we need to do a bit more work. The functions on \texttt{C} (\texttt{SetToIdentity}, \texttt{XRotate} and \texttt{ZRotate}) are all accessing the memory of the variable \texttt{VT} and eidting it. The last part of \texttt{R} code is to approch the setp as \texttt{C} doee, that is, updating the matrix \texttt{VT} by keep multifying with another rotation matrix.\\
+\texttt{C} allows programmer to access the address of memory location for every variable, but we have no permission on \texttt{R}, hence we need to do a bit more work. The functions on \texttt{C} (\texttt{SetToIdentity()}, \texttt{XRotate()} and \texttt{ZRotate()}) are all accessing the memory of the variable \texttt{VT} and eidting it. The last part of \texttt{R} code is to approch the setp as \texttt{C} doee, that is, updating the matrix \texttt{VT} by keep multifying with another rotation matrix.\\
 
-\subsection*{Box and other features}
-One feather that \texttt{persp} supported is whether draw a container (box) around the surface. In Figure 5, both surface and box been drawn in the plot. However, it is necessary to find out whether the edge of the box in front of the surface or behind the surface. \\
+\subsection{Box and other features}
+One feather that \texttt{persp()} supported is whether draw a container (box) around the surface. In Figure 5, both surface and box been drawn in the plot. However, it is necessary to find out whether the edge of the box in front of the surface or behind the surface. \\
 
 The solution will be that translates the \texttt{C} code to \texttt{R} code directly. The reason for doing this directly translation is that R is sensitive on drawing the dot lines. More specifically, it may cause difference if we connect two points with a dotted line in different direction. Due to the purpose of this paper, the plot should be drawn as identical as possible. Therefore, the direct translation is required.\\
 
 
+\newpage
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 6cm, width = 6cm]{figure/box_example_1.pdf}
@@ -418,7 +423,7 @@ Other feather that \texttt{persp} supported is the detail of the axis. More spec
 \end{center}
 \end{figure}
 
-\subsection*{The Filled Contour Plot}
+\section{The Filled Contour Plot}
 The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{filled.contour}) from \texttt{graphics} to \texttt{grid}. As pervious section, the first step to emulate \texttt{filled.contour} is to access the information from the graphics engine display list. \\
 
 \begin{Schunk}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  8 APR 2017 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  8 APR 2017 17:02
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -117,6 +117,33 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count104
+\Gm@cntv=\count105
+\c@Gm@tempcnt=\count106
+\Gm@bindingoffset=\dimen121
+\Gm@wd@mp=\dimen122
+\Gm@odd@mp=\dimen123
+\Gm@even@mp=\dimen124
+\Gm@layoutwidth=\dimen125
+\Gm@layoutheight=\dimen126
+\Gm@layouthoffset=\dimen127
+\Gm@layoutvoffset=\dimen128
+\Gm@dimlist=\toks20
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\Sweave.sty
 Package: Sweave 
 
@@ -146,21 +173,21 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count104
+\Gread@gobject=\count107
 ))
-\Gin@req@height=\dimen121
-\Gin@req@width=\dimen122
+\Gin@req@height=\dimen129
+\Gin@req@width=\dimen130
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count105
+\FV@CodeLineNo=\count108
 \FV@InFile=\read1
 \FV@TabBox=\box28
-\c@FancyVerbLine=\count106
-\FV@StepNumber=\count107
+\c@FancyVerbLine=\count109
+\FV@StepNumber=\count110
 \FV@OutFile=\write3
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
@@ -269,7 +296,7 @@ File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))))
 
 LaTeX Warning: Unused global option(s):
-    [9pt].
+    [paper=a4,fontsize=11pt].
 
 (PreReport.aux
 
@@ -290,38 +317,73 @@ LaTeX Warning: Label `figure8' multiply defined.
 )
 \openout1 = `PreReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 9.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    ... okay on input line 9.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 14.45377pt
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 438.51413pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=438.51413pt
+* \textheight=700.50687pt
+* \oddsidemargin=14.45377pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=18.06749pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen123
+\scratchcounter=\count111
+\scratchdimen=\dimen131
 \scratchbox=\box29
-\nofMPsegments=\count109
-\nofMParguments=\count110
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen124
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
-\everyMPtoPDFconversion=\toks21
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen132
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
+\everyMPtoPDFconversion=\toks22
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -329,9 +391,6 @@ Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -371,8 +430,8 @@ G,.JBIG2,.JB2,.eps]
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    !
-l.6 \setlength{\parindent}{0}
-                             
+l.11 \setlength{\parindent}{0}
+                              
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -380,7 +439,7 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 9.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 15.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
@@ -390,145 +449,138 @@ LaTeX Warning: No \author given.
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 16.
+(Font)              using `T1/aett/m/n' instead on input line 22.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
-<figure/report_basic_demo_1.pdf, id=9, 505.89pt x 505.89pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+[1
+
+] <figure/report_basic_demo_1.pdf, id=16, 505.89pt x 505.89pt>
 File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
 
 <use figure/report_basic_demo_1.pdf>
-Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 35.
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 42.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
  <use figure/report_basic_demo_1.pdf>
-Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 36.
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 43.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--43
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
 
  []
 
-[1]
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
-[2 <./figure/report_basic_demo_1.pdf>]
-<figure/report_basic_demo_4.pdf, id=25, 505.89pt x 505.89pt>
+<figure/report_basic_demo_4.pdf, id=17, 505.89pt x 505.89pt>
 File: figure/report_basic_demo_4.pdf Graphic file (type pdf)
 
 <use figure/report_basic_demo_4.pdf>
-Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 75.
+Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 81.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
-
- []
-
-<figure/report_fill_1.pdf, id=26, 505.89pt x 505.89pt>
-File: figure/report_fill_1.pdf Graphic file (type pdf)
-
-<use figure/report_fill_1.pdf>
-Package pdftex.def Info: figure/report_fill_1.pdf used on input line 95.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
-
-<figure/report_fill_2.pdf, id=27, 505.89pt x 505.89pt>
-File: figure/report_fill_2.pdf Graphic file (type pdf)
-
-<use figure/report_fill_2.pdf>
-Package pdftex.def Info: figure/report_fill_2.pdf used on input line 96.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <./figure/report_basic_demo_4.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+[2 <./figure/report_basic_demo_1.pdf>]
+<figure/report_fill_1.pdf, id=27, 505.89pt x 505.89pt>
+File: figure/report_fill_1.pdf Graphic file (type pdf)
 
- []
+<use figure/report_fill_1.pdf>
+Package pdftex.def Info: figure/report_fill_1.pdf used on input line 98.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
+<figure/report_fill_2.pdf, id=28, 505.89pt x 505.89pt>
+File: figure/report_fill_2.pdf Graphic file (type pdf)
+
+<use figure/report_fill_2.pdf>
+Package pdftex.def Info: figure/report_fill_2.pdf used on input line 99.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+ [3 <./figure/report_basic_demo_4.pdf> <./figure/report_fill_1.pdf> <./figure/r
+eport_fill_2.pdf>] [4]
+Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
-[4 <./figure/report_fill_1.pdf> <./figure/report_fill_2.pdf>]
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 129
-.
 
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 131
+.
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aett.fd
 File: ts1aett.fd 
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 129
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 131
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `TS1/aett/m/sl' in size <10> not available
-(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 129.
+(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 131.
 
 
-<figure/report_3.pdf, id=49, 505.89pt x 505.89pt>
+<figure/report_3.pdf, id=50, 505.89pt x 505.89pt>
 File: figure/report_3.pdf Graphic file (type pdf)
  <use figure/report_3.pdf>
-Package pdftex.def Info: figure/report_3.pdf used on input line 152.
+Package pdftex.def Info: figure/report_3.pdf used on input line 162.
 (pdftex.def)             Requested size: 227.62523pt x 227.62523pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[5
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
-<figure/standalone_1.pdf, id=50, 505.89pt x 505.89pt>
+] [6 <./figure/report_3.pdf>]
+Chapter 3.
+<figure/standalone_1.pdf, id=64, 505.89pt x 505.89pt>
 File: figure/standalone_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_1.pdf>
-Package pdftex.def Info: figure/standalone_1.pdf used on input line 181.
-(pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
+Package pdftex.def Info: figure/standalone_1.pdf used on input line 187.
+(pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-[6 <./figure/report_3.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+[7
+
+ <./figure/standalone_1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
  []
 
 ! Undefined control sequence.
-l.226 ... the values for all combination of \empth
+l.230 ... the values for all combination of \empth
                                                   {x} and \textbf{y} and the...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -537,19 +589,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
-[7 <./figure/standalone_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
 ! Undefined control sequence.
 <recently read> \x 
                    
-l.230 ...ay $y_p$. At last, the combination of $\x
+l.234 ...ay $y_p$. At last, the combination of $\x
                                                   _p$, $y_p$, $z_p$ is the 3...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -558,47 +610,51 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--232
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
-[8] <figure/standalone_p_1.pdf, id=79, 505.89pt x 505.89pt>
+[8] <figure/standalone_p_1.pdf, id=80, 505.89pt x 505.89pt>
 File: figure/standalone_p_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_1.pdf>
-Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 280.
+Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 284.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/standalone_p_2.pdf, id=80, 505.89pt x 505.89pt>
+<figure/standalone_p_2.pdf, id=81, 505.89pt x 505.89pt>
 File: figure/standalone_p_2.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_2.pdf>
-Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 281.
+Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 285.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/standalone_p_3.pdf, id=81, 505.89pt x 505.89pt>
+<figure/standalone_p_3.pdf, id=82, 505.89pt x 505.89pt>
 File: figure/standalone_p_3.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_3.pdf>
-Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 282.
+Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 286.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/standalone_p_4.pdf, id=82, 505.89pt x 505.89pt>
+<figure/standalone_p_4.pdf, id=83, 505.89pt x 505.89pt>
 File: figure/standalone_p_4.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_4.pdf>
-Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 283.
+Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 287.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
+[][] []
+ []
+
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.284 ...left figure is drawn in a correct order.}
+l.288 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -609,7 +665,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.284 ...left figure is drawn in a correct order.}
+l.288 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -620,7 +676,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.284 ...left figure is drawn in a correct order.}
+l.288 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -630,16 +686,6 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 289--290
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 293--294
@@ -647,39 +693,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 293--294
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--300
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 297--298
 
  []
 
-[9] <figure/Lighting_1.pdf, id=87, 505.89pt x 505.89pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--304
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--306
+
+ []
+
+[9] <figure/Lighting_1.pdf, id=89, 505.89pt x 505.89pt>
 File: figure/Lighting_1.pdf Graphic file (type pdf)
 
 <use figure/Lighting_1.pdf>
-Package pdftex.def Info: figure/Lighting_1.pdf used on input line 316.
+Package pdftex.def Info: figure/Lighting_1.pdf used on input line 320.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/Lighting_2.pdf, id=88, 505.89pt x 505.89pt>
+<figure/Lighting_2.pdf, id=90, 505.89pt x 505.89pt>
 File: figure/Lighting_2.pdf Graphic file (type pdf)
 
 <use figure/Lighting_2.pdf>
-Package pdftex.def Info: figure/Lighting_2.pdf used on input line 317.
+Package pdftex.def Info: figure/Lighting_2.pdf used on input line 321.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
+[10 <./figure/standalone_p_1.pdf> <./figure/standalone_p_2.pdf> <./figure/stand
+alone_p_3.pdf> <./figure/standalone_p_4.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 ! Undefined control sequence.
-l.341 ... It also multifying the variable \textttt
+l.345 ... It also multifying the variable \textttt
                                                   {c} and \texttt{s} for fur...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -688,21 +745,11 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
-
- []
-
-
+[11 <./figure/Lighting_1.pdf> <./figure/Lighting_2.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 388--389
 
  []
@@ -713,109 +760,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 390--391
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 
  []
 
-<figure/box_example_1.pdf, id=100, 505.89pt x 505.89pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
+
+ []
+
+[12] <figure/box_example_1.pdf, id=123, 505.89pt x 505.89pt>
 File: figure/box_example_1.pdf Graphic file (type pdf)
 
 <use figure/box_example_1.pdf>
-Package pdftex.def Info: figure/box_example_1.pdf used on input line 400.
+Package pdftex.def Info: figure/box_example_1.pdf used on input line 405.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/box_example_2.pdf, id=101, 505.89pt x 505.89pt>
+<figure/box_example_2.pdf, id=124, 505.89pt x 505.89pt>
 File: figure/box_example_2.pdf Graphic file (type pdf)
 
 <use figure/box_example_2.pdf>
-Package pdftex.def Info: figure/box_example_2.pdf used on input line 401.
+Package pdftex.def Info: figure/box_example_2.pdf used on input line 406.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figure/axis_example_1.pdf, id=102, 505.89pt x 505.89pt>
+<figure/axis_example_1.pdf, id=125, 505.89pt x 505.89pt>
 File: figure/axis_example_1.pdf Graphic file (type pdf)
 
 <use figure/axis_example_1.pdf>
-Package pdftex.def Info: figure/axis_example_1.pdf used on input line 413.
+Package pdftex.def Info: figure/axis_example_1.pdf used on input line 418.
 (pdftex.def)             Requested size: 99.57831pt x 99.57831pt.
 
-<figure/axis_example_2.pdf, id=103, 505.89pt x 505.89pt>
+<figure/axis_example_2.pdf, id=126, 505.89pt x 505.89pt>
 File: figure/axis_example_2.pdf Graphic file (type pdf)
 
 <use figure/axis_example_2.pdf>
-Package pdftex.def Info: figure/axis_example_2.pdf used on input line 414.
+Package pdftex.def Info: figure/axis_example_2.pdf used on input line 419.
 (pdftex.def)             Requested size: 99.57831pt x 99.57831pt.
 
-<figure/axis_example_3.pdf, id=104, 505.89pt x 505.89pt>
+<figure/axis_example_3.pdf, id=127, 505.89pt x 505.89pt>
 File: figure/axis_example_3.pdf Graphic file (type pdf)
 
 <use figure/axis_example_3.pdf>
-Package pdftex.def Info: figure/axis_example_3.pdf used on input line 415.
+Package pdftex.def Info: figure/axis_example_3.pdf used on input line 420.
 (pdftex.def)             Requested size: 99.57831pt x 99.57831pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (28.3954pt too wide) in paragraph at lines 422--423
-\T1/aer/m/n/10 The other tasks of this pa-per is to em-u-late the Level (Con-to
-ur) Plots (\T1/aett/m/n/10 filled.contour\T1/aer/m/n/10 )
- []
-
-
-Overfull \hbox (24.79817pt too wide) in paragraph at lines 422--423
-\T1/aer/m/n/10 from \T1/aett/m/n/10 graph-ics \T1/aer/m/n/10 to \T1/aett/m/n/10
- grid\T1/aer/m/n/10 . As per-vi-ous sec-tion, the first step to em-u-late \T1/a
-ett/m/n/10 filled.contour
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
  []
 
-[13] <figure/filled_example_1.pdf, id=108, 505.89pt x 505.89pt>
+[13 <./figure/box_example_1.pdf> <./figure/box_example_2.pdf> <./figure/axis_ex
+ample_1.pdf> <./figure/axis_example_2.pdf> <./figure/axis_example_3.pdf>]
+<figure/filled_example_1.pdf, id=150, 505.89pt x 505.89pt>
 File: figure/filled_example_1.pdf Graphic file (type pdf)
 
 <use figure/filled_example_1.pdf>
-Package pdftex.def Info: figure/filled_example_1.pdf used on input line 469.
+Package pdftex.def Info: figure/filled_example_1.pdf used on input line 474.
 (pdftex.def)             Requested size: 227.62523pt x 227.62523pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 474--475
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 476--477
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
+[14 <./figure/filled_example_1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-[14] [15] [16 <./figure/standalone_p_1.pdf> <./figure/standalone_p_2.pdf> <./fi
-gure/standalone_p_3.pdf> <./figure/standalone_p_4.pdf>] [17 <./figure/Lighting_
-1.pdf> <./figure/Lighting_2.pdf> <./figure/box_example_1.pdf> <./figure/box_exa
-mple_2.pdf>] [18 <./figure/axis_example_1.pdf> <./figure/axis_example_2.pdf> <.
-/figure/axis_example_3.pdf> <./figure/filled_example_1.pdf>] (PreReport.aux)
+[15] (PreReport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -824,13 +855,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4023 strings out of 493335
- 59214 string characters out of 3147021
- 119450 words of memory out of 3000000
- 7425 multiletter control sequences out of 15000+200000
- 35500 words of font info for 75 fonts, out of 3000000 for 9000
+ 4526 strings out of 493335
+ 66637 string characters out of 3147021
+ 132595 words of memory out of 3000000
+ 7901 multiletter control sequences out of 15000+200000
+ 46268 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,25p,847b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,6n,25p,847b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
@@ -843,11 +874,12 @@ Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (19 pages, 1069812 bytes).
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PreReport.pdf (16 pages, 1080797 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
+ 211 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
