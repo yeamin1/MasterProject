@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  8 APR 2017 17:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  9 APR 2017 15:38
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -619,42 +619,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
-[8] <figure/standalone_p_1.pdf, id=80, 505.89pt x 505.89pt>
+[8] [9] <figure/standalone_p_1.pdf, id=83, 505.89pt x 505.89pt>
 File: figure/standalone_p_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_1.pdf>
-Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 284.
+Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 285.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/standalone_p_2.pdf, id=81, 505.89pt x 505.89pt>
+<figure/standalone_p_2.pdf, id=84, 505.89pt x 505.89pt>
 File: figure/standalone_p_2.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_2.pdf>
-Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 285.
+Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 286.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/standalone_p_3.pdf, id=82, 505.89pt x 505.89pt>
+<figure/standalone_p_3.pdf, id=85, 505.89pt x 505.89pt>
 File: figure/standalone_p_3.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_3.pdf>
-Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 286.
+Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 287.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-<figure/standalone_p_4.pdf, id=83, 505.89pt x 505.89pt>
+<figure/standalone_p_4.pdf, id=86, 505.89pt x 505.89pt>
 File: figure/standalone_p_4.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_4.pdf>
-Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 287.
+Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 288.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--288
-[][] []
- []
-
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.288 ...left figure is drawn in a correct order.}
+l.289 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -665,7 +661,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.288 ...left figure is drawn in a correct order.}
+l.289 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -676,21 +672,13 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.288 ...left figure is drawn in a correct order.}
+l.289 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 295--296
@@ -703,40 +691,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--298
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 302--304
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+Underfull \hbox (badness 10000) in paragraph at lines 304--306
 
  []
 
-[9] <figure/Lighting_1.pdf, id=89, 505.89pt x 505.89pt>
-File: figure/Lighting_1.pdf Graphic file (type pdf)
 
-<use figure/Lighting_1.pdf>
-Package pdftex.def Info: figure/Lighting_1.pdf used on input line 320.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
-<figure/Lighting_2.pdf, id=90, 505.89pt x 505.89pt>
-File: figure/Lighting_2.pdf Graphic file (type pdf)
-
-<use figure/Lighting_2.pdf>
-Package pdftex.def Info: figure/Lighting_2.pdf used on input line 321.
-(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+ []
 
 [10 <./figure/standalone_p_1.pdf> <./figure/standalone_p_2.pdf> <./figure/stand
 alone_p_3.pdf> <./figure/standalone_p_4.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+<figure/Lighting_1.pdf, id=104, 505.89pt x 505.89pt>
+File: figure/Lighting_1.pdf Graphic file (type pdf)
+
+<use figure/Lighting_1.pdf>
+Package pdftex.def Info: figure/Lighting_1.pdf used on input line 322.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+<figure/Lighting_2.pdf, id=105, 505.89pt x 505.89pt>
+File: figure/Lighting_2.pdf Graphic file (type pdf)
+
+<use figure/Lighting_2.pdf>
+Package pdftex.def Info: figure/Lighting_2.pdf used on input line 323.
+(pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
 ! Undefined control sequence.
-l.345 ... It also multifying the variable \textttt
+l.346 ... It also multifying the variable \textttt
                                                   {c} and \texttt{s} for fur...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -745,22 +735,17 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
 [11 <./figure/Lighting_1.pdf> <./figure/Lighting_2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 388--389
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 392--393
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
@@ -770,12 +755,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 394--395
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
@@ -783,38 +763,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 399--400
 File: figure/box_example_1.pdf Graphic file (type pdf)
 
 <use figure/box_example_1.pdf>
-Package pdftex.def Info: figure/box_example_1.pdf used on input line 405.
+Package pdftex.def Info: figure/box_example_1.pdf used on input line 402.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 <figure/box_example_2.pdf, id=124, 505.89pt x 505.89pt>
 File: figure/box_example_2.pdf Graphic file (type pdf)
 
 <use figure/box_example_2.pdf>
-Package pdftex.def Info: figure/box_example_2.pdf used on input line 406.
+Package pdftex.def Info: figure/box_example_2.pdf used on input line 403.
 (pdftex.def)             Requested size: 170.71892pt x 170.71892pt.
 
 <figure/axis_example_1.pdf, id=125, 505.89pt x 505.89pt>
 File: figure/axis_example_1.pdf Graphic file (type pdf)
 
 <use figure/axis_example_1.pdf>
-Package pdftex.def Info: figure/axis_example_1.pdf used on input line 418.
+Package pdftex.def Info: figure/axis_example_1.pdf used on input line 415.
 (pdftex.def)             Requested size: 99.57831pt x 99.57831pt.
 
 <figure/axis_example_2.pdf, id=126, 505.89pt x 505.89pt>
 File: figure/axis_example_2.pdf Graphic file (type pdf)
 
 <use figure/axis_example_2.pdf>
-Package pdftex.def Info: figure/axis_example_2.pdf used on input line 419.
+Package pdftex.def Info: figure/axis_example_2.pdf used on input line 416.
 (pdftex.def)             Requested size: 99.57831pt x 99.57831pt.
 
 <figure/axis_example_3.pdf, id=127, 505.89pt x 505.89pt>
 File: figure/axis_example_3.pdf Graphic file (type pdf)
 
 <use figure/axis_example_3.pdf>
-Package pdftex.def Info: figure/axis_example_3.pdf used on input line 420.
+Package pdftex.def Info: figure/axis_example_3.pdf used on input line 417.
 (pdftex.def)             Requested size: 99.57831pt x 99.57831pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
@@ -824,29 +804,54 @@ ample_1.pdf> <./figure/axis_example_2.pdf> <./figure/axis_example_3.pdf>]
 File: figure/filled_example_1.pdf Graphic file (type pdf)
 
 <use figure/filled_example_1.pdf>
-Package pdftex.def Info: figure/filled_example_1.pdf used on input line 474.
+Package pdftex.def Info: figure/filled_example_1.pdf used on input line 468.
 (pdftex.def)             Requested size: 227.62523pt x 227.62523pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 481--482
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--497
+Underfull \hbox (badness 10000) in paragraph at lines 490--491
 
  []
 
 [14 <./figure/filled_example_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
 
  []
 
-[15] (PreReport.aux)
+[15]
+Chapter 4.
+[16
+
+]
+Chapter 5.
+[17
+
+]
+Chapter 6.
+[18
+
+]
+Chapter 7.
+[19
+
+]
+Chapter 8.
+[20
+
+]
+Chapter 9.
+[21
+
+] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
+[36] [37] [38] [39] [40] [41] [42] [43] (PreReport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -855,11 +860,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4526 strings out of 493335
- 66637 string characters out of 3147021
+ 4528 strings out of 493335
+ 67000 string characters out of 3147021
  132595 words of memory out of 3000000
- 7901 multiletter control sequences out of 15000+200000
- 46268 words of font info for 93 fonts, out of 3000000 for 9000
+ 7902 multiletter control sequences out of 15000+200000
+ 46758 words of font info for 95 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,25p,847b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
@@ -877,9 +882,9 @@ gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (16 pages, 1080797 bytes).
+Output written on PreReport.pdf (44 pages, 1116480 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
+ 302 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 
