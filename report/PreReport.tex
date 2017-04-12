@@ -292,9 +292,9 @@ The following figures shows how does this paper approximate to the solution. The
 \end{figure}
 
 \subsection{Lighting}
-The other main benifit supported by \texttt{persp()} is the shadding. It shades the surface by assuming the surface being illuminate from a given direction.(light source)\\
+The other main benefit supported by \texttt{persp()} is the shading. It shades the surface by assuming the surface is being illuminated from a given direction.(light source)\\
 
-In \texttt{persp()}, the main parameters that user need to specify for produce a shaded perspective plots are: \textit{ltheta}, \textit{lphi} and \textit{shade}.\\
+In \texttt{persp()}, the main parameters that user needs to specify for producing a shaded perspective plot is: \textit{ltheta}, \textit{lphi} and \textit{shade}.\\
 
 \textit{ltheta} and \textit{lphi} are used for setting up the direction of the light source. In particular, \textit{ltheta} specified the angle in z direction, \textit{lphi} specified the angle in x direction. \\
 
@@ -511,7 +511,7 @@ Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, reco
 
 
 \subsection{Vectorization}
-...
+The drawing action in \texttt{C} function \texttt{filledcontour()} is a loop of the length of x minus 1 times the length of y minus 1 times the level (that user specified) minus 1, which huge iteration. However, \texttt{R} is very slow on looping. Therefore it is necessary to write a vectorize version for \texttt{filledcontour()} in \texttt{R}. In Figure \ref{figure8}, the example of Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore there are at most 108360 polygons that we need to consider.
 
 \chapter{Integrate to \texttt{gridGraphics} package}
 \section{Integrate \texttt{persp()}}
