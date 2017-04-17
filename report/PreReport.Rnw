@@ -25,18 +25,21 @@ A graph that is drawn using grid can been edited in many more ways than a graph 
 \section{The \texttt{gridGraphics} package}
 \texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. \\
 
-The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates the plot using grid so that the user may edited the plot in more ways than they can with the original plot drawn by basic graphic package.\\
+The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates the plot using grid so that the user may edit the plot in more ways than they can with the original plot drawn by basic graphic package.\\
 
-The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with grid.
-<<R1, echo=TRUE, eval = TRUE>>=
+The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with grid, see Figure \ref{figure1}
+<<R1, echo=FALSE, eval = TRUE>>=
 pdf("figure/report_basic_demo_%0d.pdf", onefile=FALSE)
 dev.control("enable")
+@
+<<R2>>=
 set.seed(110)
 x = runif(25)
 y = runif(25)
 plot(x,y, pch = 16)
 grid.echo()
 @
+
 \newpage
 \begin{figure}[h]
 \begin{center}
@@ -55,7 +58,7 @@ grid.ls()
 dev.off()
 @
 
-As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \texttt{grid}. There is one element called \textit{graphics-plot-1-bottom-axis-labels-1} which represents the labels of the bottom axis. In \texttt{grid}, there are several functions that can be used to manipulate this grob. \\
+As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \texttt{grid}. There is one element called \textit{graphics-plot-1-bottom-axis-labels-1} which represents the labels of the bottom axis. In \texttt{grid}, there are several functions that can be used to manipulate this grob. See Figure \ref{figure2} \\
 
 For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.
 <<R6.1,eval = TRUE, echo=FALSE>>=
@@ -79,11 +82,11 @@ dev.off()
 \begin{center}
   \includegraphics[height = 7cm, width = 7cm]{figure/report_basic_demo_4.pdf}
   \caption{The angle and the color of the bottom and left axis of the previous plot have been changed by 30 degrees and orange}
-  	\label{figure3}
+  	\label{figure2}
 \end{center}
 \end{figure}
 \section{The problem}
-The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is \texttt{persp()} which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. 
+The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is \texttt{persp()} which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. See Figure \ref{figure3}.
 <<R7.1, eval = FALSE, echo = FALSE>>=
 pdf("figure/report_fill_%0d.pdf", onefile=FALSE)
 dev.control("enable")
@@ -102,12 +105,12 @@ dev.off()
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_fill_1}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_fill_2}
   \caption{The left plot been drawn by using \texttt{filled.contour} and the right plot been redrawn by calling \texttt{grid.echo()}. There is a "blank" page on the right plot because the grid.echo cannot emulate filled.contour()}
-  	\label{figure4}
+  	\label{figure3}
 \end{center}
 \end{figure}
 
 \section{Aim of this project}
-The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and Level (Contour) Plots, \texttt{filled.contour()} into \texttt{grid} package. However, these two functions are written by C, which is difficult for debugging and tracking. The solution of this paper as follows: 
+The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and Level (Contour) Plots, \texttt{filled.contour()} using the \texttt{grid} package. However, these two functions are written in C, as part of the core \texttt{R} source code. This means that a normal \texttt{R} user or developer cannot modify the code. Also, the \texttt{C} code is stractured so that the normal \texttt{R} user or developer cannot separately call the \texttt{C} code.The solution of this paper as follows: 
 \begin{enumerate}
   \item Emulate the \texttt{persp()} function on \texttt{grid} separate from the \texttt{gridGraphics} package (standalone):
     \begin{enumerate}
@@ -124,11 +127,9 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
 
 
 \chapter{The graphics engine display list}
-The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis.\\
+The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See Figure\ref{figure4}.\\
 
-This information is called the graphics engine display list. In this paper, we use this graphics engine display list to replicate the \texttt{persp()} plot and texttt{filled.contour()} plot using grid.\\
-
-The \texttt{recordPlot()} function can be used to access the graphics engine display list, the \texttt{recordPlot()} function been used. This function saves the plot in an R object. 
+This information is called the graphics engine display list. In this paper, we use this graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list, the \texttt{recordPlot()} function been used. This function saves the plot in an R object. 
 <<R8.1, echo = FALSE>>=
 pdf("figure/report_3.pdf", onefile=FALSE)
 dev.control("enable")
@@ -319,19 +320,19 @@ dev.off()
 \subsection{Lighting}
 The other main benefit supported by \texttt{persp()} is the shading. It shades the surface by assuming the surface is being illuminated from a given direction.(light source)\\
 
-In \texttt{persp()}, the main parameters that user needs to specify for producing a shaded perspective plot is: \textit{ltheta}, \textit{lphi} and \textit{shade}.\\
+In \texttt{persp()}, the main parameters that the user needs to specify for producing a shaded perspective plot is: \textit{ltheta}, \textit{lphi} and \textit{shade}.\\
 
-\textit{ltheta} and \textit{lphi} are used for setting up the direction of the light source. In particular, \textit{ltheta} specified the angle in z direction, \textit{lphi} specified the angle in x direction. \\
+\textit{ltheta} and \textit{lphi} are used for setting up the direction of the light source. In particular, \textit{ltheta} specifies the angle in the z direction, \textit{lphi} specifies the angle in the x direction. \\
 
-\textit{shade} is the parameter that specified the shade at each facets of the surface, the shades will compute as follows:
+\textit{shade} is the parameter that specifies the shade at each facets of the surface, and the shades will be computed as follows:
 \begin{equation}
 \big(\frac{1 + d}{2}\big)^{shade}
 \end{equation}
-Where \textit{d} is the dot product of the unit vector normal to each of the facet(\textit{u}) and the unit vector of the direction of the light(\textit{v}). \\
+Where \textit{d} is the dot product of the unit vector normal to each facet (\textit{u}) and the unit vector of the direction of the light(\textit{v}). \\
 
-The color of each facet will be calculated by the color that recored from the graphics engine display list multiply by the \textbf{shade}. Finally, the surface been drawn by filling the colors for every facet.\\
+The color of each facet will be calculated by the color that is recored from the graphics engine display list multiplied by the \textbf{shade}. Finally, the surface is drawn by filling the colors for every facet.\\
 
-If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker, the brightness and darkness will depend on the value of the \textbf{shade} if shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will close to 1. Therefore, it will look similar to non-shading plot. Simiarlly, if shade gets larger, the term close to 0 and the plot gets darker.
+If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker. The brightness and darkness will depend on the value of the \textbf{shade}. If shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 1. Therefore, it will look similar to non-shading plot. Similarly, if the shade gets larger, the term close to 0 and the plot gets darker.
 <<lighting_1.settup, eval = TRUE, echo = FALSE>>=
 pdf("figure/Lighting_%0d.pdf", onefile=FALSE)
 dev.control("enable")
@@ -359,10 +360,10 @@ dev.off()
 \end{figure}
 
 \subsection{Difference beween \texttt{C} and \texttt{R}}
-As we know, most base functions of \texttt{R} are been written by \texttt{C} include \texttt{persp} and \texttt{fill.contour}. Although the structure of \texttt{C} code is quite similar to \texttt{R} code in some special case, there are some \texttt{C} code structures which behave completely different to \texttt{R}, therefore translate \texttt{C} code to \texttt{R} code is not just "copy-and-paste", even just doing direct translation.\\
+Many functions in \texttt{R} call \texttt{C} code to do a lot of the work.  This is the case for \texttt{persp()} and \texttt{filled.contour()}. Although the structure of \texttt{C} code is quite similar to \texttt{R} code in some special cases, there are some \texttt{C} code structures which behave completely different to \texttt{R}, therefore translating \texttt{C} code to \texttt{R} code is not just "copy-and-paste".\\
 
 \subsubsection{Pointers}
-One main data structure in \texttt{C} is the pointers, which is a type of reference that records the address/location of a global object or a local variable in a function. Pointers can be manipulated by using assignment or pointer arithmetic.
+One main data structure in \texttt{C} is the pointer, which is a type of reference that records the address/location of a global object or a local variable in a function. Pointers can be manipulated by using assignment or pointer arithmetic.
 <<C_demo_1, eval = FALSE, echo = TRUE>>=
 # static int LimitCheck(double *lim, double *c, double *s)
 # {
@@ -373,9 +374,9 @@ One main data structure in \texttt{C} is the pointers, which is a type of refere
 #     return 1;
 # }
 @
-The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multifying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{*c} and \texttt{s*} are the pointer which will pointing to the mechine memory of \texttt{s} and \texttt{c} and multify them.\\
+The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multiplying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{c*} and \texttt{s*} are the pointer which will point to the machine memory of \texttt{s} and \texttt{c} and multify them.\\
 
-However, this process cannot be reproduced on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multify \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as xs ad ys for further calculation.
+However, this process cannot be reproduced on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multiply \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as \texttt{xs} ad \texttt{ys} for further calculation.
 <<C_demo_2, eval = FALSE, echo = TRUE>>=
 # LimitCheck = function ( lim ) {
 #     s = 0.5 * abs(lim[2] - lim[1])
@@ -729,6 +730,31 @@ DrawFacets(...)
 upViewport()
 upViewport(depth)
 @
+
+The next problem will be the merge the temporary viewport into the \texttt{gridGraphics} viewport tree to make sure all the features(such as points and lines are added afther perspective plots is drawn) are drawn in the correct viewport. Although the scales are been fixed, other features have no information about the temporary viewport. On the other word, these feathers are drawn in the viewport that \texttt{gridGraphics} creates rather than drawn in the temporary viewport. One example (see Figure \ref{}) shows that, a Rosette shape ring is drawn above the surface of tour(left-plot). Then we redraw the left-plot on \texttt{grid} by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot).
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/gridGraphics_persp_demo_viewport2_1.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/gridGraphics_persp_demo_viewport2_2.pdf}
+  \caption{A Rosette shape ring added to the tour(left-plot) on \texttt{graphics}, the right-plot reproduced the left-plot by \texttt{grid,echo()}. Althought the tour are identical, the Rosette shape ring is on the incorrect location.}
+  	\label{figure8}
+\end{center}
+\end{figure}
+
+The final problem will be decide whether allows the concepets are drawn outside the plot region or not . The example (see figure \ref{}) shows the pervious tour surface draw over the limit of the box. The left-plot is drawn by \texttt{graphics} which is the behaviours that we need to reproduce on \texttt{grid}. In \texttt{persp()}, there are three concepts are been drawn, the surface of perspective plot, the box that contains the surface and the axes plus the labels of axes. By default, \texttt{graphics} draw the surface by setting \texttt{clipping = 'on'}. On the other word, the surface will not exceed the limit of the plot region. However, the box and the axes may be drawn outside the plot region if it is necessary. Alternatively, the right plot is drawn by \texttt{grid} which indicates compeletely result comparing with the left plot(the surface is drawn over the plot region but the axes is not drawn outside the plot region). Due to the perpose of this paper, it is necessary to make sure the plots as identical as possible.
+Solving this problem by definding 
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/gridGraphics_persp_demo_viewport3_1.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/gridGraphics_persp_demo_viewport3_2.pdf}
+  \caption{A Rosette shape ring added to the tour(left-plot) on \texttt{graphics}, the right-plot reproduced the left-plot by \texttt{grid,echo()}. Althought the tour are identical, the Rosette shape ring is on the incorrect location.}
+  	\label{figure8}
+\end{center}
+\end{figure}
+
+
 
 \section{Integrate \texttt{filled.contour()}}
 
