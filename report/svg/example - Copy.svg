@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO8859-1"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="672px" height="672px" viewBox="0 0 672 672" version="1.1">
   <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
-    <gridsvg:generator name="gridSVG" version="1.5-0" time="2017-04-20 22:10:11"/>
+    <gridsvg:generator name="gridSVG" version="1.5-0" time="2017-04-20 21:54:54"/>
     <gridsvg:argument name="name" value="example.svg"/>
     <gridsvg:argument name="exportCoords" value="none"/>
     <gridsvg:argument name="exportMappings" value="none"/>
@@ -133,221 +133,221 @@
           <g id="graphics-root::graphics-inner::graphics-figure-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath)">
             <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.4">
               <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.2">
-                <g id="GRID.text.7538.1">
-                  <g id="GRID.text.7538.1.1" transform="translate(295.58, 164.89)" stroke-width="0.1">
-                    <g id="GRID.text.7538.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7538.1.1.text" transform="rotate(12.98)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
-                        <tspan id="GRID.text.7538.1.1.tspan.1" dy="6.5" x="0">x</tspan>
+                <g id="GRID.text.6882.1">
+                  <g id="GRID.text.6882.1.1" transform="translate(295.58, 164.89)" stroke-width="0.1">
+                    <g id="GRID.text.6882.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6882.1.1.text" transform="rotate(12.98)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
+                        <tspan id="GRID.text.6882.1.1.tspan.1" dy="6.5" x="0">x</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7539.1">
-                  <polyline id="GRID.lines.7539.1.1" points="129.54,256.26 121.78,244.47" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6883.1">
+                  <polyline id="GRID.lines.6883.1.1" points="129.54,256.26 121.78,244.47" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7540.1">
-                  <g id="GRID.text.7540.1.1" transform="translate(113.81, 232.37)" stroke-width="0.1">
-                    <g id="GRID.text.7540.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7540.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7540.1.1.tspan.1" dy="6.5" x="0">-10</tspan>
+                <g id="GRID.text.6884.1">
+                  <g id="GRID.text.6884.1.1" transform="translate(113.81, 232.37)" stroke-width="0.1">
+                    <g id="GRID.text.6884.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6884.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6884.1.1.tspan.1" dy="6.5" x="0">-10</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7541.1">
-                  <polyline id="GRID.lines.7541.1.1" points="218.55,236.44 211.6,223.77" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6885.1">
+                  <polyline id="GRID.lines.6885.1.1" points="218.55,236.44 211.6,223.77" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7542.1">
-                  <g id="GRID.text.7542.1.1" transform="translate(204.46, 210.75)" stroke-width="0.1">
-                    <g id="GRID.text.7542.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7542.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7542.1.1.tspan.1" dy="6.5" x="0">-5</tspan>
+                <g id="GRID.text.6886.1">
+                  <g id="GRID.text.6886.1.1" transform="translate(204.46, 210.75)" stroke-width="0.1">
+                    <g id="GRID.text.6886.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6886.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6886.1.1.tspan.1" dy="6.5" x="0">-5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7543.1">
-                  <polyline id="GRID.lines.7543.1.1" points="317.03,214.51 311.12,200.84" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6887.1">
+                  <polyline id="GRID.lines.6887.1.1" points="317.03,214.51 311.12,200.84" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7544.1">
-                  <g id="GRID.text.7544.1.1" transform="translate(305.04, 186.77)" stroke-width="0.1">
-                    <g id="GRID.text.7544.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7544.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7544.1.1.tspan.1" dy="6.5" x="0">0</tspan>
+                <g id="GRID.text.6888.1">
+                  <g id="GRID.text.6888.1.1" transform="translate(305.04, 186.77)" stroke-width="0.1">
+                    <g id="GRID.text.6888.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6888.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6888.1.1.tspan.1" dy="6.5" x="0">0</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7545.1">
-                  <polyline id="GRID.lines.7545.1.1" points="426.58,190.11 422,175.29" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6889.1">
+                  <polyline id="GRID.lines.6889.1.1" points="426.58,190.11 422,175.29" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7546.1">
-                  <g id="GRID.text.7546.1.1" transform="translate(417.27, 160.02)" stroke-width="0.1">
-                    <g id="GRID.text.7546.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7546.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7546.1.1.tspan.1" dy="6.5" x="0">5</tspan>
+                <g id="GRID.text.6890.1">
+                  <g id="GRID.text.6890.1.1" transform="translate(417.27, 160.02)" stroke-width="0.1">
+                    <g id="GRID.text.6890.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6890.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6890.1.1.tspan.1" dy="6.5" x="0">5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7547.1">
-                  <polyline id="GRID.lines.7547.1.1" points="549.18,162.8 546.29,146.65" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6891.1">
+                  <polyline id="GRID.lines.6891.1.1" points="549.18,162.8 546.29,146.65" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7548.1">
-                  <g id="GRID.text.7548.1.1" transform="translate(543.31, 129.97)" stroke-width="0.1">
-                    <g id="GRID.text.7548.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7548.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7548.1.1.tspan.1" dy="6.5" x="0">10</tspan>
+                <g id="GRID.text.6892.1">
+                  <g id="GRID.text.6892.1.1" transform="translate(543.31, 129.97)" stroke-width="0.1">
+                    <g id="GRID.text.6892.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6892.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6892.1.1.tspan.1" dy="6.5" x="0">10</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.text.7549.1">
-                  <g id="GRID.text.7549.1.1" transform="translate(617.71, 257.5)" stroke-width="0.1">
-                    <g id="GRID.text.7549.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7549.1.1.text" transform="rotate(-78.6)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
-                        <tspan id="GRID.text.7549.1.1.tspan.1" dy="6.5" x="0">y</tspan>
+                <g id="GRID.text.6893.1">
+                  <g id="GRID.text.6893.1.1" transform="translate(617.71, 257.5)" stroke-width="0.1">
+                    <g id="GRID.text.6893.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6893.1.1.text" transform="rotate(-78.6)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
+                        <tspan id="GRID.text.6893.1.1.tspan.1" dy="6.5" x="0">y</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7550.1">
-                  <polyline id="GRID.lines.7550.1.1" points="549.18,162.8 564.23,152.94" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6894.1">
+                  <polyline id="GRID.lines.6894.1.1" points="549.18,162.8 564.23,152.94" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7551.1">
-                  <g id="GRID.text.7551.1.1" transform="translate(579.39, 143.01)" stroke-width="0.1">
-                    <g id="GRID.text.7551.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7551.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7551.1.1.tspan.1" dy="6.5" x="0">-10</tspan>
+                <g id="GRID.text.6895.1">
+                  <g id="GRID.text.6895.1.1" transform="translate(579.39, 143.01)" stroke-width="0.1">
+                    <g id="GRID.text.6895.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6895.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6895.1.1.tspan.1" dy="6.5" x="0">-10</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7552.1">
-                  <polyline id="GRID.lines.7552.1.1" points="565.35,231.11 578.33,222.84" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6896.1">
+                  <polyline id="GRID.lines.6896.1.1" points="565.35,231.11 578.33,222.84" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7553.1">
-                  <g id="GRID.text.7553.1.1" transform="translate(591.38, 214.51)" stroke-width="0.1">
-                    <g id="GRID.text.7553.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7553.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7553.1.1.tspan.1" dy="6.5" x="0">-5</tspan>
+                <g id="GRID.text.6897.1">
+                  <g id="GRID.text.6897.1.1" transform="translate(591.38, 214.51)" stroke-width="0.1">
+                    <g id="GRID.text.6897.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6897.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6897.1.1.tspan.1" dy="6.5" x="0">-5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7554.1">
-                  <polyline id="GRID.lines.7554.1.1" points="577.54,282.58 588.94,275.46" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6898.1">
+                  <polyline id="GRID.lines.6898.1.1" points="577.54,282.58 588.94,275.46" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7555.1">
-                  <g id="GRID.text.7555.1.1" transform="translate(600.41, 268.3)" stroke-width="0.1">
-                    <g id="GRID.text.7555.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7555.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7555.1.1.tspan.1" dy="6.5" x="0">0</tspan>
+                <g id="GRID.text.6899.1">
+                  <g id="GRID.text.6899.1.1" transform="translate(600.41, 268.3)" stroke-width="0.1">
+                    <g id="GRID.text.6899.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6899.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6899.1.1.tspan.1" dy="6.5" x="0">0</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7556.1">
-                  <polyline id="GRID.lines.7556.1.1" points="587.05,322.76 597.22,316.51" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6900.1">
+                  <polyline id="GRID.lines.6900.1.1" points="587.05,322.76 597.22,316.51" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7557.1">
-                  <g id="GRID.text.7557.1.1" transform="translate(607.44, 310.23)" stroke-width="0.1">
-                    <g id="GRID.text.7557.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7557.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7557.1.1.tspan.1" dy="6.5" x="0">5</tspan>
+                <g id="GRID.text.6901.1">
+                  <g id="GRID.text.6901.1.1" transform="translate(607.44, 310.23)" stroke-width="0.1">
+                    <g id="GRID.text.6901.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6901.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6901.1.1.tspan.1" dy="6.5" x="0">5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7558.1">
-                  <polyline id="GRID.lines.7558.1.1" points="594.68,354.98 603.86,349.42" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6902.1">
+                  <polyline id="GRID.lines.6902.1.1" points="594.68,354.98 603.86,349.42" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7559.1">
-                  <g id="GRID.text.7559.1.1" transform="translate(613.08, 343.83)" stroke-width="0.1">
-                    <g id="GRID.text.7559.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7559.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7559.1.1.tspan.1" dy="6.5" x="0">10</tspan>
+                <g id="GRID.text.6903.1">
+                  <g id="GRID.text.6903.1.1" transform="translate(613.08, 343.83)" stroke-width="0.1">
+                    <g id="GRID.text.6903.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6903.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6903.1.1.tspan.1" dy="6.5" x="0">10</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.text.7560.1">
-                  <g id="GRID.text.7560.1.1" transform="translate(40.37, 354.87)" stroke-width="0.1">
-                    <g id="GRID.text.7560.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7560.1.1.text" transform="rotate(80.81)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
-                        <tspan id="GRID.text.7560.1.1.tspan.1" dy="6.5" x="0">z</tspan>
+                <g id="GRID.text.6904.1">
+                  <g id="GRID.text.6904.1.1" transform="translate(40.37, 354.87)" stroke-width="0.1">
+                    <g id="GRID.text.6904.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6904.1.1.text" transform="rotate(80.81)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
+                        <tspan id="GRID.text.6904.1.1.tspan.1" dy="6.5" x="0">z</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7561.1">
-                  <polyline id="GRID.lines.7561.1.1" points="125.58,282.51 106.42,278.72" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6905.1">
+                  <polyline id="GRID.lines.6905.1.1" points="125.58,282.51 106.42,278.72" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7562.1">
-                  <g id="GRID.text.7562.1.1" transform="translate(86.86, 274.85)" stroke-width="0.1">
-                    <g id="GRID.text.7562.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7562.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7562.1.1.tspan.1" dy="6.5" x="0">-1.5</tspan>
+                <g id="GRID.text.6906.1">
+                  <g id="GRID.text.6906.1.1" transform="translate(86.86, 274.85)" stroke-width="0.1">
+                    <g id="GRID.text.6906.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6906.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6906.1.1.tspan.1" dy="6.5" x="0">-1.5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7563.1">
-                  <polyline id="GRID.lines.7563.1.1" points="120.69,314.95 101.13,311.44" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6907.1">
+                  <polyline id="GRID.lines.6907.1.1" points="120.69,314.95 101.13,311.44" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7564.1">
-                  <g id="GRID.text.7564.1.1" transform="translate(81.15, 307.85)" stroke-width="0.1">
-                    <g id="GRID.text.7564.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7564.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7564.1.1.tspan.1" dy="6.5" x="0">-1.0</tspan>
+                <g id="GRID.text.6908.1">
+                  <g id="GRID.text.6908.1.1" transform="translate(81.15, 307.85)" stroke-width="0.1">
+                    <g id="GRID.text.6908.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6908.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6908.1.1.tspan.1" dy="6.5" x="0">-1.0</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7565.1">
-                  <polyline id="GRID.lines.7565.1.1" points="115.62,348.59 95.64,345.38" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6909.1">
+                  <polyline id="GRID.lines.6909.1.1" points="115.62,348.59 95.64,345.38" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7566.1">
-                  <g id="GRID.text.7566.1.1" transform="translate(75.23, 342.09)" stroke-width="0.1">
-                    <g id="GRID.text.7566.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7566.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7566.1.1.tspan.1" dy="6.5" x="0">-0.5</tspan>
+                <g id="GRID.text.6910.1">
+                  <g id="GRID.text.6910.1.1" transform="translate(75.23, 342.09)" stroke-width="0.1">
+                    <g id="GRID.text.6910.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6910.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6910.1.1.tspan.1" dy="6.5" x="0">-0.5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7567.1">
-                  <polyline id="GRID.lines.7567.1.1" points="110.36,383.5 89.95,380.6" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6911.1">
+                  <polyline id="GRID.lines.6911.1.1" points="110.36,383.5 89.95,380.6" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7568.1">
-                  <g id="GRID.text.7568.1.1" transform="translate(69.08, 377.64)" stroke-width="0.1">
-                    <g id="GRID.text.7568.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7568.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7568.1.1.tspan.1" dy="6.5" x="0">0.0</tspan>
+                <g id="GRID.text.6912.1">
+                  <g id="GRID.text.6912.1.1" transform="translate(69.08, 377.64)" stroke-width="0.1">
+                    <g id="GRID.text.6912.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6912.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6912.1.1.tspan.1" dy="6.5" x="0">0.0</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7569.1">
-                  <polyline id="GRID.lines.7569.1.1" points="104.9,419.74 84.03,417.19" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6913.1">
+                  <polyline id="GRID.lines.6913.1.1" points="104.9,419.74 84.03,417.19" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7570.1">
-                  <g id="GRID.text.7570.1.1" transform="translate(62.69, 414.59)" stroke-width="0.1">
-                    <g id="GRID.text.7570.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7570.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7570.1.1.tspan.1" dy="6.5" x="0">0.5</tspan>
+                <g id="GRID.text.6914.1">
+                  <g id="GRID.text.6914.1.1" transform="translate(62.69, 414.59)" stroke-width="0.1">
+                    <g id="GRID.text.6914.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6914.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6914.1.1.tspan.1" dy="6.5" x="0">0.5</tspan>
                       </text>
                     </g>
                   </g>
                 </g>
-                <g id="GRID.lines.7571.1">
-                  <polyline id="GRID.lines.7571.1.1" points="99.23,457.4 77.88,455.23" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                <g id="GRID.lines.6915.1">
+                  <polyline id="GRID.lines.6915.1.1" points="99.23,457.4 77.88,455.23" stroke-width="1" stroke-dasharray="none" fill="none"/>
                 </g>
-                <g id="GRID.text.7572.1">
-                  <g id="GRID.text.7572.1.1" transform="translate(56.04, 453.01)" stroke-width="0.1">
-                    <g id="GRID.text.7572.1.1.scale" transform="scale(1, -1)">
-                      <text x="0" y="0" id="GRID.text.7572.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
-                        <tspan id="GRID.text.7572.1.1.tspan.1" dy="6.5" x="0">1.0</tspan>
+                <g id="GRID.text.6916.1">
+                  <g id="GRID.text.6916.1.1" transform="translate(56.04, 453.01)" stroke-width="0.1">
+                    <g id="GRID.text.6916.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.6916.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.6916.1.1.tspan.1" dy="6.5" x="0">1.0</tspan>
                       </text>
                     </g>
                   </g>
@@ -367,32 +367,32 @@
           <g id="graphics-root::graphics-inner::graphics-figure-1-clip.6" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.6.clipPath)">
             <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.5">
               <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.3">
-                <g id="GRID.lines.7573.1">
-                  <polyline id="GRID.lines.7573.1.1" points="314.41,391.94 594.68,354.98" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6917.1">
+                  <polyline id="GRID.lines.6917.1.1" points="314.41,391.94 594.68,354.98" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7574.1">
-                  <polyline id="GRID.lines.7574.1.1" points="594.68,354.98 611.2,509.65" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6918.1">
+                  <polyline id="GRID.lines.6918.1.1" points="594.68,354.98 611.2,509.65" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7575.1">
-                  <polyline id="GRID.lines.7575.1.1" points="611.2,509.65 308.59,528.4" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6919.1">
+                  <polyline id="GRID.lines.6919.1.1" points="611.2,509.65 308.59,528.4" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7576.1">
-                  <polyline id="GRID.lines.7576.1.1" points="308.59,528.4 314.41,391.94" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6920.1">
+                  <polyline id="GRID.lines.6920.1.1" points="308.59,528.4 314.41,391.94" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7577.1">
-                  <polyline id="GRID.lines.7577.1.1" points="129.54,256.26 314.41,391.94" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6921.1">
+                  <polyline id="GRID.lines.6921.1.1" points="129.54,256.26 314.41,391.94" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7578.1">
-                  <polyline id="GRID.lines.7578.1.1" points="308.59,528.4 99.2,457.59" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6922.1">
+                  <polyline id="GRID.lines.6922.1.1" points="308.59,528.4 99.2,457.59" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7579.1">
-                  <polyline id="GRID.lines.7579.1.1" points="99.2,457.59 129.54,256.26" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6923.1">
+                  <polyline id="GRID.lines.6923.1.1" points="99.2,457.59 129.54,256.26" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7580.1">
-                  <polyline id="GRID.lines.7580.1.1" points="129.54,256.26 549.18,162.8" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6924.1">
+                  <polyline id="GRID.lines.6924.1.1" points="129.54,256.26 549.18,162.8" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7581.1">
-                  <polyline id="GRID.lines.7581.1.1" points="549.18,162.8 594.68,354.98" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6925.1">
+                  <polyline id="GRID.lines.6925.1.1" points="549.18,162.8 594.68,354.98" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
               </g>
             </g>
@@ -410,22 +410,22 @@
             <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5.clipPath)">
               <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0A.2">
                 <g id="polygon.1">
-                  <polygon id="polygon.1.1" points="278.26,417.9 345.79,511 377.2,431.33 309.22,513.71" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.2" points="345.79,511 422.87,346.86 446.86,440.25 377.2,431.33" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.3" points="422.87,346.86 511.27,499.49 520.6,415.82 446.86,440.25" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.4" points="235.19,411.44 315.39,326.01 345.79,511 278.26,417.9" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.5" points="511.27,499.49 593.02,379.88 609.41,492.85 520.6,415.82" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.6" points="315.39,326.01 395.57,487.56 422.87,346.86 345.79,511" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.7" points="395.57,487.56 482.65,298.3 511.27,499.49 422.87,346.86" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.8" points="185.17,362.24 260.07,473.95 315.39,326.01 235.19,411.44" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.9" points="482.65,298.3 586.1,366.87 593.02,379.88 511.27,499.49" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.10" points="260.07,473.95 361.31,269.88 395.57,487.56 315.39,326.01" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.11" points="361.31,269.88 465.62,454.97 482.65,298.3 395.57,487.56" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.12" points="102.58,435.17 211.51,305.86 260.07,473.95 185.17,362.24" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.13" points="465.62,454.97 572.2,301.25 586.1,366.87 482.65,298.3" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.14" points="211.51,305.86 312.61,311.51 361.31,269.88 260.07,473.95" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.15" points="312.61,311.51 427.96,265.62 465.62,454.97 361.31,269.88" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
-                  <polygon id="polygon.1.16" points="427.96,265.62 568.93,377.78 572.2,301.25 465.62,454.97" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id="polygon.1.1" points="278.26,417.9 345.79,511 377.2,431.33 309.22,513.71" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.1)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.2" points="345.79,511 422.87,346.86 446.86,440.25 377.2,431.33" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.2)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.3" points="422.87,346.86 511.27,499.49 520.6,415.82 446.86,440.25" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.3)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.4" points="235.19,411.44 315.39,326.01 345.79,511 278.26,417.9" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.4)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.5" points="511.27,499.49 593.02,379.88 609.41,492.85 520.6,415.82" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.5)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.6" points="315.39,326.01 395.57,487.56 422.87,346.86 345.79,511" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.6)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.7" points="395.57,487.56 482.65,298.3 511.27,499.49 422.87,346.86" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.7)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.8" points="185.17,362.24 260.07,473.95 315.39,326.01 235.19,411.44" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.8)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.9" points="482.65,298.3 586.1,366.87 593.02,379.88 511.27,499.49" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.9)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.10" points="260.07,473.95 361.31,269.88 395.57,487.56 315.39,326.01" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.10)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.11" points="361.31,269.88 465.62,454.97 482.65,298.3 395.57,487.56" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.11)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.12" points="102.58,435.17 211.51,305.86 260.07,473.95 185.17,362.24" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.12)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.13" points="465.62,454.97 572.2,301.25 586.1,366.87 482.65,298.3" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.13)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.14" points="211.51,305.86 312.61,311.51 361.31,269.88 260.07,473.95" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.14)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.15" points="312.61,311.51 427.96,265.62 465.62,454.97 361.31,269.88" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.15)" onmouseout="dim(1.1)"/>
+                  <polygon id="polygon.1.16" points="427.96,265.62 568.93,377.78 572.2,301.25 465.62,454.97" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1" onmouseover="highlight(1.16)" onmouseout="dim(1.1)"/>
                 </g>
               </g>
             </g>
@@ -442,14 +442,14 @@
           <g id="graphics-root::graphics-inner::graphics-figure-1-clip.7" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.7.clipPath)">
             <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.6">
               <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.4">
-                <g id="GRID.lines.7582.1">
-                  <polyline id="GRID.lines.7582.1.1" points="99.2,457.59 571.47,405.48" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6926.1">
+                  <polyline id="GRID.lines.6926.1.1" points="99.2,457.59 571.47,405.48" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7583.1">
-                  <polyline id="GRID.lines.7583.1.1" points="571.47,405.48 549.18,162.8" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6927.1">
+                  <polyline id="GRID.lines.6927.1.1" points="571.47,405.48 549.18,162.8" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
                 </g>
-                <g id="GRID.lines.7584.1">
-                  <polyline id="GRID.lines.7584.1.1" points="571.47,405.48 611.2,509.65" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
+                <g id="GRID.lines.6928.1">
+                  <polyline id="GRID.lines.6928.1.1" points="571.47,405.48 611.2,509.65" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
                 </g>
               </g>
             </g>
@@ -600,7 +600,7 @@
           </g>
         </g>
       </g>
-      <script type="application/ecmascript" id="GRID.script.grob.7585" xlink:href="example.js"/>
+      <script type="application/ecmascript" id="GRID.script.grob.6929" xlink:href="example.js"/>
     </g>
   </g>
 </svg>

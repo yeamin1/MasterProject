@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="CP936"?>
+<?xml version="1.0" encoding="ISO8859-1"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="672px" height="672px" viewBox="0 0 672 672" version="1.1">
   <metadata xmlns:gridsvg="http://www.stat.auckland.ac.nz/~paul/R/gridSVG/">
-    <gridsvg:generator name="gridSVG" version="1.5-0" time="2017-04-20 16:01:50"/>
+    <gridsvg:generator name="gridSVG" version="1.5-0" time="2017-04-20 20:03:25"/>
     <gridsvg:argument name="name" value="huber.svg"/>
     <gridsvg:argument name="exportCoords" value="none"/>
     <gridsvg:argument name="exportMappings" value="none"/>
@@ -19,310 +19,587 @@
   </metadata>
   <g transform="translate(0, 672) scale(1, -1)">
     <g id="gridSVG" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" font-size="16" font-family="Helvetica, Arial, FreeSans, Liberation Sans, Nimbus Sans L, sans-serif" opacity="1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-opacity="1" fill-opacity="0" font-weight="normal" font-style="normal">
-      <g id="plot_01.background.1">
-        <rect id="plot_01.background.1.1" x="0" y="0" width="672" height="672" fill="none" stroke="none" stroke-opacity="0" fill-opacity="0"/>
+      <g id="graphics-root.1"/>
+      <g id="graphics-root.2">
+        <g id="graphics-root::graphics-inner.1"/>
       </g>
-      <g id="plot_01.toplevel.vp.1" font-size="16">
-        <g id="plot_01.toplevel.vp::plot_01.xlab.vp.1">
-          <g id="plot_01.xlab.1">
-            <g id="plot_01.xlab.1.1" transform="translate(351.5, 22.5)" stroke-width="0.1">
-              <g id="plot_01.xlab.1.1.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.xlab.1.1.text" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="16" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.xlab.1.1.tspan.1" dy="6.5" x="0">PC1</tspan>
-                </text>
-              </g>
+      <g id="graphics-root.3">
+        <g id="graphics-root::graphics-inner.2">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.1"/>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.1.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.1" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.1.clipPath)"/>
+        </g>
+      </g>
+      <g id="graphics-root.4">
+        <g id="graphics-root::graphics-inner.3">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.2">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.1"/>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1.clipPath">
+                <rect x="78.72" y="97.92" width="552.96" height="495.36" fill="none" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.1.clipPath)"/>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.2.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.2" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.2.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.1"/>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.5">
+        <g id="graphics-root::graphics-inner.4">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.3">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.2">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-0.1"/>
+            </g>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2.clipPath">
+                <rect x="78.72" y="97.92" width="552.96" height="495.36" fill="none" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.2.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0.1"/>
+            </g>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.3.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.3" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.3.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.2">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0.1"/>
             </g>
           </g>
         </g>
-        <g id="plot_01.toplevel.vp::plot_01.ylab.vp.1">
-          <g id="plot_01.ylab.1">
-            <g id="plot_01.ylab.1.1" transform="translate(14.5, 331.16)" stroke-width="0.1">
-              <g id="plot_01.ylab.1.1.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ylab.1.1.text" transform="rotate(-90)" text-anchor="middle" opacity="1" stroke="rgb(0,0,0)" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="16" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ylab.1.1.tspan.1" dy="6.5" x="0">PC2</tspan>
-                </text>
-              </g>
+      </g>
+      <g id="graphics-root.6">
+        <g id="graphics-root::graphics-inner.5">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.4">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3.clipPath">
+                <rect x="78.72" y="97.92" width="552.96" height="495.36" fill="none" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.3.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0.2"/>
             </g>
           </g>
         </g>
-        <g id="plot_01.toplevel.vp::plot_01.figure.vp.1"/>
-        <defs>
-          <clipPath id="plot_01.toplevel.vp::plot_01.panel.1.1.vp.1.clipPath">
-            <rect x="69.68" y="70.68" width="563.65" height="520.97" fill="none" stroke="none"/>
-          </clipPath>
-        </defs>
-        <g id="plot_01.toplevel.vp::plot_01.panel.1.1.vp.1" clip-path="url(#plot_01.toplevel.vp::plot_01.panel.1.1.vp.1.clipPath)"/>
-        <g id="plot_01.toplevel.vp::plot_01.strip.1.1.off.vp.1">
-          <g id="plot_01.ticks.top.panel.1.1.1">
-            <polyline id="plot_01.ticks.top.panel.1.1.1.1" points="86.62,591.64 86.62,599.2" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.top.panel.1.1.1.2" points="230.03,591.64 230.03,599.2" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.top.panel.1.1.1.3" points="373.44,591.64 373.44,599.2" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.top.panel.1.1.1.4" points="516.86,591.64 516.86,599.2" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-          </g>
-        </g>
-        <g id="plot_01.toplevel.vp::plot_01.strip.left.1.1.off.vp.1">
-          <g id="plot_01.ticks.left.panel.1.1.1">
-            <polyline id="plot_01.ticks.left.panel.1.1.1.1" points="69.68,81.01 62.12,81.01" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.left.panel.1.1.1.2" points="69.68,219.72 62.12,219.72" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.left.panel.1.1.1.3" points="69.68,358.42 62.12,358.42" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.left.panel.1.1.1.4" points="69.68,497.12 62.12,497.12" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-          </g>
-          <g id="plot_01.ticklabels.left.panel.1.1.1">
-            <g id="plot_01.ticklabels.left.panel.1.1.1.1" transform="translate(54.56, 219.72)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.left.panel.1.1.1.1.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.left.panel.1.1.1.1.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.left.panel.1.1.1.1.tspan.1" dy="5.5" x="0">-10</tspan>
-                </text>
-              </g>
+      </g>
+      <g id="graphics-root.7">
+        <g id="graphics-root::graphics-inner.6">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.5">
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1.3">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1::graphics-window-1-0A.1"/>
             </g>
-            <g id="plot_01.ticklabels.left.panel.1.1.1.2" transform="translate(54.56, 358.42)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.left.panel.1.1.1.2.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.left.panel.1.1.1.2.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.left.panel.1.1.1.2.tspan.1" dy="5.5" x="0">0</tspan>
-                </text>
-              </g>
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4.clipPath">
+                <rect x="78.72" y="97.92" width="552.96" height="495.36" fill="none" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.4.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0A.1"/>
             </g>
-            <g id="plot_01.ticklabels.left.panel.1.1.1.3" transform="translate(54.56, 497.12)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.left.panel.1.1.1.3.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.left.panel.1.1.1.3.text" text-anchor="end" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.left.panel.1.1.1.3.tspan.1" dy="5.5" x="0">10</tspan>
-                </text>
-              </g>
+          </g>
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.4.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.4" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.4.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.3">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.1"/>
             </g>
           </g>
         </g>
-        <g id="plot_01.toplevel.vp::plot_01.panel.1.1.off.vp.1">
-          <g id="plot_01.ticks.bottom.panel.1.1.1">
-            <polyline id="plot_01.ticks.bottom.panel.1.1.1.1" points="86.62,70.68 86.62,63.12" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.bottom.panel.1.1.1.2" points="230.03,70.68 230.03,63.12" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.bottom.panel.1.1.1.3" points="373.44,70.68 373.44,63.12" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.bottom.panel.1.1.1.4" points="516.86,70.68 516.86,63.12" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-          </g>
-          <g id="plot_01.ticklabels.bottom.panel.1.1.1">
-            <g id="plot_01.ticklabels.bottom.panel.1.1.1.1" transform="translate(86.62, 55.56)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.bottom.panel.1.1.1.1.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.bottom.panel.1.1.1.1.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.bottom.panel.1.1.1.1.tspan.1" dy="11" x="0">-30</tspan>
-                </text>
-              </g>
-            </g>
-            <g id="plot_01.ticklabels.bottom.panel.1.1.1.2" transform="translate(230.03, 55.56)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.bottom.panel.1.1.1.2.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.bottom.panel.1.1.1.2.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.bottom.panel.1.1.1.2.tspan.1" dy="11" x="0">-20</tspan>
-                </text>
-              </g>
-            </g>
-            <g id="plot_01.ticklabels.bottom.panel.1.1.1.3" transform="translate(373.44, 55.56)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.bottom.panel.1.1.1.3.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.bottom.panel.1.1.1.3.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.bottom.panel.1.1.1.3.tspan.1" dy="11" x="0">-10</tspan>
-                </text>
-              </g>
-            </g>
-            <g id="plot_01.ticklabels.bottom.panel.1.1.1.4" transform="translate(516.86, 55.56)" stroke-width="0.1">
-              <g id="plot_01.ticklabels.bottom.panel.1.1.1.4.scale" transform="scale(1, -1)">
-                <text x="0" y="0" id="plot_01.ticklabels.bottom.panel.1.1.1.4.text" text-anchor="middle" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="12.8" font-weight="normal" font-style="normal">
-                  <tspan id="plot_01.ticklabels.bottom.panel.1.1.1.4.tspan.1" dy="11" x="0">0</tspan>
-                </text>
-              </g>
-            </g>
-          </g>
-          <g id="plot_01.ticks.right.panel.1.1.1">
-            <polyline id="plot_01.ticks.right.panel.1.1.1.1" points="633.32,81.01 640.88,81.01" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.right.panel.1.1.1.2" points="633.32,219.72 640.88,219.72" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.right.panel.1.1.1.3" points="633.32,358.42 640.88,358.42" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-            <polyline id="plot_01.ticks.right.panel.1.1.1.4" points="633.32,497.12 640.88,497.12" stroke="rgb(0,0,0)" opacity="1" stroke-dasharray="none" stroke-width="1" stroke-opacity="1" fill="none"/>
-          </g>
-        </g>
-        <defs>
-          <clipPath id="plot_01.toplevel.vp::plot_01.panel.1.1.vp.2.clipPath">
-            <rect x="69.68" y="70.68" width="563.65" height="520.97" fill="none" stroke="none"/>
-          </clipPath>
-        </defs>
-        <g id="plot_01.toplevel.vp::plot_01.panel.1.1.vp.2" clip-path="url(#plot_01.toplevel.vp::plot_01.panel.1.1.vp.2.clipPath)">
-          <g id="point.2.1">
-            <circle id="point.2.1.1" cx="186.17" cy="522.83" r="3.78" stroke="none" fill="rgb(0,128,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(2.1)" onmouseout="dim(2.1)"/>
-          </g>
-          <g id="point.3.1">
-            <circle id="point.3.1.1" cx="598.71" cy="140.06" r="3.78" stroke="none" fill="rgb(0,128,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(3.1)" onmouseout="dim(3.1)"/>
-          </g>
-          <g id="point.5.1">
-            <circle id="point.5.1.1" cx="104.29" cy="352.49" r="3.78" stroke="none" fill="rgb(0,128,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(5.1)" onmouseout="dim(5.1)"/>
-          </g>
-          <g id="point.6.1">
-            <circle id="point.6.1.1" cx="315.15" cy="189.01" r="3.78" stroke="none" fill="rgb(0,128,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(6.1)" onmouseout="dim(6.1)"/>
-          </g>
-          <g id="point.8.1">
-            <circle id="point.8.1.1" cx="299.45" cy="153.37" r="3.78" stroke="none" fill="rgb(0,128,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(8.1)" onmouseout="dim(8.1)"/>
-          </g>
-          <g id="point.10.1">
-            <circle id="point.10.1.1" cx="395.78" cy="515.44" r="3.78" stroke="none" fill="rgb(0,128,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(10.1)" onmouseout="dim(10.1)"/>
-          </g>
-          <g id="point.1.1">
-            <circle id="point.1.1.1" cx="535.81" cy="102.67" r="3.78" stroke="none" fill="rgb(255,0,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(1.1)" onmouseout="dim(1.1)"/>
-          </g>
-          <g id="point.4.1">
-            <circle id="point.4.1.1" cx="322.66" cy="559.65" r="3.78" stroke="none" fill="rgb(255,0,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(4.1)" onmouseout="dim(4.1)"/>
-          </g>
-          <g id="point.7.1">
-            <circle id="point.7.1.1" cx="145.8" cy="171.95" r="3.78" stroke="none" fill="rgb(255,0,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(7.1)" onmouseout="dim(7.1)"/>
-          </g>
-          <g id="point.9.1">
-            <circle id="point.9.1.1" cx="326.5" cy="420.45" r="3.78" stroke="none" fill="rgb(255,0,255)" stroke-opacity="0" fill-opacity="1" onmouseover="highlight(9.1)" onmouseout="dim(9.1)"/>
-          </g>
-        </g>
-        <g id="plot_01.toplevel.vp::plot_01.panel.1.1.off.vp.2">
-          <g id="plot_01.border.panel.1.1.1">
-            <rect id="plot_01.border.panel.1.1.1.1" x="69.68" y="70.68" width="563.65" height="520.97" stroke="rgb(0,0,0)" stroke-dasharray="none" stroke-width="1" opacity="1" fill="none" stroke-opacity="1" fill-opacity="0"/>
-          </g>
-        </g>
-        <g id="plot_01.toplevel.vp::plot_01.legend.top.vp.1">
-          <g id="plot_01.toplevel.vp::plot_01.legend.top.vp::GRID.VP.177.1">
-            <g id="plot_01.key.frame.1">
-              <g id="plot_01.toplevel.vp::plot_01.legend.top.vp::GRID.VP.177::GRID.VP.178.1">
-                <g id="GRID.cellGrob.1621.1">
-                  <g id="plot_01.key.background.1">
-                    <rect id="plot_01.key.background.1.1" x="212.5" y="622.32" width="278" height="33.68" fill="none" opacity="1" stroke="none" stroke-opacity="0" fill-opacity="0"/>
+      </g>
+      <g id="graphics-root.8">
+        <g id="graphics-root::graphics-inner.7">
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.5.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.4">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.2">
+                <g id="GRID.text.1430.1">
+                  <g id="GRID.text.1430.1.1" transform="translate(295.58, 164.89)" stroke-width="0.1">
+                    <g id="GRID.text.1430.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1430.1.1.text" transform="rotate(12.98)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
+                        <tspan id="GRID.text.1430.1.1.tspan.1" dy="6.5" x="0">x</tspan>
+                      </text>
+                    </g>
                   </g>
                 </g>
-              </g>
-              <g id="plot_01.toplevel.vp::plot_01.legend.top.vp::GRID.VP.177::GRID.VP.179.1">
-                <g id="GRID.cellGrob.1622.1">
-                  <g id="plot_01.key.rect.1.1.1">
-                    <rect id="plot_01.key.rect.1.1.1.1" x="221.5" y="639.16" width="45" height="16.84" opacity="1" fill="rgb(0,128,255)" stroke="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1"/>
+                <g id="GRID.lines.1431.1">
+                  <polyline id="GRID.lines.1431.1.1" points="129.54,256.26 121.78,244.47" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1432.1">
+                  <g id="GRID.text.1432.1.1" transform="translate(113.81, 232.37)" stroke-width="0.1">
+                    <g id="GRID.text.1432.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1432.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1432.1.1.tspan.1" dy="6.5" x="0">-10</tspan>
+                      </text>
+                    </g>
                   </g>
                 </g>
-              </g>
-              <g id="plot_01.toplevel.vp::plot_01.legend.top.vp::GRID.VP.177::GRID.VP.180.1">
-                <g id="GRID.cellGrob.1623.1">
-                  <g id="plot_01.key.rect.1.2.1">
-                    <rect id="plot_01.key.rect.1.2.1.1" x="221.5" y="622.32" width="45" height="16.84" opacity="1" fill="rgb(255,0,255)" stroke="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1"/>
+                <g id="GRID.lines.1433.1">
+                  <polyline id="GRID.lines.1433.1.1" points="218.55,236.44 211.6,223.77" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1434.1">
+                  <g id="GRID.text.1434.1.1" transform="translate(204.46, 210.75)" stroke-width="0.1">
+                    <g id="GRID.text.1434.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1434.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1434.1.1.tspan.1" dy="6.5" x="0">-5</tspan>
+                      </text>
+                    </g>
                   </g>
                 </g>
-              </g>
-              <g id="plot_01.toplevel.vp::plot_01.legend.top.vp::GRID.VP.177::GRID.VP.181.1">
-                <g id="GRID.cellGrob.1624.1">
-                  <g id="plot_01.key.text.2.1.1">
-                    <g id="plot_01.key.text.2.1.1.1" transform="translate(284.5, 647.58)" stroke-width="0.1">
-                      <g id="plot_01.key.text.2.1.1.1.scale" transform="scale(1, -1)">
-                        <text x="0" y="0" id="plot_01.key.text.2.1.1.1.text" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="16" font-weight="normal" font-style="normal">
-                          <tspan id="plot_01.key.text.2.1.1.1.tspan.1" dy="6.5" x="0">Estrogen Receptor Negative</tspan>
-                        </text>
-                      </g>
+                <g id="GRID.lines.1435.1">
+                  <polyline id="GRID.lines.1435.1.1" points="317.03,214.51 311.12,200.84" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1436.1">
+                  <g id="GRID.text.1436.1.1" transform="translate(305.04, 186.77)" stroke-width="0.1">
+                    <g id="GRID.text.1436.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1436.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1436.1.1.tspan.1" dy="6.5" x="0">0</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1437.1">
+                  <polyline id="GRID.lines.1437.1.1" points="426.58,190.11 422,175.29" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1438.1">
+                  <g id="GRID.text.1438.1.1" transform="translate(417.27, 160.02)" stroke-width="0.1">
+                    <g id="GRID.text.1438.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1438.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1438.1.1.tspan.1" dy="6.5" x="0">5</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1439.1">
+                  <polyline id="GRID.lines.1439.1.1" points="549.18,162.8 546.29,146.65" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1440.1">
+                  <g id="GRID.text.1440.1.1" transform="translate(543.31, 129.97)" stroke-width="0.1">
+                    <g id="GRID.text.1440.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1440.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1440.1.1.tspan.1" dy="6.5" x="0">10</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.text.1441.1">
+                  <g id="GRID.text.1441.1.1" transform="translate(617.71, 257.5)" stroke-width="0.1">
+                    <g id="GRID.text.1441.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1441.1.1.text" transform="rotate(-78.6)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
+                        <tspan id="GRID.text.1441.1.1.tspan.1" dy="6.5" x="0">y</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1442.1">
+                  <polyline id="GRID.lines.1442.1.1" points="549.18,162.8 564.23,152.94" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1443.1">
+                  <g id="GRID.text.1443.1.1" transform="translate(579.39, 143.01)" stroke-width="0.1">
+                    <g id="GRID.text.1443.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1443.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1443.1.1.tspan.1" dy="6.5" x="0">-10</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1444.1">
+                  <polyline id="GRID.lines.1444.1.1" points="565.35,231.11 578.33,222.84" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1445.1">
+                  <g id="GRID.text.1445.1.1" transform="translate(591.38, 214.51)" stroke-width="0.1">
+                    <g id="GRID.text.1445.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1445.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1445.1.1.tspan.1" dy="6.5" x="0">-5</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1446.1">
+                  <polyline id="GRID.lines.1446.1.1" points="577.54,282.58 588.94,275.46" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1447.1">
+                  <g id="GRID.text.1447.1.1" transform="translate(600.41, 268.3)" stroke-width="0.1">
+                    <g id="GRID.text.1447.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1447.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1447.1.1.tspan.1" dy="6.5" x="0">0</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1448.1">
+                  <polyline id="GRID.lines.1448.1.1" points="587.05,322.76 597.22,316.51" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1449.1">
+                  <g id="GRID.text.1449.1.1" transform="translate(607.44, 310.23)" stroke-width="0.1">
+                    <g id="GRID.text.1449.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1449.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1449.1.1.tspan.1" dy="6.5" x="0">5</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1450.1">
+                  <polyline id="GRID.lines.1450.1.1" points="594.68,354.98 603.86,349.42" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1451.1">
+                  <g id="GRID.text.1451.1.1" transform="translate(613.08, 343.83)" stroke-width="0.1">
+                    <g id="GRID.text.1451.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1451.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1451.1.1.tspan.1" dy="6.5" x="0">10</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.text.1452.1">
+                  <g id="GRID.text.1452.1.1" transform="translate(40.37, 354.87)" stroke-width="0.1">
+                    <g id="GRID.text.1452.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1452.1.1.text" transform="rotate(80.81)" text-anchor="middle" stroke-width="1" fill="rgb(0,0,0)" fill-opacity="1">
+                        <tspan id="GRID.text.1452.1.1.tspan.1" dy="6.5" x="0">z</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1453.1">
+                  <polyline id="GRID.lines.1453.1.1" points="125.58,282.51 106.42,278.72" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1454.1">
+                  <g id="GRID.text.1454.1.1" transform="translate(86.86, 274.85)" stroke-width="0.1">
+                    <g id="GRID.text.1454.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1454.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1454.1.1.tspan.1" dy="6.5" x="0">-1.5</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1455.1">
+                  <polyline id="GRID.lines.1455.1.1" points="120.69,314.95 101.13,311.44" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1456.1">
+                  <g id="GRID.text.1456.1.1" transform="translate(81.15, 307.85)" stroke-width="0.1">
+                    <g id="GRID.text.1456.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1456.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1456.1.1.tspan.1" dy="6.5" x="0">-1.0</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1457.1">
+                  <polyline id="GRID.lines.1457.1.1" points="115.62,348.59 95.64,345.38" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1458.1">
+                  <g id="GRID.text.1458.1.1" transform="translate(75.23, 342.09)" stroke-width="0.1">
+                    <g id="GRID.text.1458.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1458.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1458.1.1.tspan.1" dy="6.5" x="0">-0.5</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1459.1">
+                  <polyline id="GRID.lines.1459.1.1" points="110.36,383.5 89.95,380.6" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1460.1">
+                  <g id="GRID.text.1460.1.1" transform="translate(69.08, 377.64)" stroke-width="0.1">
+                    <g id="GRID.text.1460.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1460.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1460.1.1.tspan.1" dy="6.5" x="0">0.0</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1461.1">
+                  <polyline id="GRID.lines.1461.1.1" points="104.9,419.74 84.03,417.19" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1462.1">
+                  <g id="GRID.text.1462.1.1" transform="translate(62.69, 414.59)" stroke-width="0.1">
+                    <g id="GRID.text.1462.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1462.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1462.1.1.tspan.1" dy="6.5" x="0">0.5</tspan>
+                      </text>
+                    </g>
+                  </g>
+                </g>
+                <g id="GRID.lines.1463.1">
+                  <polyline id="GRID.lines.1463.1.1" points="99.23,457.4 77.88,455.23" stroke-width="1" stroke-dasharray="none" fill="none"/>
+                </g>
+                <g id="GRID.text.1464.1">
+                  <g id="GRID.text.1464.1.1" transform="translate(56.04, 453.01)" stroke-width="0.1">
+                    <g id="GRID.text.1464.1.1.scale" transform="scale(1, -1)">
+                      <text x="0" y="0" id="GRID.text.1464.1.1.text" text-anchor="middle" adj="1" pos="0.5" fill="rgb(0,0,0)" fill-opacity="1" font-size="16">
+                        <tspan id="GRID.text.1464.1.1.tspan.1" dy="6.5" x="0">1.0</tspan>
+                      </text>
                     </g>
                   </g>
                 </g>
               </g>
-              <g id="plot_01.toplevel.vp::plot_01.legend.top.vp::GRID.VP.177::GRID.VP.182.1">
-                <g id="GRID.cellGrob.1625.1">
-                  <g id="plot_01.key.text.2.2.1">
-                    <g id="plot_01.key.text.2.2.1.1" transform="translate(284.5, 630.74)" stroke-width="0.1">
-                      <g id="plot_01.key.text.2.2.1.1.scale" transform="scale(1, -1)">
-                        <text x="0" y="0" id="plot_01.key.text.2.2.1.1.text" text-anchor="start" stroke="rgb(0,0,0)" opacity="1" fill="rgb(0,0,0)" stroke-opacity="1" fill-opacity="1" font-size="16" font-weight="normal" font-style="normal">
-                          <tspan id="plot_01.key.text.2.2.1.1.tspan.1" dy="6.5" x="0">Estrogen Receptor Positive</tspan>
-                        </text>
-                      </g>
-                    </g>
-                  </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.9">
+        <g id="graphics-root::graphics-inner.8">
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.6.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.6" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.6.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.5">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.3">
+                <g id="GRID.lines.1465.1">
+                  <polyline id="GRID.lines.1465.1.1" points="314.41,391.94 594.68,354.98" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1466.1">
+                  <polyline id="GRID.lines.1466.1.1" points="594.68,354.98 611.2,509.65" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1467.1">
+                  <polyline id="GRID.lines.1467.1.1" points="611.2,509.65 308.59,528.4" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1468.1">
+                  <polyline id="GRID.lines.1468.1.1" points="308.59,528.4 314.41,391.94" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1469.1">
+                  <polyline id="GRID.lines.1469.1.1" points="129.54,256.26 314.41,391.94" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1470.1">
+                  <polyline id="GRID.lines.1470.1.1" points="308.59,528.4 99.2,457.59" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1471.1">
+                  <polyline id="GRID.lines.1471.1.1" points="99.2,457.59 129.54,256.26" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1472.1">
+                  <polyline id="GRID.lines.1472.1.1" points="129.54,256.26 549.18,162.8" stroke-dasharray="none" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1473.1">
+                  <polyline id="GRID.lines.1473.1.1" points="549.18,162.8 594.68,354.98" stroke-dasharray="none" stroke-width="1" fill="none"/>
                 </g>
               </g>
             </g>
           </g>
         </g>
-        <g id="plot_01.toplevel.vp::plot_01..1"/>
       </g>
-      <g id="label.1.1" visibility="hidden">
-        <g id="label.1.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.1.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.1.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.1.1.1.tspan.1" dy="0" x="0">ARRAY 1</tspan>
+      <g id="graphics-root.10">
+        <g id="graphics-root::graphics-inner.9">
+          <g id="graphics-root::graphics-inner::graphics-figure-1.6">
+            <defs>
+              <clipPath id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5.clipPath">
+                <rect x="78.72" y="97.92" width="552.96" height="495.36" fill="none" stroke="none"/>
+              </clipPath>
+            </defs>
+            <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip.5.clipPath)">
+              <g id="graphics-root::graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-0A.2">
+                <g id1="polygon_1.1" id2="polygon_2.1" id3="polygon_3.1" id4="polygon_4.1" id5="polygon_5.1" id6="polygon_6.1" id7="polygon_7.1" id8="polygon_8.1" id9="polygon_9.1" id10="polygon_10.1" id11="polygon_11.1" id12="polygon_12.1" id13="polygon_13.1" id14="polygon_14.1" id15="polygon_15.1" id16="polygon_16.1">
+                  <polygon id1="polygon_1.1.1" id2="polygon_2.1.1" id3="polygon_3.1.1" id4="polygon_4.1.1" id5="polygon_5.1.1" id6="polygon_6.1.1" id7="polygon_7.1.1" id8="polygon_8.1.1" id9="polygon_9.1.1" id10="polygon_10.1.1" id11="polygon_11.1.1" id12="polygon_12.1.1" id13="polygon_13.1.1" id14="polygon_14.1.1" id15="polygon_15.1.1" id16="polygon_16.1.1" points="278.26,417.9 345.79,511 377.2,431.33 309.22,513.71" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.2" id2="polygon_2.1.2" id3="polygon_3.1.2" id4="polygon_4.1.2" id5="polygon_5.1.2" id6="polygon_6.1.2" id7="polygon_7.1.2" id8="polygon_8.1.2" id9="polygon_9.1.2" id10="polygon_10.1.2" id11="polygon_11.1.2" id12="polygon_12.1.2" id13="polygon_13.1.2" id14="polygon_14.1.2" id15="polygon_15.1.2" id16="polygon_16.1.2" points="345.79,511 422.87,346.86 446.86,440.25 377.2,431.33" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.3" id2="polygon_2.1.3" id3="polygon_3.1.3" id4="polygon_4.1.3" id5="polygon_5.1.3" id6="polygon_6.1.3" id7="polygon_7.1.3" id8="polygon_8.1.3" id9="polygon_9.1.3" id10="polygon_10.1.3" id11="polygon_11.1.3" id12="polygon_12.1.3" id13="polygon_13.1.3" id14="polygon_14.1.3" id15="polygon_15.1.3" id16="polygon_16.1.3" points="422.87,346.86 511.27,499.49 520.6,415.82 446.86,440.25" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.4" id2="polygon_2.1.4" id3="polygon_3.1.4" id4="polygon_4.1.4" id5="polygon_5.1.4" id6="polygon_6.1.4" id7="polygon_7.1.4" id8="polygon_8.1.4" id9="polygon_9.1.4" id10="polygon_10.1.4" id11="polygon_11.1.4" id12="polygon_12.1.4" id13="polygon_13.1.4" id14="polygon_14.1.4" id15="polygon_15.1.4" id16="polygon_16.1.4" points="235.19,411.44 315.39,326.01 345.79,511 278.26,417.9" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.5" id2="polygon_2.1.5" id3="polygon_3.1.5" id4="polygon_4.1.5" id5="polygon_5.1.5" id6="polygon_6.1.5" id7="polygon_7.1.5" id8="polygon_8.1.5" id9="polygon_9.1.5" id10="polygon_10.1.5" id11="polygon_11.1.5" id12="polygon_12.1.5" id13="polygon_13.1.5" id14="polygon_14.1.5" id15="polygon_15.1.5" id16="polygon_16.1.5" points="511.27,499.49 593.02,379.88 609.41,492.85 520.6,415.82" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.6" id2="polygon_2.1.6" id3="polygon_3.1.6" id4="polygon_4.1.6" id5="polygon_5.1.6" id6="polygon_6.1.6" id7="polygon_7.1.6" id8="polygon_8.1.6" id9="polygon_9.1.6" id10="polygon_10.1.6" id11="polygon_11.1.6" id12="polygon_12.1.6" id13="polygon_13.1.6" id14="polygon_14.1.6" id15="polygon_15.1.6" id16="polygon_16.1.6" points="315.39,326.01 395.57,487.56 422.87,346.86 345.79,511" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.7" id2="polygon_2.1.7" id3="polygon_3.1.7" id4="polygon_4.1.7" id5="polygon_5.1.7" id6="polygon_6.1.7" id7="polygon_7.1.7" id8="polygon_8.1.7" id9="polygon_9.1.7" id10="polygon_10.1.7" id11="polygon_11.1.7" id12="polygon_12.1.7" id13="polygon_13.1.7" id14="polygon_14.1.7" id15="polygon_15.1.7" id16="polygon_16.1.7" points="395.57,487.56 482.65,298.3 511.27,499.49 422.87,346.86" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.8" id2="polygon_2.1.8" id3="polygon_3.1.8" id4="polygon_4.1.8" id5="polygon_5.1.8" id6="polygon_6.1.8" id7="polygon_7.1.8" id8="polygon_8.1.8" id9="polygon_9.1.8" id10="polygon_10.1.8" id11="polygon_11.1.8" id12="polygon_12.1.8" id13="polygon_13.1.8" id14="polygon_14.1.8" id15="polygon_15.1.8" id16="polygon_16.1.8" points="185.17,362.24 260.07,473.95 315.39,326.01 235.19,411.44" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.9" id2="polygon_2.1.9" id3="polygon_3.1.9" id4="polygon_4.1.9" id5="polygon_5.1.9" id6="polygon_6.1.9" id7="polygon_7.1.9" id8="polygon_8.1.9" id9="polygon_9.1.9" id10="polygon_10.1.9" id11="polygon_11.1.9" id12="polygon_12.1.9" id13="polygon_13.1.9" id14="polygon_14.1.9" id15="polygon_15.1.9" id16="polygon_16.1.9" points="482.65,298.3 586.1,366.87 593.02,379.88 511.27,499.49" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.10" id2="polygon_2.1.10" id3="polygon_3.1.10" id4="polygon_4.1.10" id5="polygon_5.1.10" id6="polygon_6.1.10" id7="polygon_7.1.10" id8="polygon_8.1.10" id9="polygon_9.1.10" id10="polygon_10.1.10" id11="polygon_11.1.10" id12="polygon_12.1.10" id13="polygon_13.1.10" id14="polygon_14.1.10" id15="polygon_15.1.10" id16="polygon_16.1.10" points="260.07,473.95 361.31,269.88 395.57,487.56 315.39,326.01" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.11" id2="polygon_2.1.11" id3="polygon_3.1.11" id4="polygon_4.1.11" id5="polygon_5.1.11" id6="polygon_6.1.11" id7="polygon_7.1.11" id8="polygon_8.1.11" id9="polygon_9.1.11" id10="polygon_10.1.11" id11="polygon_11.1.11" id12="polygon_12.1.11" id13="polygon_13.1.11" id14="polygon_14.1.11" id15="polygon_15.1.11" id16="polygon_16.1.11" points="361.31,269.88 465.62,454.97 482.65,298.3 395.57,487.56" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.12" id2="polygon_2.1.12" id3="polygon_3.1.12" id4="polygon_4.1.12" id5="polygon_5.1.12" id6="polygon_6.1.12" id7="polygon_7.1.12" id8="polygon_8.1.12" id9="polygon_9.1.12" id10="polygon_10.1.12" id11="polygon_11.1.12" id12="polygon_12.1.12" id13="polygon_13.1.12" id14="polygon_14.1.12" id15="polygon_15.1.12" id16="polygon_16.1.12" points="102.58,435.17 211.51,305.86 260.07,473.95 185.17,362.24" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.13" id2="polygon_2.1.13" id3="polygon_3.1.13" id4="polygon_4.1.13" id5="polygon_5.1.13" id6="polygon_6.1.13" id7="polygon_7.1.13" id8="polygon_8.1.13" id9="polygon_9.1.13" id10="polygon_10.1.13" id11="polygon_11.1.13" id12="polygon_12.1.13" id13="polygon_13.1.13" id14="polygon_14.1.13" id15="polygon_15.1.13" id16="polygon_16.1.13" points="465.62,454.97 572.2,301.25 586.1,366.87 482.65,298.3" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.14" id2="polygon_2.1.14" id3="polygon_3.1.14" id4="polygon_4.1.14" id5="polygon_5.1.14" id6="polygon_6.1.14" id7="polygon_7.1.14" id8="polygon_8.1.14" id9="polygon_9.1.14" id10="polygon_10.1.14" id11="polygon_11.1.14" id12="polygon_12.1.14" id13="polygon_13.1.14" id14="polygon_14.1.14" id15="polygon_15.1.14" id16="polygon_16.1.14" points="211.51,305.86 312.61,311.51 361.31,269.88 260.07,473.95" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.15" id2="polygon_2.1.15" id3="polygon_3.1.15" id4="polygon_4.1.15" id5="polygon_5.1.15" id6="polygon_6.1.15" id7="polygon_7.1.15" id8="polygon_8.1.15" id9="polygon_9.1.15" id10="polygon_10.1.15" id11="polygon_11.1.15" id12="polygon_12.1.15" id13="polygon_13.1.15" id14="polygon_14.1.15" id15="polygon_15.1.15" id16="polygon_16.1.15" points="312.61,311.51 427.96,265.62 465.62,454.97 361.31,269.88" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                  <polygon id1="polygon_1.1.16" id2="polygon_2.1.16" id3="polygon_3.1.16" id4="polygon_4.1.16" id5="polygon_5.1.16" id6="polygon_6.1.16" id7="polygon_7.1.16" id8="polygon_8.1.16" id9="polygon_9.1.16" id10="polygon_10.1.16" id11="polygon_11.1.16" id12="polygon_12.1.16" id13="polygon_13.1.16" id14="polygon_14.1.16" id15="polygon_15.1.16" id16="polygon_16.1.16" points="427.96,265.62 568.93,377.78 572.2,301.25 465.62,454.97" stroke="rgb(255,165,0)" fill="rgb(255,255,255)" stroke-opacity="1" fill-opacity="1"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="graphics-root.11">
+        <g id="graphics-root::graphics-inner.10">
+          <defs>
+            <clipPath id="graphics-root::graphics-inner::graphics-figure-1-clip.7.clipPath">
+              <rect x="0" y="0" width="672" height="672" fill="none" stroke="none"/>
+            </clipPath>
+          </defs>
+          <g id="graphics-root::graphics-inner::graphics-figure-1-clip.7" clip-path="url(#graphics-root::graphics-inner::graphics-figure-1-clip.7.clipPath)">
+            <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1.6">
+              <g id="graphics-root::graphics-inner::graphics-figure-1-clip::graphics-plot-1::graphics-window-1-0A.4">
+                <g id="GRID.lines.1474.1">
+                  <polyline id="GRID.lines.1474.1.1" points="99.2,457.59 571.47,405.48" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1475.1">
+                  <polyline id="GRID.lines.1475.1.1" points="571.47,405.48 549.18,162.8" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
+                </g>
+                <g id="GRID.lines.1476.1">
+                  <polyline id="GRID.lines.1476.1.1" points="571.47,405.48 611.2,509.65" stroke-dasharray="1,3" stroke-width="1" fill="none"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="label_1.1" visibility="hidden">
+        <g id="label_1.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_1.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_1.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_1.1.1.tspan.1" dy="0" x="0">value of z: 0.7071</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.2.1" visibility="hidden">
-        <g id="label.2.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.2.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.2.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.2.1.1.tspan.1" dy="0" x="0">ARRAY 2</tspan>
+      <g id="label_2.1">
+        <g id="label_2.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_2.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_2.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_2.1.1.tspan.1" dy="0" x="0">value of z: -0.8792</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.3.1" visibility="hidden">
-        <g id="label.3.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.3.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.3.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.3.1.1.tspan.1" dy="0" x="0">ARRAY 3</tspan>
+      <g id="label_3.1">
+        <g id="label_3.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_3.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_3.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_3.1.1.tspan.1" dy="0" x="0">value of z: -0.544</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.4.1" visibility="hidden">
-        <g id="label.4.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.4.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.4.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.4.1.1.tspan.1" dy="0" x="0">ARRAY 4</tspan>
+      <g id="label_4.1">
+        <g id="label_4.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_4.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_4.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_4.1.1.tspan.1" dy="0" x="0">value of z: -0.8792</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.5.1" visibility="hidden">
-        <g id="label.5.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.5.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.5.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.5.1.1.tspan.1" dy="0" x="0">ARRAY 5</tspan>
+      <g id="label_5.1">
+        <g id="label_5.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_5.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_5.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_5.1.1.tspan.1" dy="0" x="0">value of z: -0.8792</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.6.1" visibility="hidden">
-        <g id="label.6.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.6.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.6.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.6.1.1.tspan.1" dy="0" x="0">ARRAY 6</tspan>
+      <g id="label_6.1">
+        <g id="label_6.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_6.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_6.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_6.1.1.tspan.1" dy="0" x="0">value of z: 1.0025</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.7.1" visibility="hidden">
-        <g id="label.7.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.7.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.7.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.7.1.1.tspan.1" dy="0" x="0">ARRAY 7</tspan>
+      <g id="label_7.1">
+        <g id="label_7.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_7.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_7.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_7.1.1.tspan.1" dy="0" x="0">value of z: -1.9178</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.8.1" visibility="hidden">
-        <g id="label.8.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.8.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.8.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.8.1.1.tspan.1" dy="0" x="0">ARRAY 8</tspan>
+      <g id="label_8.1">
+        <g id="label_8.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_8.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_8.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_8.1.1.tspan.1" dy="0" x="0">value of z: 1.0025</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.9.1" visibility="hidden">
-        <g id="label.9.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.9.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.9.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.9.1.1.tspan.1" dy="0" x="0">ARRAY 9</tspan>
+      <g id="label_9.1">
+        <g id="label_9.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_9.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_9.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_9.1.1.tspan.1" dy="0" x="0">value of z: -0.544</tspan>
             </text>
           </g>
         </g>
       </g>
-      <g id="label.10.1" visibility="hidden">
-        <g id="label.10.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
-          <g id="label.10.1.1.scale" transform="scale(1, -1)">
-            <text x="0" y="0" id="label.10.1.1.text" text-anchor="start" fill="rgb(0,0,0)" fill-opacity="1" font-weight="bold" font-style="italic">
-              <tspan id="label.10.1.1.tspan.1" dy="0" x="0">ARRAY 10</tspan>
+      <g id="label_10.1">
+        <g id="label_10.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_10.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_10.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_10.1.1.tspan.1" dy="0" x="0">value of z: -1.9178</tspan>
             </text>
           </g>
         </g>
       </g>
-      <script type="application/ecmascript" id="GRID.script.grob.1630" xlink:href="huber.js"/>
+      <g id="label_11.1">
+        <g id="label_11.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_11.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_11.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_11.1.1.tspan.1" dy="0" x="0">value of z: 1</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="label_12.1">
+        <g id="label_12.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_12.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_12.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_12.1.1.tspan.1" dy="0" x="0">value of z: -1.9178</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="label_13.1">
+        <g id="label_13.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_13.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_13.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_13.1.1.tspan.1" dy="0" x="0">value of z: -0.8792</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="label_14.1">
+        <g id="label_14.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_14.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_14.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_14.1.1.tspan.1" dy="0" x="0">value of z: 1.0025</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="label_15.1">
+        <g id="label_15.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_15.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_15.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_15.1.1.tspan.1" dy="0" x="0">value of z: -1.9178</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+      <g id="label_16.1">
+        <g id="label_16.1.1" transform="translate(67.2, 6.72)" stroke-width="0.1">
+          <g id="label_16.1.1.scale" transform="scale(1, -1)">
+            <text x="0" y="0" id="label_16.1.1.text" text-anchor="start" stroke="rgb(255,165,0)" fill="rgb(255,165,0)" stroke-opacity="1" fill-opacity="1" font-weight="bold" font-style="italic">
+              <tspan id="label_16.1.1.tspan.1" dy="0" x="0">value of z: 1.0025</tspan>
+            </text>
+          </g>
+        </g>
+      </g>
     </g>
   </g>
 </svg>

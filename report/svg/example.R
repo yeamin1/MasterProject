@@ -75,38 +75,44 @@ grid.hyperlink('graphics-plot-1-main-1', 'https://en.wikipedia.org/wiki/Maungawh
 grid.export()
 
 ###
-x = seq(-10,10,length = 10)
-y = seq(-10,10,length = 10)
+library(gridSVG)
+
+x = seq(-10,10,length = 5)
+y = seq(-10,10,length = 5)
 f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 z <- outer(x, y, f)
 z[is.na(z)] <- 1
 
-source('loading.R')
-library(gridSVG)
+source('C:/Users/yeamin/Desktop/master/gridGraphics_script/loading.R')
+
+setwd('C:/Users/yeamin/Desktop/master/MasterProject/report/svg')
 trans = persp(x, y, z, theta = 20,
-              phi = 20, expand = 0.32, scale = 0.99,  
+              phi = 20, expand = 0.5,  
               col = 'White', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
               col.lab = 'red')
 grid.echo()
 
-for (i in 1:10) {
-  grid.text(paste("ARRAY", i), x=.1, y=.01, just=c("left", "bottom"),
-            name=paste("label", i, sep="."),
-            gp=gpar(fontface="bold.italic"))
+nx = length(x) - 1; ny = length(y) - 1
+nz = nx * ny
+display = paste('value of z:', round(as.numeric(z[1:nx, 1:ny]), 4))
+labels = paste('label.', 1:nz, sep = '')
+## display the value of z
+for (i in 1:nz) {
+  grid.text(display[i], x = 0.1, y = 0.01, just=c("left", "bottom"),
+            gp=gpar(fontface="bold.italic", col = 'orange'), name = labels[i])
 }
 
 
-for (i in 1:10) {
-  grid.garnish(paste("point", i, sep="."), group = FALSE,
-               onmouseover=paste('highlight(', i, '.1)', sep=""),
-               onmouseout=paste('dim(', i, '.1)', sep=""))
-  grid.garnish(paste("label", i, sep="."),
+for (i in 1:nz) {
+  grid.garnish(paste("polygon1", sep = ''), group = FALSE, strict = TRUE, global = TRUE,
+               onmouseover=paste('highlight(', 1, '.1)', sep=""),
+               onmouseout=paste('dim(', 1, '.1)', sep=""))
+  grid.garnish(paste("label.", i, sep=""),
                visibility="hidden")
 }
 
-grid.script(file="huber.js")
-
-grid.export("huber.svg", strict = FALSE)
+grid.script(file="example.js")
+grid.export("example.svg", strict = FALSE)
 
 
 
