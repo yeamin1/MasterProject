@@ -19,6 +19,7 @@ customPanel <- function(x, y, groups, ...) {
     }
   }
 }
+plot(PC1, PC2)
 
 library(lattice)
 xyplot(PC2 ~ PC1, group=group,

@@ -74,3 +74,39 @@ grid.echo()
 grid.hyperlink('graphics-plot-1-main-1', 'https://en.wikipedia.org/wiki/Maungawhau')
 grid.export()
 
+###
+x = seq(-10,10,length = 10)
+y = seq(-10,10,length = 10)
+f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
+z <- outer(x, y, f)
+z[is.na(z)] <- 1
+
+source('loading.R')
+library(gridSVG)
+trans = persp(x, y, z, theta = 20,
+              phi = 20, expand = 0.32, scale = 0.99,  
+              col = 'White', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
+              col.lab = 'red')
+grid.echo()
+
+for (i in 1:10) {
+  grid.text(paste("ARRAY", i), x=.1, y=.01, just=c("left", "bottom"),
+            name=paste("label", i, sep="."),
+            gp=gpar(fontface="bold.italic"))
+}
+
+
+for (i in 1:10) {
+  grid.garnish(paste("point", i, sep="."), group = FALSE,
+               onmouseover=paste('highlight(', i, '.1)', sep=""),
+               onmouseout=paste('dim(', i, '.1)', sep=""))
+  grid.garnish(paste("label", i, sep="."),
+               visibility="hidden")
+}
+
+grid.script(file="huber.js")
+
+grid.export("huber.svg", strict = FALSE)
+
+
+
