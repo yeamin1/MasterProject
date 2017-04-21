@@ -1,33 +1,37 @@
-highlight = function(i) {
-  var polygon = document.getElementById("polygon." + 1 + '.i');
-  var label = document.getElementById("label." + i + '.1');
-  //point.setAttribute("r", point.getAttribute("r")*2);
-  label.setAttribute("visibility", "visible");
+var obj, input, polygons, total,main
+
+polygons = document.getElementsByTagName('polygon');
+total = polygons.length/2;
+
+
+console.log(polygons.length);
+
+polygonon = function()
+{
+    this.setAttribute('fill', "rgb(1,255,255)")
+}
+polygonout = function()
+{
+    this.setAttribute('fill', "rgb(255,255,255)")
 }
 
-dim = function(i) {
-  var polygon = document.getElementById("polygon." + 1 + '.i');
-  var label = document.getElementById("label." + i + '.1');
-
-  //point.setAttribute("r", point.getAttribute("r")/2);
-  label.setAttribute("visibility", "hidden");
+mainon = function()
+{
+    this.setAttribute('fill', "rgb(255,0,0)")
+}
+mainout = function()
+{
+    this.setAttribute('fill', main_default)
 }
 
-
-var obj;
-var input;
-//for(i = 1; i <= 15; i++){
-    var i = 1
-    
+for(i = 1; i <= total; i++){
     obj = document.getElementById('polygon.1.' + i);
-    console.log(obj);
+    obj.onmouseover = polygonon;
+    obj.onmouseout = polygonout;
+}
 
-    obj.addEventListener("onmouseover", function(){
-        highlight(i)
-        }
-    );
-    obj.addEventListener("onmouseout", function(){
-        dim(i)
-        }
-    );
-//}
+// change the main title
+main = document.getElementById('graphics-plot-1-main-1.1.1.text');
+main_default = main.getAttribute('fill');
+main.onmouseover = mainon;
+main.onmouseout = mainout;
