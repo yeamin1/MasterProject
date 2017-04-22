@@ -76,6 +76,7 @@ grid.export()
 
 ###
 library(gridSVG)
+library(gridGraphics)
 
 x = seq(-10,10,length = 20)
 y = seq(-10,10,length = 20)
@@ -83,18 +84,19 @@ f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 z <- outer(x, y, f)
 z[is.na(z)] <- 1
 
-source('C:/Users/yeamin/Desktop/master/gridGraphics_script/loading.R')
+#source('C:/Users/yeamin/Desktop/master/gridGraphics_script/loading.R')
 
-setwd('C:/Users/yeamin/Desktop/master/MasterProject/report/svg')
+#setwd('C:/Users/yeamin/Desktop/master/MasterProject/report/svg') ## home
+setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/report/svg') ##uni
 trans = persp(x, y, z, theta = 20,
               phi = 20, expand = 0.5,  
               col = 'purple', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
-              col.lab = 'red')
+              col.lab = 'red', shade = 0.5)
 par(new = TRUE)
 trans = persp(x, y, z, theta = 20,
               phi = 20, expand = 0.5,  
               col = 'orange', box = TRUE, border = 'White',col.axis = 'red', ticktype = 'detail',
-              col.lab = 'red')
+              col.lab = 'red', shade = 0.5)
 title('clickme~~')
 grid.echo()
 
