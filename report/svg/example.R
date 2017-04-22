@@ -112,7 +112,7 @@ zz = z[1:nx, 1:ny]
 displays = paste('value of z:', round(as.numeric(zz[a]), 4))
 ## display the value of z
   grid.text(displays, x = 0.1, y = 0.01, just=c("left", "bottom"),
-            gp=gpar(fontface="italic",  col = 'blue'), name = 'labels')
+            gp=gpar(fontface="italic",  col = rgb(0,191/255,255/255, alpha = 0)), name = 'labels')
 
 
 #for (i in 1:nz) {
