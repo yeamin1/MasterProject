@@ -4,8 +4,14 @@ var shade_end = false;
 
 polygonon = function()
 {
+    str = this.id;
+    polygon_index = str.replace(/polygon.[0-9]./, '');
+    // highlight the polygon
     this.setAttribute('fill', "rgb(1,255,255)");
     this.setAttribute("fill-opacity",1);
+    // show the 'value'
+    label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
+    label.setAttribute("fill-opacity",1);
 
 }
 polygonout = function()
@@ -15,6 +21,11 @@ polygonout = function()
     
     color = pDcolor[polygon_index];
     this.setAttribute('fill', color);
+    
+    label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
+    label.setAttribute("fill-opacity",0);
+    
+    
     if(shade_end == false){
         this.setAttribute("fill-opacity",1);
     }else{
@@ -73,11 +84,16 @@ nSurface = countSurface();
 polygons = document.getElementsByTagName('polygon');
 total = polygons.length/nSurface;
 
+// initial setting 
 for(i = 1; i <= total; i++){
     obj = document.getElementById('polygon.' + 2 + '.' + i);
     pDcolor[i] = obj.getAttribute('fill');
     obj.onmouseover = polygonon;
     obj.onmouseout = polygonout;
+    // hide all the labels
+    label = document.getElementById('labels.' + '1.' + i + '.text');
+    label.setAttribute('stroke-opacity', 0);
+    label.setAttribute('fill-opacity', 0);
 }
 
 // change the main title

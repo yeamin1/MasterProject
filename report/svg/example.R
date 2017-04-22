@@ -78,8 +78,8 @@ grid.export()
 library(gridSVG)
 library(gridGraphics)
 
-x = seq(-10,10,length = 30)
-y = seq(-10,10,length = 30)
+x = seq(-10,10,length = 35)
+y = seq(-10,10,length = 35)
 f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 z <- outer(x, y, f)
 z[is.na(z)] <- 1
@@ -90,25 +90,29 @@ z[is.na(z)] <- 1
 setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/report/svg') ##uni
 trans = persp(x, y, z, theta = 20,
               phi = 20, expand = 0.5,  
-              col = 'white', box = TRUE, border = 'orange',col.axis = 'red', ticktype = 'detail',
+              col = 'gray', box = TRUE, border = NA,col.axis = 'red', ticktype = 'detail',
               col.lab = 'red', shade = 0.5)
 par(new = TRUE)
 trans = persp(x, y, z, theta = 20,
               phi = 20, expand = 0.5,  
-              col = 'white', box = FALSE, border = 'orange',col.axis = 'red', ticktype = 'detail',
+              col = 'gray', box = FALSE, border = 'white',col.axis = 'red', ticktype = 'detail',
               col.lab = 'red')
 title('clickme~~')
 grid.echo()
 
-#nx = length(x) - 1; ny = length(y) - 1
-#nz = nx * ny
-#display = paste('value of z:', round(as.numeric(z[1:nx, 1:ny]), 4))
-#labels = paste('label.', 1:nz, sep = '')
+nx = length(x) - 1; ny = length(y) - 1
+nz = nx * ny
+
+orderTemp = cbind(rep(x[-1], ny), rep(y[-1],each = nx), 0, 1) %*% trans 
+zdepth = orderTemp[, 4]
+a = order(zdepth, decreasing = TRUE)
+zz = z[1:nx, 1:ny]
+
+
+displays = paste('value of z:', round(as.numeric(zz[a]), 4))
 ## display the value of z
-#for (i in 1:nz) {
-##  grid.text(display[i], x = 0.1, y = 0.01, just=c("left", "bottom"),
-#            gp=gpar(fontface="bold.italic", col = 'orange'), name = labels[i])
-#}
+  grid.text(displays, x = 0.1, y = 0.01, just=c("left", "bottom"),
+            gp=gpar(fontface="italic",  col = 'blue'), name = 'labels')
 
 
 #for (i in 1:nz) {
@@ -118,6 +122,8 @@ grid.echo()
 
 grid.script(file="example.js")
 grid.export("example.svg", strict = FALSE)
+
+
 
 
 
