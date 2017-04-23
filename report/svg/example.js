@@ -7,8 +7,13 @@ polygonon = function()
     str = this.id;
     polygon_index = str.replace(/polygon.[0-9]./, '');
     // highlight the polygon
-    this.setAttribute('fill', "rgb(1,255,255)");
+    this.setAttribute('fill', "rgb(255,100,100)");
+    if(shade_end == false){
+        opacity = this.getAttribute('fill-opacity');
+        this.setAttribute("fill-opacity",opacity);
+    }else{
     this.setAttribute("fill-opacity",1);
+    }
     // show the 'value'
     label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
     label.setAttribute("fill-opacity",1);
@@ -25,9 +30,10 @@ polygonout = function()
     label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
     label.setAttribute("fill-opacity",0);
     
+    opacity = this.getAttribute('fill-opacity');
     
     if(shade_end == false){
-        this.setAttribute("fill-opacity",1);
+        this.setAttribute("fill-opacity",opacity);
     }else{
         this.setAttribute("fill-opacity",0);
     }
@@ -55,30 +61,85 @@ countSurface = function(){
 }
 
 addShade = function(){
+    // show the shaded surface
+    reset()
+    show_shaded(1);
+    animate(Surface_id = nSurface, action = 'shaded');
+}
+
+addAlpha = function()
+{
+    // hide the shaded surface
+    reset();
+    show_shaded(0);
+    animate(Surface_id = nSurface, action = 'alpha', alpha = 0.5);
+    
+}
+
+addColor = function()
+{
+    // hide the shaded surface
+    show_shaded(0);
+}
+
+animate = function(Surface_id, action, alpha, color)
+{
     var polygons_odd = [], opacity_odd = [], id = [], id;
 
     for(i = 1; i <= total; i++){
         var pos = 0;
-        polygons_odd[i] = document.getElementById('polygon.' + nSurface + '.' + i);
+        polygons_odd[i] = document.getElementById('polygon.' + Surface_id + '.' + i);
         opacity_odd[i] = polygons_odd[i].getAttribute('fill-opacity');
     }
     id = setInterval(frame, 20);
     function frame() {
         if (pos == 100) {
-        window.shade_end = true;
+        if(action == 'shaded'){
+            window.shade_end = true;
+        }else{
+            window.shade_end = false;
+        }
+        
         clearInterval(id);
         } else {
             pos = pos + 1; 
             for(i = 1; i <= total; i++){
-            polygons_odd[i].setAttribute("fill-opacity", (opacity_odd[i] * 100 - pos)/100);
-            polygons_odd[i].setAttribute("stroke-opacity", (opacity_odd[i] * 100 - pos)/100);
+            
+            if(action == 'shaded'){
+                polygons_odd[i].setAttribute("stroke-opacity", parseInt(opacity_odd[i]) - pos/100);
+                polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - pos/100);
+            }
+            if(action == 'alpha'){
+                polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - pos/(100 * 1/(1 - alpha)));
+            }
+            if(action == 'color'){
+                
+            }
             }
 
         }
     }
+    
+}
+
+reset = function()
+{
+    for(i = 1; i <= total; i++){
+    obj = document.getElementById('polygon.' + 2 + '.' + i);
+    obj.setAttribute('stroke-opacity', 1);
+    obj.setAttribute('fill-opacity', 1);
+    }
 }
 
 
+show_shaded = function(x)
+{
+    for(i = 1; i <= total; i++){
+    obj_shaded = document.getElementById('polygon.' + 1 + '.' + i);
+    obj_shaded.setAttribute('stroke-opacity', x);
+    obj_shaded.setAttribute('fill-opacity', x);
+    }
+}
 
 nSurface = countSurface();
 polygons = document.getElementsByTagName('polygon');
@@ -94,6 +155,10 @@ for(i = 1; i <= total; i++){
     label = document.getElementById('labels.' + '1.' + i + '.text');
     label.setAttribute('stroke-opacity', 0);
     label.setAttribute('fill-opacity', 0);
+    // hide the shaded surface
+    obj_shaded = document.getElementById('polygon.' + 1 + '.' + i);
+    obj_shaded.setAttribute('stroke-opacity', 0);
+    obj_shaded.setAttribute('fill-opacity', 0);
 }
 
 // change the main title
@@ -102,6 +167,13 @@ main_default = main.getAttribute('fill');
 main.onmouseover = mainon;
 main.onmouseout = mainout;
 main.onclick = addShade;
+alpha = document.getElementById('alpha.1.1.text');
+change_color = document.getElementById('change.1.1.text');
+alpha.onmouseover = mainon;
+alpha.onmouseout = mainout;
+change_color.onmouseover = mainon;
+change_color.onmouseout = mainout;
+alpha.onclick = addAlpha; 
 
 // get number...maybe later...
 // obj = document.getElementById('polygon.' + nSurface + '.' + 2);

@@ -113,8 +113,9 @@ displays = paste('value of z:', round(as.numeric(zz[a]), 4))
 ## display the value of z
   grid.text(displays, x = 0.1, y = 0.01, just=c("left", "bottom"),
             gp=gpar(fontface="italic",  col = rgb(0,191/255,255/255, alpha = 0)), name = 'labels')
-
-
+  grid.text('alpha~~',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'alpha')
+  grid.text('chagne color',x = 0.1, y = 0.85, just = c('left', 'top'), name = 'change')
+  
 #for (i in 1:nz) {
 #  grid.garnish(paste("label.", i, sep=""),
 #               visibility="hidden")
