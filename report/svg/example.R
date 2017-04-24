@@ -88,43 +88,100 @@ z[is.na(z)] <- 1
 
 #setwd('C:/Users/yeamin/Desktop/master/MasterProject/report/svg') ## home
 setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/report/svg') ##uni
-trans = persp(x, y, z, theta = 20,
-              phi = 20, expand = 0.5,  
-              col = 'gray', box = TRUE, border = NA,col.axis = 'red', ticktype = 'detail',
-              col.lab = 'red', shade = 0.5)
-par(new = TRUE)
-trans = persp(x, y, z, theta = 20,
-              phi = 20, expand = 0.5,  
-              col = 'gray', box = FALSE, border = 'white',col.axis = 'red', ticktype = 'detail',
-              col.lab = 'red')
-title('clickme~~')
-grid.echo()
 
-nx = length(x) - 1; ny = length(y) - 1
-nz = nx * ny
-
-orderTemp = cbind(rep(x[-1], ny), rep(y[-1],each = nx), 0, 1) %*% trans 
-zdepth = orderTemp[, 4]
-a = order(zdepth, decreasing = TRUE)
-zz = z[1:nx, 1:ny]
-
-
-displays = paste('value of z:', round(as.numeric(zz[a]), 4))
-## display the value of z
+surface = function(){
+  trans = persp(x, y, z, theta = 20,
+                phi = 20, expand = 0.5,  
+                col = 'gray', box = TRUE, border = NA,col.axis = 'red', ticktype = 'detail',
+                col.lab = 'red', shade = 0.5)
+  par(new = TRUE)
+  trans = persp(x, y, z, theta = 20,
+                phi = 20, expand = 0.5,  
+                col = 'gray', box = FALSE, border = 'white',col.axis = 'red', ticktype = 'detail',
+                col.lab = 'red')
+  title('clickme~~')
+  grid.echo()
+  
+  nx = length(x) - 1; ny = length(y) - 1
+  nz = nx * ny
+  
+  orderTemp = cbind(rep(x[-1], ny), rep(y[-1],each = nx), 0, 1) %*% trans 
+  zdepth = orderTemp[, 4]
+  a = order(zdepth, decreasing = TRUE)
+  zz = z[1:nx, 1:ny]
+  
+  
+  displays = paste('value of z:', round(as.numeric(zz[a]), 4))
+  ## display the value of z
   grid.text(displays, x = 0.1, y = 0.01, just=c("left", "bottom"),
             gp=gpar(fontface="italic",  col = rgb(0,191/255,255/255, alpha = 0)), name = 'labels')
-  grid.text('alpha~~',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'alpha')
-  grid.text('chagne color',x = 0.1, y = 0.85, just = c('left', 'top'), name = 'change')
-  
-#for (i in 1:nz) {
-#  grid.garnish(paste("label.", i, sep=""),
-#               visibility="hidden")
-#}
+}
+
+surface()
+## more actions
+grid.text('alpha~~',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'alpha')
+grid.text('chagne color',x = 0.1, y = 0.88, just = c('left', 'top'), name = 'change')
+
+grid.rect(x = c(0.1, 0.13, 0.16, 0.19, 0.22), y = rep(0.85, 5), width = 0.02, height = 0.02, 
+          just = c('left', 'top'), gp = gpar(fill = c('red', 'blue', 'green', 'yellow', 'purple'), col = NA),
+          name = 'color')
 
 grid.script(file="example.js")
 grid.export("example.svg", strict = FALSE)
 
 
 
+Volcano = function() {
+  theta = 110; phi = 60
+  z <- 2 * volcano
+  x <- 10 * (1:nrow(z))
+  y <- 10 * (1:ncol(z))
+  z0 <- min(z) - 20
+  z <- rbind(z0, cbind(z0, z, z0), z0)
+  x <- c(min(x) - 1e-10, x, max(x) + 1e-10)
+  y <- c(min(y) - 1e-10, y, max(y) + 1e-10)
+  fill <- matrix("green3", nrow = nrow(z)-1, ncol = ncol(z)-1)
+  fill[ , i2 <- c(1,ncol(fill))] <- "green"
+  fill[i1 <- c(1,nrow(fill)) , ] <- "green"
+  fcol <- fill
+  zi <- volcano[ -1,-1] + volcano[ -1,-61] +
+    volcano[-87,-1] + volcano[-87,-61]  ## / 4
+  fcol[-i1,-i2] <-
+    terrain.colors(20)[cut(zi,
+                           stats::quantile(zi, seq(0,1, length.out = 21)),
+                           include.lowest = TRUE)]
+  par(bg = "slategray")
+  trans = persp(x, y, 2*z, theta = theta, phi = phi, col = fcol, scale = FALSE,
+              ltheta = -120, shade = 0.4, border = NA, box = FALSE)
+  grid.echo()
+  
+  nx = length(x) - 1; ny = length(y) - 1
+  nz = nx * ny
+  
+  orderTemp = cbind(rep(x[-1], ny), rep(y[-1],each = nx), 0, 1) %*% trans 
+  zdepth = orderTemp[, 4]
+  a = order(zdepth, decreasing = TRUE)
+  zz = z[1:nx, 1:ny]
+  
+  
+  displays = paste('value of z:', round(as.numeric(zz[a]), 4))
+  ## display the value of z
+  grid.text(displays, x = 0.1, y = 0.01, just=c("left", "bottom"),
+            gp=gpar(fontface="italic",  col = rgb(0,191/255,255/255, alpha = 0)), name = 'labels')
+
+}
+
+#source('C:/Users/yeamin/Desktop/mproject/gridGraphics_script/loading.R')
+setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/report/svg') ##uni
+Torus()
+grid.text('alpha~~',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'alpha')
+grid.text('chagne color',x = 0.1, y = 0.88, just = c('left', 'top'), name = 'change')
+
+grid.rect(x = c(0.1, 0.13, 0.16, 0.19, 0.22), y = rep(0.85, 5), width = 0.02, height = 0.02, 
+          just = c('left', 'top'), gp = gpar(fill = c('red', 'blue', 'green', 'yellow', 'purple'), col = NA),
+          name = 'color')
+
+grid.script(file="example.js")
+grid.export("example_tours.svg", strict = FALSE)
 
 

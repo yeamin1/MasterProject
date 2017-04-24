@@ -19,33 +19,46 @@ polygonon = function()
     label.setAttribute("fill-opacity",1);
 
 }
+
 polygonout = function()
 {
     str = this.id;
     polygon_index = str.replace(/polygon.[0-9]./, '');
     
-    color = pDcolor[polygon_index];
-    this.setAttribute('fill', color);
-    
+    // labeling
     label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
     label.setAttribute("fill-opacity",0);
     
-    opacity = this.getAttribute('fill-opacity');
-    
     if(shade_end == false){
+        // reset color -> reset poacity
+        opacity = this.getAttribute('fill-opacity');
+        this.setAttribute("fill",window.new_rgb);
         this.setAttribute("fill-opacity",opacity);
     }else{
         this.setAttribute("fill-opacity",0);
+        color = pDcolor[polygon_index];
+        this.setAttribute('fill', color);
+        
     }
 }
 
 mainon = function()
 {
-    this.setAttribute('fill', "rgb(255,0,0)")
+    if(this.id.includes('color')){
+        oCol = this.getAttribute('fill-opacity');
+        this.setAttribute('fill-opacity', 0.2);
+    }else{
+        this.setAttribute('fill', "rgb(255,0,0)");
+    }
 }
 mainout = function()
 {
-    this.setAttribute('fill', main_default)
+    if(this.id.includes('color')){
+        this.setAttribute('fill-opacity', 1);
+    }else{
+       this.setAttribute('fill', main_default)
+    }
+    
 }
 // count the 'actual' number of surface in the plot
 countSurface = function(){
@@ -76,50 +89,80 @@ addAlpha = function()
     
 }
 
-addColor = function()
+color_fill = function()
 {
-    // hide the shaded surface
-    show_shaded(0);
+    reset();
+    color_new = this.getAttribute('fill');
+    animate(Surface_id = nSurface, action = 'color', alpha = 1, colors = color_new);
+    
 }
 
-animate = function(Surface_id, action, alpha, color)
+
+animate = function(Surface_id, action, alpha, colors)
 {
-    var polygons_odd = [], opacity_odd = [], id = [], id;
+    var polygons_odd = [], opacity_odd = [], id = [], id, color_current = [];
+    var newCol;
 
     for(i = 1; i <= total; i++){
         var pos = 0;
         polygons_odd[i] = document.getElementById('polygon.' + Surface_id + '.' + i);
         opacity_odd[i] = polygons_odd[i].getAttribute('fill-opacity');
+        color_current[i] = polygons_odd[i].getAttribute('fill');
     }
+    
+    if(action == 'color'){
+        newCol = colors;
+        oldCol = obj.getAttribute('fill');
+        pat = /\d+/g;
+        orgb = oldCol.match(pat);
+        or = parseInt(orgb[0]);
+        og = parseInt(orgb[1]);
+        ob = parseInt(orgb[2]);
+        
+        nrgb = newCol.match(pat);
+        nr = parseInt(nrgb[0]);
+        ng = parseInt(nrgb[1]);
+        nb = parseInt(nrgb[2]);
+        
+        // return the color for rest when onmouseout
+        window.new_rgb = newCol;
+        
+        var step = [];
+        step[0] = (nr - or) / 100;
+        step[1] = (ng - og) / 100;
+        step[2] = (nb - ob) / 100; 
+    }
+    
     id = setInterval(frame, 20);
     function frame() {
         if (pos == 100) {
-        if(action == 'shaded'){
-            window.shade_end = true;
-        }else{
-            window.shade_end = false;
-        }
-        
+            if(action == 'shaded'){
+                window.shade_end = true;
+            }else{
+                window.shade_end = false;
+            }
         clearInterval(id);
         } else {
-            pos = pos + 1; 
-            for(i = 1; i <= total; i++){
-            
-            if(action == 'shaded'){
-                polygons_odd[i].setAttribute("stroke-opacity", parseInt(opacity_odd[i]) - pos/100);
-                polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - pos/100);
+        pos = pos + 1; 
+        for(i = 1; i <= total; i++){
+        
+        if(action == 'shaded'){
+            polygons_odd[i].setAttribute("stroke-opacity", parseInt(opacity_odd[i]) - pos/100);
+            polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - pos/100);
+        }
+        if(action == 'alpha'){
+            polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - 
+                                                        pos/(100 * 1/(1 - alpha)));
+        }
+        if(action == 'color'){
+            col_out = 'rgb(' + parseInt(or + step[0] * pos) + ',' + 
+                               parseInt(og + step[1] * pos) + ',' + 
+                               parseInt(ob + step[2] * pos) + ')';
+            polygons_odd[i].setAttribute('fill', col_out);
             }
-            if(action == 'alpha'){
-                polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - pos/(100 * 1/(1 - alpha)));
-            }
-            if(action == 'color'){
-                
-            }
-            }
-
+        }
         }
     }
-    
 }
 
 reset = function()
@@ -131,7 +174,6 @@ reset = function()
     }
 }
 
-
 show_shaded = function(x)
 {
     for(i = 1; i <= total; i++){
@@ -141,16 +183,19 @@ show_shaded = function(x)
     }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+// initial setting 
 nSurface = countSurface();
 polygons = document.getElementsByTagName('polygon');
 total = polygons.length/nSurface;
 
-// initial setting 
-for(i = 1; i <= total; i++){
+
+for(i = 73; i <= total; i++){
     obj = document.getElementById('polygon.' + 2 + '.' + i);
     pDcolor[i] = obj.getAttribute('fill');
     obj.onmouseover = polygonon;
     obj.onmouseout = polygonout;
+    new_rgb = pDcolor[1];
     // hide all the labels
     label = document.getElementById('labels.' + '1.' + i + '.text');
     label.setAttribute('stroke-opacity', 0);
@@ -175,13 +220,14 @@ change_color.onmouseover = mainon;
 change_color.onmouseout = mainout;
 alpha.onclick = addAlpha; 
 
-// get number...maybe later...
-// obj = document.getElementById('polygon.' + nSurface + '.' + 2);
-// oldCol = obj.getAttribute('fill');
-// pat = /\d+/g;
-// rgb = oldCol.match(pat);
-
-//get opacity
-
-
+// avriable colors.
+var col_default = [];
+for(i = 1; i <= 5; i ++)
+{
+    color_id = document.getElementById('color.1.' + i);
+    col_default[i] = color_id.getAttribute('fill');
+    color_id.onmouseover = mainon;
+    color_id.onmouseout = mainout;
+    color_id.onclick = color_fill;
+}
     
