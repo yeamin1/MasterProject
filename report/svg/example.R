@@ -78,8 +78,8 @@ grid.export()
 library(gridSVG)
 library(gridGraphics)
 
-x = seq(-10,10,length = 35)
-y = seq(-10,10,length = 35)
+x = seq(-10,10,length = 36)
+y = seq(-10,10,length = 36)
 f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
 z <- outer(x, y, f)
 z[is.na(z)] <- 1
@@ -90,14 +90,15 @@ z[is.na(z)] <- 1
 setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/report/svg') ##uni
 
 surface = function(){
+  border = rgb(139/255,	136/255, 120/255	)
   trans = persp(x, y, z, theta = 20,
                 phi = 20, expand = 0.5,  
-                col = 'gray', box = TRUE, border = NA,col.axis = 'red', ticktype = 'detail',
+                col = rgb(255/255,	250/255,	205/255), box = TRUE, border = border,col.axis = 'red', ticktype = 'detail',
                 col.lab = 'red', shade = 0.5)
   par(new = TRUE)
   trans = persp(x, y, z, theta = 20,
                 phi = 20, expand = 0.5,  
-                col = 'gray', box = FALSE, border = 'white',col.axis = 'red', ticktype = 'detail',
+                col = rgb(255/255,	250/255,	205/255), box = FALSE, border = border,col.axis = 'red', ticktype = 'detail',
                 col.lab = 'red')
   title('clickme~~')
   grid.echo()
