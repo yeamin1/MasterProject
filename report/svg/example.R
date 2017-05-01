@@ -12,7 +12,6 @@ Volcano.contour.full = function()
 }
 Volcano.contour = function()
 {
-  par(mar = c(0, 0, 0, 0))
   par(bg = "slategray")
   x <- 10*1:nrow(volcano)
   y <- 10*1:ncol(volcano)
@@ -51,7 +50,7 @@ Volcano.persp.svg = function(theta = 110, phi = 60)
 
 Volcano.persp = function()
 {
-    par(mar = c(0, 0, 0, 0))
+    par(mar = c(0, 0, 2, 0))
     Volcano.persp.svg(theta = 0, phi = 60)
 }
 
