@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  30 APR 2017 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  1 MAY 2017 21:45
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -428,7 +428,7 @@ LaTeX Font Info:    ... okay on input line 15.
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=10.0pt
-* \footskip=18.06749pt
+* \footskip=36.135pt
 * \marginparwidth=65.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
@@ -1064,25 +1064,25 @@ Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport3_2.pdf used on
  input line 738.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
  [22 <./figure/gridGraphics_persp_demo_viewport3_1.pdf> <./figure/gridGraphics_
-persp_demo_viewport3_2.pdf>]
+persp_demo_viewport3_2.pdf>] [23]
 Chapter 5.
-[23
-
-]
-Chapter 6.
 [24
 
 ]
-Chapter 7.
+Chapter 6.
 [25
 
 ]
-Chapter 8.
+Chapter 7.
 [26
 
 ]
-Chapter 9.
+Chapter 8.
 [27
+
+]
+Chapter 9.
+[28
 
 ] (PreReport.aux)
 
@@ -1098,7 +1098,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  6938 strings out of 493333
  101745 string characters out of 3139191
- 174548 words of memory out of 3000000
+ 174539 words of memory out of 3000000
  10266 multiletter control sequences out of 15000+200000
  46758 words of font info for 95 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1117,9 +1117,9 @@ t10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (28 pages, 900193 bytes).
+Output written on PreReport.pdf (29 pages, 900672 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
+ 293 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  135 words of extra memory for PDF output out of 10000 (max. 10000000)
 

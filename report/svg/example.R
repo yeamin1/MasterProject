@@ -23,9 +23,8 @@ Volcano.contour = function()
 
 
 
-Volcano.persp.svg = function()
+Volcano.persp.svg = function(theta = 110, phi = 60)
 {
-  theta = 110; phi = 60
   z <- 2 * volcano
   x <- 10 * (1:nrow(z))
   y <- 10 * (1:ncol(z))
@@ -50,6 +49,13 @@ Volcano.persp.svg = function()
   title('Maungawhau', col.main = 'black')
 }
 
+Volcano.persp = function()
+{
+    par(mar = c(0, 0, 0, 0))
+    Volcano.persp.svg(theta = 0, phi = 60)
+}
+
+
 ## persp() + filled.contour()
 windows(7, 9.708333)
 grid.newpage()
@@ -65,6 +71,7 @@ grid.echo(Volcano.contour, newpage=FALSE)
 downViewport('graphics-plot-1')
 grid.rect(gp = gpar(fill = 'slategray', col = 'slategray'))
 upViewport()
+
 
 
 ## hyperlink

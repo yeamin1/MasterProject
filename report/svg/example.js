@@ -133,7 +133,7 @@ animate = function(Surface_id, action, alpha, colors)
         step[2] = (nb - ob) / 100; 
     }
     
-    id = setInterval(frame, 20);
+    id = setInterval(frame, 30);
     function frame() {
         if (pos == 100) {
             if(action == 'shaded'){
@@ -190,7 +190,7 @@ polygons = document.getElementsByTagName('polygon');
 total = polygons.length/nSurface;
 
 
-for(i = 73; i <= total; i++){
+for(i = 1; i <= total; i++){
     obj = document.getElementById('polygon.' + 2 + '.' + i);
     pDcolor[i] = obj.getAttribute('fill');
     obj.onmouseover = polygonon;
