@@ -84,7 +84,7 @@ For example, if the user wants to rotate the labels of the bottom axis by 30 deg
 \newpage
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{figure/report_basic_demo_4.pdf}
+  \includegraphics[height = 10cm, width = 10cm]{figure/report_basic_demo_4.pdf}
   \caption{The angle and the color of the bottom and left axis of the previous plot have been changed by 30 degrees and orange}
   	\label{figure2}
 \end{center}
@@ -93,8 +93,8 @@ For example, if the user wants to rotate the labels of the bottom axis by 30 deg
 The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is \texttt{persp()} which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. See Figure \ref{figure3}.
 \begin{Schunk}
 \begin{Sinput}
-> x <- y <- seq(-4*pi, 4*pi, len = 27)
-> r <- sqrt(outer(x^2, y^2, "+"))
+> x = y = seq(-4*pi, 4*pi, len = 27)
+> r = sqrt(outer(x^2, y^2, "+"))
 > filled.contour(cos(r^2)*exp(-r/(2*pi)), frame.plot = FALSE, plot.axes = {})
 > grid.echo()
 \end{Sinput}
@@ -103,7 +103,7 @@ The \texttt{grid.echo()} function can replicate most plots that are drawn by the
 \begin{center}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_fill_1}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_fill_2}
-  \caption{The left plot been drawn by using \texttt{filled.contour} and the right plot been redrawn by calling \texttt{grid.echo()}. There is a "blank" page on the right plot because the grid.echo cannot emulate filled.contour()}
+  \caption{The left plot been drawn by using \texttt{filled.contour()} and the right plot been redrawn by calling \texttt{grid.echo()}. There is a "blank" page on the right plot because the grid.echo cannot emulate \texttt{filled.contour()} in this stage.}
   	\label{figure3}
 \end{center}
 \end{figure}
@@ -163,7 +163,7 @@ This information is called the graphics engine display list. In this paper, we u
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 9cm, width = 9cm]{figure/report_3.pdf}
+  \includegraphics[height = 10cm, width = 10cm]{figure/report_3.pdf}
   \caption{The details of the plot of dist vs speed displayed by the graphics engine display list}
   	\label{figure4}
 \end{center}
@@ -179,16 +179,16 @@ The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y pl
 \begin{Schunk}
 \begin{Sinput}
 > x = y = seq(-10, 10, length= 40)
-> f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
-> z <- outer(x, y, f)
-> z[is.na(z)] <- 1
+> f = function(x, y) { r = sqrt(x^2+y^2); 10 * sin(r)/r }
+> z = outer(x, y, f)
+> z[is.na(z)] = 1
 > trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
 +               col = 'White', border = 'orange')
 \end{Sinput}
 \end{Schunk}
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 9cm, width = 9cm]{figure/standalone_1.pdf}
+  \includegraphics[height = 10cm, width = 10cm]{figure/standalone_1.pdf}
   \caption{An example of Perspective Plot been drawn by \texttt{persp()}}
   	\label{figure4}
 \end{center}
@@ -336,60 +336,54 @@ Many functions in \texttt{R} call \texttt{C} code to do a lot of the work.  This
 
 \subsubsection{Pointers}
 One main data structure in \texttt{C} is the pointer, which is a type of reference that records the address/location of a global object or a local variable in a function. Pointers can be manipulated by using assignment or pointer arithmetic.
-\begin{Schunk}
-\begin{Sinput}
-> # static int LimitCheck(double *lim, double *c, double *s)
-> # {
-> #     if (!R_FINITE(lim[0]) || !R_FINITE(lim[1]) || lim[0] >= lim[1])
-> # 	return 0;
-> #     *s = 0.5 * fabs(lim[1] - lim[0]);
-> #     *c = 0.5 * (lim[1] + lim[0]);
-> #     return 1;
-> # }
-\end{Sinput}
-\end{Schunk}
+\begin{lstlisting}
+static int LimitCheck(double *lim, double *c, double *s)
+{
+    if (!R_FINITE(lim[0]) || !R_FINITE(lim[1]) || lim[0] >= lim[1])
+    return 0;
+    *s = 0.5 * fabs(lim[1] - lim[0]);
+    *c = 0.5 * (lim[1] + lim[0]);
+    return 1;
+}
+\end{lstlisting}
+
 The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multiplying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{c*} and \texttt{s*} are the pointer which will point to the machine memory of \texttt{s} and \texttt{c} and multify them.\\
 
 However, this process cannot be reproduced on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multiply \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as \texttt{xs} ad \texttt{ys} for further calculation.
-\begin{Schunk}
-\begin{Sinput}
-> # LimitCheck = function ( lim ) {
-> #     s = 0.5 * abs(lim[2] - lim[1])
-> #     c = 0.5 * (lim[2] + lim[1])
-> #     c(s, c)
-> # }
-> # xs = LimitCheck(xr)[1]
-> # xc = LimitCheck(xr)[2]
-> # ...
-\end{Sinput}
-\end{Schunk}
+\begin{lstlisting}
+LimitCheck = function ( lim ) {
+    s = 0.5 * abs(lim[2] - lim[1])
+    c = 0.5 * (lim[2] + lim[1])
+    c(s, c)
+}
+xs = LimitCheck(xr)[1]
+xc = LimitCheck(xr)[2]
+...
+\end{lstlisting}
 \subsubsection{Array}
 The other main difference is that \texttt{C} use array data format rather than matrix data format in \texttt{R}. However, the indexing of elements in matrix is identical to the indexing of elements in array. 
-\begin{Schunk}
-\begin{Sinput}
-> #...
-> 
-> # FindPolygonVertices(c[k - 1], c[k],
-> #         x[i - 1], x[i],
-> #         y[j - 1], y[j],
-> #         z[i - 1 + (j - 1) * nx],
-> #         z[i + (j - 1) * nx],
-> #         z[i - 1 + j * nx],
-> #         z[i + j * nx],
-> #         px, py, pz, &npt);
-> 	    
-> 
-> #out = FindPolygonVertices(sc[k], sc[k + 1],
-> #        x[i], x[i + 1],
-> #        y[j], y[j + 1],
-> #        z[i + (j - 1) * nx],
-> #        z[i + 1 + (j - 1) * nx],
-> #        z[i + (j) * nx],
-> #        z[i + 1 + (j) * nx],
-> #        px, py, pz, npt, iii = iii)
-> #...
-\end{Sinput}
-\end{Schunk}
+\begin{lstlisting}
+FindPolygonVertices(c[k - 1], c[k],
+        x[i - 1], x[i],
+        y[j - 1], y[j],
+        z[i - 1 + (j - 1) * nx],
+        z[i + (j - 1) * nx],
+        z[i - 1 + j * nx],
+        z[i + j * nx],
+        px, py, pz, &npt);
+	    
+
+out = FindPolygonVertices(sc[k], sc[k + 1],
+       x[i], x[i + 1],
+       y[j], y[j + 1],
+       z[i + (j - 1) * nx],
+       z[i + 1 + (j - 1) * nx],
+       z[i + (j) * nx],
+       z[i + 1 + (j) * nx],
+       px, py, pz, npt, iii = iii)
+...
+\end{lstlisting}
+
 To get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
 
 The top piece of codes is both calling the \texttt{FindPolygonVertices()} function by feeding parameter into it. However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
@@ -428,8 +422,8 @@ Other feather that \texttt{persp} supported is the detail of the axis. More spec
 The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{filled.contour}) from \texttt{graphics} to \texttt{grid}. As previous section, the first step to emulate \texttt{filled.contour} is to access the information from the graphics engine display list.
 \begin{Schunk}
 \begin{Sinput}
-> x <- 10*1:nrow(volcano)
-> y <- 10*1:ncol(volcano)
+> x = 10*1:nrow(volcano)
+> y = 10*1:ncol(volcano)
 > filled.contour(x, y, volcano, color = terrain.colors,
 +     plot.title = title(main = "The Topography of Maunga Whau",
 +     xlab = "Meters North", ylab = "Meters West"),
@@ -465,7 +459,7 @@ The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{f
 \end{Schunk}
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 9cm, width = 9cm]{figure/filled_example_1.pdf}
+  \includegraphics[height = 10cm, width = 12cm]{figure/filled_example_1.pdf}
   \caption{The topography of the Maunga Whau been drawn by using the \texttt{filled.contour}}
   	\label{figure8}
 \end{center}
@@ -474,39 +468,35 @@ The example shows the plot of topography of Maunga Whau and also the information
 
 There is an algorithm to create this contour plot in the \texttt{graphics} package written by \texttt{C}. The first step of the solution will be translated the \texttt{C} code directly to maximize the accuracy.\\
 
-\begin{Schunk}
-\begin{Sinput}
-> # static void
-> # FindPolygonVertices(..., double *x, double *y, double *z, int *npt, ...)
-> # {
-> #   *npt = 0;
-> #   FindCutPoints(low, high, x1,  y1,  z11, x2,  y1,  z21, x, y, z, npt);
-> #   FindCutPoints(low, high, y1,  x2,  z21, y2,  x2,  z22, y, x, z, npt);
-> #   FindCutPoints(low, high, x2,  y2,  z22, x1,  y2,  z12, x, y, z, npt);
-> #   FindCutPoints(low, high, y2,  x1,  z12, y1,  x1,  z11, y, x, z, npt);
-> # }
-\end{Sinput}
-\end{Schunk}
+\begin{lstlisting}
+static void
+FindPolygonVertices(..., double *x, double *y, double *z, int *npt, ...)
+{
+  *npt = 0;
+  FindCutPoints(low, high, x1,  y1,  z11, x2,  y1,  z21, x, y, z, npt);
+  FindCutPoints(low, high, y1,  x2,  z21, y2,  x2,  z22, y, x, z, npt);
+  FindCutPoints(low, high, x2,  y2,  z22, x1,  y2,  z12, x, y, z, npt);
+  FindCutPoints(low, high, y2,  x1,  z12, y1,  x1,  z11, y, x, z, npt);
+}
+\end{lstlisting}
 This piece of \texttt{C} code is the algorithm used for calculate the coordinates of the vertex of each polygon in the level contour plot. The parameters $*x$, $*y$, $*z$ are the array pointers which have length of 8 individually, $*npc$ is also a pointer has length of 1. If the \texttt{FindCutPoints} is called, the elements in the arrays of $x$, $y$, $z$ will be modified. In general, we feed the location of memory of $x$, $y$, $z$ and $npt$ to \texttt{FindPolygonVertices()} and modify the values of $x$, $y$, $z$ and $npt$ within the \texttt{FindCutPoints}.\\
 
 For example, the first call of \texttt{FindCutPoints()} modifies the elements in the pointer arrays of $x$, $y$, $z$. The location of elements in arrays been modified will depend on the parameter $*npt$. More specifically, the $*x$ as a function of $x1$ and $x2$, $y$ as a function of $y1$ and so on. The second \texttt{FindCutPoints()} is slightly different, $x$ will depend on a function of $x2$, $y$ as a function of $y1$ and $y2$. In the third \texttt{FindCutPoints()} call, $x$ will depend on a function of $x2$ and $x1$, $y$ will depend on a function of $y2$. Finally, $x$ will depend on a function of $x1$, $y$ depend on the function of $y2$ and $y1$. \\
 
 There is no pointer data structure in \texttt{R} hence we cannot produce the same action as \texttt{C}. One approximation to this action will be as follows:
-\begin{Schunk}
-\begin{Sinput}
-> # lFindPolygonVertices = function(...)
-> # {
-> #     out = list(); npt = 0
-> #     out1 = lFindCutPoints(...)
-> #     x = y = z = numeric(8); npt = out1$npt
-> #     ...
-> #     out$x = out1$x + out2$y + out3$x + out4$y
-> #     out$y = out1$y + out2$x + out3$y + out4$x
-> #     out$npt = out4$npt
-> #     out
-> # }
-\end{Sinput}
-\end{Schunk}
+\begin{lstlisting}
+lFindPolygonVertices = function(...)
+{
+    out = list(); npt = 0
+    out1 = lFindCutPoints(...)
+    x = y = z = numeric(8); npt = out1$npt
+    ...
+    out$x = out1$x + out2$y + out3$x + out4$y
+    out$y = out1$y + out2$x + out3$y + out4$x
+    out$npt = out4$npt
+    out
+}
+\end{lstlisting}
 Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, record the values for $x$, $y$, $z$ and $npt$ outside the \texttt{lFindCutPoints()} call in \texttt{R} every time. At last, I combined each individual $x$ and $y$ together as the previous \texttt{C} code behave. 
 
 
@@ -556,7 +546,7 @@ The \texttt{gridGraphics} package provides the structure of viewports which act 
 \end{Schunk}
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 9cm, width = 15cm]{figure/viewport_demo_1.pdf}
+  \includegraphics[height = 8.5cm, width = 15cm]{figure/viewport_demo_1.pdf}
   \caption{display the \texttt{grid} version of draw two plots into one overall graph by setting \texttt{par(mfrow())}. The left-plot is the histogram of observations generated by standard normal distribution, right-plot is the density plot of the observations}
   	\label{figure_hist}
 \end{center}
@@ -635,7 +625,7 @@ The following exmple is calculating the verticle length and horizontal length of
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 9cm, width = 9cm]{figure/gridGraphics_persp_demo_1.pdf}
+  \includegraphics[height = 10cm, width = 10cm]{figure/gridGraphics_persp_demo_1.pdf}
   \caption{Used the example from chapter 2, calculate the actual verticle length and horizontal length of the viewport (the region of the red dotted line)}
   	\label{figure8}
 \end{center}
@@ -745,10 +735,42 @@ upViewport(depth)
 
 \section{Integrate \texttt{filled.contour()}}
 Unlike \texttt{persp()}, \texttt{filled.contour()} is 'made up' by multiple plots in one plot region. \texttt{gridGraphics} package will take care about most of the simple plots(such as the levels bar on the right hand side of the plot, the titles, and the axes). (See figure \ref{figure3} or figure \ref{figure8}).\\
-As the level-contour 
+
+\texttt{gridGraphics} fully covert the layout of \texttt{filled.contour()} to the viewport structure of \texttt{grid}, therefore we do not need to build or multify the viewports. However, it is necessary to 'move' the contours filled into the correct location with the correct scale. On the other hand, we need to draw the contours filled in the correct viewport.\\
+
+In section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. More specifically, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. In figure \ref{fill_4.3}, the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \texttt{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is simliar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
+
+\begin{lstlisting}
+...
+## navigating to the correct viewport
+depth = gotovp(TRUE)
+## actual drawing
+grid.polygon(...)
+## reset
+upViewport(depth)
+...
+\end{lstlisting}
+
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/filledContour_origin_02.pdf}
+  \includegraphics[height = 7cm, width = 8cm]{figure/filledContour_origin_03.pdf}
+  \includegraphics[height = 7cm, width = 8cm]{figure/filledContour_origin_01.pdf}
+
+  \caption{The top-left filled contour are plotted by \texttt{grid}, top-right plot is the failed reproduce the \texttt{filled.contour()} by \texttt{grid.echo()} at the original state, and the bottom-center plot is the success reproduce the \texttt{filled.contour()} by \texttt{grid.echo()} after integrated to the \texttt{gridGraphics} package.}
+  	\label{fill_4.3}
+\end{center}
+\end{figure}
+
 
 \chapter{Testing}
 \chapter{Example}
+\texttt{persp()} and \texttt{filled.contour()} emulated to \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features with in different viewport easily. However, if a plot drawn by \texttt{graphics} may not been eidt easily.\\
+One simple will be 
+\section{Example to solution}
+
+
 \chapter{Conclusion}
 \chapter{Reference}
 \chapter{Appendix}
