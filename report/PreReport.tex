@@ -528,6 +528,8 @@ for (j = 1; j < ny; j++) {
 }
 \end{lstlisting}
 
+%more -> time comparsion
+
 
 \chapter{Integrate to \texttt{gridGraphics} package}
 \section{Some Concept of \texttt{grid}}
@@ -767,8 +769,48 @@ upViewport(depth)
 \chapter{Testing}
 \chapter{Example}
 \texttt{persp()} and \texttt{filled.contour()} emulated to \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features with in different viewport easily. However, if a plot drawn by \texttt{graphics} may not been eidt easily.\\
-One simple will be 
+One simple will be drawing some points in the plot region.(See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore the right plot look quite rare.\\
+
+One approxmate solution to change the style and color of the points in the left plot of figure \ref{Example_6.0} is that redrawn the points with new style and color, rather than add the same poitns with different style and color.\\
+The other solution will be convert the plot from \texttt{graphics} into \texttt{grid} by using the \texttt{gridGraphics} package, then use \texttt{grid.edit()} to moltify the color and the style of the current plot.\\
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1.pdf}
+  \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_2.pdf}
+  \caption{..}
+  	\label{Example_6.0}
+\end{center}
+\end{figure}
+
 \section{Example to solution}
+The \texttt{persp()} and \texttt{filled.contour()} are now can been edit more easily since they are integraded to \texttt{gridGraphics}. On the other hand, they are now avriable been drawn on \texttt{grid}.\\
+An other Torus shape is drawn by \texttt{graphics} (See figure \ref{Example_6.1}), it has been redrawn on \texttt{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can moltify the features of the polygons easily by using \texttt{grid.edit}. In this example we changed the white color (with opacity is 0) to purple (with opacity is 0.3). On the other word, we added the purple (with opcity is 0.3) to the Torus shape.\\
+
+
+\begin{Schunk}
+\begin{Sinput}
+> Torus_shape(col = 'NA', border = 'gray', box = FALSE)
+> grid.echo()
+> grid.ls()
+\end{Sinput}
+\begin{Soutput}
+polygon
+\end{Soutput}
+\begin{Sinput}
+> newCol = rgb(160/255, 32/255, 240/255, alpha = 0.3)
+> grid.edit('polygon', gp = gpar(fill = newCol))
+\end{Sinput}
+\end{Schunk}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1_2.pdf}
+  \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_1_3.pdf}
+  \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then moltify the colors by \texttt{grid.edit()}}
+  	\label{Example_6.1}
+\end{center}
+\end{figure}
 
 
 \chapter{Conclusion}

@@ -822,17 +822,113 @@ upViewport(depth)
 \chapter{Testing}
 \chapter{Example}
 \texttt{persp()} and \texttt{filled.contour()} emulated to \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features with in different viewport easily. However, if a plot drawn by \texttt{graphics} may not been eidt easily.\\
-One simple will be drawing some points in 
-
-<<Chapter6_example_0.1>>=
+One simple will be drawing some points in the plot region.(See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore the right plot look quite rare.\\
+<<Chapter6_example_0.0, echo = FALSE>>=
+pdf("figure/Chapter6_example_%0d.pdf", onefile=FALSE)
+dev.control("enable")
+@
+<<Chapter6_example_0.1, echo = FALSE>>=
 plot.new()
 plot.window(xlim = c(0, 1), ylim = c(0, 1))
 x = runif(20)
 y = runif(20)
-points(x, y)
+points(x, y, pch = 12, col = 'orange', cex = 1.5)
+
+plot.new()
+plot.window(xlim = c(0, 1), ylim = c(0, 1))
+points(x, y, pch = 12, col = 'orange', cex = 1.5)
+points(x, y, pch = 16, col = 'red', cex = 1.5)
+@
+<<Chapter6_example_0.2, echo = FALSE, results = hide>>=
+dev.off()
 @
 
+One approxmate solution to change the style and color of the points in the left plot of figure \ref{Example_6.0} is that redrawn the points with new style and color, rather than add the same poitns with different style and color.\\
+The other solution will be convert the plot from \texttt{graphics} into \texttt{grid} by using the \texttt{gridGraphics} package, then use \texttt{grid.edit()} to moltify the color and the style of the current plot.\\
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1.pdf}
+  \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_2.pdf}
+  \caption{..}
+  	\label{Example_6.0}
+\end{center}
+\end{figure}
+
 \section{Example to solution}
+The \texttt{persp()} and \texttt{filled.contour()} are now can been edit more easily since they are integraded to \texttt{gridGraphics}. On the other hand, they are now avriable been drawn on \texttt{grid}.\\
+An other Torus shape is drawn by \texttt{graphics} (See figure \ref{Example_6.1}), it has been redrawn on \texttt{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can moltify the features of the polygons easily by using \texttt{grid.edit}. In this example we changed the white color (with opacity is 0) to purple (with opacity is 0.3). On the other word, we added the purple (with opcity is 0.3) to the Torus shape.\\
+
+
+<<Chapter6_1.0, echo = FALSE>>=
+pdf("figure/Chapter6_example_1_%0d.pdf", onefile=FALSE)
+dev.control("enable")
+
+Torus_shape = function(theta=120, phi = 20, expand = 0.5, col = 'orange ',
+                      box = TRUE, border = 'NA', 
+                      ticktype = 'simple', nticks = 5, ...) {
+  x = seq(-15,15,length = 35)
+  y = seq(-15,15,length = 35)
+  f <- function(x, y) { (25 - (10 - sqrt(x^2 + y^2))^2)}
+  z <- outer(x, y, f)
+  nrz <- nrow(z)
+  ncz <- ncol(z)
+  # color
+  jet.colors <- colorRampPalette( c("yellow",'gold', "orange") )
+  nbcol <- 100
+  color <- jet.colors(nbcol)
+  zfacet <- z[-1, -1] + z[-1, -ncz] + z[-nrz, -1] + z[-nrz, -ncz]
+  facetcol <- cut(zfacet, nbcol)
+  
+  par(mar = c(2,2,2,2))
+  persp(x, y, z, theta = theta, 
+        phi = phi, expand = expand, 
+        #col = color[facetcol], 
+        box = box, border = border, col = col,
+        ticktype = ticktype, nticks = nticks, ...)
+  
+}
+@
+<<Chapter6_1.0>>=
+Torus_shape(col = 'NA', border = 'gray', box = FALSE)
+grid.echo()
+grid.ls()
+newCol = rgb(160/255, 32/255, 240/255, alpha = 0.3)
+grid.edit('polygon', gp = gpar(fill = newCol))
+@
+<<Chapter6_1.2, echo = FALSE, results = hide>>=
+dev.off()
+@
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1_2.pdf}
+  \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_1_3.pdf}
+  \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then moltify the colors by \texttt{grid.edit()}}
+  	\label{Example_6.1}
+\end{center}
+\end{figure}
+
+<<Chapter_6_2.0>>=
+f8 = function()
+{
+  x <- y <- seq(-8*pi, 8*pi, len = 40)
+  r <- sqrt(outer(x^2, y^2, "+"))
+  #col = heat.colors(20)
+  col = terrain.colors(20)
+  filled.contour(cos(r^2)*exp(-r/(2*pi)), 
+                 axes=FALSE,
+                 col = col,
+                 asp=1)
+}
+
+f8()
+grid.echo()
+grid.ls()
+col = heat.colors(5)
+grid.edit('GRID.polygon.21', gp = gpar(col = 'gray'))
+
+@
 
 
 \chapter{Conclusion}
