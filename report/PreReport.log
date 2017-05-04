@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  3 MAY 2017 16:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  4 MAY 2017 13:54
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -385,6 +385,9 @@ LaTeX Warning: Label `figure8' multiply defined.
 
 
 LaTeX Warning: Label `figure8' multiply defined.
+
+
+LaTeX Warning: Label `Example_6.1' multiply defined.
 
 )
 \openout1 = `PreReport.aux'.
@@ -1134,67 +1137,144 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [23] [24 <./figure/filledContour_origin_02.pdf> <./figure/filledContour_origin_
 03.pdf> <./figure/filledContour_origin_01.pdf>]
 Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--771
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
+
+ []
+
+<figure/Chapter5_example_01.pdf, id=251, 505.89pt x 505.89pt>
+File: figure/Chapter5_example_01.pdf Graphic file (type pdf)
+
+<use figure/Chapter5_example_01.pdf>
+Package pdftex.def Info: figure/Chapter5_example_01.pdf used on input line 780.
+
+(pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
+
+<figure/Chapter5_example_02.pdf, id=252, 505.89pt x 505.89pt>
+File: figure/Chapter5_example_02.pdf Graphic file (type pdf)
+
+<use figure/Chapter5_example_02.pdf>
+Package pdftex.def Info: figure/Chapter5_example_02.pdf used on input line 781.
+
+(pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
+
+<figure/Chapter5_example_03.pdf, id=253, 505.89pt x 505.89pt>
+File: figure/Chapter5_example_03.pdf Graphic file (type pdf)
+
+<use figure/Chapter5_example_03.pdf>
+Package pdftex.def Info: figure/Chapter5_example_03.pdf used on input line 782.
+
+(pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `' on page 25 undefined on input line 789.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 789--791
+
+ []
+
 [25
 
-]
+] [26 <./figure/Chapter5_example_01.pdf> <./figure/Chapter5_example_02.pdf> <./
+figure/Chapter5_example_03.pdf>]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 771--773
+Underfull \hbox (badness 10000) in paragraph at lines 795--797
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 774--776
+Underfull \hbox (badness 10000) in paragraph at lines 798--800
 
  []
 
-<figure/Chapter6_example_1.pdf, id=254, 505.89pt x 505.89pt>
+<figure/Chapter6_example_1.pdf, id=274, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1.pdf used on input line 779.
+Package pdftex.def Info: figure/Chapter6_example_1.pdf used on input line 803.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter6_example_2.pdf, id=255, 505.89pt x 505.89pt>
+<figure/Chapter6_example_2.pdf, id=275, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_2.pdf used on input line 780.
+Package pdftex.def Info: figure/Chapter6_example_2.pdf used on input line 804.
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 787--789
+Underfull \hbox (badness 10000) in paragraph at lines 811--813
 
  []
 
-[26
+[27
 
  <./figure/Chapter6_example_1.pdf> <./figure/Chapter6_example_2.pdf>]
-<figure/Chapter6_example_1_2.pdf, id=265, 505.89pt x 505.89pt>
+<figure/Chapter6_example_1_2.pdf, id=285, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 808
+Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 832
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter6_example_1_3.pdf, id=266, 505.89pt x 505.89pt>
+<figure/Chapter6_example_1_3.pdf, id=286, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1_3.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_3.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 809
+Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 833
 .
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
- [27 <./figure/Chapter6_example_1_2.pdf> <./figure/Chapter6_example_1_3.pdf>]
+
+<figure/Chapter6_example_2_2.pdf, id=287, 505.89pt x 505.89pt>
+File: figure/Chapter6_example_2_2.pdf Graphic file (type pdf)
+
+<use figure/Chapter6_example_2_2.pdf>
+Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 861
+.
+(pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
+
+<figure/Chapter6_example_2_3.pdf, id=288, 505.89pt x 505.89pt>
+File: figure/Chapter6_example_2_3.pdf Graphic file (type pdf)
+
+<use figure/Chapter6_example_2_3.pdf>
+Package pdftex.def Info: figure/Chapter6_example_2_3.pdf used on input line 862
+.
+(pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28 <./figure/Chapter6_example_1_2.pdf> <./figure/Chapter6_example_1_3.pdf>]
+[29 <./figure/Chapter6_example_2_2.pdf> <./figure/Chapter6_example_2_3.pdf>]
 Chapter 7.
-[28
+[30
 
 ]
 Chapter 8.
-[29
+[31
 
 ]
 Chapter 9.
-[30
+[32
 
 ] (PreReport.aux)
 
@@ -1208,10 +1288,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 7045 strings out of 493335
- 104523 string characters out of 3147021
- 188555 words of memory out of 3000000
- 10364 multiletter control sequences out of 15000+200000
+ 7071 strings out of 493335
+ 105396 string characters out of 3147021
+ 188566 words of memory out of 3000000
+ 10385 multiletter control sequences out of 15000+200000
  46758 words of font info for 95 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,67p,1078b,2273s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1230,9 +1310,9 @@ gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files
  (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (31 pages, 1085386 bytes).
+Output written on PreReport.pdf (33 pages, 1421070 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
+ 367 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 170 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 195 words of extra memory for PDF output out of 10000 (max. 10000000)
 

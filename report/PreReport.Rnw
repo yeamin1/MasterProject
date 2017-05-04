@@ -562,8 +562,10 @@ Where:\\
 $nx = length(x) - 1$,\\
 $ny = length(y) - 1$,\\
 $ns = length(levels) - 1$\\
-It requires huge iteration. For example, In Figure \ref{figure8}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore there are at most 108360 polygons that we need to consider which it will slow down the sorftware. \\
-The solution will be repeating the coordinate of x, y, z, and the levels until the length of maximum polygons, then do the calculation and the drawing at once. That is, vectorizing the \texttt{filled.contour()}.\\
+It requires huge iteration. For example, In Figure \ref{figure8}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore there are at most 108360 polygons that we need to consider which it will slow down the software. \\
+The solution will be instead of calculate the coordinate of every polygon 
+
+repeating the coordinate of x, y, z, and the levels until the length of maximum polygons, then do the calculation and the drawing at once. That is, vectorizing the \texttt{filled.contour()}.\\
 
 
 
@@ -820,6 +822,30 @@ upViewport(depth)
 
 
 \chapter{Testing}
+The aim of this paper is to redraw Perspective Plots and Level (Contour) Plots on \texttt{grid} package which as identical as \texttt{graphics} package. Every plots draw by \texttt{grid} graphics should be not only identical to \texttt{graphics} by human eye, but also the machine 'thinks' they are identical.\\
+
+However, there are some tiny differences which can not distinguish by human eye, for example, the color are differences at one pixcel between two plots, or the colors of few area have one unit difference on red Channel distortion compare to the other plot. Therefore we need a software to find out those tiny difference.\\
+
+The \textbf{ImageMagick} is the software that used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and also read and write images in a variety of formats (over 200). The features used in this paper is the \texttt{compare}, which is the program to mathematically and visually annotate the difference between an image and its reconstruction.\\
+
+The following example (see figure \ref{chapter5.1}) are drawning two rotated sinc function, where the colors of the surface are close to each other which cannot be distinguish by human eyes. However, there is a difference for the colors, the top-left plot($rgb = 211, 182, 255$) have one color pixcel higher on red channel than the right-plot($rgb = 210, 182, 255$). At last, the bottom plot shows the difference, the region filled by red color is the difference, which is true because the color of the surface are different, the lines and labes which have lighter color because they are mathematically and visually identical to each other. \\
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_01.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_02.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_03.pdf}
+
+  \caption{The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}
+  	\label{chapter5.1}
+\end{center}
+\end{figure}
+
+The following figure shows the test that built in the \texttt{gridGraphics} package. In this section we only shows the different plot. The \texttt{graphics} and \texttt{grid} plots are in \ref{}.\\
+% no image return when they are identical
+
+
+
 \chapter{Example}
 \texttt{persp()} and \texttt{filled.contour()} emulated to \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features with in different viewport easily. However, if a plot drawn by \texttt{graphics} may not been eidt easily.\\
 One simple will be drawing some points in the plot region.(See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore the right plot look quite rare.\\
@@ -909,7 +935,9 @@ dev.off()
 \end{center}
 \end{figure}
 
-<<Chapter_6_2.0>>=
+<<Chapter_6_2.0, echo = FALSE>>=
+pdf("figure/Chapter6_example_2_%0d.pdf", onefile=FALSE)
+dev.control("enable")
 f8 = function()
 {
   x <- y <- seq(-8*pi, 8*pi, len = 40)
@@ -921,14 +949,29 @@ f8 = function()
                  col = col,
                  asp=1)
 }
+@
 
+<<Chapter_6_2.1>>=
 f8()
 grid.echo()
 grid.ls()
-col = heat.colors(5)
-grid.edit('GRID.polygon.21', gp = gpar(col = 'gray'))
-
+## add color to the line of every polygons
+grid.edit(grid.ls(print = FALSE)$name[3], gp = gpar(col =c(NA, NA,NA, 'red')))
 @
+
+<<Chapter_6_2.1, results = hide, echo = FALSE>>=
+dev.off()
+@
+
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_2.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_3.pdf}
+  \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then moltify the colors by \texttt{grid.edit()}}
+  	\label{Example_6.1}
+\end{center}
+\end{figure}
 
 
 \chapter{Conclusion}
