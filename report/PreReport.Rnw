@@ -381,7 +381,7 @@ static int LimitCheck(double *lim, double *c, double *s)
 }
 \end{lstlisting}
 
-The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multiplying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{c*} and \texttt{s*} are the pointer which will point to the machine memory of \texttt{s} and \texttt{c} and multify them.\\
+The top piece of code is used for checking the Limit for the \texttt{persp()} function. It also multiplying the variable \textttt{c} and \texttt{s} for further calculation. In this case, the \texttt{c*} and \texttt{s*} are the pointer which will point to the machine memory of \texttt{s} and \texttt{c} and modify them.\\
 
 However, this process cannot be reproduced on \texttt{R} because \texttt{R} does not have the pointer data structure. One possible solution will be rather than doing the Limit checking and multiply \texttt{s} and \texttt{c}, do the limit checking and return/assign the \texttt{s} and \texttt{c} as \texttt{xs} ad \texttt{ys} for further calculation.
 \begin{lstlisting}
@@ -793,7 +793,7 @@ upViewport(depth)
 \section{Integrate \texttt{filled.contour()}}
 Unlike \texttt{persp()}, \texttt{filled.contour()} is 'made up' by multiple plots in one plot region. \texttt{gridGraphics} package will take care about most of the simple plots(such as the levels bar on the right hand side of the plot, the titles, and the axes). (See figure \ref{figure3} or figure \ref{figure8}).\\
 
-\texttt{gridGraphics} fully covert the layout of \texttt{filled.contour()} to the viewport structure of \texttt{grid}, therefore we do not need to build or multify the viewports. However, it is necessary to 'move' the contours filled into the correct location with the correct scale. On the other hand, we need to draw the contours filled in the correct viewport.\\
+\texttt{gridGraphics} fully convert the layout of \texttt{filled.contour()} to the viewport structure of \texttt{grid}, therefore we do not need to build or modify the viewports. However, it is necessary to 'move' the filled contours into the correct location with the correct scale. On the other hand, we need to draw the filled contours in the correct viewport.\\
 
 In section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. More specifically, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. In figure \ref{fill_4.3}, the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \texttt{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is simliar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
 
@@ -822,13 +822,13 @@ upViewport(depth)
 
 
 \chapter{Testing}
-The aim of this paper is to redraw Perspective Plots and Level (Contour) Plots on \texttt{grid} package which as identical as \texttt{graphics} package. Every plots draw by \texttt{grid} graphics should be not only identical to \texttt{graphics} by human eye, but also the machine 'thinks' they are identical.\\
+The aim of this paper is to redraw Perspective Plots and Level (Contour) Plots using the \texttt{grid} package with an identical result to the \texttt{graphics} package. Every plot drawn by \texttt{grid} graphics should be not only identical to \texttt{graphics} by human eye, but also the machine 'thinks' they are identical.\\
 
-However, there are some tiny differences which can not distinguish by human eye, for example, the color are differences at one pixcel between two plots, or the colors of few area have one unit difference on red Channel distortion compare to the other plot. Therefore we need a software to find out those tiny difference.\\
+However, there are some tiny differences which can not distinguish by human eye, for example, the color are differences at one pixel between two plots, or the colors of few area have one unit difference on red Channel distortion compare to the other plot. Therefore we need software to detect those tiny differences.\\
 
-The \textbf{ImageMagick} is the software that used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and also read and write images in a variety of formats (over 200). The features used in this paper is the \texttt{compare}, which is the program to mathematically and visually annotate the difference between an image and its reconstruction.\\
+\textbf{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and also read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to mathematically and visually annotate the difference between an image and its reconstruction.\\
 
-The following example (see figure \ref{chapter5.1}) are drawning two rotated sinc function, where the colors of the surface are close to each other which cannot be distinguish by human eyes. However, there is a difference for the colors, the top-left plot($rgb = 211, 182, 255$) have one color pixcel higher on red channel than the right-plot($rgb = 210, 182, 255$). At last, the bottom plot shows the difference, the region filled by red color is the difference, which is true because the color of the surface are different, the lines and labes which have lighter color because they are mathematically and visually identical to each other. \\
+The following example (see figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the top-left plot($rgb = 211, 182, 255$) has one color pixel higher on red channel than the right-plot($rgb = 210, 182, 255$). The bottom plot shows the difference, the region filled by red color is the difference, which is true because the color of the surface are different, the box and labes which have lighter color because they are mathematically and visually identical to each other. \\
 
 \begin{figure}[h]
 \begin{center}
@@ -847,8 +847,9 @@ The following figure shows the test that built in the \texttt{gridGraphics} pack
 
 
 \chapter{Example}
-\texttt{persp()} and \texttt{filled.contour()} emulated to \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features with in different viewport easily. However, if a plot drawn by \texttt{graphics} may not been eidt easily.\\
-One simple will be drawing some points in the plot region.(See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore the right plot look quite rare.\\
+\texttt{persp()} and \texttt{filled.contour()} are now supported by \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features within different viewport easily. However, a plot drawn by \texttt{graphics} may not been edited easily.\\
+One simple example is drawing some points in the plot region.(See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore the right plot look quite rare.\\
+%change the example?
 <<Chapter6_example_0.0, echo = FALSE>>=
 pdf("figure/Chapter6_example_%0d.pdf", onefile=FALSE)
 dev.control("enable")
@@ -883,7 +884,7 @@ The other solution will be convert the plot from \texttt{graphics} into \texttt{
 
 \section{Example to solution}
 The \texttt{persp()} and \texttt{filled.contour()} are now can been edit more easily since they are integraded to \texttt{gridGraphics}. On the other hand, they are now avriable been drawn on \texttt{grid}.\\
-An other Torus shape is drawn by \texttt{graphics} (See figure \ref{Example_6.1}), it has been redrawn on \texttt{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can moltify the features of the polygons easily by using \texttt{grid.edit}. In this example we changed the white color (with opacity is 0) to purple (with opacity is 0.3). On the other word, we added the purple (with opcity is 0.3) to the Torus shape.\\
+An other Torus shape is drawn by \texttt{graphics} (See figure \ref{Example_6.3}), it has been redrawn on \texttt{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can moltify the features of the polygons easily by using \texttt{grid.edit}. In this example we changed the white color (with opacity is 0) to purple (with opacity is 0.3).\\
 
 
 <<Chapter6_1.0, echo = FALSE>>=
@@ -931,7 +932,7 @@ dev.off()
   \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1_2.pdf}
   \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_1_3.pdf}
   \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then moltify the colors by \texttt{grid.edit()}}
-  	\label{Example_6.1}
+  	\label{Example_6.3}
 \end{center}
 \end{figure}
 
