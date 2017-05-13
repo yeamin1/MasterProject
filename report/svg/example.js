@@ -211,20 +211,28 @@ main = document.getElementById('graphics-plot-2-main-1.1.1.text');
 main_default = main.getAttribute('fill');
 main.onmouseover = mainon;
 main.onmouseout = mainout;
-main.onclick = addShade;
+//main.onclick = addShade;
 alpha = document.getElementById('alpha.1.1.text');
-change_color = document.getElementById('change.1.1.text');
+change_color = document.getElementById('color.1.1.text');
 alpha.onmouseover = mainon;
 alpha.onmouseout = mainout;
 change_color.onmouseover = mainon;
 change_color.onmouseout = mainout;
 alpha.onclick = addAlpha; 
+shading = document.getElementById('shading.1.1.text');
+shading.onmouseover = mainon;
+shading.onmouseout = mainout;
+shading.onclick = addShade;
+reseting = document.getElementById('reset.1.1.text');
+reseting.onmouseover = mainon;
+reseting.onmouseout = mainout;
+reseting.onclick = reset;
 
 // avriable colors.
 var col_default = [];
 for(i = 1; i <= 5; i ++)
 {
-    color_id = document.getElementById('color.1.' + i);
+    color_id = document.getElementById('color.2.' + i);
     col_default[i] = color_id.getAttribute('fill');
     color_id.onmouseover = mainon;
     color_id.onmouseout = mainout;

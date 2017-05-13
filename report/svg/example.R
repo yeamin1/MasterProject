@@ -12,7 +12,6 @@ Volcano.contour.full = function()
 }
 Volcano.contour = function()
 {
-  par(bg = "slategray")
   x <- 10*1:nrow(volcano)
   y <- 10*1:ncol(volcano)
   filled.contour(x, y, volcano, color = terrain.colors, axes = FALSE)
@@ -41,7 +40,6 @@ Volcano.persp.svg = function(theta = 110, phi = 60)
     terrain.colors(20)[cut(zi,
                            stats::quantile(zi, seq(0,1, length.out = 21)),
                            include.lowest = TRUE)]
-  par(bg = "slategray")
   persp(x, y, 2*z, theta = theta, phi = phi, col = fcol, scale = FALSE,
         ltheta = -120, shade = 0.4, border = NA, box = FALSE)
   title('Maungawhau', col.main = 'red') ## on hide
@@ -62,14 +60,17 @@ pushViewport(viewport(y=1, height=.5, just="top", width = 1))
 grid.echo(Volcano.persp, newpage=FALSE)
 upViewport()
 
-pushViewport(viewport(x = 0.56, y=0.25, height=.35, width = 0.88))
+pushViewport(viewport(x = 0.56, y=0.25, height=.5, width = 1))
 
 grid.echo(Volcano.contour, newpage=FALSE)
 # grid.edit('graphics-plot-1-rect-1', gp = gpar(fill = 'white'))
 # grid.edit('graphics-plot-1-box-1', gp = gpar(fill = 'white'))
 downViewport('graphics-plot-1')
-grid.rect(gp = gpar(fill = 'slategray', col = 'slategray'))
+#grid.rect(gp = gpar(fill = 'white', col = 'white'))
 upViewport()
+
+pdf('test.pdf', width = 7, height = 9.708333)
+dev.off()
 
 
 
@@ -96,7 +97,8 @@ z[is.na(z)] <- 1
 setwd('C:/Users/yeamin/Desktop/mproject/MasterProject/report/svg') ##uni
 
 surface = function(){
-  border = rgb(139/255,	136/255, 120/255	)
+  alpha = 1
+  border = rgb(139/255,	136/255, 120/255)
   trans = persp(x, y, z, theta = 20,
                 phi = 20, expand = 0.5,  
                 col = rgb(255/255,	250/255,	205/255), box = TRUE, border = border,col.axis = 'red', ticktype = 'detail',
@@ -104,9 +106,9 @@ surface = function(){
   par(new = TRUE)
   trans = persp(x, y, z, theta = 20,
                 phi = 20, expand = 0.5,  
-                col = rgb(255/255,	250/255,	205/255), box = FALSE, border = border,col.axis = 'red', ticktype = 'detail',
+                col = rgb(255/255,	250/255,	205/255, alpha = alpha), box = FALSE, border = border,col.axis = 'red', ticktype = 'detail',
                 col.lab = 'red')
-  title('clickme~~')
+  title('A sinc surface')
   grid.echo()
   
   nx = length(x) - 1; ny = length(y) - 1
@@ -118,24 +120,33 @@ surface = function(){
   zz = z[1:nx, 1:ny]
   
   
-  displays = paste('value of z:', round(as.numeric(zz[a]), 4))
+  displays = paste('Value of z:', round(as.numeric(zz[a]), 4))
   ## display the value of z
-  grid.text(displays, x = 0.1, y = 0.01, just=c("left", "bottom"),
+  grid.text(displays, x = 0.75, y = 0.7, rot = -3.5,
             gp=gpar(fontface="italic",  col = rgb(0,191/255,255/255, alpha = 0)), name = 'labels')
 }
 
 surface()
 ## more actions
-grid.text('alpha~~',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'alpha')
-grid.text('chagne color',x = 0.1, y = 0.88, just = c('left', 'top'), name = 'change')
+grid.text('Reset',x = 0.1, y = 0.93, just = c('left', 'top'), name = 'reset')
+grid.text('Shading',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'shading')
+grid.text('Change opacity',x = 0.1, y = 0.87, just = c('left', 'top'), name = 'alpha')
+grid.text('Chagne color',x = 0.1, y = 0.84, just = c('left', 'top'), name = 'color')
 
-grid.rect(x = c(0.1, 0.13, 0.16, 0.19, 0.22), y = rep(0.85, 5), width = 0.02, height = 0.02, 
-          just = c('left', 'top'), gp = gpar(fill = c('red', 'blue', 'green', 'yellow', 'purple'), col = NA),
+
+grid.rect(x = c(0.1, 0.13, 0.16, 0.19, 0.22), y = rep(0.81, 5), width = 0.02, height = 0.02, 
+          just = c('left', 'top'), gp = gpar(fill = c('#FF4500', '#00008B', '#D3D3D3', '#F8F8FF', '#9932CC'), col = NA),
           name = 'color')
 
 grid.script(file="example.js")
 grid.export("example.svg", strict = FALSE)
 
+
+##output
+pdf("Rplot_2_%0d.pdf", onefile=FALSE)
+dev.control("enable")
+
+dev.off()
 
 
 Volcano = function() {
