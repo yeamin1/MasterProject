@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  15 MAY 2017 15:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  15 MAY 2017 23:03
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
-LaTeX2e <2016/03/31> patch level 1
+LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,14 +22,14 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count88
 \calc@Bcount=\count89
@@ -42,27 +42,27 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count90
 \calc@Cskip=\skip45
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/06/28 v2.15d AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen106
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count91
@@ -117,17 +117,17 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count104
@@ -143,8 +143,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen128
 \Gm@dimlist=\toks20
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
 \lst@mode=\count107
 \lst@gtempboxa=\box28
 \lst@token=\toks21
@@ -158,82 +158,82 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \lst@lineno=\count112
 \lst@maxwidth=\dimen132
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count113
 \lst@skipnumbers=\count114
 \lst@framebox=\box29
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count115
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
 File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
 File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang2.sty"
 File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 )
-(C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\Sweave.sty
+(C:/PROGRA~1/R/R-33~1.3/share/texmf/tex/latex\Sweave.sty
 Package: Sweave 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
@@ -241,7 +241,7 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen133
 \Gin@req@width=\dimen134
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
@@ -252,8 +252,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \c@FancyVerbLine=\count117
 \FV@StepNumber=\count118
 \FV@OutFile=\write3
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -268,7 +267,7 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
 LaTeX Info: Redefining \oldstylenums on input line 334.
@@ -335,58 +334,33 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\ae.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\ae.sty"
 Package: ae 2001/02/12 1.3 Almost European Computer Modern
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
 LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\t1aer.fd"
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 ))))
 
 LaTeX Warning: Unused global option(s):
     [paper=a4,fontsize=11pt].
 
-(PreReport.aux
-
-LaTeX Warning: Label `figure4' multiply defined.
-
-
-LaTeX Warning: Label `figure4' multiply defined.
-
-
-LaTeX Warning: Label `figure8' multiply defined.
-
-
-LaTeX Warning: Label `figure8' multiply defined.
-
-
-LaTeX Warning: Label `figure8' multiply defined.
-
-
-LaTeX Warning: Label `figure8' multiply defined.
-
-
-LaTeX Warning: Label `figure8' multiply defined.
-
-
-LaTeX Warning: Label `figure8' multiply defined.
-
-)
+(PreReport.aux)
 \openout1 = `PreReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -403,7 +377,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 15.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 15.
@@ -444,7 +418,7 @@ LaTeX Font Info:    ... okay on input line 15.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count119
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
 \scratchdimen=\dimen135
@@ -457,11 +431,11 @@ LaTeX Font Info:    ... okay on input line 15.
 \MPnumerator=\count124
 \makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks23
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -470,22 +444,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -513,7 +487,7 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 LaTeX Font Info:    Try loading font information for T1+aett on input line 21.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 
@@ -604,13 +578,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
 LaTeX Font Info:    Try loading font information for TS1+aett on input line 143
 .
-(C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aett.fd
+(C:/PROGRA~1/R/R-33~1.3/share/texmf/tex/latex\ts1aett.fd
 File: ts1aett.fd 
 )
 LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 143
 .
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `TS1/aett/m/sl' in size <10> not available
@@ -838,12 +812,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--403
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
+Underfull \hbox (badness 10000) in paragraph at lines 405--407
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
@@ -851,35 +825,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 407--408
 File: figure/box_example_1.pdf Graphic file (type pdf)
 
 <use figure/box_example_1.pdf>
-Package pdftex.def Info: figure/box_example_1.pdf used on input line 412.
+Package pdftex.def Info: figure/box_example_1.pdf used on input line 413.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/box_example_2.pdf, id=124, 505.89pt x 505.89pt>
 File: figure/box_example_2.pdf Graphic file (type pdf)
 
 <use figure/box_example_2.pdf>
-Package pdftex.def Info: figure/box_example_2.pdf used on input line 413.
+Package pdftex.def Info: figure/box_example_2.pdf used on input line 414.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/axis_example_1.pdf, id=125, 505.89pt x 505.89pt>
 File: figure/axis_example_1.pdf Graphic file (type pdf)
 
 <use figure/axis_example_1.pdf>
-Package pdftex.def Info: figure/axis_example_1.pdf used on input line 425.
+Package pdftex.def Info: figure/axis_example_1.pdf used on input line 426.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
 
 <figure/axis_example_2.pdf, id=126, 505.89pt x 505.89pt>
 File: figure/axis_example_2.pdf Graphic file (type pdf)
 
 <use figure/axis_example_2.pdf>
-Package pdftex.def Info: figure/axis_example_2.pdf used on input line 426.
+Package pdftex.def Info: figure/axis_example_2.pdf used on input line 427.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
 
 <figure/axis_example_3.pdf, id=127, 505.89pt x 505.89pt>
 File: figure/axis_example_3.pdf Graphic file (type pdf)
 
 <use figure/axis_example_3.pdf>
-Package pdftex.def Info: figure/axis_example_3.pdf used on input line 427.
+Package pdftex.def Info: figure/axis_example_3.pdf used on input line 428.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
  [13 <./figure/box_example_1.pdf> <./figure/box_example_2.pdf> <./figure/axis_e
 xample_1.pdf> <./figure/axis_example_2.pdf> <./figure/axis_example_3.pdf>]
@@ -887,31 +861,25 @@ xample_1.pdf> <./figure/axis_example_2.pdf> <./figure/axis_example_3.pdf>]
 File: figure/filled_example_1.pdf Graphic file (type pdf)
 
 <use figure/filled_example_1.pdf>
-Package pdftex.def Info: figure/filled_example_1.pdf used on input line 475.
+Package pdftex.def Info: figure/filled_example_1.pdf used on input line 476.
 (pdftex.def)             Requested size: 341.43785pt x 284.53154pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 482--483
+Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
 
-Overfull \hbox (14.65652pt too wide) in paragraph at lines 486--487
+Overfull \hbox (14.65652pt too wide) in paragraph at lines 487--488
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (8.36249pt too wide) in paragraph at lines 489--490
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][] 
  []
 
 
@@ -933,17 +901,27 @@ Overfull \hbox (8.36249pt too wide) in paragraph at lines 492--493
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Overfull \hbox (8.36249pt too wide) in paragraph at lines 493--494
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-[14] [15 <./figure/filled_example_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+[14]
+
+LaTeX Warning: Reference `figure8' on page 15 undefined on input line 526.
+
+[15 <./figure/filled_example_1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
 
  []
 
@@ -953,30 +931,32 @@ Chapter 4.
 File: figure/viewport_demo_1.pdf Graphic file (type pdf)
 
 <use figure/viewport_demo_1.pdf>
-Package pdftex.def Info: figure/viewport_demo_1.pdf used on input line 566.
+Package pdftex.def Info: figure/viewport_demo_1.pdf used on input line 567.
 (pdftex.def)             Requested size: 426.7973pt x 241.8518pt.
  [17
 
  <./figure/viewport_demo_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 593--595
+Underfull \hbox (badness 10000) in paragraph at lines 594--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 596--597
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
 
  []
 
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 604.
 
-Underfull \hbox (badness 10000) in paragraph at lines 601--602
-
- []
-
+(C:/PROGRA~1/R/R-33~1.3/share/texmf/tex/latex\ts1aer.fd
+File: ts1aer.fd 
+)
+LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 604.
 
 Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
@@ -1016,7 +996,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 620--621
 
  []
 
-<figure/gridGraphics_persp_demo_1.pdf, id=180, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_1.pdf, id=181, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_1.pdf>
@@ -1028,7 +1008,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 652--653
 
  []
 
-<figure/gridGraphics_persp_demo_viewport_1.pdf, id=189, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_viewport_1.pdf, id=190, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_viewport_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport_1.pdf>
@@ -1036,7 +1016,7 @@ Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport_1.pdf used on
 input line 671.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/gridGraphics_persp_demo_viewport_2.pdf, id=190, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_viewport_2.pdf, id=191, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_viewport_2.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport_2.pdf>
@@ -1050,10 +1030,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 678--679
 
 [20 <./figure/gridGraphics_persp_demo_viewport_1.pdf> <./figure/gridGraphics_pe
 rsp_demo_viewport_2.pdf>]
-
-LaTeX Warning: Reference `' on page 21 undefined on input line 705.
-
-<figure/gridGraphics_persp_demo_viewport2_1.pdf, id=200, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_viewport2_1.pdf, id=201, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_viewport2_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport2_1.pdf>
@@ -1061,19 +1038,15 @@ Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport2_1.pdf used on
  input line 709.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/gridGraphics_persp_demo_viewport2_2.pdf, id=201, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_viewport2_2.pdf, id=202, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_viewport2_2.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport2_2.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport2_2.pdf used on
  input line 710.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
-
-
-LaTeX Warning: Reference `' on page 21 undefined on input line 716.
-
-[21 <./figure/gridGraphics_persp_demo_viewport2_1.pdf> <./figure/gridGraphics_p
-ersp_demo_viewport2_2.pdf>]
+ [21 <./figure/gridGraphics_persp_demo_viewport2_1.pdf> <./figure/gridGraphics_
+persp_demo_viewport2_2.pdf>]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1087,7 +1060,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<figure/gridGraphics_persp_demo_viewport3_1.pdf, id=211, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_viewport3_1.pdf, id=212, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_viewport3_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport3_1.pdf>
@@ -1095,7 +1068,7 @@ Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport3_1.pdf used on
  input line 744.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/gridGraphics_persp_demo_viewport3_2.pdf, id=212, 505.89pt x 505.89pt>
+<figure/gridGraphics_persp_demo_viewport3_2.pdf, id=213, 505.89pt x 505.89pt>
 File: figure/gridGraphics_persp_demo_viewport3_2.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport3_2.pdf>
@@ -1113,7 +1086,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 756--757
 
  []
 
-<figure/filledContour_origin_02.pdf, id=226, 505.89pt x 505.89pt>
+<figure/filledContour_origin_02.pdf, id=227, 505.89pt x 505.89pt>
 File: figure/filledContour_origin_02.pdf Graphic file (type pdf)
 
 <use figure/filledContour_origin_02.pdf>
@@ -1121,7 +1094,7 @@ Package pdftex.def Info: figure/filledContour_origin_02.pdf used on input line
 774.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/filledContour_origin_03.pdf, id=227, 505.89pt x 505.89pt>
+<figure/filledContour_origin_03.pdf, id=228, 505.89pt x 505.89pt>
 File: figure/filledContour_origin_03.pdf Graphic file (type pdf)
 
 <use figure/filledContour_origin_03.pdf>
@@ -1129,7 +1102,7 @@ Package pdftex.def Info: figure/filledContour_origin_03.pdf used on input line
 775.
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
-<figure/filledContour_origin_01.pdf, id=228, 505.89pt x 505.89pt>
+<figure/filledContour_origin_01.pdf, id=229, 505.89pt x 505.89pt>
 File: figure/filledContour_origin_01.pdf Graphic file (type pdf)
 
 <use figure/filledContour_origin_01.pdf>
@@ -1163,7 +1136,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 791--792
 
  []
 
-<figure/Chapter5_example_01.pdf, id=251, 505.89pt x 505.89pt>
+<figure/Chapter5_example_01.pdf, id=252, 505.89pt x 505.89pt>
 File: figure/Chapter5_example_01.pdf Graphic file (type pdf)
 
 <use figure/Chapter5_example_01.pdf>
@@ -1171,7 +1144,7 @@ Package pdftex.def Info: figure/Chapter5_example_01.pdf used on input line 795.
 
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter5_example_02.pdf, id=252, 505.89pt x 505.89pt>
+<figure/Chapter5_example_02.pdf, id=253, 505.89pt x 505.89pt>
 File: figure/Chapter5_example_02.pdf Graphic file (type pdf)
 
 <use figure/Chapter5_example_02.pdf>
@@ -1179,7 +1152,7 @@ Package pdftex.def Info: figure/Chapter5_example_02.pdf used on input line 796.
 
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter5_example_03.pdf, id=253, 505.89pt x 505.89pt>
+<figure/Chapter5_example_03.pdf, id=254, 505.89pt x 505.89pt>
 File: figure/Chapter5_example_03.pdf Graphic file (type pdf)
 
 <use figure/Chapter5_example_03.pdf>
@@ -1223,14 +1196,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 817--818
 
  []
 
-<figure/Chapter6_example_1.pdf, id=274, 505.89pt x 505.89pt>
+<figure/Chapter6_example_1.pdf, id=275, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1.pdf>
 Package pdftex.def Info: figure/Chapter6_example_1.pdf used on input line 821.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter6_example_2.pdf, id=275, 505.89pt x 505.89pt>
+<figure/Chapter6_example_2.pdf, id=276, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2.pdf>
@@ -1248,7 +1221,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 831--832
 
  []
 
-<figure/Chapter6_example_1_2.pdf, id=285, 505.89pt x 505.89pt>
+<figure/Chapter6_example_1_2.pdf, id=286, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_2.pdf>
@@ -1256,7 +1229,7 @@ Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 851
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter6_example_1_3.pdf, id=286, 505.89pt x 505.89pt>
+<figure/Chapter6_example_1_3.pdf, id=287, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1_3.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_3.pdf>
@@ -1264,7 +1237,7 @@ Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 852
 .
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
-<figure/Chapter6_example_2_2.pdf, id=287, 505.89pt x 505.89pt>
+<figure/Chapter6_example_2_2.pdf, id=288, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_2_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2_2.pdf>
@@ -1272,7 +1245,7 @@ Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 880
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-<figure/Chapter6_example_2_3.pdf, id=288, 505.89pt x 505.89pt>
+<figure/Chapter6_example_2_3.pdf, id=289, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_2_3.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2_3.pdf>
@@ -1299,7 +1272,7 @@ l.892 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
-<figure/Chapter6_example_3_1.pdf, id=300, 505.89pt x 700.6175pt>
+<figure/Chapter6_example_3_1.pdf, id=301, 505.89pt x 700.6175pt>
 File: figure/Chapter6_example_3_1.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_3_1.pdf>
@@ -1312,29 +1285,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 902--904
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 907.
-
-(C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aer.fd
-File: ts1aer.fd 
-)
-LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 907.
-
-<figure/svg/origin_1.PNG, id=319, 505.13719pt x 438.8897pt>
+<figure/svg/origin_1.PNG, id=320, 505.13719pt x 438.8897pt>
 File: figure/svg/origin_1.PNG Graphic file (type png)
 
 <use figure/svg/origin_1.PNG>
 Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 917.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
-<figure/svg/change_2.PNG, id=321, 500.62032pt x 437.38406pt>
+<figure/svg/change_2.PNG, id=322, 500.62032pt x 437.38406pt>
 File: figure/svg/change_2.PNG Graphic file (type png)
 
 <use figure/svg/change_2.PNG>
 Package pdftex.def Info: figure/svg/change_2.PNG used on input line 918.
 (pdftex.def)             Requested size: 142.26578pt x 142.26158pt.
 
-<figure/svg/change_3.PNG, id=322, 499.11469pt x 437.38406pt>
+<figure/svg/change_3.PNG, id=323, 499.11469pt x 437.38406pt>
 File: figure/svg/change_3.PNG Graphic file (type png)
 
 <use figure/svg/change_3.PNG>
@@ -1345,14 +1310,14 @@ File: figure/svg/origin_1.PNG Graphic file (type png)
 Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 929.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
-<figure/svg/opacity_2.PNG, id=323, 500.62032pt x 438.13687pt>
+<figure/svg/opacity_2.PNG, id=324, 500.62032pt x 438.13687pt>
 File: figure/svg/opacity_2.PNG Graphic file (type png)
 
 <use figure/svg/opacity_2.PNG>
 Package pdftex.def Info: figure/svg/opacity_2.PNG used on input line 930.
 (pdftex.def)             Requested size: 142.26578pt x 142.26576pt.
 
-<figure/svg/opacity_3.PNG, id=324, 500.62032pt x 435.87843pt>
+<figure/svg/opacity_3.PNG, id=325, 500.62032pt x 435.87843pt>
 File: figure/svg/opacity_3.PNG Graphic file (type png)
 
 <use figure/svg/opacity_3.PNG>
@@ -1363,14 +1328,14 @@ File: figure/svg/origin_1.PNG Graphic file (type png)
 Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 941.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
-<figure/svg/Shade_2.PNG, id=325, 499.8675pt x 441.14813pt>
+<figure/svg/Shade_2.PNG, id=326, 499.8675pt x 441.14813pt>
 File: figure/svg/Shade_2.PNG Graphic file (type png)
 
 <use figure/svg/Shade_2.PNG>
 Package pdftex.def Info: figure/svg/Shade_2.PNG used on input line 942.
 (pdftex.def)             Requested size: 142.2654pt x 142.26076pt.
 
-<figure/svg/Shade_3.PNG, id=326, 499.8675pt x 436.63126pt>
+<figure/svg/Shade_3.PNG, id=327, 499.8675pt x 436.63126pt>
 File: figure/svg/Shade_3.PNG Graphic file (type png)
 
 <use figure/svg/Shade_3.PNG>
@@ -1411,35 +1376,31 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 7151 strings out of 493335
- 107142 string characters out of 3147021
- 183632 words of memory out of 3000000
- 10449 multiletter control sequences out of 15000+200000
+ 7159 strings out of 493333
+ 106431 string characters out of 3139191
+ 183696 words of memory out of 3000000
+ 10459 multiletter control sequences out of 15000+200000
  47093 words of font info for 96 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,67p,1079b,2273s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,7n,67p,1071b,2273s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcrm1000.pk> <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsltt10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (36 pages, 2590398 bytes).
+n\ec\dpi600\tcst1000.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsltt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on PreReport.pdf (36 pages, 2592117 bytes).
 PDF statistics:
  406 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
