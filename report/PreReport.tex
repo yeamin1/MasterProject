@@ -21,16 +21,16 @@
 \maketitle
 \chapter{Introduction}
 \section{Background}
-The core graphics system in R can been divided in to two main packages. The first package is the graphics package. It is older and it provides the original GRZ graphics system from S, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other R packages build on top of it. The newer package is the grid package. It is actually slower but is has more flexibility and additional features compared to the graphics package. \\
+The core graphics system in \texttt{R} can been divided in to two main packages. The first package is the \texttt{graphics} package. It is older and it provides the original GRZ graphics system from \texttt{S}, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other \texttt{R} packages build on top of it. The newer package is the \texttt{grid} package. It is actually slower but is has more flexibility and additional features compared to the \texttt{graphics} package. \\
 
-A graph that is drawn using grid can been edited in many more ways than a graph that has been drawn using the basic graphics package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of grid become available for any plot drawn using the \texttt{graphics} package. \\
+A graph that is drawn using \texttt{grid} can been edited in many more ways than a graph that has been drawn using the basic \texttt{graphics} package. However, there is a new package, called \texttt{gridGraphics}, which allows us to convert a plot that has been drawn by the \texttt{graphics} package to an equivalent plot drawn by \texttt{grid} graphics. This means that the additional flexibility and features of \texttt{grid} become available for any plot drawn using the \texttt{graphics} package. \\
 
 \section{The \texttt{gridGraphics} package}
-\texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic graphics package to a plot that has been drawn using the grid package. \\
+\texttt{gridGraphics} is like a 'translator' that translates a plot that has been drawn using the basic \texttt{graphics} package to a plot that has been drawn using the \texttt{grid} package. \\
 
-The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The grid.echo() replicates the plot using grid so that the user may edit the plot in more ways than they can with the original plot drawn by basic graphic package.\\
+The \texttt{gridGraphic} package has a main function called \texttt{grid.echo()}, which takes a recorded plot as an argument (or NULL for the current plot of the current graphics device). The \texttt{grid.echo()} replicates the plot using \texttt{grid} so that the user may edit the plot in more ways than they can with the original plot drawn by basic \texttt{graphic} package.\\
 
-The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with grid, see Figure \ref{figure1}
+The following code provides a quick example. We generate 25 random numbers for x and y. First, we draw a scatter plot using the function \texttt{plot()} from the basic graphics package, then we redraw it using \texttt{grid.echo()} from the \texttt{gridGraphics} package with \texttt{grid}, see Figure \ref{figure1}
 \begin{Schunk}
 \begin{Sinput}
 > set.seed(110)
@@ -46,11 +46,11 @@ The following code provides a quick example. We generate 25 random numbers for x
 \begin{center}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_basic_demo_1.pdf}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_basic_demo_1.pdf}
-  \caption{The left plot is drawn by using plot(); the Right plot is redrawn using \texttt{grid.echo()}. Two plots are identical to each other}
+  \caption{The left plot is drawn by using \texttt{plot()}; the Right plot is redrawn using \texttt{grid.echo()}. Two plots are identical to each other}
   	\label{figure1}
 \end{center}
 \end{figure}
-One example that shows the advantage of drawing the plot using grid rather than basic graphics is that there are objects, called grid grobs, which recorded a list of the details of each components of the plot that has been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\
+One example that shows the advantage of drawing the plot using \texttt{grid} rather than basic \texttt{graphics} is that there are objects, called grid grobs, which recorded a list of the details of each components of the plot that has been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\
 \begin{Schunk}
 \begin{Sinput}
 > grid.ls()
@@ -110,6 +110,7 @@ The \texttt{grid.echo()} function can replicate most plots that are drawn by the
 
 \section{Aim of this project}
 The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and Level (Contour) Plots, \texttt{filled.contour()} using the \texttt{grid} package. However, these two functions are written in C, as part of the core \texttt{R} source code. This means that a normal \texttt{R} user or developer cannot modify the code. Also, the \texttt{C} code is stractured so that the normal \texttt{R} user or developer cannot separately call the \texttt{C} code.The solution of this paper as follows: 
+\newpage
 \begin{enumerate}
   \item Emulate the \texttt{persp()} function on \texttt{grid} separate from the \texttt{gridGraphics} package (standalone):
     \begin{enumerate}
@@ -117,7 +118,14 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
       \item Understanding and translating the calculation that been done by \texttt{C} code from the \texttt{graphics} package to \texttt{R} code
       \item Draw the Perspective Plot on \texttt{grid}.
     \end{enumerate}
-  \item Connect the standalone to the \texttt{gridGraphics}
+  \item integrate the standalone to the \texttt{gridGraphics}
+  \color{red}{
+    \begin{enumerate}
+      \item navigating to the correct viewport that been setted up by \texttt{gridGraphics}
+      \item Create a new viewport for setting up the correct xscale and yscale preparing for drawing, (if necessary) then draw the contents in the correct viewport.
+      \item Test the difference of the plots that been drawn by \texttt{graphics} and \texttt{grid}
+    \end{enumerate}
+  }
 \end{enumerate}
 
 
@@ -374,18 +382,22 @@ FindPolygonVertices(c[k - 1], c[k],
         px, py, pz, &npt);
 	    
 
-out = FindPolygonVertices(sc[k], sc[k + 1],
-       x[i], x[i + 1],
-       y[j], y[j + 1],
-       z[i + (j - 1) * nx],
-       z[i + 1 + (j - 1) * nx],
-       z[i + (j) * nx],
-       z[i + 1 + (j) * nx],
-       px, py, pz, npt, iii = iii)
-...
+out = lFindPolygonVertices(sc[k], sc[k + 1],
+        x[i], x[i + 1],
+        y[j], y[j + 1],
+        z[i, j],
+        z[i + 1, j],
+        z[i, j + 1],
+        z[i + 1, j + 1],
+        px, py, pz, npt)
 \end{lstlisting}
 
-To get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
+\textcolor{red}{
+To get the same elements in the matrix as the elements in the array, one solution will be that
+changing the matrix data format into vector data format. However, \texttt{R} is farmillar with matrix data structure. Hence it is easiler and more understandable by \texttt{R} user and programmer. The \texttt{z[i - 1 + (j - 1) * nx]} in \textt{FindPolygonVertices()} is selecting the $i^{th}$ element from the $j^{th}$ column. On the other word, it selected the $i^{th}$ row and $j^{th}$ element from a matrix, which the following \texttt{R} code provied the same result That is, \texttt{z[i, j]} in \texttt{R} will provide the same result as \texttt{C}
+}\\
+
+% get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
 
 The top piece of codes is both calling the \texttt{FindPolygonVertices()} function by feeding parameter into it. However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
 
@@ -909,7 +921,6 @@ The figure \ref{Example_6.3.1} shows the color of the sinc surface changing from
   	\label{Example_6.3.1}
 \end{center}
 \end{figure}
-
 
 \subsubsection*{Animation of Changing the opacity of the surface}
 The figure \ref{Example_6.3.2} shows the opacity of the current sinc surface decreasing during the animation. The middle plot is captured during the duration. 
