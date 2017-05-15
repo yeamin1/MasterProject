@@ -116,7 +116,7 @@ dev.off()
 \end{figure}
 
 \section{Aim of this project}
-The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and Level (Contour) Plots, \texttt{filled.contour()} using the \texttt{grid} package. However, these two functions are written in C, as part of the core \texttt{R} source code. This means that a normal \texttt{R} user or developer cannot modify the code. Also, the \texttt{C} code is stractured so that the normal \texttt{R} user or developer cannot separately call the \texttt{C} code.The solution of this paper as follows: 
+The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and Level (Contour) Plots, \texttt{filled.contour()} using the \texttt{grid} package. However, these two functions are written in C, as part of the core \texttt{R} source code. This means that a normal \texttt{R} user or developer cannot modify the code. Also, the \texttt{C} code is structured so that the normal \texttt{R} user or developer cannot separately call the \texttt{C} code. The solution of this paper as follows: 
 \newpage
 \begin{enumerate}
   \item Emulate the \texttt{persp()} function on \texttt{grid} separate from the \texttt{gridGraphics} package (standalone):
@@ -129,7 +129,7 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
   \color{red}{
     \begin{enumerate}
       \item navigating to the correct viewport that been setted up by \texttt{gridGraphics}
-      \item Create a new viewport for setting up the correct xscale and yscale preparing for drawing, (if necessary) then draw the contents in the correct viewport.
+      \item Create a new viewport for setting up the correct x-scale and y-scale preparing for drawing, (if necessary) then draw the contents in the correct viewport.
       \item Test the difference of the plots that been drawn by \texttt{graphics} and \texttt{grid}
     \end{enumerate}
   }
@@ -201,7 +201,7 @@ trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
 
 From the previous example, it is clearly to see that the Perspective Plots is formed by a finite number of "polygon", each polygon has 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. \\
 
-Inorder to emulate this plot, we need to access some information from the graphics engine display list. However, the value of the vertices is not in the display list, therefore the plot cannot be reproduced directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we should re-do the calculation to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been "catched" from the display list.
+Inorder to emulate this plot, we need to access some information from the graphics engine display list. However, the value of the vertices is not in the display list, therefore the plot cannot be reproduced directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we should re-do the calculation to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been " caught " from the display list.
 <<standalone_2.1, echo = TRUE>>=
 reco = recordPlot()
 info = reco[[1]][[3]][[2]]
@@ -220,7 +220,7 @@ The values of \textbf{x}, \textbf{y} and \textbf{z} can been recored from the di
 
 As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimenstion of \textbf{z} is $ \textbf{dim(x)} \times \textbf{dim(y)}$.\\
 
-One 3-dimenstions points contains a set values of $(x, y, z)$, but \textbf{z} is $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. Inorder to produce the points, the D of \textbf{x}, \textbf{y} and \textbf{z} need to be matched and in a right order.\\
+One 3-dimenstions points contains a set values of $(x, y, z)$, but \textbf{z} is $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. In order to produce the points, the D of \textbf{x}, \textbf{y} and \textbf{z} need to be matched and in a right order.\\
 
 First step is the reduce the \textbf{z} $\textbf{dim(x)} \times \textbf{dim(y)}$ matrix into a one D vector which has length of $\textbf{dim(x)} \times \textbf{dim(y)}$. It can be reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of \textbf{z}. Since \textbf{z} is reduced along the x direction say $z_p$, hence we repeat x until the length of y say $x_p$, and we repeat each y by the length of \textbf{x}, say $y_p$. At last, the combination of $\x_p$, $y_p$, $z_p$ is the 3-D points which prepare for computing the vertices. \\
 <<standalone_2.1>>=
@@ -230,7 +230,7 @@ zTmp = as.numeric(z)
 length(xTmp) == length(zTmp) & length(yTmp) == length(zTmp)
 @
 
-The idea of transform the points into vertices is repeating the points in a right order. From previous section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, \textbf{total = (length(x) - 1) $\times$ (length(y) - 1)}. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-rigth to top-right, lastly, connect top-right to top-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
+The idea of transform the points into vertices is repeating the points in a right order. From previous section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, \textbf{total = (length(x) - 1) $\times$ (length(y) - 1)}. The polygons been drawn by connecting 4 points in a specific order. The algorithm of the drawing as follows: starting from bottom-left, first connect bottom-left to bottom-right, second connect from bottom-right to top-right, lastly, connect top-right to top-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
 
 Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and $4 \times 4$ viewing transformation matrix \textbf{P}. The 3-dimenstion vertices are computed, the matrix \textbf{P} can been recored from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
 
@@ -240,7 +240,7 @@ head(points3d$x)
 head(points3d$y)
 @
 
-Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combinding another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the drawing order of the polygons.
+Because of we are drawing a 3-D surface in a 2-D plane, some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combining another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the drawing order of the polygons.
 <<standalone_2.3>>=
 orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
 zdepth = orderTemp[, 4]
@@ -332,7 +332,7 @@ dev.off()
 \end{figure}
 
 \subsection{Lighting}
-The other main benefit supported by \texttt{persp()} is the shading. It shades the surface by assuming the surface is being illuminated from a given direction.(light source)\\
+The other main benefit supported by \texttt{persp()} is the shading. It shades the surface by assuming the surface is being illuminated from a given direction. (light source) \\
 
 In \texttt{persp()}, the main parameters that the user needs to specify for producing a shaded perspective plot is: \textit{ltheta}, \textit{lphi} and \textit{shade}.\\
 
@@ -346,7 +346,7 @@ Where \textit{d} is the dot product of the unit vector normal to each facet (\te
 
 The color of each facet will be calculated by the color that is recored from the graphics engine display list multiplied by the \textbf{shade}. Finally, the surface is drawn by filling the colors for every facet.\\
 
-If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker. The brightness and darkness will depend on the value of the \textbf{shade}. If shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 1. Therefore, it will look similar to non-shading plot. Similarly, if the shade gets larger, the term close to 0 and the plot gets darker.
+If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 0, therefore the corrosponding facets will become darker. The brightness and darkness will depend on the value of the \textbf{shade}. If shade close to 0, the term $\big(\frac{1 + d}{2}\big)^{shade}$ will be close to 1. Therefore, it will look like non-shading plot. Similarly, if the shade gets larger, the term close to 0 and the plot gets darker.
 <<lighting_1.settup, eval = TRUE, echo = FALSE>>=
 pdf("figure/Lighting_%0d.pdf", onefile=FALSE)
 dev.control("enable")
@@ -564,7 +564,7 @@ lFindPolygonVertices = function(...)
     out
 }
 \end{lstlisting}
-Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, record the values for $x$, $y$, $z$ and $npt$ outside the \texttt{lFindCutPoints()} call in \texttt{R} every time. At last, I combined each individual $x$ and $y$ together as the previous \texttt{C} code behave. 
+Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, record the values for $x$, $y$, $z$ and $npt$ outside the \texttt{lFindCutPoints()} call in \texttt{R} every time. At last, I combined every $x$ and $y$ together as the previous \texttt{C} code behave. 
 
 
 \subsection{Vectorization}
@@ -576,7 +576,7 @@ Where:\\
 $nx = length(x) - 1$,\\
 $ny = length(y) - 1$,\\
 $ns = length(levels) - 1$\\
-It requires huge iteration. For example, In Figure \ref{figure8}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore there are at most 108360 polygons that we need to consider which it will slow down the software. \\
+It requires huge iteration. For example, In Figure \ref{figure8}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore, there are at most 108360 polygons that we need to consider which it will slow down the software. \\
 The solution will be instead of calculate the coordinate of every polygon 
 
 repeating the coordinate of x, y, z, and the levels until the length of maximum polygons, then do the calculation and the drawing at once. That is, vectorizing the \texttt{filled.contour()}.\\
@@ -650,14 +650,14 @@ grid.ls(viewports = TRUE)
 \end{lstlisting}
 % PerspWindow, 
 The previous code used the \texttt{graphics} package to plot a histogram on the left and a density plot of a 
-thousand of random observation generated by standard normal distribution. Then redraw the plot on \texttt{grid}. The grobs object and the veiwports are created. \\
+thousands of random observation generated by standard normal distribution. Then redraw the plot on \texttt{grid}. The grobs object and the veiwports are created. \\
 
 The grobs object and the veiwports and been listed by \texttt{grid.ls()}. In the previous example, we can see that the contents(rectangles) of histogram were drawn in the viewports of \textit{graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1}. The density plot was drawn in the other viewports which is \textit{graphics-inner::graphics-figure-2::graphics-plot-2-clip::graphics-window-2-1}. Although it is completely different structure of the plot that was drawn by \texttt{graphics}, they are identical to each other.\\
 
-In order to reproduce the same plots as \texttt{graphics}, we need to modify the \texttt{grid} structure  of the plot so that it behaves identically to the plot that was drawn by \texttt{graphics}. In this example, the viewports need to be set in the same location and the same size as the \texttt{graphics} plot region, and also, the x-scale and y-scale of the viewports in \texttt{grid} need to be set the same user coordinates as in \texttt{graphics}.\\
+To reproduce the same plots as \texttt{graphics}, we need to modify the \texttt{grid} structure of the plot so that it behaves identically to the plot that was drawn by \texttt{graphics}. In this example, the viewports need to be set in the same location and the same size as the \texttt{graphics} plot region, and also, the x-scale and y-scale of the viewports in \texttt{grid} need to be set the same user coordinates as in \texttt{graphics}.\\
 
 \section{Integrate \texttt{persp()}}
-The core of \texttt{gridGraphics} package provides some basic viewport structure to support the perspective plots(\texttt{persp()}), base on the gerneral plots that been drawn by \texttt{graphics}. However, there are some specific details that \texttt{gridGraphics} not fully supported. The following problems need to be solved before integrating \texttt{persp()} into the package. \\
+The core of \texttt{gridGraphics} package provides some basic viewport structure to support the perspective plots(\texttt{persp()}), based on the gerneral plots that been drawn by \texttt{graphics}. However, there are some specific details that \texttt{gridGraphics} not fully supported. The following problems need to be solved before integrating \texttt{persp()} into the package. \\
 
 \begin{enumerate}
   \item{The viewport that \texttt{persp()} needs to be on}
@@ -665,13 +665,13 @@ The core of \texttt{gridGraphics} package provides some basic viewport structure
   \item{whether the clipping happens for every component when drawing}
 \end{enumerate}
 
-It is not allowable to call \texttt{grid.newpage()} to create a new page for drawing a perspective plot since it will destory other feathers within the plot. For example, the points and lines added to perspective plot. These features will desappear when calling \texttt{grid.echo()} to reproduce the plot, since they are in a different viewport and the current graphics devices only contains the viewport that I created. Therefore it is necessary to draw the perspective plot in the correct viewport.\\
+It is not allowable to call \texttt{grid.newpage()} to create a new page for drawing a perspective plot since it will destory other feathers within the plot. For example, the points and lines added to perspective plot. These features will desappear when calling \texttt{grid.echo()} to reproduce the plot, since they are in a different viewport and the current graphics devices only contains the viewport that I created. Therefore, it is necessary to draw the perspective plot in the correct viewport.\\
 
-The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \texttt{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \texttt{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because there is one more dimension of \texit{z}. And also the plot is drawn in a two dimension graphics devices.\\
+The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \texttt{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \texttt{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because there is one more dimension of \texit{z}. And, the plot is drawn in a two-dimension graphics devices.\\
 
 The final problem will be wether the clipping happeneds. More specifically, the different components of the perspective plot should be drawn in clipped region or non-clipped region. \\
 
-The first problem can be solve by ...\\
+The first problem can be solved by ...\\
 % not sure how     dev.set(recordDev()) %par = currentPar(NULL) %dev.set(playDev()) works...
 
 The limit of x and y will depend on the ratio of horizontal and verticle length of the current windows graphics devices. On \texttt{grid}, it is simple to track the actual length of the viewport in the current windows graphics devices. \\
@@ -705,7 +705,7 @@ dev.off()
 \end{figure}
 
 \newpage
-The idea of this example is that it is possible to track the actual vertical length and horizontal length by navigating to the specific viewport and record them. It leads to the solution of our second problem, first of all, we navigate to the viewport that has been drawn by \texttt{persp()}, calculate the limit of x and y base on the size of this viewport. Then we create an other viewport(visible for other \texttt{gridGraphics} functions eg \texttt{lines()} and \texttt{points()}) that has the same location and the same size as the previous viewport. Then we modify the xscale and yscale from the new veiwport to be the limit of x and y that we calculated. Finally, the concepts of \texttt{persp()} will be drawn in this viewport. \\
+The idea of this example is that it is possible to track the actual vertical length and horizontal length by navigating to the specific viewport and record them. It leads to the solution of our second problem, first of all, we navigate to the viewport that has been drawn by \texttt{persp()}, calculate the limit of x and y base on the size of this viewport. Then we create another viewport (visible for other \texttt{gridGraphics} functions eg \texttt{lines()} and \texttt{points()}) that has the same location and the same size as the previous viewport. Then we modify the xscale and yscale from the new veiwport to be the limit of x and y that we calculated. Finally, the concepts of \texttt{persp()} will be drawn in this viewport. \\
 
 <<gridGraphics_persp_demo_p1_1, eval = FALSE>>=
 testPersp21(box = FALSE)
@@ -729,7 +729,7 @@ c(current.viewport()$xscale, current.viewport()$yscale)
 \end{center}
 \end{figure}
 
-The example shows a Torus drawn on the plot region. The red dotted rectangles indicate the plot region of \texttt{graphics}(left plot) and the viewport region for \texttt{grid}(right plot). Although the plot region is identical to the viewport region, the scales are different. The limit of x and y are $(-0.4555925,  0.3807924)$, $(-0.5003499,  0.3360350)$. The scale of x and y in the viewport region are $(-0.04,  1.04)$, $(-0.04,  1.04)$. Therefore the scale needs to be moltified. \\
+The example shows a Torus drawn on the plot region. The red dotted rectangles indicate the plot region of \texttt{graphics}(left plot) and the viewport region for \texttt{grid}(right plot). Although the plot region is identical to the viewport region, the scales are different. The limit of x and y are $(-0.4555925,  0.3807924)$, $(-0.5003499,  0.3360350)$. The scale of x and y in the viewport region are $(-0.04,  1.04)$, $(-0.04,  1.04)$. Therefore, the scale needs to be moltified. \\
 
 \begin{lstlisting}
 ## navigate to the viewport
@@ -742,7 +742,7 @@ vp = viewport(0.5, 0.5, 1, 1, default.units = 'npc',
 ## back to the Root viewport
 upViewport(depth)  
 \end{lstlisting}
-The code is creating a new temporary viewport which contains the true x scale and y scale prepared for drawing the perspective plot. The values for x scale and y scale are calculated by \texttt{PerspWindow()}. It will do the calculation by considering the 'actual' ratio of horizontal length and verticle length of the current graphics device, simliar to the calculation of the \texttt{C} code does.\\
+The code is creating a new temporary viewport which contains the true x scale and y scale prepared for drawing the perspective plot. The values for x scale and y scale are calculated by \texttt{PerspWindow()}. It will do the calculation by considering the 'actual' ratio of horizontal length and vertical length of the current graphics device, similar to the calculation of the \texttt{C} code does.\\
 After we create the temporary viewport that contains the correct scale, then we added this viewport to the location of the tree which inside the viewport created by \texttt{gridGraphics}. That is, push temporary viewport inside the odd viewport. The Final step will be drawn the concepts within this viewport. To do that, we need to push a temporary viewport every time we drawn.\\ 
 The following code is how does the surface of the plot is drawn internally.
 \begin{lstlisting}
@@ -756,7 +756,7 @@ upViewport()
 upViewport(depth)
 \end{lstlisting}
 
-The next problem will be the merge the temporary viewport into the \texttt{gridGraphics} viewport tree to make sure all the features(such as points and lines are added afther perspective plots is drawn) are drawn in the correct viewport. Although the scales have been fixed, other features have no information about the temporary viewport. In the other word, these features are drawn in the viewport that \texttt{gridGraphics} creates rather than drawn in the temporary viewport. One example (see Figure \ref{}) shows that, a Rosette shape ring is drawn above the surface of tour(left-plot). Then we redraw the left-plot on \texttt{grid} by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot).
+The next problem will be the merge the temporary viewport into the \texttt{gridGraphics} viewport tree to make sure all the features (such as points and lines are added afther perspective plots is drawn) are drawn in the correct viewport. Although the scales have been fixed, other features have no information about the temporary viewport. In the other word, these features are drawn in the viewport that \texttt{gridGraphics} creates rather than drawn in the temporary viewport. One example (see Figure \ref{}) shows that, a Rosette shape ring is drawn above the surface of tour(left-plot). Then we redraw the left-plot on \texttt{grid} by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot).
 
 \begin{figure}[h]
 \begin{center}
@@ -767,25 +767,25 @@ The next problem will be the merge the temporary viewport into the \texttt{gridG
 \end{center}
 \end{figure}
 
-The final problem will be to decide whether allows the concepets are drawn outside the plot region or not . The example (see figure \ref{}) shows the previous tour surface draw over the limit of the box. The left-plot is drawn by \texttt{graphics} which is the behaviours that we need to reproduce on \texttt{grid}. In \texttt{persp()}, there are three concepts are been drawn, the surface of perspective plot, the box that contains the surface and the axes plus the labels of axes. By default, \texttt{graphics} draw the surface by setting \texttt{clipping = 'on'}. On the other hand, the surface will not exceed the limit of the plot region. However, the box and the axes may be drawn outside the plot region if it is necessary. Alternatively, the right plot is drawn by \texttt{grid} which indicates compeletely result comparing with the left plot(the surface is drawn over the plot region but the axes is not drawn outside the plot region). Due to the perpose of this paper, it is necessary to make sure the plots as identical as possible.\\
+The final problem will be to decide whether allows the concepets are drawn outside the plot region or not . The example (see figure \ref{}) shows the previous tour surface draw over the limit of the box. The left-plot is drawn by \texttt{graphics} which is the behaviours that we need to reproduce on \texttt{grid}. In \texttt{persp()}, there are three concepts are been drawn, the surface of perspective plot, the box that contains the surface and the axes plus the labels of axes. By default, \texttt{graphics} draw the surface by setting \texttt{clipping = 'on'}. On the other hand, the surface will not exceed the limit of the plot region. However, the box and the axes may be drawn outside the plot region if it is necessary. Alternatively, the right plot is drawn by \texttt{grid} which indicates compeletely result comparing with the left plot (the surface is drawn over the plot region but the axes is not drawn outside the plot region). Due to the perpose of this paper, it is necessary to make sure the plots as identical as possible.\\
 In \texttt{grid}, it is possible to define a viewport that either 'cut' the concepts if they are excess the limit of the viewprot, or continuous draw them outside the viewport by setting the \texttt{clip} equal to be \texttt{'on'} or \texttt{'off'}.\\
-The solution will be distinguish the clipping region for the concpets. Alternatively, the surface cannot excess the limit of the plot region therefore we need to 'cut' the surface if it excess the limit. On the oter hand, we drawn the surface in the 'clip = on's viewport. The box and the axes(include the labels and the units) are drawn in the 'clip = off''s viewport.\\
-Since \texttt{gridGraphics} package already setted up the clipping region, therefore it can be solved by  navigating to the specific viewport and draw the concept of \texttt{persp()}. The following code is the 'action' of solving this problem.
+The solution will be distinguished the clipping region for the concpets. Alternatively, the surface cannot excess the limit of the plot region therefore we need to 'cut' the surface if it excesses the limit. On the oter hand, we drawn the surface in the 'clip = on's viewport. The box and the axes (include the labels and the units) are drawn in the 'clip = off''s viewport.\\
+Since \texttt{gridGraphics} package already setted up the clipping region, therefore it can be solved by navigating to the specific viewport and draw the concept of \texttt{persp()}. The following code is the 'action' of solving this problem.
 \begin{lstlisting}
 ...
-## go to the  viewport weather clip = 'off'
+## go to the viewport weather clip = 'off'
 depth = gotovp(TRUE)
 ## draw the axes
 PerspAxes(...)
 upViewport(depth)
 ...
-## go to the  viewport weather clip = 'off'
+## go to the viewport weather clip = 'off'
 depth = gotovp(TRUE)
 ## draw the Box
 EdgeDone = PerspBox(0, xr, yr, zr, EdgeDone, trans, 1, lwd)
 upViewport(depth)
 ...
-## go to the  viewport weather clip = 'on'
+## go to the viewport weather clip = 'on'
 depth = gotovp(FALSE)
 ## draw the surface
 DrawFacets(...)
@@ -805,11 +805,11 @@ upViewport(depth)
 
 
 \section{Integrate \texttt{filled.contour()}}
-Unlike \texttt{persp()}, \texttt{filled.contour()} is 'made up' by multiple plots in one plot region. \texttt{gridGraphics} package will take care about most of the simple plots(such as the levels bar on the right hand side of the plot, the titles, and the axes). (See figure \ref{figure3} or figure \ref{figure8}).\\
+Unlike \texttt{persp()}, \texttt{filled.contour()} is 'made up' by multiple plots in one plot region. \texttt{gridGraphics} package will take care about most of the simple plots (such as the levels bar on the right-hand side of the plot, the titles, and the axes). (See figure \ref{figure3} or figure \ref{figure8}).\\
 
 \texttt{gridGraphics} fully convert the layout of \texttt{filled.contour()} to the viewport structure of \texttt{grid}, therefore we do not need to build or modify the viewports. However, it is necessary to 'move' the filled contours into the correct location with the correct scale. On the other hand, we need to draw the filled contours in the correct viewport.\\
 
-In section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. More specifically, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. In figure \ref{fill_4.3}, the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \texttt{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is simliar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
+In section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. More specifically, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. In figure \ref{fill_4.3}, the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \texttt{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is similar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
 
 \begin{lstlisting}
 ...
@@ -838,11 +838,11 @@ upViewport(depth)
 \chapter{Testing}
 The aim of this paper is to redraw Perspective Plots and Level (Contour) Plots using the \texttt{grid} package with an identical result to the \texttt{graphics} package. Every plot drawn by \texttt{grid} graphics should be not only identical to \texttt{graphics} by human eye, but also the machine 'thinks' they are identical.\\
 
-However, there are some tiny differences which can not distinguish by human eye, for example, the color are differences at one pixel between two plots, or the colors of few area have one unit difference on red Channel distortion compare to the other plot. Therefore we need software to detect those tiny differences.\\
+However, there are some tiny differences which cannot distinguish by human eye, for example, the color are differences at one pixel between two plots, or the colors of few area have one unit difference on red Channel distortion compare to the other plot. Therefore, we need software to detect those tiny differences.\\
 
-\textbf{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and also read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to mathematically and visually annotate the difference between an image and its reconstruction.\\
+\textbf{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to mathematically and visually annotate the difference between an image and its reconstruction.\\
 
-The following example (see figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the top-left plot($rgb = 211, 182, 255$) has one color pixel higher on red channel than the right-plot($rgb = 210, 182, 255$). The bottom plot shows the difference, the region filled by red color is the difference, which is true because the color of the surface are different, the box and labes which have lighter color because they are mathematically and visually identical to each other. \\
+The following example (see figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the top-left plot ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the right-plot ($rgb = 210, 182, 255$). The bottom plot shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
 
 \begin{figure}[h]
 \begin{center}
@@ -855,7 +855,7 @@ The following example (see figure \ref{chapter5.1}) are drawn two rotated sinc f
 \end{center}
 \end{figure}
 
-The following figure shows the test that built in the \texttt{gridGraphics} package. In this section we only shows the different plot. The \texttt{graphics} and \texttt{grid} plots are in \ref{}.\\
+The following figure shows the test that built in the \texttt{gridGraphics} package. In this section, we only show the different plot. The \texttt{graphics} and \texttt{grid} plots are in \ref{}.\\
 % no image return when they are identical
 
 
@@ -863,7 +863,7 @@ The following figure shows the test that built in the \texttt{gridGraphics} pack
 \chapter{Example}
 \texttt{persp()} and \texttt{filled.contour()} are now supported by \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features within different viewport easily. However, a plot drawn by \texttt{graphics} may not been edited easily.\\
 
-One simple example is drawing some points in the plot region.(See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore the right plot look quite rare.\\
+One simple example is drawing some points in the plot region. (See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = 'orange'}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = 'red'}). Therefore, the right plot look quite rare.\\
 %change the example?
 <<Chapter6_example_0.0, echo = FALSE>>=
 pdf("figure/Chapter6_example_%0d.pdf", onefile=FALSE)
@@ -885,9 +885,9 @@ points(x, y, pch = 16, col = 'red', cex = 1.5)
 dev.off()
 @
 
-One approxmate solution to change the style and color of the points in the left plot of figure \ref{Example_6.0} is that redrawn the points with new style and color, rather than add the same poitns with different style and color.\\
+One approximate solution to change the style and color of the points in the left plot of figure \ref{Example_6.0} is that redrawn the points with new style and color, rather than add the same points with different style and color.\\
 
-The other solution will be convert the plot from \texttt{graphics} into \texttt{grid} by using the \texttt{gridGraphics} package, then use \texttt{grid.edit()} to moltify the color and the style of the current plot.\\
+The other solution will be convert the plot from \texttt{graphics} into \texttt{grid} by using the \texttt{gridGraphics} package, then use \texttt{grid.edit()} to modify the color and the style of the current plot.\\
 
 \begin{figure}[h]
 \begin{center}
@@ -899,9 +899,9 @@ The other solution will be convert the plot from \texttt{graphics} into \texttt{
 \end{figure}
 
 \section{Example to solution}
-The \texttt{persp()} and \texttt{filled.contour()} are now can been edit more easily since they are integraded to \texttt{gridGraphics}. On the other hand, they are now avriable been drawn on \texttt{grid}.\\
+The \texttt{persp()} and \texttt{filled.contour()} are now can been edit more easily since they are integraded to \texttt{gridGraphics}. On the other hand, they are now available been drawn on \texttt{grid}.\\
 
-An other Torus shape is drawn by \texttt{graphics} (See figure \ref{Example_6.3}), it has been redrawn on \texttt{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can moltify the features of the polygons easily by using \texttt{grid.edit}. In this example we changed the white color (with opacity is 0) to purple (with opacity is 0.3).\\
+An other Torus shape is drawn by \texttt{graphics} (See figure \ref{Example_6.3}), it has been redrawn on \texttt{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can modify the features of the polygons easily by using \texttt{grid.edit}. In this example, we changed the white color (with opacity is 0) to purple (with opacity is 0.3).\\
 
 
 <<Chapter6_1.0, echo = FALSE>>=
@@ -986,7 +986,7 @@ dev.off()
 \begin{center}
   \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_2.pdf}
   \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_3.pdf}
-  \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then moltify the colors by \texttt{grid.edit()}}
+  \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then modify the colors by \texttt{grid.edit()}}
   	\label{Example_6.1}
 \end{center}
 \end{figure}
@@ -995,7 +995,7 @@ dev.off()
 \section{An advance example}
 In \texttt{graphics} package it is very normal to draw two or more plots in the plot region. However, it is not allowable to combind the \texttt{filled.contour()} with any other kind of plots together within one plot region, because \texttt{filled.contour()} will create the layout itself when it been called. Therefore, even we specify a layout before plotting, the \texttt{filled.contour()} will overwrite the layout.\\
 
-The viewport structures of \texttt{grid} provides more flexible than the layout of \texttt{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within in one plot region. The idea will be create a viewport before drawing any plots(said root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} only moltify the structure of it's own viewport but not overwritting the Root viewport. On the other hand, drawing one or more plot combind with \texttt{filled.contour()} is allowable on \texttt{grid}.\\
+The viewport structures of \texttt{grid} provides more flexible than the layout of \texttt{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within in one plot region. The idea will be create a viewport before drawing any plots (said root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} only modify the structure of its own viewport but not overwriting the Root viewport. On the other hand, drawing one or more plot combine with \texttt{filled.contour()} is allowable on \texttt{grid}.\\
 \begin{figure}[H]
 \begin{center}
   \includegraphics[height = 16cm, width = 12cm]{figure/Chapter6_example_3_1.pdf}
@@ -1006,15 +1006,15 @@ The viewport structures of \texttt{grid} provides more flexible than the layout 
 
 \newpage
 \section{A more advance example}
-An other benefit that \texttt{grid} provides is we can convert the graphics drawn with package \texttt{grid} to SVG format by the \texttt{gridSVG} package.
-SVG (Scalable Vector Graphics) is a two dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult achieve by \texttt{R} graphics system.\\
+Another benefit that \texttt{grid} provides is we can convert the graphics drawn with package \texttt{grid} to SVG format by the \texttt{gridSVG} package.
+SVG (Scalable Vector Graphics) is a two-dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult achieve by \texttt{R} graphics system.\\
 
 In this example, we are going through animation of the following action.
 \begin{itemize}
   \item Changing the color of the surface
   \item Changing the opacity of the surface
-  \item Shadding the surface
-  \item Highlighting the specific fragment of the surface and showing it's z-value  
+  \item Shading the surface
+  \item Highlighting the specific fragment of the surface and showing its z-value  
 \end{itemize}
 
 \subsubsection*{Animation of Changing the color of the surface}
@@ -1041,7 +1041,7 @@ The figure \ref{Example_6.3.2} shows the opacity of the current sinc surface dec
 \end{center}
 \end{figure}
 
-\subsubsection*{Animation of Shadding the surface}
+\subsubsection*{Animation of shading the surface}
 The figure \ref{Example_6.3.3} shows the action of adding shade of the current sinc surface. The middle plot is captured during the duration.
 \begin{figure}[h]
 \begin{center}

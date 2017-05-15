@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  15 MAY 2017 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  15 MAY 2017 15:13
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -984,7 +984,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
 ! Undefined control sequence.
 l.611 ...use there is one more dimension of \texit
-                                                  {z}. And also the plot is ...
+                                                  {z}. And, the plot is draw...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -1418,11 +1418,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  7151 strings out of 493335
  107142 string characters out of 3147021
- 182632 words of memory out of 3000000
+ 183632 words of memory out of 3000000
  10449 multiletter control sequences out of 15000+200000
  47093 words of font info for 96 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,67p,1078b,2273s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,7n,67p,1079b,2273s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcrm1000.pk> <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
@@ -1439,7 +1439,7 @@ pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (36 pages, 2590327 bytes).
+Output written on PreReport.pdf (36 pages, 2590398 bytes).
 PDF statistics:
  406 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
