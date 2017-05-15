@@ -315,9 +315,10 @@ If the normal vector is perpendicular to the direction of the light source, then
 \begin{Schunk}
 \begin{Sinput}
 > trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
++  col = 'white', border = 'orange')
+> trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
 +  col = 'white', border = 'orange', 
 +  shade = 0.8, ltheta = 30, lphi = 20)
-> grid.echo()
 \end{Sinput}
 \end{Schunk}
 
@@ -326,7 +327,7 @@ If the normal vector is perpendicular to the direction of the light source, then
 \begin{center}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/Lighting_1.pdf}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/Lighting_2.pdf}
-  \caption{Adding a light source to the perspective plot from the same angel of view. The left figure been drawn by \texttt{graphics} and the right figure been drawn by \texttt{grid}, they are identical to each other.}
+  \caption{Adding a light source to the perspective plot from the same angel of view. The left plot is origin plot without shadding, where the right plot is been shaded.}
   	\label{figure7}
 \end{center}
 \end{figure}
@@ -852,7 +853,7 @@ polygon
 \begin{Soutput}
 graphics-plot-1-rect-1
 graphics-plot-1-box-1
-GRID.polygon.22
+GRID.polygon.4
 \end{Soutput}
 \begin{Sinput}
 > ## add color to the line of every polygons
@@ -872,20 +873,78 @@ GRID.polygon.22
 \end{figure}
 
 \newpage
-\section{A advance example}
+\section{An advance example}
 In \texttt{graphics} package it is very normal to draw two or more plots in the plot region. However, it is not allowable to combind the \texttt{filled.contour()} with any other kind of plots together within one plot region, because \texttt{filled.contour()} will create the layout itself when it been called. Therefore, even we specify a layout before plotting, the \texttt{filled.contour()} will overwrite the layout.\\
+
 The viewport structures of \texttt{grid} provides more flexible than the layout of \texttt{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within in one plot region. The idea will be create a viewport before drawing any plots(said root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} only moltify the structure of it's own viewport but not overwritting the Root viewport. On the other hand, drawing one or more plot combind with \texttt{filled.contour()} is allowable on \texttt{grid}.\\
-
-
-
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{center}
   \includegraphics[height = 16cm, width = 12cm]{figure/Chapter6_example_3_1.pdf}
   \caption{The top plot shows the shape of Maungawhau volcano, where the bottom figure shows the level contour (i.e. the height)}
-  	\label{Example_6.3}
+  	\label{Example_6.2.1}
 \end{center}
 \end{figure}
 
+\newpage
+\section{A more advance example}
+An other benefit that \texttt{grid} provides is we can convert the graphics drawn with package \texttt{grid} to SVG format by the \texttt{gridSVG} package.
+SVG (Scalable Vector Graphics) is a two dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult achieve by \texttt{R} graphics system.\\
+
+In this example, we are going through animation of the following action.
+\begin{itemize}
+  \item Changing the color of the surface
+  \item Changing the opacity of the surface
+  \item Shadding the surface
+  \item Highlighting the specific fragment of the surface and showing it's z-value  
+\end{itemize}
+
+\subsubsection*{Animation of Changing the color of the surface}
+The figure \ref{Example_6.3.1} shows the color of the sinc surface changing from light-yellow(left plot) to orange-red(right plot). The middle plot is captured during the animation. 
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/origin_1.PNG}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/change_2.PNG}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/change_3.PNG}
+  \caption{The plot shows the animation that changing the surface color from the left plot to right plot}
+  	\label{Example_6.3.1}
+\end{center}
+\end{figure}
+
+
+\subsubsection*{Animation of Changing the opacity of the surface}
+The figure \ref{Example_6.3.2} shows the opacity of the current sinc surface decreasing during the animation. The middle plot is captured during the duration. 
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/origin_1.PNG}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/opacity_2.PNG}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/opacity_3.PNG}
+  \caption{The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}
+  	\label{Example_6.3.2}
+\end{center}
+\end{figure}
+
+\subsubsection*{Animation of Shadding the surface}
+The figure \ref{Example_6.3.3} shows the action of adding shade of the current sinc surface. The middle plot is captured during the duration.
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/origin_1.PNG}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/Shade_2.PNG}
+  \includegraphics[height = 5cm, width = 5cm]{figure/svg/Shade_3.PNG}
+  \caption{The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}
+  	\label{Example_6.3.3}
+\end{center}
+\end{figure}
+
+\subsubsection*{Animation of Shadding the surface}
+The figure \ref{Example_6.3.4} shows the highlight action. the specific fragment of the sinc surface will been highlightted when the mouse moves into the area of it. Also, the z-value of the current selected fragment will be appeared at the top-right region. 
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 7.5cm, width = 7.5cm]{figure/svg/hlight_1.PNG}
+  \includegraphics[height = 7.5cm, width = 7.5cm]{figure/svg/hlight_2.PNG}
+  \caption{The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}
+  	\label{Example_6.3.4}
+\end{center}
+\end{figure}
 
 \chapter{Conclusion}
 \chapter{Reference}
