@@ -18,6 +18,7 @@
 
 \title{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}
 \maketitle
+\tableofcontents
 \chapter{Introduction}
 <<R0, echo = FALSE>>=
 library(grid)
@@ -128,7 +129,7 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
   \item integrate the standalone to the \texttt{gridGraphics}
   \color{red}{
     \begin{enumerate}
-      \item navigating to the correct viewport that been setted up by \texttt{gridGraphics}
+      \item navigating to the correct viewport that has been set up by \texttt{gridGraphics}
       \item Create a new viewport for setting up the correct x-scale and y-scale preparing for drawing, (if necessary) then draw the contents in the correct viewport.
       \item Test the difference of the plots that been drawn by \texttt{graphics} and \texttt{grid}
     \end{enumerate}
@@ -428,8 +429,7 @@ out = lFindPolygonVertices(sc[k], sc[k + 1],
 \end{lstlisting}
 
 \textcolor{red}{
-To get the same elements in the matrix as the elements in the array, one solution will be that
-changing the matrix data format into vector data format. However, \texttt{R} is farmillar with matrix data structure. Hence it is easiler and more understandable by \texttt{R} user and programmer. The \texttt{z[i - 1 + (j - 1) * nx]} in \textt{FindPolygonVertices()} is selecting the $i^{th}$ element from the $j^{th}$ column. On the other word, it selected the $i^{th}$ row and $j^{th}$ element from a matrix, which the following \texttt{R} code provied the same result That is, \texttt{z[i, j]} in \texttt{R} will provide the same result as \texttt{C}
+To get the same elements in the matrix as the elements in the array, one solution is to change the matrix data format into vector data format. However, \texttt{R} is farmillar with matrix data structure. Hence it is easiler and more understandable by \texttt{R} user and programmer. The \texttt{z[i - 1 + (j - 1) * nx]} in \textt{FindPolygonVertices()} is selecting the $i^{th}$ element from the $j^{th}$ column, which the following \texttt{R} code provied the same result That is, \texttt{z[i, j]} in \texttt{R} will provide the same result as \texttt{C}
 }\\
 
 % get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
@@ -993,9 +993,9 @@ dev.off()
 
 \newpage
 \section{An advance example}
-In \texttt{graphics} package it is very normal to draw two or more plots in the plot region. However, it is not allowable to combind the \texttt{filled.contour()} with any other kind of plots together within one plot region, because \texttt{filled.contour()} will create the layout itself when it been called. Therefore, even we specify a layout before plotting, the \texttt{filled.contour()} will overwrite the layout.\\
+In the \texttt{graphics} package it is very normal to draw two or more plots in the plot region. However, it is not allowable to combine the \texttt{filled.contour()} with any other kind of plots together within one plot region, because \texttt{filled.contour()} will create the layout itself when it is called. Therefore, even if we specify a layout before plotting, the \texttt{filled.contour()} will overwrite the layout.\\
 
-The viewport structures of \texttt{grid} provides more flexible than the layout of \texttt{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within in one plot region. The idea will be create a viewport before drawing any plots (said root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} only modify the structure of its own viewport but not overwriting the Root viewport. On the other hand, drawing one or more plot combine with \texttt{filled.contour()} is allowable on \texttt{grid}.\\
+The viewport structures of \texttt{grid} provides more flexibility than the layout of \texttt{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within one page. The idea is to create a viewport before drawing any plots (said root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} will only modify the structure of its own viewport but not overwrite the Root viewport.\\
 \begin{figure}[H]
 \begin{center}
   \includegraphics[height = 16cm, width = 12cm]{figure/Chapter6_example_3_1.pdf}
@@ -1016,6 +1016,9 @@ In this example, we are going through animation of the following action.
   \item Shading the surface
   \item Highlighting the specific fragment of the surface and showing its z-value  
 \end{itemize}
+
+\color{red}{ d d  d }
+
 
 \subsubsection*{Animation of Changing the color of the surface}
 The figure \ref{Example_6.3.1} shows the color of the sinc surface changing from light-yellow(left plot) to orange-red(right plot). The middle plot is captured during the animation. 
