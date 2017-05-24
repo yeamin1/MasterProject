@@ -1009,16 +1009,16 @@ The viewport structures of \texttt{grid} provides more flexibility than the layo
 Another benefit that \texttt{grid} provides is we can convert the graphics drawn with package \texttt{grid} to SVG format by the \texttt{gridSVG} package.
 SVG (Scalable Vector Graphics) is a two-dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult achieve by \texttt{R} graphics system.\\
 
-In this example, we are going through animation of the following action.
+In this example, we are going through the animation of the following action.
 \begin{itemize}
   \item Changing the color of the surface
   \item Changing the opacity of the surface
   \item Shading the surface
   \item Highlighting the specific fragment of the surface and showing its z-value  
 \end{itemize}
-
-\color{red}{ d d  d }
-
+\\
+\textcolor{red}{ddd}
+\\
 
 \subsubsection*{Animation of Changing the color of the surface}
 The figure \ref{Example_6.3.1} shows the color of the sinc surface changing from light-yellow(left plot) to orange-red(right plot). The middle plot is captured during the animation. 

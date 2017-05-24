@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {3.2.1}Direct translation from \texttt {C} to \texttt {R}}{15}
 \contentsline {subsection}{\numberline {3.2.2}Vectorization}{16}
 \contentsline {chapter}{\numberline {4}Integrate to \texttt {gridGraphics} package}{18}
-\contentsline {section}{\numberline {4.1}Some Concept of \texttt {grid}}{18}
+\contentsline {section}{\numberline {4.1}Some concept of \texttt {grid}}{18}
 \contentsline {section}{\numberline {4.2}Integrate \texttt {persp()}}{19}
 \contentsline {section}{\numberline {4.3}Integrate \texttt {filled.contour()}}{24}
 \contentsline {chapter}{\numberline {5}Testing}{26}
