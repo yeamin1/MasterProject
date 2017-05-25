@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  24 MAY 2017 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  25 MAY 2017 15:53
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -929,7 +929,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 498--499
 LaTeX Warning: Reference `figure8' on page 16 undefined on input line 526.
 
 [16 <./figure/filled_example_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 548--550
 
  []
 
@@ -939,39 +939,39 @@ Chapter 4.
 File: figure/viewport_demo_1.pdf Graphic file (type pdf)
 
 <use figure/viewport_demo_1.pdf>
-Package pdftex.def Info: figure/viewport_demo_1.pdf used on input line 567.
+Package pdftex.def Info: figure/viewport_demo_1.pdf used on input line 599.
 (pdftex.def)             Requested size: 426.7973pt x 241.8518pt.
  [18
 
  <./figure/viewport_demo_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 594--596
+Underfull \hbox (badness 10000) in paragraph at lines 626--628
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--598
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 599--600
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 604.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 636.
 
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 604.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 636.
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 641--642
 
  []
 
 ! Undefined control sequence.
-l.611 ...use there is one more dimension of \texit
+l.643 ...use there is one more dimension of \texit
                                                   {z}. And, the plot is draw...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -980,27 +980,27 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 643--644
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 613--614
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 615--617
+Underfull \hbox (badness 10000) in paragraph at lines 647--649
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 618--619
+Underfull \hbox (badness 10000) in paragraph at lines 650--651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--621
+Underfull \hbox (badness 10000) in paragraph at lines 652--653
 
  []
 
@@ -1009,10 +1009,10 @@ File: figure/gridGraphics_persp_demo_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_1.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_1.pdf used on input lin
-e 645.
+e 677.
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
  [20 <./figure/gridGraphics_persp_demo_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 652--653
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
 
  []
 
@@ -1021,7 +1021,7 @@ File: figure/gridGraphics_persp_demo_viewport_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport_1.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport_1.pdf used on 
-input line 671.
+input line 703.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
 <figure/gridGraphics_persp_demo_viewport_2.pdf, id=194, 505.89pt x 505.89pt>
@@ -1029,10 +1029,10 @@ File: figure/gridGraphics_persp_demo_viewport_2.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport_2.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport_2.pdf used on 
-input line 672.
+input line 704.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--679
+Underfull \hbox (badness 10000) in paragraph at lines 710--711
 
  []
 
@@ -1043,7 +1043,7 @@ File: figure/gridGraphics_persp_demo_viewport2_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport2_1.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport2_1.pdf used on
- input line 709.
+ input line 741.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
 <figure/gridGraphics_persp_demo_viewport2_2.pdf, id=205, 505.89pt x 505.89pt>
@@ -1051,7 +1051,7 @@ File: figure/gridGraphics_persp_demo_viewport2_2.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport2_2.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport2_2.pdf used on
- input line 710.
+ input line 742.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
  [22 <./figure/gridGraphics_persp_demo_viewport2_1.pdf> <./figure/gridGraphics_
 persp_demo_viewport2_2.pdf>]
@@ -1062,7 +1062,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.741 
+l.773 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1073,7 +1073,7 @@ File: figure/gridGraphics_persp_demo_viewport3_1.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport3_1.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport3_1.pdf used on
- input line 744.
+ input line 776.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
 <figure/gridGraphics_persp_demo_viewport3_2.pdf, id=216, 505.89pt x 505.89pt>
@@ -1081,16 +1081,16 @@ File: figure/gridGraphics_persp_demo_viewport3_2.pdf Graphic file (type pdf)
 
 <use figure/gridGraphics_persp_demo_viewport3_2.pdf>
 Package pdftex.def Info: figure/gridGraphics_persp_demo_viewport3_2.pdf used on
- input line 745.
+ input line 777.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 754--755
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
 
  []
 
 [23 <./figure/gridGraphics_persp_demo_viewport3_1.pdf> <./figure/gridGraphics_p
 ersp_demo_viewport3_2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 756--757
+Underfull \hbox (badness 10000) in paragraph at lines 788--789
 
  []
 
@@ -1099,7 +1099,7 @@ File: figure/filledContour_origin_02.pdf Graphic file (type pdf)
 
 <use figure/filledContour_origin_02.pdf>
 Package pdftex.def Info: figure/filledContour_origin_02.pdf used on input line 
-774.
+806.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
 <figure/filledContour_origin_03.pdf, id=231, 505.89pt x 505.89pt>
@@ -1107,7 +1107,7 @@ File: figure/filledContour_origin_03.pdf Graphic file (type pdf)
 
 <use figure/filledContour_origin_03.pdf>
 Package pdftex.def Info: figure/filledContour_origin_03.pdf used on input line 
-775.
+807.
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
 <figure/filledContour_origin_01.pdf, id=232, 505.89pt x 505.89pt>
@@ -1115,7 +1115,7 @@ File: figure/filledContour_origin_01.pdf Graphic file (type pdf)
 
 <use figure/filledContour_origin_01.pdf>
 Package pdftex.def Info: figure/filledContour_origin_01.pdf used on input line 
-776.
+808.
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
 
@@ -1125,22 +1125,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 03.pdf> <./figure/filledContour_origin_01.pdf>]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 785--786
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 787--788
+Underfull \hbox (badness 10000) in paragraph at lines 819--820
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--790
+Underfull \hbox (badness 10000) in paragraph at lines 821--822
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 791--792
+Underfull \hbox (badness 10000) in paragraph at lines 823--824
 
  []
 
@@ -1148,7 +1148,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 791--792
 File: figure/Chapter5_example_01.pdf Graphic file (type pdf)
 
 <use figure/Chapter5_example_01.pdf>
-Package pdftex.def Info: figure/Chapter5_example_01.pdf used on input line 795.
+Package pdftex.def Info: figure/Chapter5_example_01.pdf used on input line 827.
 
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -1156,7 +1156,7 @@ Package pdftex.def Info: figure/Chapter5_example_01.pdf used on input line 795.
 File: figure/Chapter5_example_02.pdf Graphic file (type pdf)
 
 <use figure/Chapter5_example_02.pdf>
-Package pdftex.def Info: figure/Chapter5_example_02.pdf used on input line 796.
+Package pdftex.def Info: figure/Chapter5_example_02.pdf used on input line 828.
 
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -1164,7 +1164,7 @@ Package pdftex.def Info: figure/Chapter5_example_02.pdf used on input line 796.
 File: figure/Chapter5_example_03.pdf Graphic file (type pdf)
 
 <use figure/Chapter5_example_03.pdf>
-Package pdftex.def Info: figure/Chapter5_example_03.pdf used on input line 797.
+Package pdftex.def Info: figure/Chapter5_example_03.pdf used on input line 829.
 
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -1172,10 +1172,10 @@ Package pdftex.def Info: figure/Chapter5_example_03.pdf used on input line 797.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `' on page 26 undefined on input line 804.
+LaTeX Warning: Reference `' on page 26 undefined on input line 836.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 804--806
+Underfull \hbox (badness 10000) in paragraph at lines 836--838
 
  []
 
@@ -1185,22 +1185,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 804--806
 figure/Chapter5_example_03.pdf>]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 810--811
+Underfull \hbox (badness 10000) in paragraph at lines 842--843
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 812--814
+Underfull \hbox (badness 10000) in paragraph at lines 844--846
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 815--816
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--818
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
 
  []
 
@@ -1208,24 +1208,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 817--818
 File: figure/Chapter6_example_1.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1.pdf used on input line 821.
+Package pdftex.def Info: figure/Chapter6_example_1.pdf used on input line 853.
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
 <figure/Chapter6_example_2.pdf, id=279, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_2.pdf used on input line 822.
+Package pdftex.def Info: figure/Chapter6_example_2.pdf used on input line 854.
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
+Underfull \hbox (badness 10000) in paragraph at lines 861--862
 
  []
 
 [28
 
  <./figure/Chapter6_example_1.pdf> <./figure/Chapter6_example_2.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 831--832
+Underfull \hbox (badness 10000) in paragraph at lines 863--864
 
  []
 
@@ -1233,7 +1233,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 831--832
 File: figure/Chapter6_example_1_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 851
+Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 883
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -1241,7 +1241,7 @@ Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 851
 File: figure/Chapter6_example_1_3.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_3.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 852
+Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 884
 .
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
@@ -1249,7 +1249,7 @@ Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 852
 File: figure/Chapter6_example_2_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 880
+Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 912
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -1257,7 +1257,7 @@ Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 880
 File: figure/Chapter6_example_2_3.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2_3.pdf>
-Package pdftex.def Info: figure/Chapter6_example_2_3.pdf used on input line 881
+Package pdftex.def Info: figure/Chapter6_example_2_3.pdf used on input line 913
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -1265,7 +1265,7 @@ Package pdftex.def Info: figure/Chapter6_example_2_3.pdf used on input line 881
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29 <./figure/Chapter6_example_1_2.pdf> <./figure/Chapter6_example_1_3.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 889--890
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
 
  []
 
@@ -1276,7 +1276,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.892 \begin{figure}[H]
+l.924 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
@@ -1284,12 +1284,12 @@ Option `H' ignored and `p' used.
 File: figure/Chapter6_example_3_1.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_3_1.pdf>
-Package pdftex.def Info: figure/Chapter6_example_3_1.pdf used on input line 894
+Package pdftex.def Info: figure/Chapter6_example_3_1.pdf used on input line 926
 .
 (pdftex.def)             Requested size: 341.43785pt x 455.257pt.
  [30 <./figure/Chapter6_example_2_2.pdf> <./figure/Chapter6_example_2_3.pdf>] [
 31 <./figure/Chapter6_example_3_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 902--904
+Underfull \hbox (badness 10000) in paragraph at lines 934--936
 
  []
 
@@ -1300,14 +1300,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.913 \textcolor
+l.945 \textcolor
                 {red}{ddd}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--915
+Underfull \hbox (badness 10000) in paragraph at lines 945--947
 
  []
 
@@ -1315,39 +1315,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 913--915
 File: figure/svg/origin_1.PNG Graphic file (type png)
 
 <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 920.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 952.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
 <figure/svg/change_2.PNG, id=325, 500.62032pt x 437.38406pt>
 File: figure/svg/change_2.PNG Graphic file (type png)
 
 <use figure/svg/change_2.PNG>
-Package pdftex.def Info: figure/svg/change_2.PNG used on input line 921.
+Package pdftex.def Info: figure/svg/change_2.PNG used on input line 953.
 (pdftex.def)             Requested size: 142.26578pt x 142.26158pt.
 
 <figure/svg/change_3.PNG, id=326, 499.11469pt x 437.38406pt>
 File: figure/svg/change_3.PNG Graphic file (type png)
 
 <use figure/svg/change_3.PNG>
-Package pdftex.def Info: figure/svg/change_3.PNG used on input line 922.
+Package pdftex.def Info: figure/svg/change_3.PNG used on input line 954.
 (pdftex.def)             Requested size: 142.26439pt x 142.26158pt.
 File: figure/svg/origin_1.PNG Graphic file (type png)
  <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 932.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 964.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
 <figure/svg/opacity_2.PNG, id=327, 500.62032pt x 438.13687pt>
 File: figure/svg/opacity_2.PNG Graphic file (type png)
 
 <use figure/svg/opacity_2.PNG>
-Package pdftex.def Info: figure/svg/opacity_2.PNG used on input line 933.
+Package pdftex.def Info: figure/svg/opacity_2.PNG used on input line 965.
 (pdftex.def)             Requested size: 142.26578pt x 142.26576pt.
 
 <figure/svg/opacity_3.PNG, id=328, 500.62032pt x 435.87843pt>
 File: figure/svg/opacity_3.PNG Graphic file (type png)
 
 <use figure/svg/opacity_3.PNG>
-Package pdftex.def Info: figure/svg/opacity_3.PNG used on input line 934.
+Package pdftex.def Info: figure/svg/opacity_3.PNG used on input line 966.
 (pdftex.def)             Requested size: 142.26578pt x 142.26404pt.
 
 
@@ -1355,21 +1355,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 File: figure/svg/origin_1.PNG Graphic file (type png)
 <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 944.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 976.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
 <figure/svg/Shade_2.PNG, id=329, 499.8675pt x 441.14813pt>
 File: figure/svg/Shade_2.PNG Graphic file (type png)
 
 <use figure/svg/Shade_2.PNG>
-Package pdftex.def Info: figure/svg/Shade_2.PNG used on input line 945.
+Package pdftex.def Info: figure/svg/Shade_2.PNG used on input line 977.
 (pdftex.def)             Requested size: 142.2654pt x 142.26076pt.
 
 <figure/svg/Shade_3.PNG, id=330, 499.8675pt x 436.63126pt>
 File: figure/svg/Shade_3.PNG Graphic file (type png)
 
 <use figure/svg/Shade_3.PNG>
-Package pdftex.def Info: figure/svg/Shade_3.PNG used on input line 946.
+Package pdftex.def Info: figure/svg/Shade_3.PNG used on input line 978.
 (pdftex.def)             Requested size: 142.2654pt x 142.26324pt.
 
 
@@ -1379,14 +1379,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figure/svg/hlight_1.PNG Graphic file (type png)
 
 <use figure/svg/hlight_1.PNG>
-Package pdftex.def Info: figure/svg/hlight_1.PNG used on input line 956.
+Package pdftex.def Info: figure/svg/hlight_1.PNG used on input line 988.
 (pdftex.def)             Requested size: 213.39687pt x 213.39932pt.
 
 <figure/svg/hlight_2.PNG, id=332, 499.8675pt x 436.63126pt>
 File: figure/svg/hlight_2.PNG Graphic file (type png)
 
 <use figure/svg/hlight_2.PNG>
-Package pdftex.def Info: figure/svg/hlight_2.PNG used on input line 957.
+Package pdftex.def Info: figure/svg/hlight_2.PNG used on input line 989.
 (pdftex.def)             Requested size: 213.3981pt x 213.39154pt.
 
 
@@ -1416,10 +1416,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 7164 strings out of 493335
- 107311 string characters out of 3147021
+ 7156 strings out of 493335
+ 107327 string characters out of 3147021
  183679 words of memory out of 3000000
- 10459 multiletter control sequences out of 15000+200000
+ 10451 multiletter control sequences out of 15000+200000
  48595 words of font info for 97 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,7n,67p,1071b,2273s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1439,7 +1439,7 @@ pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (37 pages, 2596090 bytes).
+Output written on PreReport.pdf (37 pages, 2597170 bytes).
 PDF statistics:
  412 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
