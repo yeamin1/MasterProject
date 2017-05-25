@@ -1045,7 +1045,7 @@ In this example, we are going through the animation of the following action.
   \item Highlighting the specific fragment of the surface and showing its z-value  
 \end{itemize}
 \\
-\textcolor{red}{ddd}
+\textcolor{red}{ }
 \\
 
 \subsubsection*{Animation of Changing the color of the surface}
