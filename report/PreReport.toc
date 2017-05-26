@@ -24,8 +24,8 @@
 \contentsline {section}{\numberline {6.1}Example to solution}{29}
 \contentsline {section}{\numberline {6.2}An advance example}{30}
 \contentsline {section}{\numberline {6.3}A more advance example}{32}
-\contentsline {chapter}{\numberline {7}Conclusion}{34}
-\contentsline {chapter}{\numberline {8}Reference}{35}
-\contentsline {chapter}{\numberline {9}Appendix}{36}
-\contentsline {section}{\numberline {9.1}persp.R}{36}
-\contentsline {section}{\numberline {9.2}filled.contour.R}{36}
+\contentsline {chapter}{\numberline {7}Conclusion}{35}
+\contentsline {chapter}{\numberline {8}Reference}{36}
+\contentsline {chapter}{\numberline {9}Appendix}{37}
+\contentsline {section}{\numberline {9.1}persp.R}{37}
+\contentsline {section}{\numberline {9.2}filled.contour.R}{37}
