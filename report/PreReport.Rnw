@@ -6,10 +6,23 @@
 \usepackage{listings}
 \usepackage{color}
 \definecolor{darkred}{rgb}{0.26,0.23,0.23}
-\lstset{language=TeX, basicstyle=\ttfamily\color{darkred}, keywordstyle=\ttfamily\color{darkred}, emphstyle=\itshape, emph={options}, commentstyle=\itshape, lineskip=0pt} 
+\lstset{frame=tb,
+language=R,
+aboveskip=3mm,
+belowskip=3mm,
+showstringspaces=false,
+columns=flexible,
+numbers=none,
+keywordstyle=\color{black},
+numberstyle=\tiny\color{gray},
+commentstyle=\color{dkgreen},
+stringstyle=\color{mauve},
+breaklines=true,
+breakatwhitespace=true,
+tabsize=3
+}
 
-
-
+\usepackage{setspace}
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
@@ -19,6 +32,7 @@
 \title{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}
 \maketitle
 \tableofcontents
+\listoffigures
 \chapter{Introduction}
 <<R0, echo = FALSE>>=
 library(grid)
@@ -406,7 +420,7 @@ xc = LimitCheck(xr)[2]
 ...
 \end{lstlisting}
 \subsubsection{Array}
-The other main difference is that \texttt{C} use array data format rather than matrix data format in \texttt{R}. However, the indexing of elements in matrix is identical to the indexing of elements in array. 
+The other main difference is that \texttt{C} uses array data format but \texttt{R} uses matrix data format. 
 \begin{lstlisting}
 FindPolygonVertices(c[k - 1], c[k],
         x[i - 1], x[i],
@@ -577,29 +591,37 @@ Where:\\
 $nx = length(x) - 1$,\\
 $ny = length(y) - 1$,\\
 $ns = length(levels) - 1$\\
-It requires huge iteration. For example, In Figure \ref{figure8}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore, there are at most 108360 polygons that we need to consider which it will slow down the software. \\
-The solution will be instead of calculate the coordinate of every polygon 
+It requires huge iteration. For example, In Figure \ref{figure_3.6}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore, there are at most 108360 polygons that we need to consider which it will slow down the software. Instead of calculate the coordinates of every polygons one by one, it is a good idea to vectorize the function to speed up the software.
 
-repeating the coordinate of x, y, z, and the levels until the length of maximum polygons, then do the calculation and the drawing at once. That is, vectorizing the \texttt{filled.contour()}.\\
+<<R3.21, eval = FALSE>>=
+## Time compartion
+system.time(filled.contour.volcano())
+# user  system elapsed 
+# 0.01    0.05    0.07 
+
+## time for for loop version of filled.contout()
+system.time(grid.echo())
+# user  system elapsed 
+# 10.03    0.23   10.32 
+
+
+## time for for vectorizetion version of filled.contout()
+system.time(grid.echo())
+# user  system elapsed 
+# 1.28    0.53    1.82 
+@
+
+The pervious code is comparing the time for drawing the filled contour plot of the Topography of Maunga Wha. 
 
 
 
-\begin{lstlisting}
-for (i = 1; i < nx; i++) {
-for (j = 1; j < ny; j++) {
-  for (k = 1; k < nc ; k++) {
-	FindPolygonVertices(...,
-                 x[i - 1], x[i],
-		                    ...)
-  if (npt > 2)
-	    GPolygon(...);
-    }
-}
-}
-\end{lstlisting}
+The previous code is used for comaring the time for directed translation from \texttt{C} (for loop vertion) and \texttt{R} optimize version (vectorization) of \texttt{filled.contour()}. The time for drawing the filled contour plot directly from \texttt{C} takes 0.07 second in total. 
 
-%more -> time comparsion
 
+
+
+
+We redraw this plot on grid by using different method, and record the time spent for each method by using \texttt{system.time()}. The first record time is for the for loop version. It took more than 10 seconds to redraw the plot, which is very slow. The time of vectorization version recorded at the next, which only takes 1.82 second in total. It is much faster than the for loop version.\\
 
 \chapter{Integrate to \texttt{gridGraphics} package}
 \section{Some concept of \texttt{grid}}
@@ -806,28 +828,23 @@ upViewport(depth)
 
 \section{Integrate \texttt{filled.contour()}}
 Unlike \texttt{persp()}, \texttt{filled.contour()} is "made up" by multiple plots in one plot region. \texttt{gridGraphics} package will take care about most of the simple plots (such as the levels bar on the right-hand side of the plot, the titles, and the axes). (See figure \ref{figure_1.3} or figure \ref{figure_3.6}).\\
-
 \texttt{gridGraphics} fully convert the layout of \texttt{filled.contour()} to the viewport structure of \texttt{grid}, therefore we do not need to build or modify the viewports. However, it is necessary to "move" the filled contours into the correct location with the correct scale. On the other hand, we need to draw the filled contours in the correct viewport.\\
-
 In section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. More specifically, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. Figure \ref{figure_4.6} shows the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \texttt{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is similar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
-
 \begin{lstlisting}
-...
 ## navigating to the correct viewport
 depth = gotovp(TRUE)
 ## actual drawing
 grid.polygon(...)
 ## reset
 upViewport(depth)
-...
 \end{lstlisting}
 
 
 \begin{figure}[h]
 \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{figure/filledContour_origin_02.pdf}
-  \includegraphics[height = 7cm, width = 8cm]{figure/filledContour_origin_03.pdf}
-  \includegraphics[height = 7cm, width = 8cm]{figure/filledContour_origin_01.pdf}
+  \includegraphics[height = 5cm, width = 5cm]{figure/filledContour_origin_02.pdf}
+  \includegraphics[height = 5.3cm, width = 6cm]{figure/filledContour_origin_03.pdf}
+  \includegraphics[height = 5.3cm, width = 6cm]{figure/filledContour_origin_01.pdf}
 
   \caption{The top-left filled contour are plotted by \texttt{grid}, top-right plot is the failed reproduce the \texttt{filled.contour()} by \texttt{grid.echo()} at the original state, and the bottom-center plot is the success reproduce the \texttt{filled.contour()} by \texttt{grid.echo()} after integrated to the \texttt{gridGraphics} package.}
   	\label{figure_4.6}
@@ -861,42 +878,42 @@ The following figure shows the test that built in the \texttt{gridGraphics} pack
 
 
 \chapter{Example}
-\texttt{persp()} and \texttt{filled.contour()} are now supported by \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features within different viewport easily. However, a plot drawn by \texttt{graphics} may not been edited easily.\\
+\texttt{persp()} and \texttt{filled.contour()} are now supported by \texttt{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \texttt{graphics} package now is able to reproduce by \texttt{grid.echo()} on \texttt{grid}. The advantage of \texttt{grid} is \texttt{grid} is more flexible than \texttt{graphics}. For example, a plot drawn by \texttt{grid} can record the viewport structure and we may draw and edit any plot features within different viewport easily.
 
-One simple example is drawing some points in the plot region. (See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = "orange"}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = "red"}). Therefore, the right plot look quite rare.\\
-%change the example?
-<<Chapter6_example_0.0, echo = FALSE>>=
-pdf("figure/Chapter6_example_%0d.pdf", onefile=FALSE)
-dev.control("enable")
-@
-<<Chapter6_example_0.1, echo = FALSE>>=
-plot.new()
-plot.window(xlim = c(0, 1), ylim = c(0, 1))
-x = runif(20)
-y = runif(20)
-points(x, y, pch = 12, col = 'orange', cex = 1.5)
-
-plot.new()
-plot.window(xlim = c(0, 1), ylim = c(0, 1))
-points(x, y, pch = 12, col = 'orange', cex = 1.5)
-points(x, y, pch = 16, col = 'red', cex = 1.5)
-@
-<<Chapter6_example_0.2, echo = FALSE, results = hide>>=
-dev.off()
-@
-
-One approximate solution to change the style and color of the points in the left plot of figure \ref{Example_6.0} is that redrawn the points with new style and color, rather than add the same points with different style and color.\\
-
-The other solution will be convert the plot from \texttt{graphics} into \texttt{grid} by using the \texttt{gridGraphics} package, then use \texttt{grid.edit()} to modify the color and the style of the current plot.\\
-
-\begin{figure}[h]
-\begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1.pdf}
-  \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_2.pdf}
-  \caption{..}
-  	\label{Example_6.0}
-\end{center}
-\end{figure}
+% One simple example is drawing some points in the plot region. (See figure \ref{Example_6.0}.) On the left figure, some random points are drawn by \texttt{graphics} package. However, it is not allowable for us to moltify the feature of the existence plot (eg, the style or the color of the points). The left plot is some random points are drawn in the plot with \texttt{pch = 12} and \texttt{col = "orange"}, where the right plot are draw the same points but with different color and style (\texttt{pch = 16} and \texttt{col = "red"}). Therefore, the right plot look quite rare.\\
+% %change the example?
+% <<Chapter6_example_0.0, echo = FALSE>>=
+% pdf("figure/Chapter6_example_%0d.pdf", onefile=FALSE)
+% dev.control("enable")
+% @
+% <<Chapter6_example_0.1, echo = FALSE>>=
+% plot.new()
+% plot.window(xlim = c(0, 1), ylim = c(0, 1))
+% x = runif(20)
+% y = runif(20)
+% points(x, y, pch = 12, col = 'orange', cex = 1.5)
+% 
+% plot.new()
+% plot.window(xlim = c(0, 1), ylim = c(0, 1))
+% points(x, y, pch = 12, col = 'orange', cex = 1.5)
+% points(x, y, pch = 16, col = 'red', cex = 1.5)
+% @
+% <<Chapter6_example_0.2, echo = FALSE, results = hide>>=
+% dev.off()
+% @
+% 
+% One approximate solution to change the style and color of the points in the left plot of figure \ref{Example_6.0} is that redrawn the points with new style and color, rather than add the same points with different style and color.\\
+% 
+% The other solution will be convert the plot from \texttt{graphics} into \texttt{grid} by using the \texttt{gridGraphics} package, then use \texttt{grid.edit()} to modify the color and the style of the current plot.\\
+% 
+% \begin{figure}[h]
+% \begin{center}
+%   \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_1.pdf}
+%   \includegraphics[height = 7cm, width = 8cm]{figure/Chapter6_example_2.pdf}
+%   \caption{..}
+%   	\label{Example_6.0}
+% \end{center}
+% \end{figure}
 
 \section{Example to solution}
 The \texttt{persp()} and \texttt{filled.contour()} are now can been edit more easily since they are integraded to \texttt{gridGraphics}. On the other hand, they are now available been drawn on \texttt{grid}.\\
@@ -933,7 +950,7 @@ Torus_shape = function(theta=120, phi = 20, expand = 0.5, col = 'orange ',
   
 }
 @
-<<Chapter6_1.0>>=
+<<Chapter6_1.0, eval = FALSE>>=
 Torus_shape(col = 'NA', border = 'gray', box = FALSE)
 grid.echo()
 grid.ls()
@@ -969,12 +986,16 @@ f8 = function()
 }
 @
 
-<<Chapter_6_2.1>>=
+<<Chapter_6_2.1, eval = FALSE>>=
 f8()
 grid.echo()
-grid.ls()
-## add color to the line of every polygons
-grid.edit(grid.ls(print = FALSE)$name[3], gp = gpar(col = 'white', lty = 1122))
+poly.obj = grid.get(grid.ls(print = FALSE)$name[3])
+rect.obj = grid.get(grid.ls(print = FALSE)$name[1])
+colpoly = colorspace::desaturate(poly.obj$gp$fill)
+colrect = colorspace::desaturate(rect.obj$gp$fill)
+## modify the colors
+grid.edit(grid.ls(print = FALSE)$name[3], gp = gpar(fill = colpoly))
+grid.edit(grid.ls(print = FALSE)$name[1], gp = gpar(fill = colrect))
 @
 
 <<Chapter_6_2.1, results = hide, echo = FALSE>>=
@@ -982,10 +1003,10 @@ dev.off()
 @
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{center}
   \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_2.pdf}
-  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_3.pdf}
+  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter6_example_2_4.pdf}
   \caption{The left plot is drawn by \texttt{graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt{grid.echo()}) and then modify the colors by \texttt{grid.edit()}}
   	\label{Example_6.1}
 \end{center}
@@ -1006,6 +1027,7 @@ The viewport structures of \texttt{grid} provides more flexibility than the layo
 
 \newpage
 \section{A more advance example}
+\subsection{Basic concepts}
 Another benefit that \texttt{grid} provides is we can convert the graphics drawn with package \texttt{grid} to SVG format by the \texttt{gridSVG} package.\\
 SVG (Scalable Vector Graphics) is a two-dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult achieve by \texttt{R} graphics system.\\
 
@@ -1041,6 +1063,33 @@ Oncircle.onmouseover = Onmove;
 \end{center}
 \end{figure}
 
+\subsection{The sinc surface}
+\textcolor{red}{
+Since those action cannot been achieved by \texttt{R} graphics system. The first step is to export the plot into SVG image. To do that, the \texttt{gridSVG} is required. The following codes are used for export the SVG image (See figure \ref{Example_6.3.01}). \texttt{surface()} is the 'wrap' function for drawing the sinc surface perspective plot. \texttt{addFeatures()} is creating the texts and the little boxes of color at the top-left region in the plot. It also creates some hidden objects which are all invisible unless the specific action been actived. A javascript is imported for supporting the animations by using \texttt{grid.script()}. Finally we exported the SVG image by \texttt{grid.export()}\\
+}
+\\
+
+\begin{lstlisting}
+## draw a surface
+surface()  
+## add the button at the top-left of the plot prepare for animation
+addFeatures() 
+## import the javascript file into the SVG image
+grid.script(file="example.js") 
+## export the SVG image
+grid.export("example.svg", strict = FALSE) 
+\end{lstlisting}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 11cm, width = 13cm]{figure/svg/origin_1.PNG}
+  \caption{A SVG image of the sinc surface perspective plot}
+  	\label{Example_6.3.01}
+\end{center}
+\end{figure}
+
+
+
 
 In this example, we are going through the animation of the following action.
 \begin{itemize}
@@ -1052,19 +1101,30 @@ In this example, we are going through the animation of the following action.
 \\
 
 \subsubsection*{Animation of Changing the color of the surface}
+Simliar to the circle example, we change the color of the surface by locating the elements that contain the surface then modify the color. However, the complicate task will be create the animation. The animation of \texttt{JavaScript} are done by programming gradual change in elements' style. The animation will look continuous when the time between every changes are small.\\
+The following code is key step for creating the animation (See figure \ref{Example_6.3.1}).The \texttt{animate()} can produce all the action that we disscussed previously. The \texttt{frame()} in the \texttt{animate()} will change the color of the surface gradually every time it been called. The \texttt{setInterval(frame, 30)} will call the \texttt{frame()} every 30 milliseconds. On the other than, the color of the surface will be changed gradually every 30 milliseconds. This action will be actived when user clicks the colored boxes.
 
 \begin{lstlisting}
+    animate = function(...){
+      ...
+      setInterval(frame, 30)
+      function frame() {
+        ...
+      }
+    ...
+    }
+    
     color_fill = function(){
         reset();
         color_new = this.getAttribute('fill');
         animate(..., action = 'color',colors = color_new);
     }
+    ...
     color_id = document.getElementById('color.2.' + 1)
     color_id.onclick = color_fill
 \end{lstlisting}
 
 
-The figure \ref{Example_6.3.1} shows the color of the sinc surface changing from light-yellow(left plot) to orange-red(right plot). The middle plot is captured during the animation. 
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 5cm, width = 5cm]{figure/svg/origin_1.PNG}
@@ -1076,7 +1136,26 @@ The figure \ref{Example_6.3.1} shows the color of the sinc surface changing from
 \end{figure}
 
 \subsubsection*{Animation of Changing the opacity of the surface}
-The figure \ref{Example_6.3.2} shows the opacity of the current sinc surface decreasing during the animation. The middle plot is captured during the duration. 
+Simliar to the animation of Changing the color of the surface, the opacity attribute of the surface will be change in this example. The animation will be actived when user clicks the "Change opacity" text on the top-left corner of figure \ref{Example_6.3.01}. Once user clicked the text, the \texttt{addAlpha()} will call the \texttt{animate()} which it locates all the polygons and produces gradual change of the stroke opacity in every 30 milliseconds. (See figure \ref{Example_6.3.2})
+\begin{lstlisting}
+animate = function(...){
+  ...
+  setInterval(frame, 30)
+  function frame() {
+    ...
+    polygons_odd[i].setAttribute("stroke-opacity", ...);
+  }
+...
+}
+
+addAlpha = function(){
+    animate(..., action = 'alpha', ...);
+}
+...
+alpha = document.getElementById('alpha.1.1.text');
+alpha.onclick = addAlpha; 
+\end{lstlisting}
+
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 5cm, width = 5cm]{figure/svg/origin_1.PNG}
@@ -1100,7 +1179,39 @@ The figure \ref{Example_6.3.3} shows the action of adding shade of the current s
 \end{figure}
 
 \subsubsection*{Highlighting the specific fragment of the surface and showing its z-value}
-The figure \ref{Example_6.3.4} shows the highlight action. the specific fragment of the sinc surface will been highlightted when the mouse moves into the its area. Also, the z-value of the current selected fragment will be appeared at the top-right region. 
+The action of this example will be slightly difference to the previous example. There two actions need to be actived at the same time when user moves the mouse into a specific fragments of the sinc surface. One is highlight the fragment and the other one is display the z-value of itself. When user moves the mouse left the fragment, the color needs reset and the z-value needs to be hided.\\
+The trick to perform this action is to display the correct z-value for the specific polygon. The svg we created is not only a sinc surface and the action text, but also a set of z values, located at the top-right corner of the box. Since their opacity are 0 hence they are invisible at the beginning.\\
+First to all, we need to add the \texttt{onmouseover} and the \texttt{onmouseout} events to all fragments. That is, the functions \texttt{polygonon()} and \texttt{polygonout()} are actived when the mouse enter and leave the regon of the specific fragments.\\
+There are two action will happen when the mouse enter the fragments. One is highlighting the fragment and the other is display its z-value. The highlighting action can be done simply by changing the color of the fragments. The z-value is displayed by macthing the correct index. That is, the action funtion \texttt{polygonon()} will pull out the index of the id attribute from the specific polygon element, and then it will find the label element by matching this index. Finally the z-value will be diaplayed by setting the opacity of the label element to be 1.\\
+When the mouse leave the fragment, it is necessary to reset the color of this fragment and hide the z-value. These actions will be done by \texttt{polygonout()}.
+
+\begin{lstlisting}
+for(i = 1; i <= total; i++){
+    obj = document.getElementById('polygon.' + 2 + '.' + i);
+    obj.onmouseover = polygonon;
+    obj.onmouseout = polygonout;
+}
+polygonon = function(){
+    str = this.id;
+    polygon_index = str.replace(/polygon.[0-9]./, '');
+    // highlight the polygon
+    this.setAttribute('fill', "rgb(255,100,100)");
+    // show the 'value'
+    label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
+    label.setAttribute("fill-opacity",1);
+}
+polygonout = function(){
+    str = this.id;
+    polygon_index = str.replace(/polygon.[0-9]./, '');
+    // hide the label
+    label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
+    label.setAttribute("fill-opacity",0);
+    opacity = this.getAttribute('fill-opacity');
+    // rest the color
+    this.setAttribute("fill",window.new_rgb);
+}
+\end{lstlisting}
+
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 7.5cm, width = 7.5cm]{figure/svg/hlight_1.PNG}
