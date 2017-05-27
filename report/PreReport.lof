@@ -19,17 +19,19 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces A \texttt {graphics} \texttt {persp()} is drawn at the left. The red regions are the plot region for \texttt {graphics}(left plot) and the viewport region for \texttt {grid}(right plot). Clearly, the right plot is tried to reproduce the left plot, but the surface is not allowed excess the limit of the viewport, but the axes label and units are needs to be drawn even excess the limit.}}{25}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces The top-left filled contour are plotted by \texttt {grid}, top-right plot is the failed reproduce the \texttt {filled.contour()} by \texttt {grid.echo()} at the original state, and the bottom-center plot is the success reproduce the \texttt {filled.contour()} by \texttt {grid.echo()} after integrated to the \texttt {gridGraphics} package.}}{26}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{28}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The left plot looks identical to the plot at middle by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{27}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{28}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then moltify the colors by \texttt {grid.edit()}}}{30}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{30}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The top plot shows the shape of Maungawhau volcano, where the bottom figure shows the level contour (i.e. the height)}}{31}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces The left circle is created with svg imgae, the right circle is changed color to yellow then the mouse enter the region of the circle. }}{32}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces A SVG image of the sinc surface perspective plot}}{33}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces The plot shows the animation that changing the surface color from the left plot to right plot}}{34}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}}{35}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces The shading animation}}{35}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces The fragment will be highlight when the mouse move into its area. Also its z-value will be appeared}}{36}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then moltify the colors by \texttt {grid.edit()}}}{31}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{31}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The top plot shows the shape of Maungawhau volcano, where the bottom figure shows the level contour (i.e. the height)}}{32}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The left circle is created with svg imgae, the right circle is changed color to yellow then the mouse enter the region of the circle. }}{33}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces A SVG image of the sinc surface perspective plot}}{34}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces The plot shows the animation that changing the surface color from the left plot to right plot}}{35}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}}{36}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces The shading animation}}{36}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces The fragment will be highlight when the mouse move into its area. Also its z-value will be appeared}}{37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

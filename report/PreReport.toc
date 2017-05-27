@@ -20,14 +20,14 @@
 \contentsline {section}{\numberline {4.2}Integrate \texttt {persp()}}{21}
 \contentsline {section}{\numberline {4.3}Integrate \texttt {filled.contour()}}{26}
 \contentsline {chapter}{\numberline {5}Testing}{27}
-\contentsline {chapter}{\numberline {6}Example}{29}
-\contentsline {section}{\numberline {6.1}Example to solution}{29}
-\contentsline {section}{\numberline {6.2}An advance example}{30}
-\contentsline {section}{\numberline {6.3}A more advance example}{32}
-\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{32}
-\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{32}
-\contentsline {chapter}{\numberline {7}Conclusion}{37}
-\contentsline {chapter}{\numberline {8}Reference}{38}
-\contentsline {chapter}{\numberline {9}Appendix}{39}
-\contentsline {section}{\numberline {9.1}persp.R}{39}
-\contentsline {section}{\numberline {9.2}filled.contour.R}{39}
+\contentsline {chapter}{\numberline {6}Example}{30}
+\contentsline {section}{\numberline {6.1}Example to solution}{30}
+\contentsline {section}{\numberline {6.2}An advance example}{31}
+\contentsline {section}{\numberline {6.3}A more advance example}{33}
+\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{33}
+\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{33}
+\contentsline {chapter}{\numberline {7}Conclusion}{38}
+\contentsline {chapter}{\numberline {8}Reference}{39}
+\contentsline {chapter}{\numberline {9}Appendix}{40}
+\contentsline {section}{\numberline {9.1}persp.R}{40}
+\contentsline {section}{\numberline {9.2}filled.contour.R}{40}

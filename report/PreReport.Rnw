@@ -5,6 +5,7 @@
             footskip=.5in]{geometry}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{lscape}
 \definecolor{darkred}{rgb}{0.26,0.23,0.23}
 \lstset{frame=tb,
 language=R,
@@ -22,14 +23,29 @@ breakatwhitespace=true,
 tabsize=3
 }
 
-\usepackage{setspace}
+
+\title{\Huge{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}}
+\author{\Large{Zhijian Wen}}
+
+\date
+{
+    \vspace{3cm}
+    \includegraphics[height = 5cm, width = 5cm]{logo.jpg}\\
+    \vspace{1cm}
+    % Change to Masters if applicable
+    Masters of Science\\
+    Department of Statistics\\
+    The University of Auckland\\
+    New Zealand
+}
+
+
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 \setlength{\parindent}{0}
 \noindent
 
-\title{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}
 \maketitle
 \tableofcontents
 \listoffigures
@@ -591,19 +607,18 @@ Where:\\
 $nx = length(x) - 1$,\\
 $ny = length(y) - 1$,\\
 $ns = length(levels) - 1$\\
-It requires huge iteration. For example, In Figure \ref{figure_3.6}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore, there are at most 108360 polygons that we need to consider which it will slow down the software. Instead of calculate the coordinates of every polygons one by one, it is a good idea to vectorize the function to speed up the software.
+
+\textcolor{red}{
+It requires huge iteration. For example, In Figure \ref{figure_3.6}, the Topography of Maunga Whau, the length of x is 87 and the length of y is 61, where the length of levels is 22. Therefore, there are at most 108360 polygons that we need to consider which it will slow down the software. Instead of calculate the coordinates of every polygons one by one, it is a good idea to vectorize the function to speed up the software.}
 
 <<R3.21, eval = FALSE>>=
-## Time compartion
-system.time(filled.contour.volcano())
-# user  system elapsed 
-# 0.01    0.05    0.07 
+## time comparasion
+filled.contour.volcano()
 
 ## time for for loop version of filled.contout()
 system.time(grid.echo())
 # user  system elapsed 
 # 10.03    0.23   10.32 
-
 
 ## time for for vectorizetion version of filled.contout()
 system.time(grid.echo())
@@ -611,18 +626,10 @@ system.time(grid.echo())
 # 1.28    0.53    1.82 
 @
 
-The pervious code is comparing the time for drawing the filled contour plot of the Topography of Maunga Wha. 
-
-
-
-The previous code is used for comaring the time for directed translation from \texttt{C} (for loop vertion) and \texttt{R} optimize version (vectorization) of \texttt{filled.contour()}. The time for drawing the filled contour plot directly from \texttt{C} takes 0.07 second in total. 
-
-
-
-
-
-We redraw this plot on grid by using different method, and record the time spent for each method by using \texttt{system.time()}. The first record time is for the for loop version. It took more than 10 seconds to redraw the plot, which is very slow. The time of vectorization version recorded at the next, which only takes 1.82 second in total. It is much faster than the for loop version.\\
-
+\textcolor{red}{
+The previous codes is testing the efficiency of the methods by using \texttt{system.time()}. First to all, we draw the filled contour plot for the Topography of Maunga Whau, then we tried to redraw it in \texttt{grid} by using two different implement methods. One is the directed translation from \texttt{C} by using multiple loops (old method) and the other one is using vectorzation (new method).\\
+The result shows that the new method (1.82 seconds) is much faster than the old method (10.32 seconds).
+}
 \chapter{Integrate to \texttt{gridGraphics} package}
 \section{Some concept of \texttt{grid}}
 The previous section explained the internal calculation for \texttt{persp()} and \texttt{filled.contour()}. It works perfectly outside the \texttt{gridGraphics} package. However, \texttt{grid.echo()} still cannot emulate thest two kinds of plot because they are not been integrated to the package yet. Therefore, it requires more work.\\ 
@@ -859,22 +866,35 @@ However, there are some tiny differences which cannot distinguish by human eye, 
 
 \textbf{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to mathematically and visually annotate the difference between an image and its reconstruction.\\
 
-The following example (see figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the top-left plot ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the right-plot ($rgb = 210, 182, 255$). The bottom plot shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
+The following example (see figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the plot in left ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the plot in middle ($rgb = 210, 182, 255$). The plot in right shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_01.pdf}
-  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_02.pdf}
-  \includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_03.pdf}
-
-  \caption{The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}
+  \includegraphics[height = 5cm, width = 5cm]{figure/Chapter5_example_01.pdf}
+  \includegraphics[height = 5cm, width = 5cm]{figure/Chapter5_example_02.pdf}
+  \includegraphics[height = 5cm, width = 5cm]{figure/Chapter5_example_03.pdf}
+  \caption{The left plot looks identical to the plot at middle by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}
   	\label{chapter5.1}
 \end{center}
 \end{figure}
 
-The following figure shows the test that built in the \texttt{gridGraphics} package. In this section, we only show the different plot. The \texttt{graphics} and \texttt{grid} plots are in \ref{}.\\
-% no image return when they are identical
 
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 24cm, width = 16cm]{figure/montage/persp-montage.png}
+  \caption{The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}
+  	\label{chapter5.2}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphics[height = 24cm, width = 12cm]{figure/montage/filled-contour-montage.png}
+  \caption{The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}
+  	\label{chapter5.3}
+\end{center}
+\end{figure}
 
 
 \chapter{Example}
@@ -973,7 +993,7 @@ dev.off()
 <<Chapter_6_2.0, echo = FALSE>>=
 pdf("figure/Chapter6_example_2_%0d.pdf", onefile=FALSE)
 dev.control("enable")
-f8 = function()
+fill.contour.volcano = function()
 {
   x <- y <- seq(-8*pi, 8*pi, len = 40)
   r <- sqrt(outer(x^2, y^2, "+"))
@@ -986,11 +1006,15 @@ f8 = function()
 }
 @
 
+
+An other benefit that \texttt{grid} graphics provides is that we can get a grid graphical object. For example it is possible to get the colors of the filled.contour plot which drawn by \texttt{grid} (see following codes and figure \ref{Example_6.1} ) and then transform these colors to the corresponding colors with chroma removed in Hue Chroma Luminance (HCL) space.
 <<Chapter_6_2.1, eval = FALSE>>=
-f8()
+fill.contour.volcano()
 grid.echo()
+## get the colors of filled.contour() drawn by grid
 poly.obj = grid.get(grid.ls(print = FALSE)$name[3])
 rect.obj = grid.get(grid.ls(print = FALSE)$name[1])
+## transform the colors
 colpoly = colorspace::desaturate(poly.obj$gp$fill)
 colrect = colorspace::desaturate(rect.obj$gp$fill)
 ## modify the colors
