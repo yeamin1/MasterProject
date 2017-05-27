@@ -20,8 +20,8 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces The top-left filled contour are plotted by \texttt {grid}, top-right plot is the failed reproduce the \texttt {filled.contour()} by \texttt {grid.echo()} at the original state, and the bottom-center plot is the success reproduce the \texttt {filled.contour()} by \texttt {grid.echo()} after integrated to the \texttt {gridGraphics} package.}}{26}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The left plot looks identical to the plot at middle by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{27}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{28}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The top-left plot looks identical to the plot at top-right by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}}{29}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces A set of perspective plots, which passed the identical test by ImageMagick}}{28}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces A set of filled contour plots, which passed the identical test by ImageMagick}}{29}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then moltify the colors by \texttt {grid.edit()}}}{31}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{31}
