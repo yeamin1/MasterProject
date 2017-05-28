@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  27 MAY 2017 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  28 MAY 2017 16:10
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -211,6 +211,18 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\soul\soul.sty"
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks22
+\SOUL@lasttoken=\toks23
+\SOUL@cmds=\toks24
+\SOUL@buffer=\toks25
+\SOUL@token=\toks26
+\SOUL@spaceskip=\skip50
+\SOUL@ttwidth=\dimen133
+\SOUL@uldp=\dimen134
+\SOUL@ulht=\dimen135
+)
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\Sweave.sty
 Package: Sweave 
 
@@ -219,8 +231,8 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen133
-\Gin@req@width=\dimen134
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
 Package: fancyvrb 2008/02/07
@@ -345,24 +357,24 @@ LaTeX Warning: Unused global option(s):
 (PreReport.aux)
 \openout1 = `PreReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 48.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    ... okay on input line 48.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -403,16 +415,16 @@ LaTeX Font Info:    ... okay on input line 45.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count120
-\scratchdimen=\dimen135
+\scratchdimen=\dimen138
 \scratchbox=\box31
 \nofMPsegments=\count121
 \nofMParguments=\count122
-\everyMPshowfont=\toks22
+\everyMPshowfont=\toks27
 \MPscratchCnt=\count123
-\MPscratchDim=\dimen136
+\MPscratchDim=\dimen139
 \MPnumerator=\count124
 \makeMPintoPDFobject=\count125
-\everyMPtoPDFconversion=\toks23
+\everyMPtoPDFconversion=\toks28
 ) ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -459,7 +471,7 @@ G,.JBIG2,.JB2,.eps]
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    !
-l.47 \setlength{\parindent}{0}
+l.50 \setlength{\parindent}{0}
                               
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -468,14 +480,14 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-LaTeX Font Info:    Try loading font information for T1+aett on input line 50.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 53.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
 <logo.jpg, id=2, 250.9375pt x 271.0125pt>
 File: logo.jpg Graphic file (type jpg)
  <use logo.jpg>
-Package pdftex.def Info: logo.jpg used on input line 50.
+Package pdftex.def Info: logo.jpg used on input line 53.
 (pdftex.def)             Requested size: 142.27005pt x 142.26714pt.
  [1
 
@@ -507,12 +519,7 @@ w())\T1/aer/m/n/10 .
  [3]
 Chapter 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--56
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
@@ -522,7 +529,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
@@ -532,19 +544,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--63
 File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
 
 <use figure/report_basic_demo_1.pdf>
-Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 78.
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 81.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 File: figure/report_basic_demo_1.pdf Graphic file (type pdf)
  <use figure/report_basic_demo_1.pdf>
-Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 79.
+Package pdftex.def Info: figure/report_basic_demo_1.pdf used on input line 82.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
@@ -553,7 +565,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 104--105
 File: figure/report_basic_demo_4.pdf Graphic file (type pdf)
 
 <use figure/report_basic_demo_4.pdf>
-Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 118.
+Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 121.
 
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
 
@@ -561,14 +573,14 @@ Package pdftex.def Info: figure/report_basic_demo_4.pdf used on input line 118.
 File: figure/report_fill_1.pdf Graphic file (type pdf)
 
 <use figure/report_fill_1.pdf>
-Package pdftex.def Info: figure/report_fill_1.pdf used on input line 135.
+Package pdftex.def Info: figure/report_fill_1.pdf used on input line 138.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/report_fill_2.pdf, id=39, 505.89pt x 505.89pt>
 File: figure/report_fill_2.pdf Graphic file (type pdf)
 
 <use figure/report_fill_2.pdf>
-Package pdftex.def Info: figure/report_fill_2.pdf used on input line 136.
+Package pdftex.def Info: figure/report_fill_2.pdf used on input line 139.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 
@@ -578,29 +590,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 e/report_fill_2.pdf>]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 174
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 177
 .
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aett.fd
 File: ts1aett.fd 
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 174
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 177
 .
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
 File: ts1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `TS1/aett/m/sl' in size <10> not available
-(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 174.
+(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 177.
 
 
 <figure/report_3.pdf, id=62, 505.89pt x 505.89pt>
 File: figure/report_3.pdf Graphic file (type pdf)
  <use figure/report_3.pdf>
-Package pdftex.def Info: figure/report_3.pdf used on input line 205.
+Package pdftex.def Info: figure/report_3.pdf used on input line 208.
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
 
 
@@ -614,22 +626,22 @@ Chapter 3.
 File: figure/standalone_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_1.pdf>
-Package pdftex.def Info: figure/standalone_1.pdf used on input line 230.
+Package pdftex.def Info: figure/standalone_1.pdf used on input line 233.
 (pdftex.def)             Requested size: 284.53154pt x 284.53154pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 [10
 
  <./figure/standalone_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Underfull \hbox (badness 10000) in paragraph at lines 274--276
 
  []
 
 ! Undefined control sequence.
-l.273 ... the values for all combination of \empth
+l.277 ... the values for all combination of \empth
                                                   {x} and \textbf{y} and the...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -638,19 +650,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 ! Undefined control sequence.
 <recently read> \x 
                    
-l.277 ...ay $y_p$. At last, the combination of $\x
+l.281 ...ay $y_p$. At last, the combination of $\x
                                                   _p$, $y_p$, $z_p$ is the 3...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -659,12 +671,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 290--291
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 
  []
 
@@ -672,34 +684,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--291
 File: figure/standalone_p_1.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_1.pdf>
-Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 328.
+Package pdftex.def Info: figure/standalone_p_1.pdf used on input line 332.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/standalone_p_2.pdf, id=95, 505.89pt x 505.89pt>
 File: figure/standalone_p_2.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_2.pdf>
-Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 329.
+Package pdftex.def Info: figure/standalone_p_2.pdf used on input line 333.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/standalone_p_3.pdf, id=96, 505.89pt x 505.89pt>
 File: figure/standalone_p_3.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_3.pdf>
-Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 330.
+Package pdftex.def Info: figure/standalone_p_3.pdf used on input line 334.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/standalone_p_4.pdf, id=97, 505.89pt x 505.89pt>
 File: figure/standalone_p_4.pdf Graphic file (type pdf)
 
 <use figure/standalone_p_4.pdf>
-Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 331.
+Package pdftex.def Info: figure/standalone_p_4.pdf used on input line 335.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.332 ...left figure is drawn in a correct order.}
+l.336 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -710,7 +722,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.332 ...left figure is drawn in a correct order.}
+l.336 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -721,23 +733,13 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...rawn unorderly by using the \testtt 
                                                   {grid.polygon}. Finally, t...
-l.332 ...left figure is drawn in a correct order.}
+l.336 ...left figure is drawn in a correct order.}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
-
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 342--343
@@ -745,13 +747,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 342--343
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--349
+Underfull \hbox (badness 10000) in paragraph at lines 344--345
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--353
 
  []
 
 [13 <./figure/standalone_p_1.pdf> <./figure/standalone_p_2.pdf> <./figure/stand
 alone_p_3.pdf> <./figure/standalone_p_4.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
@@ -759,17 +771,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 350--351
 File: figure/Lighting_1.pdf Graphic file (type pdf)
 
 <use figure/Lighting_1.pdf>
-Package pdftex.def Info: figure/Lighting_1.pdf used on input line 367.
+Package pdftex.def Info: figure/Lighting_1.pdf used on input line 371.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/Lighting_2.pdf, id=115, 505.89pt x 505.89pt>
 File: figure/Lighting_2.pdf Graphic file (type pdf)
 
 <use figure/Lighting_2.pdf>
-Package pdftex.def Info: figure/Lighting_2.pdf used on input line 368.
+Package pdftex.def Info: figure/Lighting_2.pdf used on input line 372.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
-Overfull \hbox (18.99893pt too wide) in paragraph at lines 375--376
+Overfull \hbox (18.99893pt too wide) in paragraph at lines 379--380
 \T1/aer/m/n/10 Many func-tions in \T1/aett/m/n/10 R \T1/aer/m/n/10 call \T1/aet
 t/m/n/10 C \T1/aer/m/n/10 code to do a lot of the work. This is the case for \T
 1/aett/m/n/10 persp() \T1/aer/m/n/10 and \T1/aett/m/n/10 filled.contour()\T1/ae
@@ -777,20 +789,20 @@ r/m/n/10 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
-LaTeX Font Info:    Try loading font information for TS1+aer on input line 380.
+LaTeX Font Info:    Try loading font information for TS1+aer on input line 384.
 
 (C:/PROGRA~1/R/R-33~1.1/share/texmf/tex/latex\ts1aer.fd
 File: ts1aer.fd 
 )
 LaTeX Font Info:    Font shape `TS1/aer/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 380.
+(Font)              Font shape `TS1/cmr/m/n' tried instead on input line 384.
  [14 <./figure/Lighting_1.pdf> <./figure/Lighting_2.pdf>]
 ! Undefined control sequence.
-l.390 ...It also multiplying the variable \textttt
+l.394 ...It also multiplying the variable \textttt
                                                   {c} and \texttt{s} for fur...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -799,14 +811,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 
  []
 
 ! Undefined control sequence.
 <argument> ...{z[i - 1 + (j - 1) * nx]} in \textt 
                                                   {FindPolygonVertices()} is...
-l.428 }
+l.432 }
        \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -815,22 +827,22 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 432--433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--441
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
@@ -838,35 +850,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 438--439
 File: figure/box_example_1.pdf Graphic file (type pdf)
 
 <use figure/box_example_1.pdf>
-Package pdftex.def Info: figure/box_example_1.pdf used on input line 443.
+Package pdftex.def Info: figure/box_example_1.pdf used on input line 447.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/box_example_2.pdf, id=135, 505.89pt x 505.89pt>
 File: figure/box_example_2.pdf Graphic file (type pdf)
 
 <use figure/box_example_2.pdf>
-Package pdftex.def Info: figure/box_example_2.pdf used on input line 444.
+Package pdftex.def Info: figure/box_example_2.pdf used on input line 448.
 (pdftex.def)             Requested size: 213.39865pt x 213.39865pt.
 
 <figure/axis_example_1.pdf, id=136, 505.89pt x 505.89pt>
 File: figure/axis_example_1.pdf Graphic file (type pdf)
 
 <use figure/axis_example_1.pdf>
-Package pdftex.def Info: figure/axis_example_1.pdf used on input line 456.
+Package pdftex.def Info: figure/axis_example_1.pdf used on input line 460.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
 
 <figure/axis_example_2.pdf, id=137, 505.89pt x 505.89pt>
 File: figure/axis_example_2.pdf Graphic file (type pdf)
 
 <use figure/axis_example_2.pdf>
-Package pdftex.def Info: figure/axis_example_2.pdf used on input line 457.
+Package pdftex.def Info: figure/axis_example_2.pdf used on input line 461.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
 
 <figure/axis_example_3.pdf, id=138, 505.89pt x 505.89pt>
 File: figure/axis_example_3.pdf Graphic file (type pdf)
 
 <use figure/axis_example_3.pdf>
-Package pdftex.def Info: figure/axis_example_3.pdf used on input line 458.
+Package pdftex.def Info: figure/axis_example_3.pdf used on input line 462.
 (pdftex.def)             Requested size: 142.26576pt x 142.26576pt.
  [16 <./figure/box_example_1.pdf> <./figure/box_example_2.pdf> <./figure/axis_e
 xample_1.pdf> <./figure/axis_example_2.pdf> <./figure/axis_example_3.pdf>]
@@ -874,34 +886,34 @@ xample_1.pdf> <./figure/axis_example_2.pdf> <./figure/axis_example_3.pdf>]
 File: figure/filled_example_1.pdf Graphic file (type pdf)
 
 <use figure/filled_example_1.pdf>
-Package pdftex.def Info: figure/filled_example_1.pdf used on input line 506.
+Package pdftex.def Info: figure/filled_example_1.pdf used on input line 510.
 (pdftex.def)             Requested size: 341.43785pt x 284.53154pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--527
+Underfull \hbox (badness 10000) in paragraph at lines 530--531
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 551--556
+Underfull \hbox (badness 10000) in paragraph at lines 555--560
 
  []
 
@@ -911,32 +923,32 @@ Chapter 4.
 File: figure/viewport_demo_1.pdf Graphic file (type pdf)
 
 <use figure/viewport_demo_1.pdf>
-Package pdftex.def Info: figure/viewport_demo_1.pdf used on input line 597.
+Package pdftex.def Info: figure/viewport_demo_1.pdf used on input line 601.
 (pdftex.def)             Requested size: 426.7973pt x 241.8518pt.
  [20
 
  <./figure/viewport_demo_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 624--626
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--628
+Underfull \hbox (badness 10000) in paragraph at lines 631--632
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 629--630
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 639--640
+Underfull \hbox (badness 10000) in paragraph at lines 642--643
 
  []
 
 ! Undefined control sequence.
-l.641 ...use there is one more dimension of \texit
+l.644 ...use there is one more dimension of \texit
                                                   {z}. And, the plot is draw...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -945,21 +957,16 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
+Underfull \hbox (badness 10000) in paragraph at lines 644--645
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 643--644
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 645--647
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 648--649
 
  []
@@ -4976,7 +4983,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 #
-        # add the button at the top-left of the plot prepare for animation
+        # add the button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4988,7 +4996,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## 
-          add the button at the top-left of the plot prepare for animation
+          add the button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5000,7 +5009,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## 
-          add the button at the top-left of the plot prepare for animation
+          add the button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5012,7 +5022,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add 
-              the button at the top-left of the plot prepare for animation
+              the button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5024,7 +5035,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add 
-              the button at the top-left of the plot prepare for animation
+              the button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5036,7 +5048,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the 
-                  button at the top-left of the plot prepare for animation
+                  button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5048,7 +5061,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the 
-                  button at the top-left of the plot prepare for animation
+                  button at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5060,7 +5074,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button 
-                         at the top-left of the plot prepare for animation
+                         at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5072,7 +5087,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button 
-                         at the top-left of the plot prepare for animation
+                         at the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5084,7 +5100,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at 
-                            the top-left of the plot prepare for animation
+                            the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5096,7 +5113,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at 
-                            the top-left of the plot prepare for animation
+                            the top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5108,7 +5126,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the 
-                                top-left of the plot prepare for animation
+                                top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5120,7 +5139,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the 
-                                top-left of the plot prepare for animation
+                                top-left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5132,7 +5152,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-
-                                    left of the plot prepare for animation
+                                    left of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5144,7 +5165,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-l
-                                     eft of the plot prepare for animation
+                                     eft of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5156,7 +5178,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-left 
-                                         of the plot prepare for animation
+                                         of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5168,7 +5191,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-left 
-                                         of the plot prepare for animation
+                                         of the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5180,7 +5204,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-left of 
-                                            the plot prepare for animation
+                                            the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5192,7 +5217,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-left of 
-                                            the plot prepare for animation
+                                            the plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5204,7 +5230,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-left of the 
-                                                plot prepare for animation
+                                                plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5216,7 +5243,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ## add the button at the top-left of the 
-                                                plot prepare for animation
+                                                plot and hidden objects prep...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5228,7 +5256,8 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ... the button at the top-left of the plot 
-                                                  prepare for animation
+                                                  and hidden objects prepare...
+
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -5240,6 +5269,71 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1004 ... the button at the top-left of the plot 
+                                                  and hidden objects prepare...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `dkgreen'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004 ... button at the top-left of the plot and 
+                                                  hidden objects prepare for...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `dkgreen'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004 ... button at the top-left of the plot and 
+                                                  hidden objects prepare for...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `dkgreen'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004 ... at the top-left of the plot and hidden 
+                                                  objects prepare for animation
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `dkgreen'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004 ... at the top-left of the plot and hidden 
+                                                  objects prepare for animation
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `dkgreen'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004 ...top-left of the plot and hidden objects 
                                                   prepare for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5251,7 +5345,19 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...ton at the top-left of the plot prepare 
+l.1004 ...top-left of the plot and hidden objects 
+                                                  prepare for animation
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `dkgreen'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1004 ... of the plot and hidden objects prepare 
                                                   for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5263,7 +5369,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...ton at the top-left of the plot prepare 
+l.1004 ... of the plot and hidden objects prepare 
                                                   for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5275,7 +5381,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...at the top-left of the plot prepare for 
+l.1004 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5287,7 +5393,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...at the top-left of the plot prepare for 
+l.1004 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5299,7 +5405,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...at the top-left of the plot prepare for 
+l.1004 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5311,7 +5417,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...at the top-left of the plot prepare for 
+l.1004 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5323,7 +5429,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...at the top-left of the plot prepare for 
+l.1004 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5335,7 +5441,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...at the top-left of the plot prepare for 
+l.1004 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5347,7 +5453,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...p-left of the plot prepare for animation
+l.1004 ...and hidden objects prepare for animation
                                                   
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7728,13 +7834,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 6910 strings out of 493335
- 101921 string characters out of 3147021
+ 7079 strings out of 493335
+ 104026 string characters out of 3147021
  211014 words of memory out of 3000000
- 10205 multiletter control sequences out of 15000+200000
- 49313 words of font info for 99 fonts, out of 3000000 for 9000
+ 10369 multiletter control sequences out of 15000+200000
+ 49626 words of font info for 100 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,40p,1071b,2139s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,7n,40p,1296b,2139s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcrm1000.pk> <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
@@ -7751,7 +7857,7 @@ pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (41 pages, 7731608 bytes).
+Output written on PreReport.pdf (41 pages, 7742286 bytes).
 PDF statistics:
  424 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

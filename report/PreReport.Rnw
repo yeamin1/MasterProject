@@ -23,9 +23,12 @@ breakatwhitespace=true,
 tabsize=3
 }
 
+%editing
+\usepackage{soul}
+
 
 \title{\Huge{Emulate \texttt{persp} plot and \texttt{filled.contour} plot on \texttt{gridGraphics}}}
-\author{\Large{Zhijian Wen}}
+\author{\Large{Zhijian Wen} \\ \\ \Large{Supervised by Dr. Paul Murrell}}
 
 \date
 {
@@ -154,14 +157,14 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
     \begin{enumerate}
       \item Extract the information from the graphics engine display list.
       \item Understanding and translating the calculation that been done by \texttt{C} code from the \texttt{graphics} package to \texttt{R} code
-      \item Draw the Perspective Plot on \texttt{grid}.
+      \item Draw the Perspective Plot and Filled Contour Plot on \texttt{grid}.
     \end{enumerate}
-  \item integrate the standalone to the \texttt{gridGraphics}
+  \item Integrate the standalone to the \texttt{gridGraphics}
   \color{red}{
     \begin{enumerate}
-      \item navigating to the correct viewport that has been set up by \texttt{gridGraphics}
+      \item Navigating to the correct viewport that has been set up by \texttt{gridGraphics}
       \item Create a new viewport for setting up the correct x-scale and y-scale preparing for drawing, (if necessary) then draw the contents in the correct viewport.
-      \item Test the difference of the plots that been drawn by \texttt{graphics} and \texttt{grid}
+      \item Test the identicality of the plots that been drawn by \texttt{graphics} and \texttt{grid}
     \end{enumerate}
   }
 \end{enumerate}
@@ -172,9 +175,9 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
 
 
 \chapter{The graphics engine display list}
-The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See Figure\ref{figure_2.1}.\\
+The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See figure \ref{figure_2.1}.\\
 
-This information is called the graphics engine display list. In this paper, we use this graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list, the \texttt{recordPlot()} function been used. This function saves the plot in an R object. 
+This information is called the graphics engine display list. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list, \st{the recordPlot() function been used}. This function saves the plot in an R object. 
 <<R8.1, echo = FALSE>>=
 pdf("figure/report_3.pdf", onefile=FALSE)
 dev.control("enable")
@@ -202,13 +205,13 @@ dev.off()
 \end{center}
 \end{figure}
 
-The example demonstrates how to access the graphics engine display list of a plot drawn by \texttt{plot}. The values of x and y, the labels of x-axis and y-axis been displayed.
+The example demonstrates how to access the graphics engine display list of a plot drawn by \texttt{plot}. The values of x and y, the labels of x-axis and y-axis are displayed.
 
 
 
 \chapter{Standalone}
 \section{The Perspective Plots \texttt{persp()}}
-The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y plane. Usually, it has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} are the locations of grid line which the value z been measured, \textbf{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The following example shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot. See figure \ref{figure_3.1}
+The Perspective Plots \texttt{persp()} is used to draw a surface over the x-y plane. Usually, it has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} are the locations of grid line \st{which the value z been measured,} \textbf{z} is a matrix which containing the values that been used to plot, or it is the matrix that been calculated by a specific function, such as 3-D mathematical functions. The example (See figure \ref{figure_3.1}) shows how to draw a obligatory mathematical surface rotated sinc function on Perspective Plot.
 <<standalone_1.1, echo = FALSE>>=
 pdf("figure/standalone_1.pdf", onefile=FALSE)
 dev.control("enable")
@@ -225,14 +228,14 @@ trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
 \begin{figure}[h]
 \begin{center}
   \includegraphics[height = 10cm, width = 10cm]{figure/standalone_1.pdf}
-  \caption{An example of Perspective Plot been drawn by \texttt{persp()}}
+  \caption{A sinc surface drawn by \texttt{persp()}}
   	\label{figure_3.1}
 \end{center}
 \end{figure}
 
-It is clearly to see that the Perspective Plots is formed by a finite number of "polygon", each polygon has 4 Vertices. If we can access the values for each Vertices of the polygon, then we can reproduce this polygon. If we can access all the values of Vertices of all polygons, then we can reproduce the Perspective Plot. \\
+The sinc surface is made up by formed up by finite number of "polygon", each polygon has 4 Vertices. If we can access the coordinates one polygon, then we can redraw this polygon on \texttt{grid}. If we can access all the coordinates of all polygons, then we can emulate the Perspective Plot on \texttt{grid}. \\
 
-Inorder to emulate this plot, we need to access some information from the graphics engine display list. However, the value of the vertices is not in the display list, therefore the plot cannot be reproduced directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we should re-do the calculation to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been " caught " from the display list.
+Inorder to emulate this surface, we need to access some information from the graphics engine display list. However, the coordinates of the vertices are not in the display list, therefore the plot cannot be reproduced directly. But we can access value of \textbf{x}, \textbf{y} and \textbf{z}, therefore we should re-do the calculation to get values of all vertices. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been " caught " from the display list.
 <<standalone_2.1, echo = TRUE>>=
 reco = recordPlot()
 info = reco[[1]][[3]][[2]]
@@ -247,7 +250,8 @@ info[[4]][1:6, 1:2]
 dev.off()
 @
 \subsection{The translation from 3-D points into 2-D points}
-The values of \textbf{x}, \textbf{y} and \textbf{z} can been recored from the display list, which been explained by the previous section, the next task is to use this information to reproduce the vertics in 3-D.\\
+The values of \textbf{x}, \textbf{y} and \textbf{z} can been recored from the display list, which been explained by the previous section, the next task is to transform the \texttt{x, y, z} values into the 3 dimention polygon vertices coordinates system.
+\st{use this information to reproduce the vertics in 3-D.}\\
 
 As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimenstion of \textbf{z} is $ \textbf{length(x)} \times \textbf{length(y)}$.\\
 
@@ -689,8 +693,7 @@ To reproduce the same plots as \texttt{graphics}, we need to modify the \texttt{
 \section{Integrate \texttt{persp()}}
 The core of \texttt{gridGraphics} package provides some basic viewport structure to support the perspective plots(\texttt{persp()}), based on the gerneral plots that been drawn by \texttt{graphics}. However, there are some specific details that \texttt{gridGraphics} not fully supported. The following problems need to be solved before integrating \texttt{persp()} into the package:
 \begin{itemize}
-  \item{The viewport that \texttt{persp()} needs to be on}
-  \item{The xcale and yscale need to be calcualted}
+  \item{The scaling of the viewport needs to be calcualted}
   \item{whether the clipping happens for every component when drawing}
 \end{itemize}
 
@@ -699,9 +702,6 @@ It is not allowable to call \texttt{grid.newpage()} to create a new page for dra
 The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \texttt{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \texttt{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because there is one more dimension of \texit{z}. And, the plot is drawn in a two-dimension graphics devices.\\
 
 The final problem will be wether the clipping happeneds. More specifically, the different components of the perspective plot should be drawn in clipped region or non-clipped region. \\
-
-The first problem can be solved by ...\\
-% not sure how     dev.set(recordDev()) %par = currentPar(NULL) %dev.set(playDev()) works...
 
 The limit of x and y will depend on the ratio of horizontal and verticle length of the current windows graphics devices. On \texttt{grid}, it is simple to track the actual length of the viewport in the current windows graphics devices. \\
 
@@ -1070,7 +1070,7 @@ The pervious codes created the circle filled with red color (See figure \ref{Exa
 
 The following codes is coded with \texttt{JavaScript}. It interactives with the SVG image that changes the color of the circle from red to yellow, when a mouse moves into the circle region. The key step of this interactivity will be track the circle element and modify its color.\\
 
-The method for tracking the \texttt{circle} element is to find the elements where its \texttt{id} attribute is \texttt{"circle1"}. Therefore, the \texttt{getElementById()} method is used. It will return the element that has the ID attribute with the specified value. After the circle element is tracked, we can simply add a \texttt{onmouseover} Even to it. That is, the color of the circle will change only if a mouse moving into the circle. The \texttt{Onmove} function is the action when the even is activated.\\ 
+The method for tracking the \texttt{circle} element is to find the elements where its \texttt{id} attribute is \texttt{"circle1"}. Therefore, the \texttt{getElementById()} method is used. It will return the element that has the ID attribute with the specified value. After the circle element is tracked, we can simply add a \texttt{onmouseover} Even to it. That is, the color of the circle will change only if a mouse moving into the circle. The \texttt{Onmoveover} function is called when the even is activated.\\ 
 
 \begin{lstlisting}
 Onmove = function(){
@@ -1093,14 +1093,20 @@ Oncircle.onmouseover = Onmove;
 
 \subsection{The sinc surface}
 \textcolor{red}{
-Since those action cannot been achieved by \texttt{R} graphics system. The first step is to export the plot into SVG image. To do that, the \texttt{gridSVG} is required. The following codes are used for export the SVG image (See figure \ref{Example_6.3.01}). \texttt{surface()} is the 'wrap' function for drawing the sinc surface perspective plot. \texttt{addFeatures()} is creating the texts and the little boxes of color at the top-left region in the plot. It also creates some hidden objects which are all invisible unless the specific action been actived. A javascript is imported for supporting the animations by using \texttt{grid.script()}. Finally we exported the SVG image by \texttt{grid.export()}\\
+Since those action cannot been achieved by R graphics system. The first step is to export the plot into
+SVG image. To do that, the gridSVG is required. The following codes are used for export the SVG
+image (See figure 6.5). surface() is the ¡¯wrap¡¯ function for drawing the sinc surface perspective plot.
+addFeatures() is creating the texts and the little boxes of colour at the top-left region in the plot.
+It also creates some hidden objects which are all invisible unless the specific action is activated. A
+JavaScript is imported for supporting the animations by using grid.script(). Finally we exported
+the SVG image by grid.export()
 }
 \\
 
 \begin{lstlisting}
 ## draw a surface
 surface()  
-## add the button at the top-left of the plot prepare for animation
+## add the button at the top-left of the plot and hidden objects prepare for animation
 addFeatures() 
 ## import the javascript file into the SVG image
 grid.script(file="example.js") 
@@ -1250,6 +1256,11 @@ polygonout = function(){
 \end{figure}
 
 \chapter{Conclusion}
+The \texttt{gridGraphics} is the package to make the connection between \texttt{graphcis} and \texttt{grid} package. The \texttt{grid.echo()} function will convert plots drawn by \texttt{graphcis} package into \texttt{grid}.\\
+There are two kinds of \texttt{graphics} plot that were not supported by previous version: \texttt{persp()} for drawing perspective plot and \texttt{filled.contour()} for drawing level filled contour plot. The surface of perspective plot is formed by finite number of polygons, where polygons have four vertexes. The surface will be drawn by calculating the coordinates of vertexes of every polygons. The rest features that \texttt{persp()} supported, the lighting, boxes and axis will be emulate by translating \texttt{C} code to \texttt{R} code. The surface of filled contour plot will be emulate by translating the \texttt{C} code directly then vectorize so that the function will be more efficiency. \\
+The core of \texttt{gridGraphics} package provides fully viewport structure to support the filled contour plot. Integrating \texttt{filled.contour()} will be done by navigating to the correct viewport and draw the filled contour plot. However, \texttt{gridGraphics} dose not fully provide the viewport structure for \texttt{persp}. The solution to this problem is that: creating a new viewport in the correct location of the viewport tree (created by \texttt{gridGraphics} when \texttt{grid.echo()} been called.). Then we need to consider: (1) The x-scale and y-scale for the viewport. (2) Determined the clipping happens for every components. The x-scale and y-scale will be calculated base on the size of the current graphics device. The solution will be write a \texttt{R} function that do the extract calculation for the range of x and y (from \texttt{graphics}). The clipping will be solve by observing the difference from the \texttt{persp()} plot that drawn by \texttt{graphics} and \texttt{grid}. That is, the clips will be turn on when drawing both the axes and box, but it will been turn off when drawing the surface. Finally \texttt{persp()} is integrated into the package by navigating to the viewport with correct scale and correct clipping actions.\\
+To ensure the accuracy of identical that a \texttt{graphics} plot redrawn on \texttt{grid}, it is necessary to provide the identical test. The \textbf{ImageMagick} software will be used to test the identical (mathematically and visually) between a \texttt{graphics}-plot and \texttt{grid}-plot. Most kinds of plots are identical mathematically and visually. (See figure \ref{chapter5.2} and figure \ref{chapter5.3}).
+
 
 
 \chapter{Reference}
