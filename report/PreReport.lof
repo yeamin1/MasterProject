@@ -23,15 +23,15 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces A set of perspective plots, which passed the identical test by ImageMagick}}{28}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces A set of filled contour plots, which passed the identical test by ImageMagick}}{29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then moltify the colors by \texttt {grid.edit()}}}{31}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces The left plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{31}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The left \texttt {persp()} plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then moltify the colors by \texttt {grid.edit()}}}{31}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The left filled contour plot is drawn by \texttt {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{31}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces The top plot shows the shape of Maungawhau volcano, where the bottom figure shows the level contour (i.e. the height)}}{32}
 \contentsline {figure}{\numberline {6.4}{\ignorespaces The left circle is created with svg imgae, the right circle is changed color to yellow then the mouse enter the region of the circle. }}{33}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces A SVG image of the sinc surface perspective plot}}{34}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces The plot shows the animation that changing the surface color from the left plot to right plot}}{35}
 \contentsline {figure}{\numberline {6.7}{\ignorespaces The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}}{36}
 \contentsline {figure}{\numberline {6.8}{\ignorespaces The shading animation}}{36}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces The fragment will be highlight when the mouse move into its area. Also its z-value will be appeared}}{37}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces The fragment will be highlight when the mouse move into its area. Also its z-value will be appeared}}{38}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

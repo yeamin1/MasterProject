@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  28 MAY 2017 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  29 MAY 2017 12:22
 entering extended mode
 **./PreReport.tex
 (PreReport.tex
@@ -816,10 +816,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 394--395
  []
 
 ! Undefined control sequence.
-<argument> ...{z[i - 1 + (j - 1) * nx]} in \textt 
+l.432 ...texttt{z[i - 1 + (j - 1) * nx]} in \textt
                                                   {FindPolygonVertices()} is...
-l.432 }
-       \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4218,16 +4216,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 890--891
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 892--893
-
- []
-
 <figure/Chapter6_example_1_2.pdf, id=287, 505.89pt x 505.89pt>
 File: figure/Chapter6_example_1_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 907
+Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 905
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -4235,7 +4228,7 @@ Package pdftex.def Info: figure/Chapter6_example_1_2.pdf used on input line 907
 File: figure/Chapter6_example_1_3.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_1_3.pdf>
-Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 908
+Package pdftex.def Info: figure/Chapter6_example_1_3.pdf used on input line 906
 .
 (pdftex.def)             Requested size: 227.62523pt x 199.17207pt.
 
@@ -4246,7 +4239,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: figure/Chapter6_example_2_2.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2_2.pdf>
-Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 937
+Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 935
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -4254,7 +4247,7 @@ Package pdftex.def Info: figure/Chapter6_example_2_2.pdf used on input line 937
 File: figure/Chapter6_example_2_4.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_2_4.pdf>
-Package pdftex.def Info: figure/Chapter6_example_2_4.pdf used on input line 938
+Package pdftex.def Info: figure/Chapter6_example_2_4.pdf used on input line 936
 .
 (pdftex.def)             Requested size: 199.17207pt x 199.17207pt.
 
@@ -4264,7 +4257,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [30
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 946--947
+Underfull \hbox (badness 10000) in paragraph at lines 944--945
 
  []
 
@@ -4275,7 +4268,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.949 \begin{figure}[H]
+l.947 \begin{figure}[H]
                        
 Option `H' ignored and `p' used.
 
@@ -4283,13 +4276,18 @@ Option `H' ignored and `p' used.
 File: figure/Chapter6_example_3_1.pdf Graphic file (type pdf)
 
 <use figure/Chapter6_example_3_1.pdf>
-Package pdftex.def Info: figure/Chapter6_example_3_1.pdf used on input line 951
+Package pdftex.def Info: figure/Chapter6_example_3_1.pdf used on input line 949
 .
 (pdftex.def)             Requested size: 341.43785pt x 455.257pt.
  [31 <./figure/Chapter6_example_1_2.pdf> <./figure/Chapter6_example_1_3.pdf> <.
 /figure/Chapter6_example_2_2.pdf> <./figure/Chapter6_example_2_4.pdf>] [32 <./f
 igure/Chapter6_example_3_1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 960--962
+Underfull \hbox (badness 10000) in paragraph at lines 958--959
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 960--961
 
  []
 
@@ -4300,7 +4298,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "
+l.963 <circle id = "
                     circle1"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4312,7 +4310,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "circle1"
+l.963 <circle id = "circle1"
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4324,7 +4322,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "circle1"
+l.963 <circle id = "circle1"
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4336,7 +4334,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "circle1"
+l.963 <circle id = "circle1"
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4348,7 +4346,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "circle1"
+l.963 <circle id = "circle1"
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4360,7 +4358,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "circle1"
+l.963 <circle id = "circle1"
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4372,7 +4370,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.964 <circle id = "circle1"
+l.963 <circle id = "circle1"
                             
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4384,8 +4382,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="
-                50" cy="50" r="40"
+l.964 cx="
+          50" cy="50" r="40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4396,8 +4394,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50"
-                    cy="50" r="40"
+l.964 cx="50"
+              cy="50" r="40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4408,8 +4406,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50"
-                    cy="50" r="40"
+l.964 cx="50"
+              cy="50" r="40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4420,8 +4418,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50" cy="
-                        50" r="40"
+l.964 cx="50" cy="
+                  50" r="40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4432,8 +4430,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50" cy="50"
-                            r="40"
+l.964 cx="50" cy="50"
+                      r="40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4444,8 +4442,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50" cy="50"
-                            r="40"
+l.964 cx="50" cy="50"
+                      r="40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4456,8 +4454,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50" cy="50" r="
-                               40"
+l.964 cx="50" cy="50" r="
+                         40"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4468,8 +4466,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50" cy="50" r="40"
-                                  
+l.964 cx="50" cy="50" r="40"
+                            
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4480,8 +4478,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.965       cx="50" cy="50" r="40"
-                                  
+l.964 cx="50" cy="50" r="40"
+                            
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4492,8 +4490,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.966       stroke="
-                    black" stroke-width="3"
+l.965 stroke="
+              black" stroke-width="3"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4504,8 +4502,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.966       stroke="black"
-                           stroke-width="3"
+l.965 stroke="black"
+                     stroke-width="3"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4516,8 +4514,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.966       stroke="black"
-                           stroke-width="3"
+l.965 stroke="black"
+                     stroke-width="3"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4528,8 +4526,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.966       stroke="black" stroke-width="
-                                         3"
+l.965 stroke="black" stroke-width="
+                                   3"
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4540,8 +4538,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.966       stroke="black" stroke-width="3"
-                                           
+l.965 stroke="black" stroke-width="3"
+                                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4552,8 +4550,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.966       stroke="black" stroke-width="3"
-                                           
+l.965 stroke="black" stroke-width="3"
+                                     
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4564,8 +4562,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.967       fill="
-                  red" />
+l.966 fill="
+            red" />
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4576,8 +4574,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.967       fill="red"
-                       />
+l.966 fill="red"
+                 />
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4588,23 +4586,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.967       fill="red"
-                       />
+l.966 fill="red"
+                 />
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 970--971
+Underfull \hbox (badness 10000) in paragraph at lines 969--970
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 972--973
+Underfull \hbox (badness 10000) in paragraph at lines 971--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 974--975
+Underfull \hbox (badness 10000) in paragraph at lines 973--974
 
  []
 
@@ -4615,8 +4613,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('
-                             fill', "yellow");
+l.977 this.setAttribute('
+                         fill', "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4627,8 +4625,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('
-                             fill', "yellow");
+l.977 this.setAttribute('
+                         fill', "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4639,8 +4637,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('
-                             fill', "yellow");
+l.977 this.setAttribute('
+                         fill', "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4651,8 +4649,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill'
-                                  , "yellow");
+l.977 this.setAttribute('fill'
+                              , "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4663,8 +4661,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill'
-                                  , "yellow");
+l.977 this.setAttribute('fill'
+                              , "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4675,8 +4673,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill'
-                                  , "yellow");
+l.977 this.setAttribute('fill'
+                              , "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4687,8 +4685,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill'
-                                  , "yellow");
+l.977 this.setAttribute('fill'
+                              , "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4699,8 +4697,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill'
-                                  , "yellow");
+l.977 this.setAttribute('fill'
+                              , "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4711,8 +4709,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill'
-                                  , "yellow");
+l.977 this.setAttribute('fill'
+                              , "yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4723,8 +4721,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "
-                                     yellow");
+l.977 this.setAttribute('fill', "
+                                 yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4735,8 +4733,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "
-                                     yellow");
+l.977 this.setAttribute('fill', "
+                                 yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4747,8 +4745,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "
-                                     yellow");
+l.977 this.setAttribute('fill', "
+                                 yellow");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4759,8 +4757,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "yellow"
-                                            );
+l.977 this.setAttribute('fill', "yellow"
+                                        );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4771,8 +4769,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "yellow"
-                                            );
+l.977 this.setAttribute('fill', "yellow"
+                                        );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4783,8 +4781,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "yellow"
-                                            );
+l.977 this.setAttribute('fill', "yellow"
+                                        );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4795,8 +4793,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "yellow"
-                                            );
+l.977 this.setAttribute('fill', "yellow"
+                                        );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4807,8 +4805,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "yellow"
-                                            );
+l.977 this.setAttribute('fill', "yellow"
+                                        );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4819,8 +4817,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.978     this.setAttribute('fill', "yellow"
-                                            );
+l.977 this.setAttribute('fill', "yellow"
+                                        );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -4831,7 +4829,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.981 Oncircle = document.getElementById("
+l.980 Oncircle = document.getElementById("
                                           circle1");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4843,7 +4841,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.981 Oncircle = document.getElementById("circle1"
+l.980 Oncircle = document.getElementById("circle1"
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4855,7 +4853,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.981 Oncircle = document.getElementById("circle1"
+l.980 Oncircle = document.getElementById("circle1"
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4864,17 +4862,17 @@ If that doesn't work, type  X <return>  to quit.
 File: figure/svg/svgdemo0.PNG Graphic file (type png)
 
 <use figure/svg/svgdemo0.PNG>
-Package pdftex.def Info: figure/svg/svgdemo0.PNG used on input line 987.
+Package pdftex.def Info: figure/svg/svgdemo0.PNG used on input line 986.
 (pdftex.def)             Requested size: 45.52547pt x 41.25714pt.
 
 <figure/svg/svgdemo1.PNG, id=323, 76.03406pt x 72.27pt>
 File: figure/svg/svgdemo1.PNG Graphic file (type png)
 
 <use figure/svg/svgdemo1.PNG>
-Package pdftex.def Info: figure/svg/svgdemo1.PNG used on input line 989.
+Package pdftex.def Info: figure/svg/svgdemo1.PNG used on input line 988.
 (pdftex.def)             Requested size: 42.6797pt x 42.67862pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1000
+Underfull \hbox (badness 10000) in paragraph at lines 995--1003
 
  []
 
@@ -4886,7 +4884,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 #
+l.1005 #
         # draw a surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4898,7 +4896,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## 
+l.1005 ## 
           draw a surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4910,7 +4908,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## 
+l.1005 ## 
           draw a surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4922,7 +4920,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## draw 
+l.1005 ## draw 
                a surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4934,7 +4932,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## draw 
+l.1005 ## draw 
                a surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4946,7 +4944,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## draw a 
+l.1005 ## draw a 
                  surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4958,7 +4956,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## draw a 
+l.1005 ## draw a 
                  surface
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4970,7 +4968,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1002 ## draw a surface
+l.1005 ## draw a surface
                         
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4982,7 +4980,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 #
+l.1007 #
         # add the button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -4995,7 +4993,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## 
+l.1007 ## 
           add the button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5008,7 +5006,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## 
+l.1007 ## 
           add the button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5021,7 +5019,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add 
+l.1007 ## add 
               the button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5034,7 +5032,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add 
+l.1007 ## add 
               the button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5047,7 +5045,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the 
+l.1007 ## add the 
                   button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5060,7 +5058,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the 
+l.1007 ## add the 
                   button at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5073,7 +5071,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button 
+l.1007 ## add the button 
                          at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5086,7 +5084,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button 
+l.1007 ## add the button 
                          at the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5099,7 +5097,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at 
+l.1007 ## add the button at 
                             the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5112,7 +5110,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at 
+l.1007 ## add the button at 
                             the top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5125,7 +5123,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the 
+l.1007 ## add the button at the 
                                 top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5138,7 +5136,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the 
+l.1007 ## add the button at the 
                                 top-left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5151,7 +5149,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-
+l.1007 ## add the button at the top-
                                     left of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5164,7 +5162,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-l
+l.1007 ## add the button at the top-l
                                      eft of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5177,7 +5175,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-left 
+l.1007 ## add the button at the top-left 
                                          of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5190,7 +5188,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-left 
+l.1007 ## add the button at the top-left 
                                          of the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5203,7 +5201,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-left of 
+l.1007 ## add the button at the top-left of 
                                             the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5216,7 +5214,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-left of 
+l.1007 ## add the button at the top-left of 
                                             the plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5229,7 +5227,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-left of the 
+l.1007 ## add the button at the top-left of the 
                                                 plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5242,7 +5240,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ## add the button at the top-left of the 
+l.1007 ## add the button at the top-left of the 
                                                 plot and hidden objects prep...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5255,7 +5253,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... the button at the top-left of the plot 
+l.1007 ... the button at the top-left of the plot 
                                                   and hidden objects prepare...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5268,7 +5266,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... the button at the top-left of the plot 
+l.1007 ... the button at the top-left of the plot 
                                                   and hidden objects prepare...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5281,7 +5279,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... button at the top-left of the plot and 
+l.1007 ... button at the top-left of the plot and 
                                                   hidden objects prepare for...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5294,7 +5292,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... button at the top-left of the plot and 
+l.1007 ... button at the top-left of the plot and 
                                                   hidden objects prepare for...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5307,7 +5305,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... at the top-left of the plot and hidden 
+l.1007 ... at the top-left of the plot and hidden 
                                                   objects prepare for animation
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5320,7 +5318,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... at the top-left of the plot and hidden 
+l.1007 ... at the top-left of the plot and hidden 
                                                   objects prepare for animation
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -5333,7 +5331,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...top-left of the plot and hidden objects 
+l.1007 ...top-left of the plot and hidden objects 
                                                   prepare for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5345,7 +5343,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...top-left of the plot and hidden objects 
+l.1007 ...top-left of the plot and hidden objects 
                                                   prepare for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5357,7 +5355,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... of the plot and hidden objects prepare 
+l.1007 ... of the plot and hidden objects prepare 
                                                   for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5369,7 +5367,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ... of the plot and hidden objects prepare 
+l.1007 ... of the plot and hidden objects prepare 
                                                   for animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5381,7 +5379,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...the plot and hidden objects prepare for 
+l.1007 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5393,7 +5391,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...the plot and hidden objects prepare for 
+l.1007 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5405,7 +5403,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...the plot and hidden objects prepare for 
+l.1007 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5417,7 +5415,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...the plot and hidden objects prepare for 
+l.1007 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5429,7 +5427,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...the plot and hidden objects prepare for 
+l.1007 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5441,7 +5439,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...the plot and hidden objects prepare for 
+l.1007 ...the plot and hidden objects prepare for 
                                                   animation
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5453,7 +5451,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1004 ...and hidden objects prepare for animation
+l.1007 ...and hidden objects prepare for animation
                                                   
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5465,7 +5463,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 #
+l.1009 #
         # import the javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5477,7 +5475,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## 
+l.1009 ## 
           import the javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5489,7 +5487,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## 
+l.1009 ## 
           import the javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5501,7 +5499,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import 
+l.1009 ## import 
                  the javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5513,7 +5511,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import 
+l.1009 ## import 
                  the javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5525,7 +5523,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the 
+l.1009 ## import the 
                      javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5537,7 +5535,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the 
+l.1009 ## import the 
                      javascript file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5549,7 +5547,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript 
+l.1009 ## import the javascript 
                                 file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5561,7 +5559,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript 
+l.1009 ## import the javascript 
                                 file into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5573,7 +5571,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file 
+l.1009 ## import the javascript file 
                                      into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5585,7 +5583,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file 
+l.1009 ## import the javascript file 
                                      into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5597,7 +5595,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file 
+l.1009 ## import the javascript file 
                                      into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5609,7 +5607,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file 
+l.1009 ## import the javascript file 
                                      into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5621,7 +5619,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file 
+l.1009 ## import the javascript file 
                                      into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5633,7 +5631,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file 
+l.1009 ## import the javascript file 
                                      into the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5645,7 +5643,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into 
+l.1009 ## import the javascript file into 
                                           the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5657,7 +5655,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into 
+l.1009 ## import the javascript file into 
                                           the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5669,7 +5667,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into 
+l.1009 ## import the javascript file into 
                                           the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5681,7 +5679,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into 
+l.1009 ## import the javascript file into 
                                           the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5693,7 +5691,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into 
+l.1009 ## import the javascript file into 
                                           the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5705,7 +5703,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into 
+l.1009 ## import the javascript file into 
                                           the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5717,7 +5715,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into the 
+l.1009 ## import the javascript file into the 
                                               SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5729,7 +5727,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into the 
+l.1009 ## import the javascript file into the 
                                               SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5741,7 +5739,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into the 
+l.1009 ## import the javascript file into the 
                                               SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5753,7 +5751,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into the 
+l.1009 ## import the javascript file into the 
                                               SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5765,7 +5763,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into the SVG 
+l.1009 ## import the javascript file into the SVG 
                                                   image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5777,7 +5775,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ## import the javascript file into the SVG 
+l.1009 ## import the javascript file into the SVG 
                                                   image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5789,7 +5787,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1006 ...t the javascript file into the SVG image
+l.1009 ...t the javascript file into the SVG image
                                                   
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5801,7 +5799,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1007 grid.script(file="
+l.1010 grid.script(file="
                          example.js")
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5813,7 +5811,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1007 grid.script(file="example.
+l.1010 grid.script(file="example.
                                  js")
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5825,7 +5823,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1007 grid.script(file="example.j
+l.1010 grid.script(file="example.j
                                   s")
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5837,7 +5835,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1007 grid.script(file="example.js"
+l.1010 grid.script(file="example.js"
                                     )
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5849,7 +5847,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1007 grid.script(file="example.js"
+l.1010 grid.script(file="example.js"
                                     )
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5861,7 +5859,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 #
+l.1011 #
         # export the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5873,7 +5871,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## 
+l.1011 ## 
           export the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5885,7 +5883,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## 
+l.1011 ## 
           export the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5897,7 +5895,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export 
+l.1011 ## export 
                  the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5909,7 +5907,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export 
+l.1011 ## export 
                  the SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5921,7 +5919,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export the 
+l.1011 ## export the 
                      SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5933,7 +5931,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export the 
+l.1011 ## export the 
                      SVG image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5945,7 +5943,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export the SVG 
+l.1011 ## export the SVG 
                          image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5957,7 +5955,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export the SVG 
+l.1011 ## export the SVG 
                          image
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5969,7 +5967,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1008 ## export the SVG image
+l.1011 ## export the SVG image
                               
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5981,7 +5979,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("
+l.1012 grid.export("
                     example.svg", strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5993,7 +5991,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("
+l.1012 grid.export("
                     example.svg", strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6005,7 +6003,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("
+l.1012 grid.export("
                     example.svg", strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6017,7 +6015,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("example.
+l.1012 grid.export("example.
                             svg", strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6029,7 +6027,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("example.s
+l.1012 grid.export("example.s
                              vg", strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6041,7 +6039,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("example.svg"
+l.1012 grid.export("example.svg"
                                 , strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6053,7 +6051,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1009 grid.export("example.svg"
+l.1012 grid.export("example.svg"
                                 , strict = FALSE)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6062,7 +6060,7 @@ If that doesn't work, type  X <return>  to quit.
 File: figure/svg/origin_1.PNG Graphic file (type png)
 
 <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1014.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1017.
 (pdftex.def)             Requested size: 369.88783pt x 312.98672pt.
 
 
@@ -6072,11 +6070,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1031 
+l.1034 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
+
+ []
 
 [34 <./figure/svg/origin_1.PNG>]
 
@@ -6086,8 +6089,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048         color_new = this.getAttribute('
-                                              fill');
+l.1052 color_new = this.getAttribute('
+                                      fill');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6098,8 +6101,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048         color_new = this.getAttribute('
-                                              fill');
+l.1052 color_new = this.getAttribute('
+                                      fill');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6110,8 +6113,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048         color_new = this.getAttribute('
-                                              fill');
+l.1052 color_new = this.getAttribute('
+                                      fill');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6122,8 +6125,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048 ...    color_new = this.getAttribute('fill'
-                                                  );
+l.1052 color_new = this.getAttribute('fill'
+                                           );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6134,8 +6137,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048 ...    color_new = this.getAttribute('fill'
-                                                  );
+l.1052 color_new = this.getAttribute('fill'
+                                           );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6146,8 +6149,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048 ...    color_new = this.getAttribute('fill'
-                                                  );
+l.1052 color_new = this.getAttribute('fill'
+                                           );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6158,8 +6161,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048 ...    color_new = this.getAttribute('fill'
-                                                  );
+l.1052 color_new = this.getAttribute('fill'
+                                           );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6170,8 +6173,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048 ...    color_new = this.getAttribute('fill'
-                                                  );
+l.1052 color_new = this.getAttribute('fill'
+                                           );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6182,8 +6185,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1048 ...    color_new = this.getAttribute('fill'
-                                                  );
+l.1052 color_new = this.getAttribute('fill'
+                                           );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6194,8 +6197,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = '
-                                      color',colors = color_new);
+l.1053 animate(..., action = '
+                              color',colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6206,8 +6209,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = 'color'
-                                            ,colors = color_new);
+l.1053 animate(..., action = 'color'
+                                    ,colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6218,8 +6221,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = 'color'
-                                            ,colors = color_new);
+l.1053 animate(..., action = 'color'
+                                    ,colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6230,8 +6233,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = 'color'
-                                            ,colors = color_new);
+l.1053 animate(..., action = 'color'
+                                    ,colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6242,8 +6245,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = 'color'
-                                            ,colors = color_new);
+l.1053 animate(..., action = 'color'
+                                    ,colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6254,8 +6257,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = 'color'
-                                            ,colors = color_new);
+l.1053 animate(..., action = 'color'
+                                    ,colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6266,8 +6269,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1049         animate(..., action = 'color'
-                                            ,colors = color_new);
+l.1053 animate(..., action = 'color'
+                                    ,colors = color_new);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6278,8 +6281,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1052     color_id = document.getElementById('
-                                               color.2.' + 1)
+l.1056 color_id = document.getElementById('
+                                           color.2.' + 1)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6290,8 +6293,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1052 ...lor_id = document.getElementById('color.
-                                                  2.' + 1)
+l.1056 color_id = document.getElementById('color.
+                                                 2.' + 1)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6302,7 +6305,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1052 ..._id = document.getElementById('color.2.'
+l.1056 ..._id = document.getElementById('color.2.'
                                                    + 1)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6314,28 +6317,28 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1052 ..._id = document.getElementById('color.2.'
+l.1056 ..._id = document.getElementById('color.2.'
                                                    + 1)
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 File: figure/svg/origin_1.PNG Graphic file (type png)
 <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1059.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1063.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
 <figure/svg/change_2.PNG, id=334, 500.62032pt x 437.38406pt>
 File: figure/svg/change_2.PNG Graphic file (type png)
 
 <use figure/svg/change_2.PNG>
-Package pdftex.def Info: figure/svg/change_2.PNG used on input line 1060.
+Package pdftex.def Info: figure/svg/change_2.PNG used on input line 1064.
 (pdftex.def)             Requested size: 142.26578pt x 142.26158pt.
 
 <figure/svg/change_3.PNG, id=335, 499.11469pt x 437.38406pt>
 File: figure/svg/change_3.PNG Graphic file (type png)
 
 <use figure/svg/change_3.PNG>
-Package pdftex.def Info: figure/svg/change_3.PNG used on input line 1061.
+Package pdftex.def Info: figure/svg/change_3.PNG used on input line 1065.
 (pdftex.def)             Requested size: 142.26439pt x 142.26158pt.
 
 
@@ -6345,8 +6348,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("
-                                         stroke-opacity", ...);
+l.1079 polygons_odd[i].setAttribute("
+                                     stroke-opacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6357,8 +6360,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("
-                                         stroke-opacity", ...);
+l.1079 polygons_odd[i].setAttribute("
+                                     stroke-opacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6369,8 +6372,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("
-                                         stroke-opacity", ...);
+l.1079 polygons_odd[i].setAttribute("
+                                     stroke-opacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6381,8 +6384,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("stroke-
-                                                opacity", ...);
+l.1079 polygons_odd[i].setAttribute("stroke-
+                                            opacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6393,8 +6396,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("stroke-
-                                                opacity", ...);
+l.1079 polygons_odd[i].setAttribute("stroke-
+                                            opacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6405,8 +6408,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("stroke-
-                                                opacity", ...);
+l.1079 polygons_odd[i].setAttribute("stroke-
+                                            opacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6417,8 +6420,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075     polygons_odd[i].setAttribute("stroke-o
-                                                 pacity", ...);
+l.1079 polygons_odd[i].setAttribute("stroke-o
+                                             pacity", ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6429,7 +6432,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075 ...ons_odd[i].setAttribute("stroke-opacity"
+l.1079 ...ons_odd[i].setAttribute("stroke-opacity"
                                                   , ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6441,7 +6444,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1075 ...ons_odd[i].setAttribute("stroke-opacity"
+l.1079 ...ons_odd[i].setAttribute("stroke-opacity"
                                                   , ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6454,8 +6457,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1081     animate(..., action = '
-                                  alpha', ...);
+l.1085 animate(..., action = '
+                              alpha', ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6466,8 +6469,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1081     animate(..., action = 'alpha'
-                                        , ...);
+l.1085 animate(..., action = 'alpha'
+                                    , ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6478,8 +6481,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1081     animate(..., action = 'alpha'
-                                        , ...);
+l.1085 animate(..., action = 'alpha'
+                                    , ...);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6490,7 +6493,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1084 alpha = document.getElementById('
+l.1088 alpha = document.getElementById('
                                         alpha.1.1.text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6502,7 +6505,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1084 alpha = document.getElementById('alpha.
+l.1088 alpha = document.getElementById('alpha.
                                               1.1.text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6514,7 +6517,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1084 ...a = document.getElementById('alpha.1.1.t
+l.1088 ...a = document.getElementById('alpha.1.1.t
                                                   ext');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6526,7 +6529,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1084 ...document.getElementById('alpha.1.1.text'
+l.1088 ...document.getElementById('alpha.1.1.text'
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6538,49 +6541,68 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1084 ...document.getElementById('alpha.1.1.text'
+l.1088 ...document.getElementById('alpha.1.1.text'
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 File: figure/svg/origin_1.PNG Graphic file (type png)
 <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1090.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1094.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
 <figure/svg/opacity_2.PNG, id=341, 500.62032pt x 438.13687pt>
 File: figure/svg/opacity_2.PNG Graphic file (type png)
 
 <use figure/svg/opacity_2.PNG>
-Package pdftex.def Info: figure/svg/opacity_2.PNG used on input line 1091.
+Package pdftex.def Info: figure/svg/opacity_2.PNG used on input line 1095.
 (pdftex.def)             Requested size: 142.26578pt x 142.26576pt.
 
 <figure/svg/opacity_3.PNG, id=342, 500.62032pt x 435.87843pt>
 File: figure/svg/opacity_3.PNG Graphic file (type png)
 
 <use figure/svg/opacity_3.PNG>
-Package pdftex.def Info: figure/svg/opacity_3.PNG used on input line 1092.
+Package pdftex.def Info: figure/svg/opacity_3.PNG used on input line 1096.
 (pdftex.def)             Requested size: 142.26578pt x 142.26404pt.
 File: figure/svg/origin_1.PNG Graphic file (type png)
  <use figure/svg/origin_1.PNG>
-Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1102.
+Package pdftex.def Info: figure/svg/origin_1.PNG used on input line 1106.
 (pdftex.def)             Requested size: 142.26218pt x 142.26244pt.
 
 <figure/svg/Shade_2.PNG, id=343, 499.8675pt x 441.14813pt>
 File: figure/svg/Shade_2.PNG Graphic file (type png)
 
 <use figure/svg/Shade_2.PNG>
-Package pdftex.def Info: figure/svg/Shade_2.PNG used on input line 1103.
+Package pdftex.def Info: figure/svg/Shade_2.PNG used on input line 1107.
 (pdftex.def)             Requested size: 142.2654pt x 142.26076pt.
 
 <figure/svg/Shade_3.PNG, id=344, 499.8675pt x 436.63126pt>
 File: figure/svg/Shade_3.PNG Graphic file (type png)
 
 <use figure/svg/Shade_3.PNG>
-Package pdftex.def Info: figure/svg/Shade_3.PNG used on input line 1104.
+Package pdftex.def Info: figure/svg/Shade_3.PNG used on input line 1108.
 (pdftex.def)             Requested size: 142.2654pt x 142.26324pt.
- [36 <./figure/svg/opacity_2.PNG> <./figure/svg/opacity_3.PNG> <./figure/svg/Sh
-ade_2.PNG> <./figure/svg/Shade_3.PNG>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1115--1116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1118
+
+ []
+
+[36 <./figure/svg/opacity_2.PNG> <./figure/svg/opacity_3.PNG> <./figure/svg/Sha
+de_2.PNG> <./figure/svg/Shade_3.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+
+ []
+
 
 ! LaTeX Error: Undefined color `mauve'.
 
@@ -6588,8 +6610,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119     obj = document.getElementById('
-                                          polygon.' + 2 + '.' + i);
+l.1127 obj = document.getElementById('
+                                      polygon.' + 2 + '.' + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6600,8 +6622,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119     obj = document.getElementById('polygon.
-                                                  ' + 2 + '.' + i);
+l.1127 obj = document.getElementById('polygon.
+                                              ' + 2 + '.' + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6612,8 +6634,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119 ...obj = document.getElementById('polygon.'
-                                                   + 2 + '.' + i);
+l.1127 obj = document.getElementById('polygon.'
+                                                + 2 + '.' + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6624,8 +6646,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119 ...obj = document.getElementById('polygon.'
-                                                   + 2 + '.' + i);
+l.1127 obj = document.getElementById('polygon.'
+                                                + 2 + '.' + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6636,7 +6658,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119 ...cument.getElementById('polygon.' + 2 + '
+l.1127 ...cument.getElementById('polygon.' + 2 + '
                                                   .' + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6648,7 +6670,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119 ...ment.getElementById('polygon.' + 2 + '.'
+l.1127 ...ment.getElementById('polygon.' + 2 + '.'
                                                    + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6660,7 +6682,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1119 ...ment.getElementById('polygon.' + 2 + '.'
+l.1127 ...ment.getElementById('polygon.' + 2 + '.'
                                                    + i);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6672,7 +6694,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1125 ..._index = str.replace(/polygon.[0-9]./, '
+l.1133 ..._index = str.replace(/polygon.[0-9]./, '
                                                   ');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6684,7 +6706,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1125 ..._index = str.replace(/polygon.[0-9]./, '
+l.1133 ..._index = str.replace(/polygon.[0-9]./, '
                                                   ');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6696,7 +6718,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1125 ..._index = str.replace(/polygon.[0-9]./, '
+l.1133 ..._index = str.replace(/polygon.[0-9]./, '
                                                   ');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6708,7 +6730,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1125 ...index = str.replace(/polygon.[0-9]./, ''
+l.1133 ...index = str.replace(/polygon.[0-9]./, ''
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6720,7 +6742,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1125 ...index = str.replace(/polygon.[0-9]./, ''
+l.1133 ...index = str.replace(/polygon.[0-9]./, ''
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6732,7 +6754,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1125 ...index = str.replace(/polygon.[0-9]./, ''
+l.1133 ...index = str.replace(/polygon.[0-9]./, ''
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6744,8 +6766,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('
-                              fill', "rgb(255,100,100)");
+l.1135 this.setAttribute('
+                          fill', "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6756,8 +6778,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('
-                              fill', "rgb(255,100,100)");
+l.1135 this.setAttribute('
+                          fill', "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6768,8 +6790,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('
-                              fill', "rgb(255,100,100)");
+l.1135 this.setAttribute('
+                          fill', "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6780,8 +6802,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill'
-                                   , "rgb(255,100,100)");
+l.1135 this.setAttribute('fill'
+                               , "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6792,8 +6814,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill'
-                                   , "rgb(255,100,100)");
+l.1135 this.setAttribute('fill'
+                               , "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6804,8 +6826,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill'
-                                   , "rgb(255,100,100)");
+l.1135 this.setAttribute('fill'
+                               , "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6816,8 +6838,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill'
-                                   , "rgb(255,100,100)");
+l.1135 this.setAttribute('fill'
+                               , "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6828,8 +6850,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill'
-                                   , "rgb(255,100,100)");
+l.1135 this.setAttribute('fill'
+                               , "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6840,8 +6862,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill'
-                                   , "rgb(255,100,100)");
+l.1135 this.setAttribute('fill'
+                               , "rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6852,8 +6874,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill', "
-                                      rgb(255,100,100)");
+l.1135 this.setAttribute('fill', "
+                                  rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6864,8 +6886,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill', "
-                                      rgb(255,100,100)");
+l.1135 this.setAttribute('fill', "
+                                  rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6876,8 +6898,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill', "
-                                      rgb(255,100,100)");
+l.1135 this.setAttribute('fill', "
+                                  rgb(255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6888,8 +6910,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127     this.setAttribute('fill', "rgb(
-                                          255,100,100)");
+l.1135 this.setAttribute('fill', "rgb(
+                                      255,100,100)");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6900,7 +6922,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127 ...s.setAttribute('fill', "rgb(255,100,100)
+l.1135 this.setAttribute('fill', "rgb(255,100,100)
                                                   ");
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6912,7 +6934,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1127 ....setAttribute('fill', "rgb(255,100,100)"
+l.1135 ....setAttribute('fill', "rgb(255,100,100)"
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6924,8 +6946,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the '
-                        value'
+l.1136 // show the '
+                    value'
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6936,8 +6958,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the '
-                        value'
+l.1136 // show the '
+                    value'
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6948,8 +6970,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the '
-                        value'
+l.1136 // show the '
+                    value'
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6960,8 +6982,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the 'value'
-                              
+l.1136 // show the 'value'
+                          
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6972,8 +6994,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the 'value'
-                              
+l.1136 // show the 'value'
+                          
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6984,8 +7006,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the 'value'
-                              
+l.1136 // show the 'value'
+                          
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -6996,8 +7018,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the 'value'
-                              
+l.1136 // show the 'value'
+                          
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7008,8 +7030,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the 'value'
-                              
+l.1136 // show the 'value'
+                          
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7020,8 +7042,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128     // show the 'value'
-                              
+l.1136 // show the 'value'
+                          
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7032,21 +7054,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129     label = document.getElementById('
-                                            labels.' + '1.' + polygon_index ...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Undefined color `mauve'.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1129 ...label = document.getElementById('labels.
-                                                  ' + '1.' + polygon_index +...
+l.1137 label = document.getElementById('
+                                        labels.' + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7058,8 +7067,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...abel = document.getElementById('labels.'
-                                                   + '1.' + polygon_index + ...
+l.1137 label = document.getElementById('labels.
+                                               ' + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7071,8 +7080,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...abel = document.getElementById('labels.'
-                                                   + '1.' + polygon_index + ...
+l.1137 label = document.getElementById('labels.'
+                                                 + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7084,7 +7093,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ... = document.getElementById('labels.' + '
+l.1137 label = document.getElementById('labels.'
+                                                 + '1.' + polygon_index + '....
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: Undefined color `mauve'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1137 ... = document.getElementById('labels.' + '
                                                   1.' + polygon_index + '.te...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -7097,7 +7119,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...document.getElementById('labels.' + '1.'
+l.1137 ...document.getElementById('labels.' + '1.'
                                                    + polygon_index + '.text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7109,7 +7131,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...document.getElementById('labels.' + '1.'
+l.1137 ...document.getElementById('labels.' + '1.'
                                                    + polygon_index + '.text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7121,7 +7143,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...yId('labels.' + '1.' + polygon_index + '
+l.1137 ...yId('labels.' + '1.' + polygon_index + '
                                                   .text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7133,7 +7155,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...d('labels.' + '1.' + polygon_index + '.t
+l.1137 ...d('labels.' + '1.' + polygon_index + '.t
                                                   ext');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7145,7 +7167,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...abels.' + '1.' + polygon_index + '.text'
+l.1137 ...abels.' + '1.' + polygon_index + '.text'
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7157,7 +7179,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1129 ...abels.' + '1.' + polygon_index + '.text'
+l.1137 ...abels.' + '1.' + polygon_index + '.text'
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7169,8 +7191,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("
-                               fill-opacity",1);
+l.1138 label.setAttribute("
+                           fill-opacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7181,8 +7203,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("
-                               fill-opacity",1);
+l.1138 label.setAttribute("
+                           fill-opacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7193,8 +7215,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("
-                               fill-opacity",1);
+l.1138 label.setAttribute("
+                           fill-opacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7205,8 +7227,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("fill-
-                                    opacity",1);
+l.1138 label.setAttribute("fill-
+                                opacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7217,8 +7239,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("fill-
-                                    opacity",1);
+l.1138 label.setAttribute("fill-
+                                opacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7229,8 +7251,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("fill-
-                                    opacity",1);
+l.1138 label.setAttribute("fill-
+                                opacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7241,8 +7263,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("fill-o
-                                     pacity",1);
+l.1138 label.setAttribute("fill-o
+                                 pacity",1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7253,8 +7275,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("fill-opacity"
-                                            ,1);
+l.1138 label.setAttribute("fill-opacity"
+                                        ,1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7265,8 +7287,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1130     label.setAttribute("fill-opacity"
-                                            ,1);
+l.1138 label.setAttribute("fill-opacity"
+                                        ,1);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7277,7 +7299,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 ..._index = str.replace(/polygon.[0-9]./, '
+l.1142 ..._index = str.replace(/polygon.[0-9]./, '
                                                   ');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7289,7 +7311,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 ..._index = str.replace(/polygon.[0-9]./, '
+l.1142 ..._index = str.replace(/polygon.[0-9]./, '
                                                   ');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7301,7 +7323,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 ..._index = str.replace(/polygon.[0-9]./, '
+l.1142 ..._index = str.replace(/polygon.[0-9]./, '
                                                   ');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7313,7 +7335,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 ...index = str.replace(/polygon.[0-9]./, ''
+l.1142 ...index = str.replace(/polygon.[0-9]./, ''
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7325,7 +7347,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 ...index = str.replace(/polygon.[0-9]./, ''
+l.1142 ...index = str.replace(/polygon.[0-9]./, ''
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7337,7 +7359,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1134 ...index = str.replace(/polygon.[0-9]./, ''
+l.1142 ...index = str.replace(/polygon.[0-9]./, ''
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7349,8 +7371,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136     label = document.getElementById('
-                                            labels.' + '1.' + polygon_index ...
+l.1144 label = document.getElementById('
+                                        labels.' + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7362,8 +7384,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...label = document.getElementById('labels.
-                                                  ' + '1.' + polygon_index +...
+l.1144 label = document.getElementById('labels.
+                                               ' + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7375,8 +7397,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...abel = document.getElementById('labels.'
-                                                   + '1.' + polygon_index + ...
+l.1144 label = document.getElementById('labels.'
+                                                 + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7388,8 +7410,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...abel = document.getElementById('labels.'
-                                                   + '1.' + polygon_index + ...
+l.1144 label = document.getElementById('labels.'
+                                                 + '1.' + polygon_index + '....
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7401,7 +7423,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ... = document.getElementById('labels.' + '
+l.1144 ... = document.getElementById('labels.' + '
                                                   1.' + polygon_index + '.te...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -7414,7 +7436,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...document.getElementById('labels.' + '1.'
+l.1144 ...document.getElementById('labels.' + '1.'
                                                    + polygon_index + '.text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7426,7 +7448,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...document.getElementById('labels.' + '1.'
+l.1144 ...document.getElementById('labels.' + '1.'
                                                    + polygon_index + '.text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7438,7 +7460,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...yId('labels.' + '1.' + polygon_index + '
+l.1144 ...yId('labels.' + '1.' + polygon_index + '
                                                   .text');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7450,7 +7472,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...d('labels.' + '1.' + polygon_index + '.t
+l.1144 ...d('labels.' + '1.' + polygon_index + '.t
                                                   ext');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7462,7 +7484,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...abels.' + '1.' + polygon_index + '.text'
+l.1144 ...abels.' + '1.' + polygon_index + '.text'
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7474,7 +7496,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1136 ...abels.' + '1.' + polygon_index + '.text'
+l.1144 ...abels.' + '1.' + polygon_index + '.text'
                                                   );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7486,8 +7508,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("
-                               fill-opacity",0);
+l.1145 label.setAttribute("
+                           fill-opacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7498,8 +7520,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("
-                               fill-opacity",0);
+l.1145 label.setAttribute("
+                           fill-opacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7510,8 +7532,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("
-                               fill-opacity",0);
+l.1145 label.setAttribute("
+                           fill-opacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7522,8 +7544,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("fill-
-                                    opacity",0);
+l.1145 label.setAttribute("fill-
+                                opacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7534,8 +7556,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("fill-
-                                    opacity",0);
+l.1145 label.setAttribute("fill-
+                                opacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7546,8 +7568,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("fill-
-                                    opacity",0);
+l.1145 label.setAttribute("fill-
+                                opacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7558,8 +7580,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("fill-o
-                                     pacity",0);
+l.1145 label.setAttribute("fill-o
+                                 pacity",0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7570,8 +7592,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("fill-opacity"
-                                            ,0);
+l.1145 label.setAttribute("fill-opacity"
+                                        ,0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7582,8 +7604,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1137     label.setAttribute("fill-opacity"
-                                            ,0);
+l.1145 label.setAttribute("fill-opacity"
+                                        ,0);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7594,8 +7616,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('
-                                        fill-opacity');
+l.1146 opacity = this.getAttribute('
+                                    fill-opacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7606,8 +7628,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('
-                                        fill-opacity');
+l.1146 opacity = this.getAttribute('
+                                    fill-opacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7618,8 +7640,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('
-                                        fill-opacity');
+l.1146 opacity = this.getAttribute('
+                                    fill-opacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7630,8 +7652,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('fill-
-                                             opacity');
+l.1146 opacity = this.getAttribute('fill-
+                                         opacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7642,8 +7664,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('fill-
-                                             opacity');
+l.1146 opacity = this.getAttribute('fill-
+                                         opacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7654,8 +7676,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('fill-
-                                             opacity');
+l.1146 opacity = this.getAttribute('fill-
+                                         opacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7666,8 +7688,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138     opacity = this.getAttribute('fill-o
-                                              pacity');
+l.1146 opacity = this.getAttribute('fill-o
+                                          pacity');
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7678,8 +7700,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138 ...acity = this.getAttribute('fill-opacity'
-                                                  );
+l.1146 opacity = this.getAttribute('fill-opacity'
+                                                 );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7690,8 +7712,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1138 ...acity = this.getAttribute('fill-opacity'
-                                                  );
+l.1146 opacity = this.getAttribute('fill-opacity'
+                                                 );
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7702,8 +7724,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("
-                              fill",window.new_rgb);
+l.1148 this.setAttribute("
+                          fill",window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7714,8 +7736,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("
-                              fill",window.new_rgb);
+l.1148 this.setAttribute("
+                          fill",window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7726,8 +7748,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("
-                              fill",window.new_rgb);
+l.1148 this.setAttribute("
+                          fill",window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7738,8 +7760,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("fill"
-                                   ,window.new_rgb);
+l.1148 this.setAttribute("fill"
+                               ,window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7750,8 +7772,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("fill"
-                                   ,window.new_rgb);
+l.1148 this.setAttribute("fill"
+                               ,window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7762,8 +7784,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("fill"
-                                   ,window.new_rgb);
+l.1148 this.setAttribute("fill"
+                               ,window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7774,8 +7796,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("fill"
-                                   ,window.new_rgb);
+l.1148 this.setAttribute("fill"
+                               ,window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7786,8 +7808,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("fill"
-                                   ,window.new_rgb);
+l.1148 this.setAttribute("fill"
+                               ,window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7798,8 +7820,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1140     this.setAttribute("fill"
-                                   ,window.new_rgb);
+l.1148 this.setAttribute("fill"
+                               ,window.new_rgb);
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -7807,26 +7829,51 @@ If that doesn't work, type  X <return>  to quit.
 File: figure/svg/hlight_1.PNG Graphic file (type png)
 
 <use figure/svg/hlight_1.PNG>
-Package pdftex.def Info: figure/svg/hlight_1.PNG used on input line 1146.
+Package pdftex.def Info: figure/svg/hlight_1.PNG used on input line 1154.
 (pdftex.def)             Requested size: 213.39687pt x 213.39932pt.
 
 <figure/svg/hlight_2.PNG, id=354, 499.8675pt x 436.63126pt>
 File: figure/svg/hlight_2.PNG Graphic file (type png)
 
 <use figure/svg/hlight_2.PNG>
-Package pdftex.def Info: figure/svg/hlight_2.PNG used on input line 1147.
+Package pdftex.def Info: figure/svg/hlight_2.PNG used on input line 1155.
 (pdftex.def)             Requested size: 213.3981pt x 213.39154pt.
- [37 <./figure/svg/hlight_1.PNG> <./figure/svg/hlight_2.PNG>]
-Chapter 7.
-[38
 
-]
-Chapter 8.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[37] [38 <./figure/svg/hlight_1.PNG> <./figure/svg/hlight_2.PNG>]
+Chapter 7.
+! Too many }'s.
+l.1161 \chapter{\textcolor{red}{Conclusion}}}
+                                             
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1162--1163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1164--1165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1167
+
+ []
+
 [39
 
 ]
-Chapter 9.
+Chapter 8.
 [40
+
+]
+Chapter 9.
+[41
 
 ] (PreReport.aux)
 
@@ -7834,13 +7881,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 7079 strings out of 493335
- 104026 string characters out of 3147021
- 211014 words of memory out of 3000000
- 10369 multiletter control sequences out of 15000+200000
+ 7078 strings out of 493335
+ 104021 string characters out of 3147021
+ 210014 words of memory out of 3000000
+ 10368 multiletter control sequences out of 15000+200000
  49626 words of font info for 100 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,7n,40p,1296b,2139s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,7n,40p,1297b,2137s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \tcrm1000.pk> <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\tcst1000.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
@@ -7857,9 +7904,9 @@ pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Pr
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PreReport.pdf (41 pages, 7742286 bytes).
+Output written on PreReport.pdf (42 pages, 7747001 bytes).
 PDF statistics:
- 424 PDF objects out of 1000 (max. 8388607)
+ 427 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  260 words of extra memory for PDF output out of 10000 (max. 10000000)
 
