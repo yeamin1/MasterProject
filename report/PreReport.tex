@@ -6,6 +6,8 @@ footskip=.5in]{geometry}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{lscape}
+\usepackage{hyperref}
+
 \definecolor{darkred}{rgb}{0.26,0.23,0.23}
 \lstset{frame=tb,
 language=R,
@@ -1018,7 +1020,8 @@ grid.export("example.svg", strict = FALSE)
 
 
 
-In this example, we are going through the animation of the following action. Since it is not possible to see the full animation 
+In this example, we are going through the animation of the following action. Since it is not possible to see the full animation. To see the full animation, please vist \href{https://github.com/yeamin1/MasterProject/blob/master/report/svg}{my github}
+
 \begin{itemize}
 	\item Changing the color of the surface
 	\item Changing the opacity of the surface
@@ -1113,9 +1116,7 @@ The trick to perform this action is to display the correct z-value for the speci
 
 First to all, we need to add the \texttt{onmouseover} and the \texttt{onmouseout} events to all fragments. That is, the functions \texttt{polygonon()} and \texttt{polygonout()} are actived when the mouse enter and leave the region of the specific fragments.\\
 
-There are two action will happen when the mouse enter the fragments. One is highlighting the fragment and the other is display its z-value. The highlighting action can be done simply by changing the color of the fragments. The z-value is displayed by matching the correct index. That is, the action funtion \texttt{polygonon()} will pull out the index of the id attribute from the specific polygon element, and then it will find the label element by matching this index. Finally the z-value will be diaplayed by setting the opacity of the label element to be 1.\\
-
-When the mouse leave the fragment, it is necessary to reset the color of this fragment and hide the z-value. These actions will be done by \texttt{polygonout()}.
+There are two action will happen when the mouse enter the fragments. One is highlighting the fragment and the other is display its z-value. The highlighting action can be done simply by changing the color of the fragments. The z-value is displayed by matching the correct index. That is, the action funtion \texttt{polygonon()} will pull out the index of the id attribute from the specific polygon element, and then it will find the label element by matching this index. Finally the z-value will be diaplayed by setting the opacity of the label element to be 1. When the mouse leave the fragment, it is necessary to reset the color of this fragment and hide the z-value. These actions will be done by \texttt{polygonout()}.
 
 \begin{lstlisting}
 for(i = 1; i <= total; i++){
