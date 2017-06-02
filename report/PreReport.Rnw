@@ -1117,7 +1117,7 @@ grid.export("example.svg", strict = FALSE)
 
 
 
-In this example, we are going through the animation of the following action. Since it is not possible to see the full animation 
+In this example, we are going through the animation of the following action. Since it is not possible to see the full animation. To see the full animation, please vist 
 \begin{itemize}
 	\item Changing the color of the surface
 	\item Changing the opacity of the surface
