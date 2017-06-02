@@ -27,7 +27,9 @@
 \contentsline {subsection}{\numberline {6.3.1}Basic concepts}{36}
 \contentsline {subsection}{\numberline {6.3.2}The sinc surface}{38}
 \contentsline {chapter}{\numberline {7}Conclusion}{44}
-\contentsline {chapter}{\numberline {8}Reference}{45}
-\contentsline {chapter}{\numberline {9}Appendix}{46}
-\contentsline {section}{\numberline {9.1}persp.R}{46}
-\contentsline {section}{\numberline {9.2}filled.contour.R}{65}
+\contentsline {section}{\numberline {7.1}Limitations}{44}
+\contentsline {section}{\numberline {7.2}Disscussion}{44}
+\contentsline {chapter}{\numberline {8}Reference}{46}
+\contentsline {chapter}{\numberline {9}Appendix}{47}
+\contentsline {section}{\numberline {9.1}persp.R}{47}
+\contentsline {section}{\numberline {9.2}filled.contour.R}{47}
