@@ -1,0 +1,35 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {section}{\numberline {1.1}Background}{5}
+\contentsline {section}{\numberline {1.2}The \texttt {gridGraphics} package}{5}
+\contentsline {section}{\numberline {1.3}The problem}{7}
+\contentsline {section}{\numberline {1.4}Aim of this project}{8}
+\contentsline {chapter}{\numberline {2}The graphics engine display list}{9}
+\contentsline {chapter}{\numberline {3}Standalone}{11}
+\contentsline {section}{\numberline {3.1}The Perspective Plots \texttt {persp()}}{11}
+\contentsline {subsection}{\numberline {3.1.1}The translation from 3-D points into 2-D points}{12}
+\contentsline {subsection}{\numberline {3.1.2}Lighting}{15}
+\contentsline {subsection}{\numberline {3.1.3}Difference beween \texttt {C} and \texttt {R}}{15}
+\contentsline {subsubsection}{Pointers}{15}
+\contentsline {subsubsection}{Array}{17}
+\contentsline {subsection}{\numberline {3.1.4}Box and other features}{17}
+\contentsline {section}{\numberline {3.2}The Filled Contour Plot}{18}
+\contentsline {subsection}{\numberline {3.2.1}Direct translation from \texttt {C} to \texttt {R}}{18}
+\contentsline {subsection}{\numberline {3.2.2}Vectorization}{21}
+\contentsline {chapter}{\numberline {4}Integrate to \texttt {gridGraphics} package}{22}
+\contentsline {section}{\numberline {4.1}Some concept of \texttt {grid}}{22}
+\contentsline {section}{\numberline {4.2}Integrate \texttt {persp()}}{23}
+\contentsline {section}{\numberline {4.3}Integrate \texttt {filled.contour()}}{28}
+\contentsline {chapter}{\numberline {5}Testing}{30}
+\contentsline {chapter}{\numberline {6}Example}{34}
+\contentsline {section}{\numberline {6.1}Example to solution}{34}
+\contentsline {section}{\numberline {6.2}An advance example}{35}
+\contentsline {section}{\numberline {6.3}A more advance example}{36}
+\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{36}
+\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{38}
+\contentsline {chapter}{\numberline {7}Conclusion}{44}
+\contentsline {section}{\numberline {7.1}Limitations}{44}
+\contentsline {section}{\numberline {7.2}Disscussion}{44}
+\contentsline {chapter}{\numberline {8}Reference}{46}
+\contentsline {chapter}{\numberline {9}Appendix}{47}
+\contentsline {section}{\numberline {9.1}persp.R}{47}
+\contentsline {section}{\numberline {9.2}filled.contour.R}{47}

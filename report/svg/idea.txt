@@ -1,0 +1,27 @@
+Example
+    + introduce the example
+    + what is svg
+    + what svg can do
+        - manipulated  by javascript
+    + what is javascript 
+        - what it will do on svg
+    + explain (with code) to show what svg files look like
+    + little example for import codes to manipulate the svg plot.
+    
+    + Back to the main example.
+        -(done)
+            + how dose the svg been generated
+            + 
+        - on change color
+            + show the attribute that needs to been change
+            + codes to track this attribute
+            + initialize (add onclick on the top-left text)
+            + when click, track the polygons which needs been manipulated
+                        polygons_odd[i] = document.getElementById('polygon.' + Surface_id + '.' + i);
+                        opacity_odd[i] = polygons_odd[i].getAttribute('fill-opacity');
+                        color_current[i] = polygons_odd[i].getAttribute('fill');
+                        
+            + then track the color attributes.
+            + modify this attribute
+            + introduce the animation
+                - 

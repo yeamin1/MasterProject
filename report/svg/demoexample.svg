@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="CP936"?>
+<svg xmlns="http://www.w3.org/2000/svg"  height="100" width="100" version="1.1">
+    <circle id = "circle1" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    <script>
+    Onmove = function(){
+        this.setAttribute('fill', "yellow");
+        console.log(this)
+    }
+    var Oncircle;
+    Oncircle = document.getElementById("circle1");
+    Oncircle.onmouseover = Onmove;
+    </script>
+</svg>

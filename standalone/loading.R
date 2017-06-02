@@ -1,0 +1,7 @@
+cat('loading', sep = '\n')
+    library(grid)
+    source('persp-global.R')
+    source('persp-main.R')
+    source('persp-support.R')
+    source('persp-testFunctions.R')
+cat('done', sep = '\n')
