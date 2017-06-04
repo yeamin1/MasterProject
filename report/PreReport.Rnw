@@ -55,6 +55,10 @@ New Zealand
 \maketitle
 \tableofcontents
 \listoffigures
+
+\chapter{Abstract}
+The function \texttt{grid.echo()} in the \texttt{gridGraphics} package can be used to convert \texttt{graphics} plot to \texttt{grid} plot. Most of the \texttt{graphics} plot can be convert visually identically. However, there are two kinds of \texttt{graphics} plots that \texttt{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \texttt{grid}, then integrate into the \texttt{gridGraphics} package.
+
 \chapter{Introduction}
 <<R0, echo = FALSE>>=
 library(grid)
@@ -178,7 +182,7 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
 \chapter{The graphics engine display list}
 The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See figure \ref{figure_2.1}.\\
 
-This information is called the graphics engine display list. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list, \st{the recordPlot() function been used}. This function saves the plot in an R object. 
+This information is called the graphics engine display list. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list. This function saves the plot in an R object. 
 <<R8.1, echo = FALSE>>=
 pdf("figure/report_3.pdf", onefile=FALSE)
 dev.control("enable")
@@ -1256,7 +1260,7 @@ polygonout = function(){
 \chapter{Conclusion}
 
 \section{Limitations}
-There are couples of things that can be improved: (1). the \texttt{gridGraphics} package can not fully implement full set of the fix up function. For example, the \texttt{FixupCol()} function which used to fix some unusual colors in some unusual situation, if the some of the colors is missing when shadding action happen \texttt{persp()} then those missing colors will be convert to white color ($rgb(1, 1, 1, 1)$). this action will be implement in \texttt{persp()} but the rest fix action may or may not implement by \texttt{persp()}. (2). \texttt{persp()} is not fully vectorization. The calculation for shadding colors is still using loops rather than vectorization. Therefore, it may slow down the software if shadding a surface which contains large amounts of polygons. \\
+There are couples of things that can be improved: (1). the \texttt{gridGraphics} package can not fully implement full set of the \textbf{fix up} function. For example, the \texttt{FixupCol()} function which used to fix some unusual colors in some unusual situation, if the some of the colors is missing when shadding action happen \texttt{persp()} then those missing colors will be convert to white color ($rgb(1, 1, 1, 1)$). this action will be implement in \texttt{persp()} but the rest fix action may or may not implement by \texttt{persp()}. (2). \texttt{persp()} is not fully vectorization. The calculation for shadding colors is still using loops rather than vectorization. Therefore, it may slow down the software if shadding a surface which contains large amounts of polygons. \\
 
 
 \section{Disscussion}

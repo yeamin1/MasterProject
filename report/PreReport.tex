@@ -56,6 +56,10 @@ New Zealand
 \maketitle
 \tableofcontents
 \listoffigures
+
+\chapter{Abstract}
+The function \texttt{grid.echo()} in the \texttt{gridGraphics} package can be used to convert \texttt{graphics} plot to \texttt{grid} plot. Most of the \texttt{graphics} plot can be convert visually identically. However, there are two kinds of \texttt{graphics} plots that \texttt{gridGraphics} can not replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface, Level (Contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \texttt{grid}, then integrate into the \texttt{gridGraphics} package.
+
 \chapter{Introduction}
 \section{Background}
 The core graphics system in \texttt{R} can been divided in to two main packages. The first package is the \texttt{graphics} package. It is older and it provides the original GRZ graphics system from \texttt{S}, sometimes referred to as ``traditional'' graphics. It is relatively fast and many other \texttt{R} packages build on top of it. The newer package is the \texttt{grid} package. It is actually slower but is has more flexibility and additional features compared to the \texttt{graphics} package. \\
