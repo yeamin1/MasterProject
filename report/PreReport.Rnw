@@ -182,7 +182,7 @@ The purpose of this paper is emulate the Perspective Plots, \texttt{persp()} and
 \chapter{The graphics engine display list}
 The information for every plot drawn by R can be recorded. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See figure \ref{figure_2.1}.\\
 
-This information is called the graphics engine display list. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list. This function saves the plot in an R object. 
+This information is called the graphics engine display list. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list, \st{the recordPlot() function been used}. This function saves the plot in an R object. 
 <<R8.1, echo = FALSE>>=
 pdf("figure/report_3.pdf", onefile=FALSE)
 dev.control("enable")
