@@ -90,7 +90,7 @@ The core graphics system in \texttt{R} can been divided in to two main packages.
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[height = 7.5cm, width = 9.5cm]{figure/intro.png}
-		\caption{The structure of the \texttt{R} core graphics system, the \texttt{lattice} and \texttt{ggplot2} and many others packagesare built on top of the \textbf{grid} package. The \texttt{plotrix} and \texttt{maps} and many others packages are built on top of the \textbf{graphics} package. }
+		\caption{The structure of the \texttt{R} core graphics system, the \texttt{lattice}\citet{lattice}  and \texttt{ggplot2}\citet{ggplot2} and many others packages are built on top of the \textbf{grid} package. The \texttt{plotrix}\citet{plotrix} and \texttt{maps}\citet{maps} and many others packages are built on top of the \textbf{graphics} package. }
 		\label{intro}
 	\end{center}
 \end{figure}
@@ -908,7 +908,7 @@ To test whether a \texttt{persp()} plot and \texttt{filled.contour()} plot produ
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 24cm, width = 16cm]{figure/montage/persp-montage.png}
+		\includegraphics[height = 24cm, width = 16cm]{figure/montage/persp-montage1.png}
 		\caption{A set of perspective plots, which passed the identical test by ImageMagick}
 		\label{chapter5.2}
 	\end{center}
@@ -917,7 +917,7 @@ To test whether a \texttt{persp()} plot and \texttt{filled.contour()} plot produ
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 24cm, width = 12cm]{figure/montage/filled-contour-montage.png}
+		\includegraphics[height = 24cm, width = 12cm]{figure/montage/filled-contour-montage2.png}
 		\caption{A set of filled contour plots, which passed the identical test by ImageMagick}
 		\label{chapter5.3}
 	\end{center}
@@ -1000,7 +1000,7 @@ Torus_shape(col = 'NA', border = 'gray', box = FALSE)
 grid.echo()
 grid.ls()
 newCol = rgb(160/255, 32/255, 240/255, alpha = 0.3)
-grid.edit('polygon', gp = gpar(fill = newCol))
+grid.edit(grid.ls(print = FALSE)$name[1], gp = gpar(fill = newCol))
 @
 <<Chapter6_1.2, echo = FALSE, results = hide>>=
 dev.off()
@@ -1288,11 +1288,22 @@ The core of \textbf{gridGraphics} package provides fully viewport structure to s
 To ensure the accuracy of identical that a \textbf{graphics} plot redrawn on \textbf{grid}, it is necessary to provide the identical test. The \textbf{ImageMagick} software will be used to test the identical (mathematically and visually) between a \textbf{graphics}-plot and \textbf{grid}-plot. Most kinds of plots are identical mathematically and visually. (See Figure \ref{chapter5.2} and figure \ref{chapter5.3}).
 
 
+\nocite{R2017}
+\nocite{gGpackage}
+\nocite{gGarticle}
+\nocite{gGgitPaul}
+\nocite{gGgitWen}
+\nocite{gridSVG}
+\nocite{lattice}
+\nocite{ggplot2}
+\nocite{plotrix}
+\nocite{mapss}
+\nocite{ImageMagick}
+\nocite{sco09}
+\bibliography{MasterReport}
+\bibliographystyle{IEEEtran}
 
-\chapter{Reference}
-  \nocite{Rref}
-  \bibliographystyle{plain}
-  \bibliography{MasterReport}
+
 \chapter{Appendix}
 \section{persp.R}
 \begin{lstlisting}

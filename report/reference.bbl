@@ -21,33 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{lattice}
-\BIBentryALTinterwordspacing
-D.~Sarkar, \emph{Lattice: Multivariate Data Visualization with R}.\hskip 1em
-  plus 0.5em minus 0.4em\relax New York: Springer, 2008, iSBN
-  978-0-387-75968-5. [Online]. Available:
-  \url{http://lmdvr.r-forge.r-project.org}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ggplot2}
-\BIBentryALTinterwordspacing
-H.~Wickham, \emph{ggplot2: Elegant Graphics for Data Analysis}.\hskip 1em plus
-  0.5em minus 0.4em\relax Springer-Verlag New York, 2009. [Online]. Available:
-  \url{http://ggplot2.org}
-\BIBentrySTDinterwordspacing
-
-\bibitem{plotrix}
-L.~J, ``Plotrix: a package in the red light district of r,'' \emph{R-News},
-  vol.~6, no.~4, pp. 8--12, 2006.
-
-\bibitem{maps}
-\BIBentryALTinterwordspacing
-O.~S. code~by Richard A.~Becker, A.~R. W.~R. version by Ray Brownrigg.
-  Enhancements~by Thomas P~Minka, and A.~Deckmyn., \emph{maps: Draw
-  Geographical Maps}, 2016, r package version 3.1.1. [Online]. Available:
-  \url{https://CRAN.R-project.org/package=maps}
-\BIBentrySTDinterwordspacing
-
 \bibitem{R2017}
 \BIBentryALTinterwordspacing
 {R Core Team}, \emph{R: A Language and Environment for Statistical Computing},
@@ -84,6 +57,25 @@ P.~Murrell and S.~Potter, \emph{gridSVG: Export 'grid' Graphics as SVG}, 2017,
   r package version 1.5-1. [Online]. Available:
   \url{https://CRAN.R-project.org/package=gridSVG}
 \BIBentrySTDinterwordspacing
+
+\bibitem{lattice}
+\BIBentryALTinterwordspacing
+D.~Sarkar, \emph{Lattice: Multivariate Data Visualization with R}.\hskip 1em
+  plus 0.5em minus 0.4em\relax New York: Springer, 2008, iSBN
+  978-0-387-75968-5. [Online]. Available:
+  \url{http://lmdvr.r-forge.r-project.org}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ggplot2}
+\BIBentryALTinterwordspacing
+H.~Wickham, \emph{ggplot2: Elegant Graphics for Data Analysis}.\hskip 1em plus
+  0.5em minus 0.4em\relax Springer-Verlag New York, 2009. [Online]. Available:
+  \url{http://ggplot2.org}
+\BIBentrySTDinterwordspacing
+
+\bibitem{plotrix}
+L.~J, ``Plotrix: a package in the red light district of r,'' \emph{R-News},
+  vol.~6, no.~4, pp. 8--12, 2006.
 
 \bibitem{ImageMagick}
 \BIBentryALTinterwordspacing

@@ -87,7 +87,7 @@ The core graphics system in \texttt{R} can been divided in to two main packages.
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[height = 7.5cm, width = 9.5cm]{figure/intro.png}
-		\caption{The structure of the \texttt{R} core graphics system, the \texttt{lattice} and \texttt{ggplot2} and many others packagesare built on top of the \textbf{grid} package. The \texttt{plotrix} and \texttt{maps} and many others packages are built on top of the \textbf{graphics} package. }
+		\caption{The structure of the \texttt{R} core graphics system, the \texttt{lattice}\citet{lattice}  and \texttt{ggplot2}\citet{ggplot2} and many others packages are built on top of the \textbf{grid} package. The \texttt{plotrix}\citet{plotrix} and \texttt{maps}\citet{maps} and many others packages are built on top of the \textbf{graphics} package. }
 		\label{intro}
 	\end{center}
 \end{figure}
@@ -462,12 +462,10 @@ out = lFindPolygonVertices(sc[k], sc[k + 1],
 
 To get the same elements in the matrix as the elements in the array, one solution is to change the matrix data format into vector data format. However, \texttt{R} is farmillar with matrix data structure. Hence it is easiler and more understandable by \texttt{R} user and programmer. The \texttt{z[i - 1 + (j - 1) * nx]} in \textt{FindPolygonVertices()} is selecting the $i^{th}$ element from the $j^{th}$ column, which the following \texttt{R} code provied the same result That is, \texttt{z[i, j]} in \texttt{R} will provide the same result as \texttt{C} \\
 
-% get the "same" elements in the matrix as the elements in the array, one solution will be that changing the matrix data format into vector data format, so that the elements will be stay the same location for both array, and matrix data format.\\
-
-The top piece of codes is both calling the \texttt{FindPolygonVertices()} function by feeding parameter into it. However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
+However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
 
 \subsection{Box and other features}
-One feather that \texttt{persp()} supported is whether draw a container (box) around the surface. (See Figure \ref{figure_3.4}). Therefore, it is necessary to find out whether the edge of the box in front of the surface or behind the surface. \\ 
+One feather that \texttt{persp()} supported is whether or not to draw a container (box) around the surface. (See Figure \ref{figure_3.4}). Therefore, it is necessary to find out whether the edge of the box in front of the surface or behind the surface. \\ 
 
 The solution will be that translates the \texttt{C} code to \texttt{R} code directly. The reason for doing this directly translation is that R is sensitive on drawing the dot lines. More specifically, it may cause difference if we connect two points with a dotted line in different direction. Due to the purpose of this paper, the plot should be drawn as identical as possible. Therefore, the direct translation is required.\\
 
@@ -594,12 +592,12 @@ It requires huge iteration. For example, In Figure \ref{figure_3.6}, the Topogra
 \begin{Sinput}
 > ## time comparasion
 > filled.contour.volcano()
-> ## time for for loop version of filled.contout()
+> ## time for for loop version of fille.contour()
 > system.time(grid.echo())
 > # user  system elapsed 
 > # 10.03    0.23   10.32 
 > 
-> ## time for for vectorizetion version of filled.contout()
+> ## time for for vectorizetion version of fille.contour()
 > system.time(grid.echo())
 > # user  system elapsed 
 > # 1.28    0.53    1.82 
@@ -857,7 +855,7 @@ To test whether a \texttt{persp()} plot and \texttt{filled.contour()} plot produ
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 24cm, width = 16cm]{figure/montage/persp-montage.png}
+		\includegraphics[height = 24cm, width = 16cm]{figure/montage/persp-montage1.png}
 		\caption{A set of perspective plots, which passed the identical test by ImageMagick}
 		\label{chapter5.2}
 	\end{center}
@@ -866,7 +864,7 @@ To test whether a \texttt{persp()} plot and \texttt{filled.contour()} plot produ
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 24cm, width = 12cm]{figure/montage/filled-contour-montage.png}
+		\includegraphics[height = 24cm, width = 12cm]{figure/montage/filled-contour-montage2.png}
 		\caption{A set of filled contour plots, which passed the identical test by ImageMagick}
 		\label{chapter5.3}
 	\end{center}
@@ -922,11 +920,11 @@ The \texttt{persp()} and \texttt{filled.contour()} are now can been edited more 
 > grid.ls()
 \end{Sinput}
 \begin{Soutput}
-polygon
+GRID.polygon.4
 \end{Soutput}
 \begin{Sinput}
 > newCol = rgb(160/255, 32/255, 240/255, alpha = 0.3)
-> grid.edit('polygon', gp = gpar(fill = newCol))
+> grid.edit(grid.ls(print = FALSE)$name[1], gp = gpar(fill = newCol))
 \end{Sinput}
 \end{Schunk}
 
@@ -1201,11 +1199,22 @@ The core of \textbf{gridGraphics} package provides fully viewport structure to s
 To ensure the accuracy of identical that a \textbf{graphics} plot redrawn on \textbf{grid}, it is necessary to provide the identical test. The \textbf{ImageMagick} software will be used to test the identical (mathematically and visually) between a \textbf{graphics}-plot and \textbf{grid}-plot. Most kinds of plots are identical mathematically and visually. (See Figure \ref{chapter5.2} and figure \ref{chapter5.3}).
 
 
+\nocite{R2017}
+\nocite{gGpackage}
+\nocite{gGarticle}
+\nocite{gGgitPaul}
+\nocite{gGgitWen}
+\nocite{gridSVG}
+\nocite{lattice}
+\nocite{ggplot2}
+\nocite{plotrix}
+\nocite{mapss}
+\nocite{ImageMagick}
+\nocite{sco09}
+\bibliography{MasterReport}
+\bibliographystyle{IEEEtran}
 
-\chapter{Reference}
-  \nocite{Rref}
-  \bibliographystyle{plain}
-  \bibliography{MasterReport}
+
 \chapter{Appendix}
 \section{persp.R}
 \begin{lstlisting}

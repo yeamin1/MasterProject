@@ -30,7 +30,6 @@
 \contentsline {chapter}{\numberline {7}Conclusion}{45}{chapter.7}
 \contentsline {section}{\numberline {7.1}Limitations}{45}{section.7.1}
 \contentsline {section}{\numberline {7.2}Disscussion}{45}{section.7.2}
-\contentsline {chapter}{\numberline {8}Reference}{47}{chapter.8}
-\contentsline {chapter}{\numberline {9}Appendix}{49}{chapter.9}
-\contentsline {section}{\numberline {9.1}persp.R}{49}{section.9.1}
-\contentsline {section}{\numberline {9.2}filled.contour.R}{49}{section.9.2}
+\contentsline {chapter}{\numberline {8}Appendix}{48}{chapter.8}
+\contentsline {section}{\numberline {8.1}persp.R}{48}{section.8.1}
+\contentsline {section}{\numberline {8.2}filled.contour.R}{48}{section.8.2}
