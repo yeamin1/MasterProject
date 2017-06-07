@@ -9,7 +9,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces A sinc surface drawn by \texttt {persp()}}}{13}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The top-left figure is only plotting the transformed 2-dimenstion points. The top-right figure is being drawn by connecting the points line-by-line. The top-right figure is drawn unorderly by using the {grid.polygon}. Finally, the bottom-left figure is drawn in a correct order.}}{16}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Adding a light source to the perspective plot from the same angel of view. The left plot is origin plot without shadding, where the right plot is been shaded.}}{17}{figure.4.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Adding a light source to the perspective plot from the same angel of view. The left plot is origin plot without shadding, where the right plot is been shaded.}}{18}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces The surace been drawn by ignore the box in the left plot, right plot drawn the surface as well as box}}{20}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces The Perspective surfaces are been ignored in this example, the left plot shows no axis been drawn, the simple axes been drawn in the middle plot and the right plot shows more detail for each axis.}}{20}{figure.4.5}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces The topography of the Maunga Whau been drawn by using the \texttt {filled.contour}}}{21}{figure.4.6}
@@ -26,12 +26,12 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces A set of filled contour plots, which passed the identical test by ImageMagick}}{35}{figure.6.3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces The left \texttt {persp()} plot is drawn by \textbf {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then moltify the colors by \texttt {grid.edit()}}}{37}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces The left filled contour plot is drawn by \textbf {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{37}{figure.7.2}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces The left filled contour plot is drawn by \textbf {graphics}, where the right plot is been drawn by redrawn the left plot on grid (\texttt {grid.echo()}) and then modify the colors by \texttt {grid.edit()}}}{38}{figure.7.2}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces The top plot shows the shape of Maungawhau volcano, where the bottom figure shows the level contour (i.e. the height)}}{39}{figure.7.3}
 \contentsline {figure}{\numberline {7.4}{\ignorespaces The left circle is created with svg imgae, the right circle is changed color to yellow then the mouse enter the region of the circle. }}{40}{figure.7.4}
 \contentsline {figure}{\numberline {7.5}{\ignorespaces A SVG image of the sinc surface perspective plot}}{41}{figure.7.5}
 \contentsline {figure}{\numberline {7.6}{\ignorespaces The plot shows the animation that changing the surface color from the left plot to right plot}}{42}{figure.7.6}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}}{42}{figure.7.7}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces The plot shows the animation that decreasing the opacity of sinc surface from the left plot to right plot}}{43}{figure.7.7}
 \contentsline {figure}{\numberline {7.8}{\ignorespaces The shading animation}}{43}{figure.7.8}
 \contentsline {figure}{\numberline {7.9}{\ignorespaces The fragment will be highlight when the mouse move into its area. Also its z-value will be appeared}}{44}{figure.7.9}
 \addvspace {10\p@ }

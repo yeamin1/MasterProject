@@ -7,12 +7,13 @@
 \contentsline {chapter}{\numberline {3}The graphics engine display list}{11}{chapter.3}
 \contentsline {chapter}{\numberline {4}Standalone}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}The Perspective Plots \texttt {persp()}}{13}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The translation from 3-D points into 2-D points}{14}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Lighting}{16}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Difference beween \texttt {C} and \texttt {R}}{18}{subsection.4.1.3}
-\contentsline {subsubsection}{Pointers}{18}{section*.3}
+\contentsline {subsection}{\numberline {4.1.1}Convert the inputs into the coordinates of vertices}{14}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}The translation from 3-D points into 2-D points}{15}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Lighting}{17}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Difference beween \texttt {C} and \texttt {R}}{17}{subsection.4.1.4}
+\contentsline {subsubsection}{Pointers}{17}{section*.3}
 \contentsline {subsubsection}{Array}{18}{section*.4}
-\contentsline {subsection}{\numberline {4.1.4}Box and other features}{19}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Box and other features}{19}{subsection.4.1.5}
 \contentsline {section}{\numberline {4.2}The Filled Contour Plot}{19}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Direct translation from \texttt {C} to \texttt {R}}{19}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Vectorization}{22}{subsection.4.2.2}
