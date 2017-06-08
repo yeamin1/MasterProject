@@ -9,7 +9,7 @@
 \contentsline {subsection}{\numberline {3.1.1}Convert the inputs into the coordinates of vertices}{14}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}The transformation from 3-D vertices into 2-D vertices}{15}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Lighting}{16}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Difference beween \texttt {C} and \texttt {R}}{18}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.4}Difference between \texttt {C} and \texttt {R}}{18}{subsection.3.1.4}
 \contentsline {subsubsection}{Pointers}{18}{section*.4}
 \contentsline {subsubsection}{Array}{19}{section*.5}
 \contentsline {subsection}{\numberline {3.1.5}Box and other features}{19}{subsection.3.1.5}
@@ -23,13 +23,13 @@
 \contentsline {chapter}{\numberline {5}Testing}{32}{chapter.5}
 \contentsline {chapter}{\numberline {6}Example}{36}{chapter.6}
 \contentsline {section}{\numberline {6.1}Example to solution}{36}{section.6.1}
-\contentsline {section}{\numberline {6.2}An advance example}{37}{section.6.2}
-\contentsline {section}{\numberline {6.3}A more advance example}{38}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{38}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{40}{subsection.6.3.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{45}{chapter.7}
-\contentsline {section}{\numberline {7.1}Limitations}{45}{section.7.1}
-\contentsline {section}{\numberline {7.2}Disscussion}{45}{section.7.2}
-\contentsline {chapter}{\numberline {8}Appendix}{48}{chapter.8}
-\contentsline {section}{\numberline {8.1}persp.R}{48}{section.8.1}
-\contentsline {section}{\numberline {8.2}filled.contour.R}{48}{section.8.2}
+\contentsline {section}{\numberline {6.2}An advance example}{38}{section.6.2}
+\contentsline {section}{\numberline {6.3}A more advance example}{40}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{40}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{41}{subsection.6.3.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{46}{chapter.7}
+\contentsline {section}{\numberline {7.1}Limitations}{46}{section.7.1}
+\contentsline {section}{\numberline {7.2}Disscussion}{46}{section.7.2}
+\contentsline {chapter}{\numberline {8}Appendix}{49}{chapter.8}
+\contentsline {section}{\numberline {8.1}persp.R}{49}{section.8.1}
+\contentsline {section}{\numberline {8.2}filled.contour.R}{65}{section.8.2}
