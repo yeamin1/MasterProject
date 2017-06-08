@@ -723,12 +723,12 @@ The following problems need to be solved before integrating \texttt{persp()} int
 	\item{Determine whether the clipping happens for every component when drawing}
 \end{itemize}
 
-It is not allowable to create a new grid page (\texttt{grid.newpage()}) because it will rest the viewport structures, even it will reset the viewports that created by \texttt{gridGraphics}
-For example, the points and lines added to perspective plot. These features will disappear when calling \texttt{grid.echo()}, because \texttt{grid.newpage()} will clean all the contents and structures in the current graphics devices. Therefore, it is necessary to draw the perspective plot in the correct viewport.\\
+It is not allowable to create a new viewport structures starting with \texttt{grid.newpage()}, which creates a new grid page because it will rest the viewport structures, even it will reset the viewports that created by \texttt{gridGraphics}
+For example, the points and lines added to perspective plot. These features will disappear when calling \texttt{grid.echo()}, because \texttt{grid.newpage()} will clean all the contents and structures in the current graphics devices. Therefore, it is necessary to draw the perspective plot in the correct viewport, which under the structure provided by \textbf{gridGraphics}.\\
 
-The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \textbf{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \textbf{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because there is one more dimension of \texit{z}. And, the plot is drawn in a two-dimension graphics devices.\\
+The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \textbf{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \textbf{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because we are mapping a 3-dimensions objects into the 2-dimension graphics device, therefore the limit of x and y in the graphics device is not equal the limit of x and y of the origin 3-dimension object.\\
 
-The final problem will be whether the clipping happened. More specifically, the different components of the perspective plot should be drawn in clipped region or non-clipped region. \\
+The final problem will be whether the clipping happened. More specifically, the different components of the perspective plot should be drawn in clipped region or non-clipped region.\\
 
 The limit of x and y will depend on the ratio of horizontal and vertical length of the current windows graphics devices. On \textbf{grid}, it is simple to track the actual length of the viewport in the current windows graphics devices. \\
 
@@ -761,7 +761,7 @@ dev.off()
 \newpage
 The idea of this example is that it is possible to track the actual vertical length and horizontal length by navigating to the specific viewport and record them. It leads to the solution of our second problem, first of all, we navigate to the viewport that has been drawn by \texttt{persp()}, calculate the limit of x and y base on the size of this viewport. Then we create another viewport (visible for other \textbf{gridGraphics} functions e.g. \texttt{lines()} and \texttt{points()}) that has the same location and the same size as the previous viewport. Then we modify the x-scale and y-scale from the new viewport to be the limit of x and y that we calculated. Finally, the concepts of \texttt{persp()} will be drawn in this viewport. \\
 
-<<gridGraphics_persp_demo_p1_1, eval = FALSE>>=
+\begin{lstlisting}[language = R]
 testPersp21(box = FALSE)
 usr = par('usr')
 rect(usr[1], usr[3], usr[2], usr[4], lty = 12221, lwd = 2, border = 'red')
@@ -772,7 +772,7 @@ downViewport('graphics-window-1-0');
 grid.rect(gp = gpar(col = 'red', lty = 12221))
 c(current.viewport()$xscale, current.viewport()$yscale)
 ## [1] -0.04  1.04 -0.04  1.04
-@
+\end{lstlisting}
 
 \begin{figure}[h]
 	\begin{center}
@@ -790,15 +790,17 @@ Figure \ref{figure_4.3} shows a Torus drawn on the plot region. The red dotted r
 ## navigate to the viewport
 depth = gotovp(TRUE) 
 ## calculate the limit of x and y
-lim = PerspWindow(xr, yr, zr, trans, 'r')  
+lim = PerspWindow(xr, yr, zr, trans, 'r')
+## lim = -0.4555925 0.3807924 -0.5003499 0.3360350
 ## create another viewport by using the limit that we just calculated
 vp = viewport(0.5, 0.5, 1, 1, default.units = 'npc',
-xscale = lim[1:2], yscale = lim[3:4]) 
+              xscale = lim[1:2], yscale = lim[3:4]) 
 ## back to the Root viewport
 upViewport(depth)  
 \end{lstlisting}
 The previous code is creating a new temporary viewport which contains the true x-scale and y-scale prepared for drawing the perspective plot. The values for x scale and y scale are calculated by \texttt{PerspWindow()}. It will do the calculation by considering the 'actual' ratio of horizontal length and vertical length of the current graphics device, similar to the calculation of the \texttt{C} code does.\\
 After we create the temporary viewport that contains the correct scale, then we added this viewport to the location of the tree which inside the viewport created by \textbf{gridGraphics}. That is, push temporary viewport inside the odd viewport. The Final step will be drawn the concepts within this viewport. To do that, we need to push a temporary viewport every time we drawn. The following code is how does the surface of the plot is drawn internally.
+
 \begin{lstlisting}[language = R]
 ## navigate to the viewport which has the true limit of x and y
 depth = gotovp(FALSE)
@@ -810,7 +812,7 @@ upViewport()
 upViewport(depth)
 \end{lstlisting}
 
-The next problem will be the merge the temporary viewport into the \textbf{gridGraphics} viewport tree to make sure all the features (such as points and lines are added after perspective plots is drawn) are drawn in the correct viewport. Although the scales have been fixed, other features have no information about the temporary viewport. In the other word, these features are drawn in the viewport that \textbf{gridGraphics} creates rather than drawn in the temporary viewport. Figure \ref{figure_4.4} shows a Rosette shape ring is drawn above the surface of tour(left-plot). The left-plot is tried to reproduce a \textbf{grid} version by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot).
+The next problem will be the merge the temporary viewport into the \textbf{gridGraphics} viewport tree to make sure all the features (such as points and lines are added before or/ and after the perspective plots is drawn) are drawn in the correct viewport. Although the scales have been fixed, other features have no information about the temporary viewport. In the other word, these features are drawn in the viewport that \textbf{gridGraphics} creates rather than drawn in the temporary viewport. Figure \ref{figure_4.4} shows a Rosette shape ring is drawn above the surface of tour(left-plot). The left-plot is tried to reproduce a \textbf{grid} version by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot).
 
 \begin{figure}[h]
 	\begin{center}
@@ -860,8 +862,10 @@ upViewport(depth)
 
 \section{Integrate \texttt{filled.contour()}}
 Unlike \texttt{persp()}, \texttt{filled.contour()} is "made up" by multiple plots in one plot region. \textbf{gridGraphics} package will take care about most of the simple plots (such as the levels bar on the right-hand side of the plot, the titles, and the axes). (See Figure \ref{figure_1.3} or figure \ref{figure_3.6}).\\
-\textbf{gridGraphics} fully convert the layout of \texttt{filled.contour()} to the viewport structure of \textbf{grid}, therefore we do not need to build or modify the viewports. However, it is necessary to "move" the filled contours into the correct location with the correct scale. On the other hand, we need to draw the filled contours in the correct viewport.\\
-In section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. More specifically, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. Figure \ref{figure_4.6} shows the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \textbf{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is similar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
+
+\textbf{gridGraphics} fully convert the layout of \texttt{filled.contour()} to the viewport structure of \textbf{grid}, therefore we do not need to build or modify the viewport structure. However, it is necessary to "move" the filled contours into the correct location with the correct scale. On the other hand, we need to draw the filled contours in the correct viewport, provided by \textbf{gridGraphics}.\\
+
+In Section 3.2, we discussed how a Filled Contour Plot been drawn by the \texttt{filled.contour()}. However, we only figure out who we drawn the main filled contour, but we still do not know how we display it. The next task is to display Filled Contour Plot in the correct location. Figure \ref{figure_4.6} shows the top-left is the contents of \texttt{filled.contour()}, which redrawn by using \textbf{grid} package. The red dotted rectangle is the viewport region. The next step is fill the blank region (top-right plot) by the top-left plot. The solution is similar to the first step of integrating \texttt{persp()}, that is, navigating to the correct viewport region and then drawn the filled contour. The following code is the solution in action.
 \begin{lstlisting}[language = R]
 ## navigating to the correct viewport
 depth = gotovp(TRUE)
@@ -889,7 +893,7 @@ The aim of this paper is to redraw Perspective Plots and Level (Contour) Plots u
 
 \textbf{ImageMagick} \citep{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to mathematically and visually annotate the difference between an image and its reconstruction.\\
 
-The following example (See Figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the plot in left ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the plot in middle ($rgb = 210, 182, 255$). The plot in right shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
+The following example (See Figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the plot in top-left ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the plot in top-right ($rgb = 210, 182, 255$). The plot in bottom shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
 
 \begin{figure}[h!]
 	\begin{center}
@@ -1086,7 +1090,7 @@ SVG image. To do that, the \texttt{gridSVG} package is required. The following c
 addFeatures() is creating the texts and the little boxes of color at the top-left region in the plot.
 It also creates some hidden objects which are all invisible unless the specific action is activated. A
 JavaScript is imported for supporting the animations by using grid.script(). Finally we exported
-the SVG image by grid.export()
+the SVG image by \texttt{grid.export()}
 \\
 
 \begin{lstlisting}[language = R]
