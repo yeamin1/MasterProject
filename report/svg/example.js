@@ -1,22 +1,21 @@
-var obj, input, polygons, total,main;
+var obj, input, polygons, total, main, current_color;
 var pDcolor = [];
-var shade_end = false;
 
 polygonon = function()
 {
     str = this.id;
+    color = this.getAttribute('fill');
+    window.current_color = color;
     polygon_index = str.replace(/polygon.[0-9]./, '');
     // highlight the polygon
     this.setAttribute('fill', "rgb(255,100,100)");
-    if(shade_end == false){
-        opacity = this.getAttribute('fill-opacity');
-        this.setAttribute("fill-opacity",opacity);
-    }else{
-    this.setAttribute("fill-opacity",1);
-    }
+
+    opacity = this.getAttribute('fill-opacity');
+    this.setAttribute("fill-opacity",opacity);
+
     // show the 'value'
     label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
-    label.setAttribute("fill-opacity",1);
+    label.setAttribute("fill-opacity", 1);
 
 }
 
@@ -29,17 +28,8 @@ polygonout = function()
     label = document.getElementById('labels.' + '1.' + polygon_index + '.text');
     label.setAttribute("fill-opacity",0);
     
-    if(shade_end == false){
-        // reset color -> reset poacity
-        opacity = this.getAttribute('fill-opacity');
-        this.setAttribute("fill",window.new_rgb);
-        this.setAttribute("fill-opacity",opacity);
-    }else{
-        this.setAttribute("fill-opacity",0);
-        color = pDcolor[polygon_index];
-        this.setAttribute('fill', color);
-        
-    }
+    this.setAttribute('fill', current_color);
+
 }
 
 mainon = function()
@@ -76,7 +66,6 @@ countSurface = function(){
 addShade = function(){
     // show the shaded surface
     reset()
-    show_shaded(1);
     animate(Surface_id = nSurface, action = 'shaded');
 }
 
@@ -98,9 +87,20 @@ color_fill = function()
 }
 
 
+function Create2DArray(rows) {
+  var arr = [];
+
+  for (var i=0;i<rows;i++) {
+     arr[i] = [];
+  }
+
+  return arr;
+}
+
 animate = function(Surface_id, action, alpha, colors)
 {
-    var polygons_odd = [], opacity_odd = [], id = [], id, color_current = [];
+    var polygons_odd = [], opacity_odd = [], id = [], id, color_current = []; 
+    var color_new = [], polygons_new = [];
     var newCol;
 
     for(i = 1; i <= total; i++){
@@ -108,6 +108,33 @@ animate = function(Surface_id, action, alpha, colors)
         polygons_odd[i] = document.getElementById('polygon.' + Surface_id + '.' + i);
         opacity_odd[i] = polygons_odd[i].getAttribute('fill-opacity');
         color_current[i] = polygons_odd[i].getAttribute('fill');
+    }
+    
+    if(action == 'shaded'){
+        var steps = Create2DArray(total + 1);
+        oldCol = obj.getAttribute('fill');
+        pat = /\d+/g;
+        orgb = oldCol.match(pat);
+        or = parseInt(orgb[0]);
+        og = parseInt(orgb[1]);
+        ob = parseInt(orgb[2]);
+        
+        for(i = 1; i <= total; i++){
+            var pos = 0;
+            polygons_new[i] = document.getElementById('polygon.' + 1 + '.' + i);
+            color_new[i] = polygons_new[i].getAttribute('fill');
+            
+            nrgb = color_new[i].match(pat);
+            nr = parseInt(nrgb[0]);
+            ng = parseInt(nrgb[1]);
+            nb = parseInt(nrgb[2]);
+
+            // return the color for rest when onmouseout
+            window.new_rgb = newCol;
+            steps[i][0] = (nr - or) / 100;
+            steps[i][1] = (ng - og) / 100;
+            steps[i][2] = (nb - ob) / 100;
+        }
     }
     
     if(action == 'color'){
@@ -126,29 +153,25 @@ animate = function(Surface_id, action, alpha, colors)
         
         // return the color for rest when onmouseout
         window.new_rgb = newCol;
-        
         var step = [];
         step[0] = (nr - or) / 100;
         step[1] = (ng - og) / 100;
         step[2] = (nb - ob) / 100; 
     }
     
-    id = setInterval(frame, 30);
+    id = setInterval(frame, 15);
     function frame() {
         if (pos == 100) {
-            if(action == 'shaded'){
-                window.shade_end = true;
-            }else{
-                window.shade_end = false;
-            }
         clearInterval(id);
         } else {
         pos = pos + 1; 
         for(i = 1; i <= total; i++){
         
         if(action == 'shaded'){
-            polygons_odd[i].setAttribute("stroke-opacity", parseInt(opacity_odd[i]) - pos/100);
-            polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - pos/100);
+            col_out = 'rgb(' + parseInt(or + steps[i][0] * pos) + ',' + 
+                   parseInt(og + steps[i][1] * pos) + ',' + 
+                   parseInt(ob + steps[i][2] * pos) + ')';
+            polygons_odd[i].setAttribute('fill', col_out);
         }
         if(action == 'alpha'){
             polygons_odd[i].setAttribute("fill-opacity", parseInt(opacity_odd[i]) - 
