@@ -4,12 +4,10 @@
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 
-\bibitem[{code~by Richard A.~Becker et~al.(2016)code~by Richard A.~Becker,
-  version by Ray Brownrigg. Enhancements~by Thomas P~Minka, and
-  Deckmyn.}]{maps}
-code~by Richard A.~Becker, O.~S., version by Ray Brownrigg. Enhancements~by
-  Thomas P~Minka, A. R. W.~R., Deckmyn., A., 2016. maps: Draw Geographical
-  Maps. R package version 3.1.1.
+\bibitem[{Becker et~al.(2016)Becker, version~by Ray Brownrigg Thomas P~Minka,
+  and Deckmyn.}]{maps}
+Becker, R.~A., version~by Ray Brownrigg Thomas P~Minka, A. R. W.~R., Deckmyn.,
+  A., 2016. maps: Draw Geographical Maps. R package version 3.1.1.
 \newline\urlprefix\url{https://CRAN.R-project.org/package=maps}
 
 \bibitem[{Ferraiolo et~al.(2000)Ferraiolo, Jun, and Jackson}]{SVG}

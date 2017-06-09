@@ -75,8 +75,25 @@ New Zealand
 \listoffigures
 
 \newpage
+
+\section*{ACKNOWLEDGEMENT}
+I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. His guidance helped me in all the time of research and writing of this thesis. 
+
+Without his help this dissertation would not be possible.
+I also would like to thank to Tim and Albert, who gave me ideas about the format of my dissertation. And also I would like to thank to Tong, Dong and Kevin, who gave me some ideas about 
+Lastly, I would like to thank to my parents, thank you very much for giving me unconditional support. 
+
+
+\newpage
+\pagebreak
+\hspace{0pt}
+\vfill
 \section*{Abstract}
-The function \texttt{grid.echo()} in the \textbf{gridGraphics} package can be used to converted \textbf{graphics} plot to \textbf{grid} plot. Most of the \textbf{graphics} plot can be convert visually identically. However, there are two kinds of \textbf{graphics}-based plots that \textbf{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \textbf{grid}, then integrate into the \textbf{gridGraphics} package.
+The function \texttt{grid.echo()} in the \textbf{gridGraphics} package can be used to converted \textbf{graphics} plot to \textbf{grid} plot. Most of the \textbf{graphics} plot can be convert visually identically. However, there are two kinds of \textbf{graphics}-based plots that \textbf{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \textbf{grid}, then integrate into the \textbf{gridGraphics} package.\vfill
+\hspace{0pt}
+\pagebreak
+
+
 
 \chapter{Introduction}
 <<R0, echo = FALSE>>=
