@@ -80,9 +80,7 @@ New Zealand\\
 \hspace{0pt}
 \vfill
 \section*{ACKNOWLEDGEMENT}
-I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. His guidance helped me in all the time of research and writing of this thesis. 
-
-Without his help this dissertation would not be possible.
+I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. His guidance helped me in all the time of research and writing of this thesis. Without his help this dissertation would not be possible.
 I also would like to thank to Tim and Albert, who gave me ideas about the format of my dissertation. And also I would like to thank to Tong, Dong and Kevin, who gave me some ideas about 
 Lastly, I would like to thank to my parents, thank you very much for giving me unconditional support. 
 \vfill
@@ -94,7 +92,7 @@ Lastly, I would like to thank to my parents, thank you very much for giving me u
 \hspace{0pt}
 \vfill
 \section*{Abstract}
-The function \texttt{grid.echo()} in the \textbf{gridGraphics} package can be used to converted \textbf{graphics} plot to \textbf{grid} plot. Most of the \textbf{graphics} plot can be convert visually identically. However, there are two kinds of \textbf{graphics}-based plots that \textbf{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \textbf{grid}, then integrate into the \textbf{gridGraphics} package.
+The function \texttt{grid.echo()} in the \textbf{gridGraphics} package can be used to converte \textbf{graphics} plot to \textbf{grid} plot. Most of the \textbf{graphics} plot can be convert visually identically. However, there are two kinds of \textbf{graphics}-based plots that \textbf{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \textbf{grid}, and integrate into the \textbf{gridGraphics} package.
 \vfill
 \hspace{0pt}
 \pagebreak
@@ -224,9 +222,9 @@ The purpose of this paper is to emulate the Perspective Plots, \texttt{persp()} 
 
 
 \chapter{The graphics engine display list}
-The information for every plot drawn by R can saved as a \texttt{R} object. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See Figure \ref{figure_2.1}.\\
+The information for every plot drawn by R can been saved as a \texttt{R} object. For example, In the simple \texttt{plot()} function, it is possible to obtain the parameters for x and y, even the label of the x-axis and y-axis. See Figure \ref{figure_2.1}.\\
 
-This information is called the graphics engine display list. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list and saved as an \texttt{R} object.
+This information is called the \textbf{graphics engine display list}. In this paper, we use the graphics engine display list to replicate the \texttt{persp()} plot and \texttt{filled.contour()} plot using grid. The \texttt{recordPlot()} function can be used to access the graphics engine display list and saved as an \texttt{R} object.
 
 \begin{Schunk}
 \begin{Sinput}
@@ -327,7 +325,7 @@ If we can access the coordinates one polygon, then we can redraw this polygon on
 \end{Soutput}
 \end{Schunk}
 \subsection{Convert the inputs into the coordinates of vertices}
-The inputs(\textbf{x}, \textbf{y} and \textbf{z}) are recorded by \texttt{recordPlot}. However, we cannot draw the surface directly by using the inputs, because the inputs are not the vertices coordinates of the surface. Therefore, the first step is to convert these \textbf{x}, \textbf{y} and \textbf{z} inputs into the coordinates of the vertices of every polygon.
+The inputs(\textbf{x}, \textbf{y} and \textbf{z}) are recorded by \texttt{recordPlot()}. However, we cannot draw the surface directly by using the inputs, because the inputs are not the vertices coordinates of the surface. Therefore, the first step is to convert these \textbf{x}, \textbf{y} and \textbf{z} inputs into the coordinates of the vertices of every polygon.
 
 
 As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimension of \textbf{z} is $ \textbf{length(x)} \times \textbf{length(y)}$.\\
@@ -347,7 +345,7 @@ First step is the reduce the \textbf{z} matrix into a one dimension vector which
 \end{Soutput}
 \end{Schunk}
 
-Converting points to vertices by repeating the points in a right order. From previous section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, total = (length(x) - 1) $\times$ (length(y) - 1). The polygons been drawn by connecting 4 points in a specific order. The order of the drawing as follows: starting from bottom-left, (1) connect bottom-left to bottom-right, (2) connect from bottom-right to top-right, lastly, (3) connect top-right to top-left, (4) connect top-left to bottom-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
+Converting points to vertices by repeating the points in a right order. From previous section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, total = (length(x) - 1) $\times$ (length(y) - 1). The polygons been drawn by connecting 4 points in a specific order. The order of the drawing as follows: starting from bottom-left, (1) connect bottom-left to bottom-right, (2) connect from bottom-right to top-right, (3) connect top-right to top-left, (4) connect top-left to bottom-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
 
 \subsection{The transformation from 3-D vertices into 2-D vertices}
 Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and a transformation matrix \textbf{P}. The 3-dimenstion vertices are already computed, \textbf{P} is a 4 by 4 viewing transformation matrix which suitable for projecting 3-dimensions coordinates (x, y, z) into 2-dimensions plane using homogeneous 4-dimension coordinates (x, y, z, t). It can be recorded from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
@@ -368,14 +366,14 @@ Before drawing the surface, the transformation of 3-D vertices into 2-D vertices
 \end{Soutput}
 \end{Schunk}
 
-Some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. That is, draw the polygons which located further behind first then draw the polygons which located font, from user's view. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combining another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the order of the polygons. The following codes calculated the order of every polygons where \texttt{a} indicates the orders.
+Some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. That is, draw the polygons which located further behind first then draw the polygons which located font, from user's view. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combining another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the order of the polygons. The following codes calculated the order of every polygons where \texttt{ordering} indicates the orders.
 \begin{Schunk}
 \begin{Sinput}
 > orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
 > zdepth = orderTemp[, 4]
 > ## the zdepth of a set of 4 points of each polygon
-> a = order(zdepth, decreasing = TRUE)
-> head(a)
+> ordering = order(zdepth, decreasing = TRUE)
+> head(ordering)
 \end{Sinput}
 \begin{Soutput}
 [1] 1561 1562 1521 1563 1522 1564
@@ -389,7 +387,7 @@ Figure \ref{figure_3.2} shows how does this paper approximate to the solution. T
 		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_2.pdf}
 		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_3.pdf}
 		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_4.pdf}
-		\caption{The top-left figure is only plotting the transformed 2-dimenstion points. The top-right figure is being drawn by connecting the points line-by-line. The top-right figure is drawn unorderly by using the \testtt{grid.polygon}. Finally, the bottom-left figure is drawn in a correct order.}
+		\caption{The top-left figure is only plotting the transformed 2-dimenstion points. The top-right figure is being drawn by connecting the points line-by-line. The top-right figure is drawn unorderly by using the \texttt{grid.polygon()}. Finally, the bottom-left figure is drawn in a correct order.}
 		\label{figure_3.2}
 	\end{center}
 \end{figure}
@@ -520,7 +518,7 @@ Other feather that \texttt{persp} supported is the detail of the axis. (See Figu
 \newpage
 \section{The Filled Contour Plot}
 \subsection{Direct translation from \texttt{C} to \texttt{R}}
-The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{filled.contour}) from \textbf{graphics} to \textbf{grid}. Similar to \texttt{persp()}, the first step to emulate \texttt{filled.contour} is to access the information from the graphics engine display list. (See Figure \ref{figure_3.6})
+The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{filled.contour()}) from \textbf{graphics} to \textbf{grid}. Similar to \texttt{persp()}, the first step to emulate \texttt{filled.contour()} is to access the information from the graphics engine display list. (See Figure \ref{figure_3.6})
 \begin{Schunk}
 \begin{Sinput}
 > x = 10*1:nrow(volcano)
@@ -552,7 +550,7 @@ The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{f
 [1] 87 61
 \end{Soutput}
 \begin{Sinput}
-> length(info[[5]])  ## print the length of s
+> length(info[[5]])  ## print the length of s (levels)
 \end{Sinput}
 \begin{Soutput}
 [1] 22
@@ -561,7 +559,7 @@ The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{f
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[height = 10cm, width = 12cm]{figure/filled_example_1.pdf}
-		\caption{The topography of the Maunga Whau been drawn by using the \texttt{filled.contour}}
+		\caption{The topography of the Maunga Whau been drawn by using the \texttt{filled.contour()}}
 		\label{figure_3.6}
 	\end{center}
 \end{figure}
