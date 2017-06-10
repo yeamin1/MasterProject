@@ -27,7 +27,7 @@ footskip=.5in]{geometry}
 }
 
 \lstset{ %
-  basicstyle=\footnotesize\ttfamily,
+  basicstyle=\fontsize{9}{11}\ttfamily,
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
@@ -59,9 +59,9 @@ footskip=.5in]{geometry}
 Masters of Science\\
 Department of Statistics\\
 The University of Auckland\\
-New Zealand
+New Zealand\\
+\today\\
 }
-
 
 
 \begin{document}
@@ -75,21 +75,24 @@ New Zealand
 \listoffigures
 
 \newpage
-
+\pagebreak
+\hspace{0pt}
+\vfill
 \section*{ACKNOWLEDGEMENT}
-I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. His guidance helped me in all the time of research and writing of this thesis. 
-
-Without his help this dissertation would not be possible.
+I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. His guidance helped me in all the time of research and writing of this thesis. Without his help this dissertation would not be possible.
 I also would like to thank to Tim and Albert, who gave me ideas about the format of my dissertation. And also I would like to thank to Tong, Dong and Kevin, who gave me some ideas about 
 Lastly, I would like to thank to my parents, thank you very much for giving me unconditional support. 
-
+\vfill
+\hspace{0pt}
+\pagebreak
 
 \newpage
 \pagebreak
 \hspace{0pt}
 \vfill
 \section*{Abstract}
-The function \texttt{grid.echo()} in the \textbf{gridGraphics} package can be used to converted \textbf{graphics} plot to \textbf{grid} plot. Most of the \textbf{graphics} plot can be convert visually identically. However, there are two kinds of \textbf{graphics}-based plots that \textbf{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \textbf{grid}, then integrate into the \textbf{gridGraphics} package.\vfill
+The function \texttt{grid.echo()} in the \textbf{gridGraphics} package can be used to converted \textbf{graphics} plot to \textbf{grid} plot. Most of the \textbf{graphics} plot can be convert visually identically. However, there are two kinds of \textbf{graphics}-based plots that \textbf{gridGraphics} cannot replicate: (1) the perspective plot (\texttt{persp()}) for drawing the 3-dimensional surface. (2) The level (contour) plot (\texttt{filled.contour()}) for drawing the filled contour plot. The aim of this paper is to replicate these two kind of plot on \textbf{grid}, then integrate into the \textbf{gridGraphics} package.
+\vfill
 \hspace{0pt}
 \pagebreak
 
@@ -140,6 +143,7 @@ grid.echo()
 	\end{center}
 \end{figure}
 One example that shows the advantage of drawing the plot using \textbf{grid} rather than basic \textbf{graphics} is that there are objects, called grid grobs, which recorded a list of the details of each components of the plot that has been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}. \\
+\newpage
 <<R5, eval = TRUE>>=
 grid.ls()
 @
@@ -266,7 +270,7 @@ It has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} ar
 <<standalone_1.1, echo = FALSE>>=
 pdf("figure/standalone_1.pdf", onefile=FALSE)
 dev.control("enable")
-par(mar = c(1,1,1,1))
+par(mar = c(0.5,0.5,0.5,0.5))
 @
 <<standalone_1, echo = TRUE>>=
 x = y = seq(-10, 10, length= 40)
@@ -418,9 +422,11 @@ dev.off()
 
 \subsection{Lighting}
 The other main benefit supported by \texttt{persp()} is the shading. It shades the surface by assuming the surface is being illuminated from a given direction. (light source). In \texttt{persp()}, the main parameters that the user needs to specify for producing a shaded perspective plot is: \textbf{ltheta}, \textbf{lphi} and \textbf{shade}. The \textbf{ltheta} and \textbf{lphi} are used for setting up the direction of the light source. In particular, \textbf{ltheta} specifies the angle in the z direction, \textbf{lphi} specifies the angle in the x direction. \textbf{s} is the parameter that specifies the shade at each facets of the surface, and the shades will be computed as follows:
+
 \begin{equation}
 Shade = \big(\frac{1 + d}{2}\big)^{s}
 \end{equation}
+
 Where \textbf{d} is the dot product of the unit vector normal to each facet(\textbf{u}) and the unit vector of the direction of the light(\textbf{v}). \\
 
 The color of each facet will be calculated by the color that is recorded from the graphics engine display list multiplied by the \textbf{shade}. Finally, the surface is drawn by filling the colors for every facet.\\
@@ -498,7 +504,6 @@ FindPolygonVertices(c[k - 1], c[k],
                     z[i + j * nx],
                     px, py, pz, &npt);
 
-
 out = lFindPolygonVertices(sc[k], sc[k + 1],
                           x[i], x[i + 1],
                           y[j], y[j + 1],
@@ -544,6 +549,7 @@ dev.off()
 	\end{center}
 \end{figure}
 
+\newpage
 Other feather that \texttt{persp} supported is the detail of the axis. (See Figure \ref{figure_3.5}). The axis has three type, no axes, simple axes which only contain the label of axes, or showing the scale of each axes. These feathers are required to be reproduced by \textbf{grid}, The solution to this problem by translating the \texttt{C} code to \texttt{R} code directly.
 <<axis_example_0, echo = FALSE>>=
 pdf("figure/axis_example_%0d.pdf", onefile=FALSE)
@@ -574,6 +580,7 @@ dev.off()
 	\end{center}
 \end{figure}
 
+\newpage
 \section{The Filled Contour Plot}
 \subsection{Direct translation from \texttt{C} to \texttt{R}}
 The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{filled.contour}) from \textbf{graphics} to \textbf{grid}. Similar to \texttt{persp()}, the first step to emulate \texttt{filled.contour} is to access the information from the graphics engine display list. (See Figure \ref{figure_3.6})
@@ -610,13 +617,15 @@ dev.off()
 		\label{figure_3.6}
 	\end{center}
 \end{figure}
+
+\newpage
 The example shows the plot of topography of Maunga Whau and also the information from the \texttt{filled.contour} call in the graphics engine display list. Same problem as \texttt{persp()}, there is no way to reproduce this plot directly by only using the inputs from the \texttt{filled.contour()}.\\
 
 There is an algorithm to create this contour plot in the \textbf{graphics} package written by \texttt{C}. The first step of the solution will be translated the \texttt{C} code directly to maximize the accuracy.\\
 
 \begin{lstlisting}[language = C]
 static void
-FindPolygonVertices(..., double *x, double *y, double *z, int *npt, ...)
+FindPolygonVertices(double *x, double *y, double *z, int *npt, ...)
 {
     *npt = 0;
     FindCutPoints(low, high, x1,  y1,  z11, x2,  y1,  z21, x, y, z, npt);
@@ -686,9 +695,9 @@ The \textbf{gridGraphics} package provides the structure of viewports which act 
 <<viewport_demo_0, echo = FALSE>>=
 pdf("figure/viewport_demo_1.pdf", onefile=FALSE, width = 15, height = 8.5)
 dev.control("enable")
+set.seed(110)
 @
 <<viewport_demo_1>>=
-set.seed(110)
 par(mfrow = c(1,2))
 x = rnorm(1000)
 hist(x, probability = T)
@@ -698,14 +707,15 @@ grid.echo()
 <<viewport_demo_2, results = hide, echo = FALSE>>=
 dev.off()
 @
-\begin{figure}[h]
+\begin{figure}[!h]
 	\begin{center}
-		\includegraphics[height = 8.5cm, width = 15cm]{figure/viewport_demo_1.pdf}
+		\includegraphics[height = 7.3cm, width = 15cm]{figure/viewport_demo_1.pdf}
 		\caption{display the \textbf{grid} version of draw two plots into one overall graph by setting \texttt{par(mfrow())}. The left-plot is the histogram of observations generated by standard normal distribution, right-plot is the density plot of the observations}
 		\label{figure_4.1}
 	\end{center}
 \end{figure}
 
+\newpage
 \begin{lstlisting}[language = R]
 grid.ls(viewports = TRUE)
 
@@ -728,7 +738,7 @@ graphics-root
 % PerspWindow, 
 The previous code used the \textbf{graphics} package to plot a histogram on the left and a density plot of one thousand random observations generated by standard normal distribution. Then redraw the plot on \textbf{grid}. (See Figure \ref{figure_4.1}.) The grobs object and the veiwports are created. \\
 
-The grobs object and the veiwports and been listed by \texttt{grid.ls()}. In the previous example, we can see that the contents(rectangles) of histogram were drawn in the viewports of \texttt{graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1}. The density plot was drawn in the other viewports which is \texttt{graphics-inner::graphics-figure-2::graphics-plot-2-clip::graphics-window-2-1}. Although it is completely different structure of the plot that was drawn by \textbf{graphics}, they are identical to each other.\\
+The grobs object and the veiwports and been listed by \texttt{grid.ls()}. In the previous example, we can see that the contents (rectangles) of the histogram were drawn in the viewports of \texttt{graphics-inner::graphics-figure-1::graphics-plot-1-clip::graphics-window-1-1}. The density plot was drawn in the other viewports which is \texttt{graphics-inner::graphics-figure-2::graphics-plot-2-clip::graphics-window-2-1}. Although it is completely different structure of the plot that was drawn by \textbf{graphics}, they are visually identical to each other.\\
 
 To reproduce the same plots as \textbf{graphics}, we need to modify the \textbf{grid} structure of the plot so that it behaves identically to the plot that was drawn by \textbf{graphics}. In this example, the viewports need to be set in the same location and the same size as the \textbf{graphics} plot region, and, the x-scale and y-scale of the viewports in \textbf{grid} need to be set the same user coordinates as in \textbf{graphics}.\\
 
@@ -740,10 +750,10 @@ The following problems need to be solved before integrating \texttt{persp()} int
 	\item{Determine whether the clipping happens for every component when drawing}
 \end{itemize}
 
-It is not allowable to create a new viewport structures starting with \texttt{grid.newpage()}, which creates a new grid page because it will rest the viewport structures, even it will reset the viewports that created by \texttt{gridGraphics}
+It is not allowable to create a new viewport structures starting with \texttt{grid.newpage()}, which creates a new grid page. It will rest the viewport structures, even it will reset the viewports that created by \texttt{gridGraphics}.
 For example, the points and lines added to perspective plot. These features will disappear when calling \texttt{grid.echo()}, because \texttt{grid.newpage()} will clean all the contents and structures in the current graphics devices. Therefore, it is necessary to draw the perspective plot in the correct viewport, which under the structure provided by \textbf{gridGraphics}.\\
 
-The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \textbf{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \textbf{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because we are mapping a 3-dimensions objects into the 2-dimension graphics device, therefore the limit of x and y in the graphics device is not equal the limit of x and y of the origin 3-dimension object.\\
+The other problem that we may consider is the actual scale for the viewport, i.e. the x-scale and y-scale. Unfortunately, \textbf{gridGraphics} does no support the calculation for the actual limit of x and y since the other kinds of plot that \textbf{graphics} provides is in two dimension. The calculation of the limit of x and y is not as simple as \texttt{range(x)} or \texttt{range(y)}, because we are mapping a 3-dimensions objects into the 2-dimensions graphics device, therefore the limit of x and y in the graphics device is not equal the limit of x and y of the origin 3-dimensions object.\\
 
 The final problem will be whether the clipping happened. More specifically, the different components of the perspective plot should be drawn in clipped region or non-clipped region.\\
 
@@ -841,11 +851,12 @@ The next problem will be the merge the temporary viewport into the \textbf{gridG
 \end{figure}
 
 The final problem will be to decide whether allows the concepts are drawn outside the plot region or not . Figure \ref{figure_4.5} shows the previous tour surface draw over the limit of the box. The left-plot is drawn by \textbf{graphics} which is the behaviors that we need to reproduce on \textbf{grid}. In \texttt{persp()}, there are three concepts are been drawn, the surface of perspective plot, the box that contains the surface and the axes plus the labels of axes. By default, \textbf{graphics} draw the surface by setting \texttt{clipping = "on"}. On the other hand, the surface will not exceed the limit of the plot region. However, the box and the axes may be drawn outside the plot region if it is necessary. Alternatively, the right plot is drawn by \textbf{grid} which indicates completely result comparing with the left plot (the surface is drawn over the plot region but the axes is not drawn outside the plot region). Due to the purpose of this paper, it is necessary to make sure the plots as identical as possible.\\
+
 In \textbf{grid}, it is possible to define a viewport that either 'cut' the concepts if they are excess the limit of the viewport, or continuous draw them outside the viewport by setting the \texttt{clip} equal to be \texttt{"on"} or \texttt{"off"}.\\
+
 The solution will be distinguished the clipping region for the concepts. Alternatively, the surface cannot excess the limit of the plot region therefore we need to "cut" the surface if it excesses the limit. On the other hand, we drawn the surface in the \texttt{clip = "on"}'s viewport. The box and the axes (include the labels and the units) are drawn in the \texttt{clip = "off"}'s viewport.\\
 Since \textbf{gridGraphics} package already set up the clipping region, therefore it can be solved by navigating to the specific viewport and draw the concept of \texttt{persp()}. The following code is the action for solving this problem.
 
-\newpage
 \begin{lstlisting}[language = R]
 ## go to the viewport weather clip = 'off'
 depth = gotovp(TRUE)
@@ -897,7 +908,7 @@ upViewport(depth)
 	\begin{center}
 		\includegraphics[height = 5cm, width = 5cm]{figure/filledContour_origin_02.pdf}
 		\includegraphics[height = 5.3cm, width = 6cm]{figure/filledContour_origin_03.pdf}
-		\includegraphics[height = 5.3cm, width = 6cm]{figure/filledContour_origin_01.pdf}
+		\includegraphics[height = 6cm, width = 6.5cm]{figure/filledContour_origin_01.pdf}
 		
 		\caption{The top-left filled contour are plotted by \textbf{grid}, top-right plot is the failed reproduce the \texttt{filled.contour()} by \texttt{grid.echo()} at the original state, and the bottom-center plot is the success reproduce the \texttt{filled.contour()} by \texttt{grid.echo()} after integrated to the \textbf{gridGraphics} package.}
 		\label{figure_4.6}
@@ -924,7 +935,8 @@ The following example (See Figure \ref{chapter5.1}) are drawn two rotated sinc f
 
 \newpage
 To test whether a \texttt{persp()} plot and \texttt{filled.contour()} plot produce indentical results by \texttt{grid.echo()}, the \textbf{gridGraphics} provides a \texttt{plotdiff()} function. It will creates PDF and PNG files of a \textbf{graphics}-plot then compare with the result from \texttt{grid.echo()}. A PNG file will be created if there is any mathematically and visually difference. The \texttt{plotdiffResult()} will also provide to summarize the multiple results called by \texttt{plotdiff()}.\\
-  The Figure \ref{chapter5.2} and Figure \ref{chapter5.3} shows all the \texttt{persp()} plot and \texttt{filled.contour()} plot drawn by \textbf{graphics}-based are mathematically and visually identical when they converted to \textbf{grid}, by using the \texttt{grid.echo()}.
+
+The Figure \ref{chapter5.2} and Figure \ref{chapter5.3} shows all the \texttt{persp()} plot and \texttt{filled.contour()} plot drawn by \textbf{graphics}-based are mathematically and visually identical when they converted to \textbf{grid}, by using the \texttt{grid.echo()}.\\
 
 
 \begin{figure}[h]
@@ -1063,7 +1075,7 @@ The viewport structures of \textbf{grid} provides more flexibility than the layo
 
 
 \newpage
-\section{A more advance example}
+\section{Exporting SVG image and interacting with JavaScript}
 \subsection{Basic concepts}
 The benefit that \textbf{gridGraphics} is that the \textbf{graphics} plot converted to \textbf{grid} that contains the \textbf{grobs} and \texbf{viewport} with names. The \texttt{gridSVG} \citep{gridSVG} package can export this plot to SVG format image, which it contains the information of the \textbf{grobs} and \textbf{viewports} names. Therefore, the \textbf{JavaScript} \citep{javascript} can interact with the SVG image more easily because the SVG elements contain every graphical element of the image.\\
 
@@ -1101,10 +1113,11 @@ Oncircle.onmouseover = Onmove;
 	\end{center}
 \end{figure}
 
+\newpage
 \subsection{The sinc surface}
 Since those actions cannot been achieved by R graphics system. The first step is to export the plot into
 SVG image. To do that, the \texttt{gridSVG} package is required. The following codes are used for export the SVG image (See Figure \ref{Example_6.3.01}). surface() is the ''wrap'' function for drawing the sinc surface perspective plot.
-addFeatures() is creating the texts and the little boxes of color at the top-left region in the plot.
+The addFeatures() is creating the texts and the little boxes of color at the top-left region in the plot.
 It also creates some hidden objects which are all invisible unless the specific action is activated. A
 JavaScript is imported for supporting the animations by using grid.script(). Finally we exported
 the SVG image by \texttt{grid.export()}
@@ -1123,7 +1136,7 @@ grid.export("example.svg", strict = FALSE)
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 11cm, width = 12cm]{figure/svg/origin_1.PNG}
+		\includegraphics[height = 9cm, width = 10cm]{figure/svg/origin_1.PNG}
 		\caption{A SVG image of the sinc surface perspective plot}
 		\label{Example_6.3.01}
 	\end{center}
@@ -1132,7 +1145,7 @@ grid.export("example.svg", strict = FALSE)
 
 
 
-In this example, we are going through the animation of the following action. Since it is not possible to see the full animation. To see the full animation, please vist \href{https://github.com/yeamin1/MasterProject/blob/master/report/svg}{my github}
+In this example, we are going through the animation of the following action. 
 
 \begin{itemize}
 	\item Changing the color of the surface
@@ -1175,6 +1188,7 @@ color_id.onclick = color_fill
 	\end{center}
 \end{figure}
 
+\newpage
 \subsubsection*{Animation of Changing the opacity of the surface}
 Similar to the animation of Changing the color of the surface, the opacity attribute of the surface will be change in this example. The animation will be activated when user clicks the "Change opacity" text on the top-left panel of figure \ref{Example_6.3.01}. Once user clicked the text, the \texttt{addAlpha()} will call the \texttt{animate()} which it locates all the polygons and then changes the stroke opacity gradually every 30 milliseconds. (See Figure \ref{Example_6.3.2})
 \begin{lstlisting}[language = JavaScript]
@@ -1184,11 +1198,9 @@ animate = function(...){
         polygons_odd[i].setAttribute("stroke-opacity", ...);
     }
 }
-
 addAlpha = function(){
     animate(action = 'alpha', ...);
 }
-...
 alpha = document.getElementById('alpha.1.1.text');
 alpha.onclick = addAlpha; 
 \end{lstlisting}
@@ -1223,7 +1235,7 @@ The trick to perform this action is to display the correct z-value for the speci
 First to all, we need to add the \texttt{onmouseover} and the \texttt{onmouseout} events to all fragments. That is, the functions \texttt{polygonon()} and \texttt{polygonout()} are activated when the mouse enter and leave the region of the specific fragments.\\
 
 There are two action will happen when the mouse enters the fragments. One is highlighting the fragment and the other is display its z-value. The highlighting action can be done simply by changing the color of the fragments. The z-value is displayed by matching the correct index. That is, the action function \texttt{polygonon()} will pull out the index of the id attribute from the specific polygon element, and then it will find the label element by matching this index. Finally, the z-value will be displayed by setting the opacity of the label element to be 1. When the mouse leave the fragment, it is necessary to reset the color of this fragment and hide the z-value. These actions will be done by \texttt{polygonout()}.
-
+\newpage
 \begin{lstlisting}[language = JavaScript]
 for(i = 1; i <= total; i++){
     obj = document.getElementById('polygon.' + 2 + '.' + i);
@@ -1276,7 +1288,7 @@ The core of \textbf{gridGraphics} package provides fully viewport structure to s
 To ensure the accuracy of identical that a \textbf{graphics} plot redrawn on \textbf{grid}, it is necessary to provide the identical test. The \textbf{ImageMagick} software will be used to test the identical (mathematically and visually) between a \textbf{graphics}-plot and \textbf{grid}-plot. Most kinds of plots are identical mathematically and visually. (See Figure \ref{chapter5.2} and figure \ref{chapter5.3}).
 
 \section*{Availability}
-The updated \textbf{gridGraphics} package which supported the conversion of \texttt{persp()} and \texttt{filled.contour()} from \textbf{graphics}-base to \textbf{grid} is now available from CRAN and GitHub. And, the supporting material of this paper, which including the animation of the section 6.3.2 is also available from the following website: \\
+The updated \textbf{gridGraphics} package which supported the conversion of \texttt{persp()} and \texttt{filled.contour()} from \textbf{graphics}-base to \textbf{grid} is now available from CRAN and GitHub. And, the supporting material of this paper, which including the animation of the section 6.3.2 is also available from the following websites: \\
 \begin{center}
     \herf{https://github.com/yeamin1/MasterProject/tree/master/report/svg} \\
     \herf{https://github.com/yeamin1/gridgraphics} \\

@@ -13,23 +13,23 @@
 \contentsline {subsubsection}{Pointers}{19}{section*.5}
 \contentsline {subsubsection}{Array}{20}{section*.6}
 \contentsline {subsection}{\numberline {3.1.5}Box and other features}{20}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}The Filled Contour Plot}{21}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Direct translation from \texttt {C} to \texttt {R}}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Vectorization}{23}{subsection.3.2.2}
-\contentsline {chapter}{\numberline {4}Integrate to \textbf {gridGraphics} package}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Some concept of \textbf {grid}}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}Integrate \texttt {persp()}}{26}{section.4.2}
-\contentsline {section}{\numberline {4.3}Integrate \texttt {filled.contour()}}{31}{section.4.3}
-\contentsline {chapter}{\numberline {5}Testing}{33}{chapter.5}
-\contentsline {chapter}{\numberline {6}Example}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Example to solution}{37}{section.6.1}
-\contentsline {section}{\numberline {6.2}An advance example}{39}{section.6.2}
-\contentsline {section}{\numberline {6.3}A more advance example}{41}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{41}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{42}{subsection.6.3.2}
-\contentsline {chapter}{\numberline {7}Conclusion}{47}{chapter.7}
-\contentsline {section}{\numberline {7.1}Limitations}{47}{section.7.1}
-\contentsline {section}{\numberline {7.2}Disscussion}{47}{section.7.2}
-\contentsline {chapter}{\numberline {8}Appendix}{50}{chapter.8}
-\contentsline {section}{\numberline {8.1}persp.R}{50}{section.8.1}
-\contentsline {section}{\numberline {8.2}filled.contour.R}{66}{section.8.2}
+\contentsline {section}{\numberline {3.2}The Filled Contour Plot}{22}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Direct translation from \texttt {C} to \texttt {R}}{22}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Vectorization}{24}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Integrate to \textbf {gridGraphics} package}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Some concept of \textbf {grid}}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}Integrate \texttt {persp()}}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Integrate \texttt {filled.contour()}}{32}{section.4.3}
+\contentsline {chapter}{\numberline {5}Testing}{34}{chapter.5}
+\contentsline {chapter}{\numberline {6}Example}{38}{chapter.6}
+\contentsline {section}{\numberline {6.1}Example to solution}{38}{section.6.1}
+\contentsline {section}{\numberline {6.2}An advance example}{40}{section.6.2}
+\contentsline {section}{\numberline {6.3}Exporting SVG image and interacting with JavaScript}{42}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Basic concepts}{42}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}The sinc surface}{43}{subsection.6.3.2}
+\contentsline {chapter}{\numberline {7}Conclusion}{48}{chapter.7}
+\contentsline {section}{\numberline {7.1}Limitations}{48}{section.7.1}
+\contentsline {section}{\numberline {7.2}Disscussion}{48}{section.7.2}
+\contentsline {chapter}{\numberline {8}Appendix}{51}{chapter.8}
+\contentsline {section}{\numberline {8.1}persp.R}{51}{section.8.1}
+\contentsline {section}{\numberline {8.2}filled.contour.R}{70}{section.8.2}
