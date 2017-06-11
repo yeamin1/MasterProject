@@ -79,9 +79,11 @@ New Zealand\\
 \pagebreak
 \hspace{0pt}
 \vfill
-\section*{ACKNOWLEDGEMENT}
-I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. His guidance helped me in all the time of research and writing of this thesis. Without his help this dissertation would not be possible.
-I also would like to thank to Tim and Albert, who gave me ideas about the format of my dissertation. And also I would like to thank to Tong, Dong and Kevin, who gave me some ideas about 
+\section*{Acknowledgement}
+I would like to express my sincere gratitude to my advisor Dr. Paul Murrell for the continuous support of my master project, for his patience, motivation, and immense knowledge. Thought this project, I learnt lots of programming skills (\texttt{JavaScript}, \texttt{C}, ect...), specially \texttt{R}. His guidance helped me in all the time of research and writing of this thesis.
+
+I also would like to thank to Albert and Tim, who gave me some ideas about the format of my dissertation. And also I would like to thank to Tong, Dong and Kevin, who gave me some ideas when I was getting a bit trouble on optimizing the functions.\\
+
 Lastly, I would like to thank to my parents, thank you very much for giving me unconditional support. 
 \vfill
 \hspace{0pt}
@@ -366,6 +368,7 @@ Before drawing the surface, the transformation of 3-D vertices into 2-D vertices
 \end{Soutput}
 \end{Schunk}
 
+\subsection{Ordering}
 Some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. That is, draw the polygons which located further behind first then draw the polygons which located font, from user's view. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combining another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the order of the polygons. The following codes calculated the order of every polygons where \texttt{ordering} indicates the orders.
 \begin{Schunk}
 \begin{Sinput}
@@ -565,7 +568,7 @@ The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{f
 \end{figure}
 
 \newpage
-The example shows the plot of topography of Maunga Whau and also the information from the \texttt{filled.contour} call in the graphics engine display list. Same problem as \texttt{persp()}, there is no way to reproduce this plot directly by only using the inputs from the \texttt{filled.contour()}.\\
+The example shows the plot of topography of Maunga Whau and also the information from the \texttt{filled.contour()} call in the graphics engine display list. Same problem as \texttt{persp()}, there is no way to reproduce this plot directly by only using the inputs from the \texttt{filled.contour()}.\\
 
 There is an algorithm to create this contour plot in the \textbf{graphics} package written by \texttt{C}. The first step of the solution will be translated the \texttt{C} code directly to maximize the accuracy.\\
 
@@ -591,7 +594,7 @@ lFindPolygonVertices = function(...)
     out = list(); npt = 0
     out1 = lFindCutPoints(...)
     x = y = z = numeric(8); npt = out1$npt
-
+    ...
     out$x = out1$x + out2$y + out3$x + out4$y
     out$y = out1$y + out2$x + out3$y + out4$x
     out$npt = out4$npt
@@ -634,7 +637,7 @@ It requires huge iteration. For example, In Figure \ref{figure_3.6}, the Topogra
 	The result shows that the new method (1.82 seconds) is much faster than the old method (10.32 seconds).
 
 \chapter{Integrate to \textbf{gridGraphics} package}
-\section{Some concept of \textbf{grid}}
+\section{The viewport structure of \texttt{gridGraphics}}
 The previous section explained the internal calculation for \texttt{persp()} and \texttt{filled.contour()}. It works perfectly outside the \textbf{gridGraphics} package. However, \texttt{grid.echo()} still cannot emulate these two kinds of plot because they are not been integrated to the package yet. Therefore, it requires more work.\\ 
 
 The \textbf{gridGraphics} package provides the structure of viewports which act identical to the layout of plots in the plot region been drawn by \textbf{gridGraphics}. 
@@ -1063,10 +1066,19 @@ In this example, we are going through the animation of the following action.
 \end{itemize}
 \\
 
+\begin{lstlisting}
+<polygon id="polygon.1.1" 
+        points="309.53,420.57 316.8,418.03 320.23,422.03 313.08,423.25" 
+        stroke="rgb(139,136,120)" fill="rgb(162,159,130)" 
+        stroke-opacity="1" fill-opacity="1"/>
+\end{lstlisting}
+The top piece of codes shows one polygon of the sinc surface, which it is exported by \texttt{grid.export()}. As we see, the \texttt{polygon} contains the key attributes which they define how does the polygon behaves. For example, the \texttt{fill} attribute will display the filled color of this polygon which is rgb(162,159,130), the \texttt{fill-opacity} will change the opacity, which is completely non-transparen.
+To create the animation, we need to moldify the specific attributes of the \texttt{polygon} element. 
+ 
 \subsubsection*{Animation of Changing the color of the surface}
 Similar to the circle example, we change the color of the surface by locating the elements that contain the surface then modify the color. However, the complicate part will be the animation creation. The animation of \texttt{JavaScript} can be done by programming gradual change in the attribute of the elements. The animation will look continuous when the time interval between every change are small.\\
 
-The following code is key step for creating the animation (See Figure \ref{Example_6.3.1}). The \texttt{animate()} can produce all the action that we discussed previously. The \texttt{frame()} in the \texttt{animate()} will change the color of the surface gradually every time it been called. The \texttt{setInterval(frame, 30)} will call the \texttt{frame()} every 30 milliseconds. On the other hand, the color of the surface will be changed gradually every 30 milliseconds. This action will be activated when user clicks the red boxes.
+The following code is key step for creating the animation (See Figure \ref{Example_6.3.1}). The \texttt{animate()} can produce all the action that we discussed previously. The \texttt{frame()} in the \texttt{animate()} will change the color of the surface gradually every time it been called.  The \texttt{setInterval(frame, 30)} will call the \texttt{frame()} every 30 milliseconds. On the other hand, we are changing the color of the surface by changing the \texttt{fill} attribute in every \texttt{polygon} elements gradually every 30 milliseconds. This action will be activated when user clicks the red boxes.
 
 \begin{lstlisting}[language = JavaScript]
 animate = function(...){
@@ -1098,7 +1110,7 @@ color_id.onclick = color_fill
 
 \newpage
 \subsubsection*{Animation of Changing the opacity of the surface}
-Similar to the animation of Changing the color of the surface, the opacity attribute of the surface will be change in this example. The animation will be activated when user clicks the "Change opacity" text on the top-left panel of figure \ref{Example_6.3.01}. Once user clicked the text, the \texttt{addAlpha()} will call the \texttt{animate()} which it locates all the polygons and then changes the stroke opacity gradually every 30 milliseconds. (See Figure \ref{Example_6.3.2})
+Similar to the animation of Changing the color of the surface, the opacity attribute of the surface will be change in this example. The animation will be activated when user clicks the "Change opacity" text on the top-left panel of figure \ref{Example_6.3.01}. Once user clicked the text, the \texttt{addAlpha()} will call the \texttt{animate()} which it locates all the polygons and then changes the stroke opacity (the \texttt{fill-opacity} attribute) gradually every 30 milliseconds. (See Figure \ref{Example_6.3.2})
 \begin{lstlisting}[language = JavaScript]
 animate = function(...){
     setInterval(frame, 30)
@@ -1145,6 +1157,7 @@ First to all, we need to add the \texttt{onmouseover} and the \texttt{onmouseout
 There are two action will happen when the mouse enters the fragments. One is highlighting the fragment and the other is display its z-value. The highlighting action can be done simply by changing the color of the fragments. The z-value is displayed by matching the correct index. That is, the action function \texttt{polygonon()} will pull out the index of the id attribute from the specific polygon element, and then it will find the label element by matching this index. Finally, the z-value will be displayed by setting the opacity of the label element to be 1. When the mouse leave the fragment, it is necessary to reset the color of this fragment and hide the z-value. These actions will be done by \texttt{polygonout()}.
 \newpage
 \begin{lstlisting}[language = JavaScript]
+// initialization: assign onmouseover and onmouseout events to all polygons
 for(i = 1; i <= total; i++){
     obj = document.getElementById('polygon.' + 2 + '.' + i);
     obj.onmouseover = polygonon;
@@ -1189,7 +1202,7 @@ There are couples of things that can be improved: (1). The \textbf{gridGraphics}
 \section{Disscussion}
 The \textbf{gridGraphics} is the package to make the connection between \textbf{graphics} and \textbf{grid} package. The \texttt{grid.echo()} function will convert plots drawn by \textbf{graphics} package into \textbf{grid}.\\
 
-There are two kinds of \textbf{graphics} plot that were not supported by previous version: \texttt{persp()} for drawing perspective plot and \texttt{filled.contour()} for drawing level filled contour plot. The surface of perspective plot is formed by finite number of polygons, where polygons have four vertexes. The surface will be drawn by calculating the coordinates of vertices of every polygon. The other features that \texttt{persp()} supported, the lighting, boxes and axis will be emulate by translating \texttt{C} codes to \texttt{R} codes. The surface of filled contour plot will be emulated by translating the \texttt{C} code directly then vectorized so that the function will be more efficient. \\
+There are two kinds of \textbf{graphics} plot that were not supported by previous version: \texttt{persp()} for drawing perspective plot and \texttt{filled.contour()} for drawing level filled contour plot. The surface of perspective plot is formed by finite number of polygons, where polygons have four vertexes. The surface will be drawn by (1). Converting the inputs into vertices coordinates of every polygon. (2). Transforming the 3-dimensions vertices into 2-dimensions vertices by using the 3-dimensions vertices coordinates and the transformation matrix \textbf{P}. (3). Draw the surface by draw every polygon in a specific order. The other features that \texttt{persp()} supported, the lighting, boxes and axis will be emulate by translating \texttt{C} codes to \texttt{R} codes. The surface of filled contour plot will be emulated by translating the \texttt{C} code directly then vectorized so that the function will be more efficient. \\
 
 The core of \textbf{gridGraphics} package provides fully viewport structure to support the filled contour plot. Integrating \texttt{filled.contour()} will be done by navigating to the correct viewport and draw the filled contour plot. However, \textbf{gridGraphics} does not fully provide the viewport structure for \texttt{persp}. The solution to this problem is that: creating a new viewport in the correct location of the viewport tree (created by \textbf{gridGraphics} when \texttt{grid.echo()} been called.). Then we need to consider: (1) The x-scale and y-scale for the viewport. (2) Determined the clipping happens for every component. The x-scale and y-scale will be calculated based on the size of the current graphics device. The solution will be to write a \texttt{R} function that do the extract calculation for the range of x and y (from \textbf{graphics}). The clipping will be solved by observing the difference from the \texttt{persp()} plot that drawn by \textbf{graphics} and \textbf{grid}. That is, the clipping will be turned on when drawing both the axes and box, but it will be turned off when drawing the surface. Finally \texttt{persp()} is integrated into the package by navigating to the viewport with correct scale and correct clipping actions.\\
 

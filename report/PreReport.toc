@@ -8,16 +8,17 @@
 \contentsline {section}{\numberline {3.1}The Perspective Plots \texttt {persp()}}{14}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Convert the inputs into the coordinates of vertices}{15}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}The transformation from 3-D vertices into 2-D vertices}{16}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Lighting}{17}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Difference between \texttt {C} and \texttt {R}}{19}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.3}Ordering}{16}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Lighting}{17}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Difference between \texttt {C} and \texttt {R}}{19}{subsection.3.1.5}
 \contentsline {subsubsection}{Pointers}{19}{section*.5}
 \contentsline {subsubsection}{Array}{20}{section*.6}
-\contentsline {subsection}{\numberline {3.1.5}Box and other features}{20}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Box and other features}{20}{subsection.3.1.6}
 \contentsline {section}{\numberline {3.2}The Filled Contour Plot}{22}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Direct translation from \texttt {C} to \texttt {R}}{22}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Vectorization}{24}{subsection.3.2.2}
 \contentsline {chapter}{\numberline {4}Integrate to \textbf {gridGraphics} package}{26}{chapter.4}
-\contentsline {section}{\numberline {4.1}Some concept of \textbf {grid}}{26}{section.4.1}
+\contentsline {section}{\numberline {4.1}The viewport structure of \texttt {gridGraphics}}{26}{section.4.1}
 \contentsline {section}{\numberline {4.2}Integrate \texttt {persp()}}{27}{section.4.2}
 \contentsline {section}{\numberline {4.3}Integrate \texttt {filled.contour()}}{32}{section.4.3}
 \contentsline {chapter}{\numberline {5}Testing}{34}{chapter.5}
