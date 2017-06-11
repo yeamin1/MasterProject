@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[11pt,twoside]{report}
 
 \usepackage{natbib}
 \usepackage{mathtools}
@@ -141,11 +141,9 @@ The following code provides a quick example. We generate 25 random numbers for x
 \end{figure}
 \newpage
 One example that shows the advantage of drawing the plot using \textbf{grid} rather than basic \textbf{graphics} is that there are objects, called grid grobs, which recorded a list of the details of each components of the plot that has been drawn. The list of grobs can been seen by calling the function \texttt{grid.ls()}.
-\begin{Schunk}
-\begin{Sinput}
+\begin{lstlisting}[language = R]
 > grid.ls()
-\end{Sinput}
-\begin{Soutput}
+
 graphics-plot-1-points-1
 graphics-plot-1-bottom-axis-line-1
 graphics-plot-1-bottom-axis-ticks-1
@@ -156,26 +154,22 @@ graphics-plot-1-left-axis-labels-1
 graphics-plot-1-box-1
 graphics-plot-1-xlab-1
 graphics-plot-1-ylab-1
-\end{Soutput}
-\end{Schunk}
+\end{lstlisting}
 
 
 As we see, the \texttt{grid.ls()} function returns a list of grid grobs for the previous plot that has been redrawn by \textbf{grid}. There is one element called \texttt{graphics-plot-1-bottom-axis-labels-1} which represents the labels of the bottom axis. In \textbf{grid}, there are several functions that can be used to manipulate this grob. See Figure \ref{figure_1.2} \\
-
-For example, if the user wants to rotate the labels of the bottom and left axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.
+For example, if the user wants to rotate the labels of the bottom axis by 30 degrees and changes the color from default to orange, then the following code performs these changes.
 \begin{Schunk}
 \begin{Sinput}
 > grid.edit("graphics-plot-1-bottom-axis-labels-1", 
-+           rot=30, gp=gpar(col="orange"))
-> grid.edit("graphics-plot-1-left-axis-labels-1", 
 +           rot=30, gp=gpar(col="orange"))
 \end{Sinput}
 \end{Schunk}
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 7cm, width = 7cm]{figure/report_basic_demo_4.pdf}
-		\caption{The angle and the color of the bottom and left axis of the previous plot have been changed by 30 degrees and orange}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/report_basic_demo_4.pdf}
+		\caption{The angle and the color of the bottom axis of the previous plot have been changed by 30 degrees and orange}
 		\label{figure_1.2}
 	\end{center}
 \end{figure}
@@ -185,6 +179,8 @@ For example, if the user wants to rotate the labels of the bottom and left axis 
 The \texttt{grid.echo()} function can replicate most plots that are drawn by the graphics package. However, there are a few functions in the graphics package that \texttt{grid.echo()} cannot replicate. One such function is \texttt{persp()} which draws 3-dimemtional surfaces, the other one is the \texttt{filled.contour()}. If we can draw a plot with \texttt{persp()} or \texttt{filled.countour(),} the result from calling \texttt{grid.echo()} is a (mostly) blank screen. See Figure \ref{figure_1.3}.
 \begin{Schunk}
 \begin{Sinput}
+> x = y = seq(-4*pi, 4*pi, len = 27)
+> r = sqrt(outer(x^2, y^2, "+"))
 > filled.contour(cos(r^2)*exp(-r/(2*pi)), 
 +                frame.plot = FALSE, plot.axes = {})
 > grid.echo()
@@ -192,8 +188,8 @@ The \texttt{grid.echo()} function can replicate most plots that are drawn by the
 \end{Schunk}
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 5.5cm, width = 7cm]{figure/report_fill_1}
-		\includegraphics[height = 5.5cm, width = 7cm]{figure/report_fill_2}
+		\includegraphics[height = 7cm, width = 7.5cm]{figure/report_fill_1}
+		\includegraphics[height = 7cm, width = 7.5cm]{figure/report_fill_2}
 		\caption{The left plot been drawn by using \texttt{filled.contour()} and the right plot been redrawn by calling \texttt{grid.echo()}. There is a "blank" page on the right plot because the grid.echo cannot emulate \texttt{filled.contour()} in this stage.}
 		\label{figure_1.3}
 	\end{center}
@@ -210,7 +206,7 @@ The purpose of this paper is to emulate the Perspective Plots, \texttt{persp()} 
 		\item Understanding and translating the calculation that been done by \texttt{C} code from the \textbf{graphics} package to \texttt{R} code
 		\item Draw the Perspective Plot and Filled Contour Plot on \textbf{grid}.
 	\end{enumerate}
-	\item Integrate the standalone to the \textbf{gridGraphics}
+	\item Integrate the standalone to the \textbf{gridGraphics} package
 		\begin{enumerate}
 			\item Navigating to the correct viewport that has been set up by \textbf{gridGraphics}
 			\item Create a new viewport for setting up the correct x-scale and y-scale preparing for drawing, (if necessary) then draw the contents in the correct viewport.
@@ -295,7 +291,7 @@ It has three main argument, \textbf{x, y, z}. Where \textbf{x} and \textbf{y} ar
 
 \newpage
 The sinc surface is built up by finite number of "polygon", each polygon has 4 Vertices.
-If we can access the coordinates one polygon, then we can redraw this polygon on \textbf{grid}. If we can access all the coordinates of all polygons, then we can emulate the Perspective Plot on \textbf{grid}. The following codes show that the value of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been " caught " from the display list.
+If we can access the vertices coordinates of one polygon, then we can redraw this polygon on \textbf{grid}. If we can access all the vertices coordinates of all polygons, then we can redraw the surface on \textbf{grid}. The following codes show that the inputs of \textbf{x}, \textbf{y} and \textbf{z} which inputted by the user can been " caught " from the display list.
 \begin{Schunk}
 \begin{Sinput}
 > reco = recordPlot()
@@ -328,14 +324,13 @@ If we can access the coordinates one polygon, then we can redraw this polygon on
 \end{Soutput}
 \end{Schunk}
 \subsection{Convert the inputs into the coordinates of vertices}
-The inputs(\textbf{x}, \textbf{y} and \textbf{z}) are recorded by \texttt{recordPlot()}. However, we cannot draw the surface directly by using the inputs, because the inputs are not the vertices coordinates of the surface. Therefore, the first step is to convert these \textbf{x}, \textbf{y} and \textbf{z} inputs into the coordinates of the vertices of every polygon.
-
+The inputs (\textbf{x}, \textbf{y} and \textbf{z}) are recorded by \texttt{recordPlot()}. However, we cannot draw the surface directly by using the inputs, because the inputs are not the vertices coordinates of the surface. Therefore, the first step is to convert these \textbf{x}, \textbf{y} and \textbf{z} inputs into the coordinates of the vertices of every polygon.\\
 
 As we know, the matrix, \textbf{z} is computed by a specific functions, given two inputs, \textbf{x} and \textbf{y}, or the expression of z can been written as: $z = f(x,y)$, it contains all the values for all combination of \empth{x} and \textbf{y} and the dimension of \textbf{z} is $ \textbf{length(x)} \times \textbf{length(y)}$.\\
 
-One 3-dimenstions points contains a set values of (\textbf{x}, \textbf{y}, \textbf{z}). However, \textbf{z} is $\textbf{length(x)} \times \textbf{length(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. To produce the points, the coordinates (\textbf{x}, \textbf{y} and \textbf{z}) need to be matched in a right order.\\
+One 3-dimenstions points contains a set values of (\textbf{x}, \textbf{y}, \textbf{z}). However, \textbf{z} is $\textbf{length(x)} \times \textbf{length(y)}$ matrix, \textbf{x} is a vector which has length of $\textbf{length(x)}$ and \textbf{y} is a vector which has length of $\textbf{length(y)}$. To transform the intpus to points, the coordinates (\textbf{x}, \textbf{y} and \textbf{z}) need to be matched in a correct order.\\
 
-First step is the reduce the \textbf{z} matrix into a one dimension vector which has length of $\textbf{length(x)} \times \textbf{length(y)}$. It can be reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of \textbf{z}. Since \textbf{z} is reduced along the x direction say $z_p$, we repeat x until the length of y say $x_p$, and we repeat each y by the length of \textbf{x}, say $y_p$. At last, the combination of $x_p$, $y_p$, $z_p$ is the 3-D points which prepare for computing the vertices. \\
+First step is to reduce the \textbf{z} matrix into a one dimension vector which has length of $\textbf{length(x)} \times \textbf{length(y)}$. It can be reduced by either along x direction or y direction. In this paper, we reduced along the x direction. The second step is repeat the vector x and y until the same length of \textbf{z}. Since \textbf{z} is reduced along the x direction say $z_p$, we repeat x until the length of y say $x_p$, and we repeat each y by the length of \textbf{x}, say $y_p$. At last, the combination of $x_p$, $y_p$, $z_p$ is the 3-D points which prepare for computing the vertices. 
 \begin{Schunk}
 \begin{Sinput}
 > xTmp = rep(x, length(y))
@@ -348,7 +343,7 @@ First step is the reduce the \textbf{z} matrix into a one dimension vector which
 \end{Soutput}
 \end{Schunk}
 
-Converting points to vertices by repeating the points in a right order. From previous section, we explained that the Perspective Plots is made by finite number of polygons. Each polygon has 4 vertices. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, total = (length(x) - 1) $\times$ (length(y) - 1). The polygons been drawn by connecting 4 points in a specific order. The order of the drawing as follows: starting from bottom-left, (1) connect bottom-left to bottom-right, (2) connect from bottom-right to top-right, (3) connect top-right to top-left, (4) connect top-left to bottom-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
+Converting points to vertices by repeating the points in a right order. The total number of polygons are required to be drawn is depend on the length of input \textbf{x} and the length of input \textbf{y}, that is, total = (length(x) - 1) $\times$ (length(y) - 1). The polygons been drawn by connecting 4 points in a specific order. The order of the drawing as follows: starting from bottom-left, (1) connect bottom-left to bottom-right, (2) connect from bottom-right to top-right, (3) connect top-right to top-left, (4) connect top-left to bottom-left. Every polygon is being drawn in this order. The surface of Perspective Plots is formed until all the polygons are been drawn. \\
 
 \subsection{The transformation from 3-D vertices into 2-D vertices}
 Before drawing the surface, the transformation of 3-D vertices into 2-D vertices is required. This transformation required two main variables, the 3-D vertices and a transformation matrix \textbf{P}. The 3-dimenstion vertices are already computed, \textbf{P} is a 4 by 4 viewing transformation matrix which suitable for projecting 3-dimensions coordinates (x, y, z) into 2-dimensions plane using homogeneous 4-dimension coordinates (x, y, z, t). It can be recorded from the \texttt{persp()} call. This transformation can be done easily on R by using the \texttt{trans3d()} function.
@@ -370,7 +365,7 @@ Before drawing the surface, the transformation of 3-D vertices into 2-D vertices
 \end{Schunk}
 
 \subsection{Ordering}
-Some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. That is, draw the polygons which located further behind first then draw the polygons which located font, from user's view. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combining another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the order of the polygons. The following codes calculated the order of every polygons where \texttt{ordering} indicates the orders.
+Some polygons that stay 'behind' cannot been seen, it is necessary to draw the polygons in a right order. That is, we draw the polygons which located further behind first then draw the polygons which located font, from user's view. The order defined by using the \textbf{x} and \textbf{y} coordinate of the 3-D vertices (but ignore the \textbf{z} coordinate) combining another column \textbf{1}, then do the matrix multiplication with the viewing transformation \textbf{P}. The fourth column from this multiplication is the order of the polygons. The following codes calculated the order of every polygons where \texttt{ordering} indicates the orders.
 \begin{Schunk}
 \begin{Sinput}
 > orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
@@ -405,7 +400,7 @@ Shade = \big(\frac{1 + d}{2}\big)^{s}
 
 Where \textbf{d} is the dot product of the unit vector normal to each facet(\textbf{u}) and the unit vector of the direction of the light(\textbf{v}). \\
 
-The color of each facet will be calculated by the color that is recorded from the graphics engine display list multiplied by the \textbf{shade}. Finally, the surface is drawn by filling the colors for every facet.\\
+The color of each facet will be calculated by the color that is recorded from the graphics engine display list multiplied by the \textbf{shade}. Finally, the surface is drawn by filling the shaded colors to every facet.\\
 
 If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the \textbf{shade} will be close to 0, therefore the corresponding facets will become darker. The brightness and darkness will depend on the value of the \textbf{s}. If \textbf{s} close to 0, the \textbf{Shade} will be close to 1. Therefore, it will look like non-shading plot. Similarly, if the \textbf{s} gets larger, the \textbf{Shade} close to 0 and the plot will look darker.
 
@@ -484,7 +479,7 @@ out = lFindPolygonVertices(sc[k], sc[k + 1],
 
 
 
-To get the same elements in the matrix as the elements in the array, one solution is to change the matrix data format into vector data format. However, \texttt{R} is familiar with matrix data structure. Hence it is easier and more understandable by \texttt{R} user and programmer. The \texttt{z[i - 1 + (j - 1) * nx]} in \textt{FindPolygonVertices()} is selecting the $i^{th}$ element from the $j^{th}$ column, which the following \texttt{R} code provide the same result That is, \texttt{z[i, j]} in \texttt{R} will provide the same result as \texttt{C} \\
+To get the same elements in the matrix as the elements in the array, one solution is to change the matrix data format into vector data format. However, \texttt{R} is familiar with matrix data structure which it is easier and more understandable by \texttt{R} user and programmer. The \texttt{z[i - 1 + (j - 1) * nx]} in \textt{FindPolygonVertices()} is selecting the $i^{th}$ element from the $j^{th}$ column, which the following \texttt{R} code provide the same result That is, \texttt{z[i, j]} in \texttt{R} will provide the same result as \texttt{C} \\
 
 However, the \texttt{z} is array in the first call as it written on \texttt{C} but the second is matrix as it written on \texttt{R}. the - 1 on the \texttt{R} code because \texttt{C} starting at 0 index but \texttt{R} starting at 1.\\
 
@@ -566,7 +561,7 @@ The other tasks of this paper is to emulate the Level (Contour) Plots (\texttt{f
 
 The example shows the plot of topography of Maunga Whau and also the information from the \texttt{filled.contour()} call in the graphics engine display list. Same problem as \texttt{persp()}, there is no way to reproduce this plot directly by only using the inputs from the \texttt{filled.contour()}.\\
 
-There is an algorithm to create this contour plot in the \textbf{graphics} package written by \texttt{C}. The first step of the solution will be translated the \texttt{C} code directly to maximize the accuracy.\\
+The following code is used to create the filled contour plot in the \textbf{graphics} package written by \texttt{C}. The first step of the solution will be translated the \texttt{C} code directly to maximize the accuracy.\\
 
 \begin{lstlisting}[language = C]
 static void
@@ -579,7 +574,7 @@ FindPolygonVertices(double *x, double *y, double *z, int *npt, ...)
     FindCutPoints(low, high, y2,  x1,  z12, y1,  x1,  z11, y, x, z, npt);
 }
 \end{lstlisting}
-This piece of \texttt{C} code is the algorithm used for calculate the coordinates of the vertex of each polygon in the level contour plot. The parameters \textbf{*x}, \textbf{*y}, \textbf{*z} are the array pointers which have length of 8, individually, \textbf{*npc} is also a pointer has length of 1. If the \texttt{FindCutPoints()} is called, the elements in the arrays of \textbf{x}, \textbf{y}, \textbf{z} will be modified. In general, we feed the location of memory of \textbf{x}, \textbf{y}, \textbf{z} and \textbf{npt} to \texttt{FindPolygonVertices()} and modify the values of \textbf{x}, \textbf{y}, \textbf{z} and \textbf{npt} inside the \texttt{FindCutPoints()}.\\
+This piece of \texttt{C} code is used for calculate the coordinates of the vertex of each polygon in the level contour plot. The parameters \textbf{*x}, \textbf{*y}, \textbf{*z} are the array pointers which have length of 8, individually, \textbf{*npc} is also a pointer has length of 1. If the \texttt{FindCutPoints()} is called, the elements in the arrays of \textbf{x}, \textbf{y}, \textbf{z} will be modified. In general, we feed the location of memory of \textbf{x}, \textbf{y}, \textbf{z} and \textbf{npt} to \texttt{FindPolygonVertices()} and modify the values of \textbf{x}, \textbf{y}, \textbf{z} and \textbf{npt} inside the \texttt{FindCutPoints()}.\\
 
 For example, the first call of \texttt{FindCutPoints()} modifies the elements in the pointer arrays of $x$, $y$, $z$. The location of elements in arrays been modified will depend on the parameter $*npt$. More specifically, the $x$ as a function of $x_1$ and $x_2$, $y$ as a function of $y_1$ and so on. The second \texttt{FindCutPoints()} is slightly different, $x$ will depend on a function of $x_2$, $y$ as a function of $y_1$ and $y_2$. In the third \texttt{FindCutPoints()} call, $x$ will depend on a function of $x_2$ and $x_1$, $y$ will depend on a function of $y_2$. Finally, $x$ will depend on a function of $x_1$, $y$ depend on the function of $y_2$ and $y_1$. \\
 
@@ -597,7 +592,7 @@ lFindPolygonVertices = function(...)
     out
 }
 \end{lstlisting}
-Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, record the values for $x$, $y$, $z$ and $npt$ outside the \texttt{lFindCutPoints()} call in \texttt{R} every time. At last, we combined every $x$ and $y$ together as the previous \texttt{C} code behave. 
+Instead of mortify $x$, $y$, $z$ and $npt$ inside \texttt{FindCutPoints()}, we record the values for $x$, $y$, $z$ and $npt$ outside the \texttt{lFindCutPoints()} call in \texttt{R} every time. At last, we combined every $x$ and $y$ together as the previous \texttt{C} code behave. 
 
 
 \subsection{Vectorization}
@@ -684,7 +679,7 @@ The grobs object and the veiwports and been listed by \texttt{grid.ls()}. In the
 To reproduce the same plots as \textbf{graphics}, we need to modify the \textbf{grid} structure of the plot so that it behaves identically to the plot that was drawn by \textbf{graphics}. In this example, the viewports need to be set in the same location and the same size as the \textbf{graphics} plot region, and, the x-scale and y-scale of the viewports in \textbf{grid} need to be set the same user coordinates as in \textbf{graphics}.\\
 
 \section{Integrate \texttt{persp()}}
-The core of \textbf{gridGraphics} package provides some basic viewport structure to support the perspective plots(\texttt{persp()}), based on the general plots that been drawn by \textbf{graphics}. However, there are some specific details that \textbf{gridGraphics} not fully supported.
+The core of \textbf{gridGraphics} package provides some basic viewport structure to support the perspective plots (\texttt{persp()}), based on the general plots that been drawn by \textbf{graphics}. However, there are some specific details that \textbf{gridGraphics} not fully supported.
 The following problems need to be solved before integrating \texttt{persp()} into the package:
 \begin{itemize}
 	\item{The scaling of the viewport needs to be calculated}
@@ -769,9 +764,9 @@ vp = viewport(0.5, 0.5, 1, 1, default.units = 'npc',
 ## back to the Root viewport
 upViewport(depth)  
 \end{lstlisting}
-The previous code is creating a new temporary viewport which contains the true x-scale and y-scale prepared for drawing the perspective plot. The values for x scale and y scale are calculated by \texttt{PerspWindow()}. It will do the calculation by considering the 'actual' ratio of horizontal length and vertical length of the current graphics device, similar to the calculation of the \texttt{C} code does.\\
+The previous code is creating a new temporary viewport which contains the true x-scale and y-scale prepared for drawing the perspective plot. The values for x scale and y scale are calculated by \texttt{PerspWindow()}. The \texttt{PerspWindow()} will take the maximum and minimum coordinates along each x, y, and z direction as inputs, then calculates the scale for the 2-dimensions graphics device, by considering the 'actual' ratio of horizontal length and vertical length. It is similar to the calculation of the \texttt{C} code does.\\
 
-After we create the temporary viewport that contains the correct scale, then we added this viewport to the location of the tree which inside the viewport created by \textbf{gridGraphics}. That is, push temporary viewport inside the odd viewport. The Final step will be drawn the concepts within this viewport. To do that, we need to push a temporary viewport every time we drawn. The following code is how does the surface of the plot is drawn internally.
+After we created the temporary viewport that contains the correct scale, then we added this viewport to the location of the viewport tree which created by \textbf{gridGraphics}. That is, push temporary viewport inside the odd viewport. The Final step will be drawn the concepts within this viewport. To do that, we need to push a temporary viewport every time we drawn. The following code is how does the surface of the plot is drawn internally.
 
 \begin{lstlisting}[language = R]
 ## navigate to the viewport which has the true limit of x and y
@@ -784,7 +779,7 @@ upViewport()
 upViewport(depth)
 \end{lstlisting}
 
-The next problem will be the merge the temporary viewport into the \textbf{gridGraphics} viewport tree to make sure all the features (such as points and lines are added before or/ and after the perspective plots is drawn) are drawn in the correct viewport. Although the scales have been fixed, other features have no information about the temporary viewport. In the other word, these features are drawn in the viewport that \textbf{gridGraphics} creates rather than drawn in the temporary viewport. Figure \ref{figure_4.4} shows a Rosette shape ring is drawn above the surface of tour(left-plot). The left-plot is tried to reproduce a \textbf{grid} version by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot). \\
+The next problem will be the merge the temporary viewport into the \textbf{gridGraphics} viewport tree to make sure all the features (such as points and lines are added before or/and after the perspective plots is drawn) are drawn in the correct viewport. Although the scales have been fixed, other features have no information about the temporary viewport. In the other word, these features are drawn in the viewport that \textbf{gridGraphics} creates rather than drawn in the temporary viewport. Figure \ref{figure_4.4} shows a Rosette shape ring is drawn above the surface of tour(left-plot). The left-plot is tried to reproduce a \textbf{grid} version by \texttt{grid.echo()}. Although the tour is drawn in the correct location, the Rosette shape ring appear on the bottom-left region of the plot(right-plot). \\
 
 \begin{figure}[h]
 	\begin{center}
@@ -859,16 +854,16 @@ upViewport(depth)
 \chapter{Testing}
 The aim of this paper is to redraw Perspective Plots and Level (Contour) Plots using the \textbf{grid} package with an identical result to the \textbf{graphics} package. Every plot drawn by \textbf{grid} graphics should be not only identical to \textbf{graphics} by human eye, but also the machine 'thinks' they are identical. However, there are some tiny differences which cannot distinguish by human eye, for example, the color are differences at one pixel between two plots, or the colors of few area have one unit difference on red Channel distortion compare to the other plot. Therefore, we need software to detect those tiny differences.\\
 
-\textbf{ImageMagick} \citep{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to mathematically and visually annotate the difference between an image and its reconstruction.\\
+\textbf{ImageMagick} \citep{ImageMagick} is the software that can be used for the comparison in this paper, it can create, edit, compose, or convert bitmap images and read and write images in a variety of formats (over 200). The features used in this paper is \texttt{compare}, which is a program to annotate the difference between an image mathematically and visually.\\
 
-The following example (See Figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, there is a difference for the colors, the plot in top-left ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the plot in top-right ($rgb = 210, 182, 255$). The plot in bottom shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
+The following example (See Figure \ref{chapter5.1}) are drawn two rotated sinc function, where the colors of the surface are close to each other and cannot be distinguish by human eyes. However, the colors of the two surfaces are different. the plot in top-left ($rgb = 211, 182, 255$) has one color pixel higher on red channel than the plot in top-right ($rgb = 210, 182, 255$). The plot in bottom shows the difference, the region filled by red color is the difference, which is true because the color of the surface is different, the box and labels which have lighter color because they are mathematically and visually identical to each other. \\
 
 \begin{figure}[h!]
 	\begin{center}
 		\includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_01.pdf}
 		\includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_02.pdf}
 		\includegraphics[height = 7cm, width = 7cm]{figure/Chapter5_example_03.pdf}
-		\caption{The left plot looks identical to the plot at middle by human eyes, however, there is a tiny difference at the color of the surface, which been detected by the software, the red color indicated the difference.}
+		\caption{The left plot looks identical to the plot at right by human eyes. However, The colors of the surfaces are tiny difference, which been detected by the software, the red color indicated the difference.}
 		\label{chapter5.1}
 	\end{center}
 \end{figure}
@@ -898,11 +893,11 @@ The Figure \ref{chapter5.2} and Figure \ref{chapter5.3} shows all the \texttt{pe
 
 
 \chapter{Example}
-The \texttt{persp()} plot and \texttt{filled.contour()} plot are now supported by \textbf{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \textbf{graphics} package now is able to reproduce by \texttt{grid.echo()} on \textbf{grid}. The advantage of \textbf{grid} is \textbf{grid} is more flexible than \textbf{graphics}. For example, a plot drawn by \textbf{grid} can record the viewport structure and we may draw and edit any plot features within different viewport easily.
+The \texttt{persp()} plot and \texttt{filled.contour()} plot are now supported by \textbf{gridGraphics}. This means most of the plots that drawn by \texttt{persp()} and \texttt{filled.contour()} by \textbf{graphics} package now is able to reproduce by \texttt{grid.echo()} on \textbf{grid}. The advantage of \textbf{grid} is it is more flexible than \textbf{graphics}. For example, a plot drawn by \textbf{grid} can record the viewport structure and we may draw and edit any plot features within different viewport easily.
 
 
 \section{Example to solution}
-The \texttt{persp()} and \texttt{filled.contour()} are now can been edited more easily since they are integrated to \textbf{gridGraphics}. Another Torus shape is drawn by \textbf{graphics} (See Figure \ref{Example_6.3}), it has been redrawn on \textbf{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since we are only drawing the surface, and the surface is formed by polygons. Then we can modify the features of the polygons easily by using \texttt{grid.edit}. In this example, we changed the white color (with opacity is 0) to purple (with opacity is 0.3).\\
+Another Torus shape is drawn by \textbf{graphics} (See Figure \ref{Example_6.3}), it has been redrawn on \textbf{grid} by \texttt{grid.echo()} and then we can listing the grobs of this plot. Since the surface is formed by polygons, we can modify the features of the polygons easily by using \texttt{grid.edit}. In this example, we changed the white color (with opacity is 0) to purple (with opacity is 0.3).\\
 \begin{Schunk}
 \begin{Sinput}
 > Torus_shape(col = 'NA', border = 'gray', box = FALSE)
@@ -929,7 +924,7 @@ GRID.polygon.4
 
 
 \newpage
-Another benefit that \textbf{grid} graphics provides is that we can get a grid graphical object. For example it is possible to get the colors of the filled contour plot which drawn by \textbf{grid} (see following codes and figure \ref{Example_6.1} ) and then transform these colors to the corresponding colors with Chroma removed in Hue Chroma Luminance (HCL) space.
+Another benefit that \textbf{grid} graphics provides is that we can get a grid graphical object. For example, it is possible to get the colors of the filled contour plot which drawn by \textbf{grid} (see following codes and figure \ref{Example_6.1} ) and then transform these colors to the corresponding colors with Chroma removed in Hue Chroma Luminance (HCL) space.
 \begin{Schunk}
 \begin{Sinput}
 > fill.contour.plot()
@@ -968,7 +963,7 @@ Another benefit that \textbf{grid} graphics provides is that we can get a grid g
 \section{An advance example}
 In the \textbf{graphics} package it is very normal to draw two or more plots in the plot region. However, it is not allowable to combine the \texttt{filled.contour()} with any other kind of plots together within one plot region, because \texttt{filled.contour()} will create the layout itself when it is called. Therefore, even if we specify a layout before plotting, the \texttt{filled.contour()} will overwrite the layout.\\
 
-The viewport structures of \textbf{grid} provides more flexibility than the layout of \textbf{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within one page. The idea is to create a viewport before drawing any plots (said Root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} will only modify the structure of its own viewport but not overwrite the Root viewport.\\
+The viewport structures of \textbf{grid} provide more flexibility than the layout of \textbf{graphics}, which allows us draw any other plots with \texttt{filled.contour()} within one page. The idea is to create a viewport before drawing any plots (said Root viewport), then push a viewport within the Root viewport for drawing a grid version of \texttt{filled.contour()} so that the \texttt{filled.contour()} will only modify the structure of its own viewport but not overwrite the Root viewport.\\
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[height = 16cm, width = 12cm]{figure/Chapter6_example_3_1.pdf}
@@ -983,7 +978,7 @@ The viewport structures of \textbf{grid} provides more flexibility than the layo
 \subsection{Basic concepts}
 The benefit that \textbf{gridGraphics} is that the \textbf{graphics} plot converted to \textbf{grid} that contains the \textbf{grobs} and \texbf{viewport} with names. The \texttt{gridSVG} \citep{gridSVG} package can export this plot to SVG format image, which it contains the information of the \textbf{grobs} and \textbf{viewports} names. Therefore, the \textbf{JavaScript} \citep{javascript} can interact with the SVG image more easily because the SVG elements contain every graphical element of the image.\\
 
-SVG (Scalable Vector Graphics) \citep{SVG} is a two-dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult to implement by \texttt{R} graphics system.\\
+SVG (Scalable Vector Graphics) \citep{SVG} is a two-dimensional vector image format with XML-based. A SVG format graphics can support for interactivity and animation which most of the \texttt{R} graphics system is not supported or it is difficult to implement.
 
 \begin{lstlisting}
 <circle id = "circle1" 
@@ -1012,7 +1007,7 @@ Oncircle.onmouseover = Onmove;
 		\includegraphics[height = 1.45cm, width = 1.6cm]{figure/svg/svgdemo0.PNG}
 		\hspace{4cm}
 		\includegraphics[height = 1.5cm, width = 1.5cm]{figure/svg/svgdemo1.PNG}
-		\caption{The left circle is created with svg imgae, the right circle is changed color to yellow then the mouse enter the region of the circle. }
+		\caption{The left circle is created with svg imgae, the right circle is changed color to yellow when the mouse enter the region of the circle. }
 		\label{Example_6.3.0}
 	\end{center}
 \end{figure}
@@ -1020,11 +1015,10 @@ Oncircle.onmouseover = Onmove;
 \newpage
 \subsection{The sinc surface}
 Since those actions cannot been achieved by R graphics system. The first step is to export the plot into
-SVG image. To do that, the \texttt{gridSVG} package is required. The following codes are used for export the SVG image (See Figure \ref{Example_6.3.01}). surface() is the ''wrap'' function for drawing the sinc surface perspective plot.
-The addFeatures() is creating the texts and the little boxes of color at the top-left region in the plot.
+SVG image. To do that, the \textbf{gridSVG} package is required. The following codes are used for export the SVG image (See Figure \ref{Example_6.3.01}). \texttt{surface()} is the ''wrap'' function for drawing the sinc surface perspective plot.
+The \texttt{addFeatures()} is creating the texts and the little boxes of color at the top-left region in the plot.
 It also creates some hidden objects which are all invisible unless the specific action is activated. A
-JavaScript is imported for supporting the animations by using grid.script(). Finally we exported
-the SVG image by \texttt{grid.export()}\\
+JavaScript is imported for supporting the animations by using \texttt{grid.script()}. Finally we used \texttt{grid.export()} to export the SVG image.
 \begin{lstlisting}[language = R]
 ## draw a surface
 surface()  
@@ -1211,6 +1205,7 @@ The updated \textbf{gridGraphics} package which supported the conversion of \tex
 
 
 \bibliography{reference/reference}
+\nocite{hearn1997m}
 \bibliographystyle{./reference/elsart-harv}
 \input{Appendix/Appendix.tex}
 

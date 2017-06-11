@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -16,6 +16,10 @@ Ferraiolo, J., Jun, F., Jackson, D., 2000. Scalable vector graphics (SVG) 1.0
 
 \bibitem[{Flanagan(2006)}]{javascript}
 Flanagan, D., 2006. JavaScript: the definitive guide. " O'Reilly Media, Inc.".
+
+\bibitem[{Hearn(1997)}]{hearn1997m}
+Hearn, D., 1997. M. pauline baker. Computer Graphics, Second Edition, Prentice
+  Hall International Editors .
 
 \bibitem[{{ImageMagick Studio LLC}(2017)}]{ImageMagick}
 {ImageMagick Studio LLC}, 2017. Imagemagick.
