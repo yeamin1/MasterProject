@@ -1,0 +1,57 @@
+\begin{thebibliography}{11}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Becker et~al.(2016)Becker, version~by Ray Brownrigg Thomas P~Minka,
+  and Deckmyn.}]{maps}
+Becker, R.~A., version~by Ray Brownrigg Thomas P~Minka, A. R. W.~R., Deckmyn.,
+  A., 2016. maps: Draw Geographical Maps. R package version 3.1.1.
+\newline\urlprefix\url{https://CRAN.R-project.org/package=maps}
+
+\bibitem[{Ferraiolo et~al.(2000)Ferraiolo, Jun, and Jackson}]{SVG}
+Ferraiolo, J., Jun, F., Jackson, D., 2000. Scalable vector graphics (SVG) 1.0
+  specification. iuniverse.
+
+\bibitem[{Flanagan(2006)}]{javascript}
+Flanagan, D., 2006. JavaScript: the definitive guide. " O'Reilly Media, Inc.".
+
+\bibitem[{Hearn(1997)}]{hearn1997m}
+Hearn, D., 1997. M. pauline baker. Computer Graphics, Second Edition, Prentice
+  Hall International Editors .
+
+\bibitem[{{ImageMagick Studio LLC}(2017)}]{ImageMagick}
+{ImageMagick Studio LLC}, 2017. Imagemagick.
+\newline\urlprefix\url{http://www.imagemagick.org/}
+
+\bibitem[{J(2006)}]{plotrix}
+J, L., 2006. Plotrix: a package in the red light district of r. R-News 6~(4),
+  8--12.
+
+\bibitem[{Murrell(2017)}]{gGpackage}
+Murrell, P., 2017. gridGraphics: Redraw Base Graphics Using 'grid' Graphics. R
+  package version 0.2.
+\newline\urlprefix\url{https://CRAN.R-project.org/package=gridGraphics}
+
+\bibitem[{Murrell and Potter(2017)}]{gridSVG}
+Murrell, P., Potter, S., 2017. gridSVG: Export 'grid' Graphics as SVG. R
+  package version 1.5-1.
+\newline\urlprefix\url{https://CRAN.R-project.org/package=gridSVG}
+
+\bibitem[{{R Core Team}(2017)}]{R2017}
+{R Core Team}, 2017. R: A Language and Environment for Statistical Computing. R
+  Foundation for Statistical Computing, Vienna, Austria.
+\newline\urlprefix\url{https://www.R-project.org/}
+
+\bibitem[{Sarkar(2008)}]{lattice}
+Sarkar, D., 2008. Lattice: Multivariate Data Visualization with R. Springer,
+  New York, iSBN 978-0-387-75968-5.
+\newline\urlprefix\url{http://lmdvr.r-forge.r-project.org}
+
+\bibitem[{Wickham(2009)}]{ggplot2}
+Wickham, H., 2009. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag
+  New York.
+\newline\urlprefix\url{http://ggplot2.org}
+
+\end{thebibliography}
