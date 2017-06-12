@@ -377,6 +377,7 @@ Some polygons that stay at ``behind'' cannot be seen, it is necessary to draw th
 \begin{Sinput}
 > orderTemp = cbind(xTmp, yTmp, 0, 1) %*% trans 
 > zdepth = orderTemp[, 4]
+> ## the zdepth of a set of 4 points of each polygon
 > ordering = order(zdepth, decreasing = TRUE)
 > head(ordering)
 \end{Sinput}
@@ -388,10 +389,10 @@ Some polygons that stay at ``behind'' cannot be seen, it is necessary to draw th
 Figure \ref{figure_3.2} shows how this method approximate to the solution. The top-left figure is drawn by plotting the transformed 2-dimensional points, the shape of the Perspective Plots is presented. The top-right figure is drawn by connecting the points line-by-line, the shape become more obvious. The bottom-left figure is drawn by using the \texttt{grid.polygon()}. By default, the origin order of the polygons is drawn along the x-axis, then along the y-axis. Clearly, the order is not correct. Finally, the bottom-right figure shows the true Perspective Plots by fixing the order. 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 7.0cm, width = 7.0cm]{figure/standalone_p_1.pdf}
-		\includegraphics[height = 7.0cm, width = 7.0cm]{figure/standalone_p_2.pdf}
-		\includegraphics[height = 7.0cm, width = 7.0cm]{figure/standalone_p_3.pdf}
-		\includegraphics[height = 7.0cm, width = 7.0cm]{figure/standalone_p_4.pdf}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_1.pdf}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_2.pdf}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_3.pdf}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/standalone_p_4.pdf}
 		\caption{The top-left figure is only plotting the transformed 2-dimensional points. The top-right figure is being drawn by connecting the points line-by-line. The top-right figure is drawn unorderly by using the \texttt{grid.polygon()}. Finally, the bottom-left figure is drawn in a correct order.}
 		\label{figure_3.2}
 	\end{center}
@@ -409,6 +410,7 @@ Where \textbf{d} is the dot product of \textbf{u} and \textbf{v}. \textbf{u} is 
 The color of each facet will be calculated by the color that is recorded from the graphics engine display list multiplied by the \textbf{shade}. Finally, the surface is drawn by filling the shaded colors to every facet.\\
 
 If the normal vector is perpendicular to the direction of the light source, then $d = 0$ and the \textbf{shade} will be close to 0. Therefore, the corresponding facets will become darker. The brightness and darkness will depend on the value of the \textbf{s}. If \textbf{s} close to 0, the \textbf{Shade} will be close to 1. Therefore, it will look like a non-shading plot. Similarly, if the \textbf{s} gets larger, the \textbf{Shade} close to 0 and the plot will look darker.
+
 \begin{Schunk}
 \begin{Sinput}
 > trans = persp(x, y, z, theta=30, phi = 20, expand = 0.5,
@@ -419,10 +421,11 @@ If the normal vector is perpendicular to the direction of the light source, then
 \end{Sinput}
 \end{Schunk}
 
+
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[height = 6.5cm, width = 7.0cm]{figure/Lighting_1.pdf}
-		\includegraphics[height = 6.5cm, width = 7.0cm]{figure/Lighting_2.pdf}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/Lighting_1.pdf}
+		\includegraphics[height = 7.5cm, width = 7.5cm]{figure/Lighting_2.pdf}
 		\caption{Adding a light source to the perspective plot from the same angle of view. The left plot is origin plot without shading, where the right plot is being shaded.}
 		\label{figure_3.3}
 	\end{center}
@@ -849,7 +852,7 @@ upViewport(depth)
 		\includegraphics[height = 5cm, width = 5cm]{figure/filledContour_origin_02.pdf}
 		\includegraphics[height = 5cm, width = 6cm]{figure/filledContour_origin_03.pdf}
 		\includegraphics[height = 5cm, width = 6cm]{figure/filledContour_origin_01.pdf}
-		\caption{The top-left filled contour is plotted by \textbf{grid}, top-right plot is the failed emulation of the \texttt{filled.contour()} by \texttt{grid.echo()}. The bottom plot is emulating the \texttt{filled.contour()} by \texttt{grid.echo()} successfully, after we integrated to the \textbf{gridGraphics}}
+		\caption{The top-left filled contour is plotted by \textbf{grid}, top-right plot is the failed emulation of the \texttt{filled.contour()} by \texttt{grid.echo()}. The bottom plot is emulating the \texttt{filled.contour()} by \texttt{grid.echo()} successfully, after we integrated to the \textbf{gridGraphics} package.}
 		\label{figure_4.6}
 	\end{center}
 \end{figure}
