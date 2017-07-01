@@ -1,0 +1,48 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+
+\title{A Simple Beamer Knitr Example}
+\author{Guy Yollin}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\maketitle
+
+\begin{frame}[fragile]
+\frametitle{Beamer slides can have code chucks}
+Slides with code chunks need to be marked as "fragile"
+<<>>=
+set.seed(1)
+x <- rnorm(100)
+mean(x)
+@
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{A graph from R}
+<<Intro_0, echo=FALSE, results=hide>>=
+pdf('intro_%0d.pdf', onefile = FALSE)
+dev.control('enable')
+@
+<<Intro_1>>=
+plot(cars$dist ~ cars$speed, pch = 16, 
+     col = 'orange', main = 'Distance vs Speed')
+library(gridGraphics)
+grid.echo()
+@
+<<Intro_2, echo=FALSE, results=hide>>=
+dev.off()
+@
+\begin{center}
+\includegraphics[height = 5.5cm, width = 5.5cm]<1>{intro_1.pdf}
+\includegraphics[height = 5.5cm, width = 5.5cm]<2>{intro_2.pdf}
+\end{center}
+
+\end{frame}
+
+
+
+
+\end{document}
