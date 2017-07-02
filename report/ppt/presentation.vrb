@@ -1,4 +1,22 @@
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
+\frametitle{Final solution}
 
-This statement requires citation \cite{p1}.
+\only<1>{
+  \texttt{> par(mfrow = c(1,2))}\\
+  \texttt{> Volcano.persp()}\\
+  \texttt{> box('outer', col = 'red')}\\
+
+  \begin{center}
+  \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_1.pdf}
+  \end{center}
+}
+
+\only<2>{
+  \texttt{> par(mfrow = c(1,2))}\\
+  \texttt{> Volcano.persp()}\\
+  \texttt{> box('outer', col = 'red')}\\
+  \texttt{> volcano\_filled.contour()}\\
+  \begin{center}
+  \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_2.pdf}
+  \end{center}
+}
+

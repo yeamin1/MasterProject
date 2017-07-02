@@ -1,31 +1,18 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Beamer Presentation
-% LaTeX Template
-% Version 1.0 (10/11/12)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
-
 \documentclass{beamer}
 
+
+
 \usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+
 \lstset{ %
   basicstyle=\fontsize{9}{11}\ttfamily,
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
-  breaklines=true,                 % sets automatic line breaking
   captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{codegreen},    % comment style
-  frame=tb,	                       % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
   showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
@@ -33,6 +20,8 @@
   showtabs=false,                  % show tabs within strings adding particular underscores
   tabsize=2,	                     % sets default tabsize to 2 spaces
 }
+
+
 
 
 
@@ -107,7 +96,7 @@ Emulate the \texttt{persp()} plot and \texttt{filled.contour()} plot on \textbf{
 } % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Zhijian Wen} % Your name
-\institute[UCLA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\institute[UOA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 University of Auckland \\ % Your institution for the title page
 \medskip
@@ -201,7 +190,7 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 \end{lstlisting}
 
 \begin{columns}[c]
-\column{0.4\textwidth}
+\column{0.3\textwidth}
 \begin{lstlisting}[language = R]
 "C_plot_new"    
 "palette2"      
@@ -214,10 +203,8 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 \end{lstlisting}
 
 
-\column{0.4\textwidth}
-\begin{center}
-\includegraphics[height = 5.5cm, width = 5.5cm]{plot/intro_1.pdf}
-\end{center}
+\column{0.6\textwidth}
+\includegraphics[height = 6cm, width = 6cm]{plot/intro_1.pdf}
 
 \end{columns}
 
@@ -281,122 +268,377 @@ dev.off()
 \end{frame}
 
 
+%------------------------------------------------
 
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+\begin{frame}[fragile]
+\frametitle{Structure of the \textbf{C} code (\textif{pointers})}
+\begin{block}{The problems}
+\begin{lstlisting}{C}
+static int LimitCheck(double *lim, double *c, double *s)
+{
+    if(!R_FINITE(lim[0]) || !R_FINITE(lim[1]) || 
+          lim[0] >= lim[1])
+    return 0;
+    *s = 0.5 * fabs(lim[1] - lim[0]) ;
+    *c = 0.5 * (lim[1] + lim[0]) ;
+    return 1;
+}
+...
+if(!LimitCheck(REAL(xlim), &xc, &xs))
+	error(_("invalid 'x' limits"));
+\end{lstlisting}
 \end{block}
 
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
 \end{frame}
+
 
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+\begin{frame}[fragile]
+\frametitle{Structure of the \textbf{C} code (\textif{pointers})}
+\begin{block}{Solution}
+\begin{lstlisting}{C}
+LimitCheck = function(lim){
+    if(!is.finite(lim[1]) || !is.finite(lim[2]) 
+            || lim[1] >= lim[2])
+        stop("invalid limits");
+      
+    s = 0.5 * abs (lim[2] - lim[1])
+    c = 0.5 * (lim[2] + lim[1])
+    c(s , c)
+}
+xs = LimitCheck(xr)[1]
+xc = LimitCheck(xr)[2]
+...
+\end{lstlisting}
+\end{block}
 
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
+\end{frame}
 
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{How much \textbf{C} codes?}
+\begin{center}
+\includegraphics{plot/code.png}
+\end{center}
+\end{frame}
+
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Copy or not copy?}
+\begin{block}{Why just 'copy'?}
+FILL IT!!
+\end{block}
+
+\begin{block}{Why just not 'copy'?}
+FILL IT!!
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Why just not 'copy'?}
+
+\begin{columns}[c]
+\column{0.4\textwidth}
+\begin{lstlisting}[language = R]
+volcano_filled.contour()
+xx = recordPlot()
+info = xx[[1]][[12]][[2]]
+
+dim(info[[4]])
+[1] 87 61
+
+length(info[[5]])
+[1] 22
+ 
+\end{lstlisting}
+\column{0.6\textwidth}
+\begin{center}
+\includegraphics{plot/filled_example_1}
+\end{center}
+
+\end{columns}
+There are at most (87 - 1) * (61 - 1) * (22 - 1) =  108360 polygons.
+
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Why just not 'copy'?}
+
+\begin{columns}[c]
+\column{0.4\textwidth}
+\begin{lstlisting}[language = R]
+volcano_filled.contour()
+
+## time comparison
+## time for loop version
+system.time(grid.echo())
+# user system elapsed
+# 10.03 0.23 10.32
+
+## time for vectorizetion
+system.time(grid.echo())
+# user system elapsed
+# 1.28 0.53 1.82
+\end{lstlisting}
+
+\column{0.6\textwidth}
+\begin{center}
+\includegraphics{plot/filled_example_1}
+\end{center}
 
 \end{columns}
 \end{frame}
 
-%------------------------------------------------
-\section{Second Section}
+
+
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\begin{frame}[fragile]
+\frametitle{Any difference?}
+\begin{lstlisting}[language = R]
+## left plot
+Sinc_Curve(col = ??)
+## right plot
+Sinc_Curve(col = ??)
+\end{lstlisting}
+
+\begin{columns}[c]
+\column{0.5\textwidth}
+\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_1.pdf}
+
+\column{0.5\textwidth}
+\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_2.pdf}
+
+\end{columns}
 \end{frame}
 
+
+
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+\begin{frame}[fragile]
+\frametitle{Answers}
+
+\texttt{\textcolor{codegreen}{\#\# color for left plot}}\\
+\texttt{col = rgb(0, \textcolor{red}{191}, 255, maxColorValue = 255)} \\
+
+\texttt{\textcolor{codegreen}{\#\# extra diff color for right plot}}\\
+\texttt{col = rgb(0, \textcolor{red}{190}, 255, maxColorValue = 255)} \\
+
+\begin{center}
+\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_3.pdf}
+\end{center}
+
 \end{frame}
 
+
 %------------------------------------------------
 
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
+\begin{frame}[fragile]
+\frametitle{The solustions}
+
+\texttt{\textcolor{codegreen}{\#\# color for left plot}}\\
+\texttt{col = rgb(0, \textcolor{red}{191}, 255, maxColorValue = 255)} \\
+
+\texttt{\textcolor{codegreen}{\#\# extra diff color for right plot}}\\
+\texttt{col = rgb(0, \textcolor{red}{190}, 255, maxColorValue = 255)} \\
+
+\begin{center}
+\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_3.pdf}
+\end{center}
+
 \end{frame}
 
-%------------------------------------------------
 
-\begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
 
 %------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}
-\frametitle{References}
-\footnotesize{
-\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-\bibitem[Smith, 2012]{p1} John Smith (2012)
-\newblock Title of the publication
-\newblock \emph{Journal Name} 12(3), 45 -- 678.
-\end{thebibliography}
+<<persp_solution, echo = FALSE, results = hide>>=
+Torus = function(theta=120, phi = 20, expand = 0.5, col = 'orange ',
+                      box = TRUE, border = 'NA', 
+                      ticktype = 'simple', nticks = 5, ...) {
+  x = seq(-1,1,length = 45)
+  y = seq(-1,1,length = 45)
+  f <- function(x, y) { (0.4^2-(0.6-(x^2+y^2)^0.5)^2)^0.5}
+  z <- outer(x, y, f)
+  nrz <- nrow(z)
+  ncz <- ncol(z)
+  # color
+  jet.colors <- colorRampPalette( c("yellow",'gold', "orange") )
+  nbcol <- 100
+  color <- jet.colors(nbcol)
+  zfacet <- z[-1, -1] + z[-1, -ncz] + z[-nrz, -1] + z[-nrz, -ncz]
+  facetcol <- cut(zfacet, nbcol)
+  
+  par(mar = c(2,2,2,2))
+  expand = 0.5
+  persp(x, y, z, theta = theta, 
+                 phi = phi, expand = expand, 
+                 col = color[facetcol], box = box, border = border, 
+                 ticktype = ticktype, nticks = nticks, ...)
+  
 }
+
+pdf('plot/persp_torus_%d.pdf', onefile = FALSE)
+dev.control('enable')
+Torus()
+grid.echo()
+dev.off()
+
+
+pdf('plot/filled_solution_%d.pdf', onefile = FALSE)
+dev.control('enable')
+
+filled.contour(cos(r^2)*exp(-r/(2*pi)))
+grid.echo()
+dev.off()
+@
+
+\begin{frame}[fragile]
+\frametitle{Final solution}
+
+\only<1>{
+  \texttt{> Torus()}\\
+  \begin{center}
+  \includegraphics[height = 8cm, width = 8cm]{plot/persp_torus_1.pdf}
+  \end{center}
+}
+
+\only<2>{
+  \texttt{> grid.echo()} \\
+  \begin{center}
+  \includegraphics[height = 8cm, width = 8cm]{plot/persp_torus_2.pdf}
+  \end{center}
+}
+
 \end{frame}
 
 %------------------------------------------------
 
-\begin{frame}
-\Huge{\centerline{The End}}
+\begin{frame}[fragile]
+\frametitle{Final solution}
+
+\only<1>{
+  \texttt{> filled.contour(cos(r^2)*exp(-r/(2*pi)))}\\
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/filled_solution_1.pdf}
+  \end{center}
+}
+
+\only<2>{
+  \texttt{> grid.echo()} \\
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/filled_solution_2.pdf}
+  \end{center}
+}
+
 \end{frame}
 
-%----------------------------------------------------------------------------------------
+%------------------------------------------------
+
+
+<<R3, echo = FALSE, results = hide>>=
+x = 10*1:nrow(volcano)
+y = 10*1:ncol(volcano)
+volcano_filled.contour = function()
+{
+    filled.contour(x, y, volcano, color = terrain.colors,
+        plot.title = title(main = "The Topography of Maunga Whau",
+        xlab = "Meters North", ylab = "Meters West"),
+        plot.axes = { axis(1, seq(100, 800, by = 100))
+        axis(2, seq(100, 600, by = 100)) },
+        key.title = title(main = "Height\n(meters)"),
+        key.axes = axis(4, seq(90, 190, by = 10)))
+}
+
+Volcano.persp.svg = function(theta = 110, phi = 60)
+{
+  z <- 2 * volcano
+  x <- 10 * (1:nrow(z))
+  y <- 10 * (1:ncol(z))
+  z0 <- min(z) - 20
+  z <- rbind(z0, cbind(z0, z, z0), z0)
+  x <- c(min(x) - 1e-10, x, max(x) + 1e-10)
+  y <- c(min(y) - 1e-10, y, max(y) + 1e-10)
+  fill <- matrix("green3", nrow = nrow(z)-1, ncol = ncol(z)-1)
+  fill[ , i2 <- c(1,ncol(fill))] <- "green"
+  fill[i1 <- c(1,nrow(fill)) , ] <- "green"
+  fcol <- fill
+  zi <- volcano[ -1,-1] + volcano[ -1,-61] +
+    volcano[-87,-1] + volcano[-87,-61]  ## / 4
+  fcol[-i1,-i2] <-
+    terrain.colors(20)[cut(zi,
+                           stats::quantile(zi, seq(0,1, length.out = 21)),
+                           include.lowest = TRUE)]
+  persp(x, y, 2*z, theta = theta, phi = phi, col = fcol, scale = FALSE,
+        ltheta = -120, shade = 0.4, border = NA, box = FALSE)
+}
+
+Volcano.persp = function()
+{
+    par(mar = c(0, 0, 0, 0))
+    Volcano.persp.svg(theta = 0, phi = 60)
+}
+
+pdf('plot/demo_example_%d.pdf', width = 10, height = 5, onefile = FALSE)
+par(mfrow = c(1,2))
+Volcano.persp()
+box('outer', col = 'red')
+
+par(mar = c(5,5,5,5))
+volcano_filled.contour()
+box('outer', col = 'red')
+dev.off()
+
+
+pdf('plot/demo_grid_example_%d.pdf', width = 10, height = 5, onefile = FALSE)
+
+grid.newpage()
+vp = viewport(y=1, height=.5, just="top", width = 1)
+pushViewport(vp)
+
+pushViewport(viewport(x = 0.56, y=0.25, height=.5, width = 1))
+
+
+@
+
+\begin{frame}[fragile]
+\frametitle{Final solution}
+
+\only<1>{
+  \texttt{> par(mfrow = c(1,2))}\\
+  \texttt{> Volcano.persp()}\\
+  \texttt{> box('outer', col = 'red')}\\
+
+  \begin{center}
+  \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_1.pdf}
+  \end{center}
+}
+
+\only<2>{
+  \texttt{> par(mfrow = c(1,2))}\\
+  \texttt{> Volcano.persp()}\\
+  \texttt{> box('outer', col = 'red')}\\
+  \texttt{> volcano\_filled.contour()}\\
+  \begin{center}
+  \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_2.pdf}
+  \end{center}
+}
+
+\end{frame}
+
+
 
 \end{document}
