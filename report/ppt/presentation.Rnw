@@ -121,14 +121,43 @@ University of Auckland \\ % Your institution for the title page
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{What is \texttt{gridGraphics}}
 
-\subsection{Introduction} 
-\begin{frame}
+\begin{frame}[fragile]
+
 \frametitle{Introduction}
-\begin{block}{What is \textbf{gridGraphics}...}
-\textbf{gridGraphics} is the \textbf{R} package that convert \textbf{graphics}-plot to \textbf{grid}-plot.
-\end{block}
+What is \textbf{graphics} and what is \textbf{grid} ?
+\begin{center}
+\includegraphics[width = 8cm, height = 6cm]{plot/grid_and_graphics.PNG}
+\end{center}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Introduction}
+Then, what is \textbf{gridGraphics}? \\
+
+\begin{enumerate}
+	\item A \textbf{R} package 
+	\item A ``translator'' that translates a \textbf{graphics}-plot to a \textbf{grid}-plot 
+	\item With a main function \texttt{grid.echo()}.
+\end{enumerate}
+
+\end{frame}
+
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+
+\frametitle{Introduction}
+
+What is \textbf{gridGraphics}?
+\begin{center}
+\includegraphics[width = 8cm, height = 6cm]{plot/grid_graphics.png}
+\end{center}
 
 \end{frame}
 
