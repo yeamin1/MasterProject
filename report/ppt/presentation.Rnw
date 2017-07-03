@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
 
-
+\usepackage{amsmath}
 \usepackage{listings}
 \usepackage{color}
 
@@ -165,19 +165,17 @@ What is \textbf{gridGraphics}?
 
 \begin{frame}[fragile]
 \frametitle{Example}
-<<Intro_0, echo=FALSE, results=hide>>=
+<<Intro_0, echo=FALSE, eval = FALSE, results=hide>>=
 pdf('plot/intro_%0d.pdf', onefile = FALSE)
 dev.control('enable')
 @
-<<Intro_1>>=
+<<Intro_1, eval=FALSE>>=
 plot(cars$dist ~ cars$speed, pch = 16, 
      col = 'orange', main = 'Distance vs Speed')
 library(gridGraphics)
 grid.echo()
 @
-<<Intro_2, echo=FALSE, results=hide>>=
-dev.off()
-@
+
 \begin{center}
   \includegraphics[height = 5.5cm, width = 5.5cm]{plot/intro_1.pdf}
   \includegraphics[height = 5.5cm, width = 5.5cm]{plot/intro_2.pdf}
@@ -188,12 +186,30 @@ dev.off()
 
 \begin{frame}[fragile]
 \frametitle{The problem}
-<<Intro_3, echo=TRUE>>=
-x = y = seq(-4*pi, 4*pi, len = 27)
-r = sqrt(outer(x^2, y^2, "+"))
-filled.contour(cos(r^2)*exp(-r/(2*pi)))
-grid.echo()
+<<Intro_3, echo=FALSE>>=
+Persian_Rug_Art = function(){
+  x = y = seq(-4*pi, 4*pi, len = 27)
+  r = sqrt(outer(x^2, y^2, "+"))
+  filled.contour(cos(r^2)*exp(-r/(2*pi)))
+}
+
+Sinc_Curve = function(){
+  x = seq(-10, 10, length= 30)
+  y = x
+  f = function(x, y) { r = sqrt(x^2+y^2); 10 * sin(r)/r }
+  z = outer(x, y, f)
+  z[is.na(z)] = 1
+  
+  persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "lightblue",
+      ltheta = 120, shade = 0.75, ticktype = "detailed",
+      xlab = "X", ylab = "Y", zlab = "Sinc( r )")
+  }
+
 @
+<<Intro_4, eval = FALSE>>=
+Persian_Rug_Art() ##filled.contour()
+grid.echo()
+@ 
 \begin{center}
   \includegraphics[height = 5.5cm, width = 5.5cm]{plot/report_fill_1}
   \includegraphics[height = 5.5cm, width = 5.5cm]{plot/report_fill_2}
@@ -201,16 +217,41 @@ grid.echo()
 
 \end{frame}
 
+
+\begin{frame}[fragile]
+<<Intro_4, eval = FALSE>>=
+Sinc_Curve() ##persp()
+grid.echo()
+@
+\begin{center}
+  \includegraphics[height = 5.5cm, width = 5.5cm]{plot/persp_1}
+  \includegraphics[height = 5.5cm, width = 5.5cm]{plot/blank}
+\end{center}
+  
+\end{frame}
+
 %------------------------------------------------
+
+
+
 
 \begin{frame}[fragile]
 \frametitle{How \textbf{gridGraphics} works?}
+\begin{center}
+  \includegraphics[height = 7.2cm, width = 12.2cm]{plot/display_list.PNG}
+\end{center}
+\end{frame}
 
-<<Intro_3, echo=FALSE>>=
+%------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{How \textbf{gridGraphics} works?}
+
+<<Intro_3, echo=FALSE, results=hide, eval = FALSE>>=
 pdf('plot/intro_%0d.pdf', onefile = FALSE)
 dev.control('enable')
 plot(cars$dist ~ cars$speed, pch = 16, 
      col = 'orange', main = 'Distance vs Speed')
+dev.off()
 @
 
 \begin{lstlisting}[language = R]
@@ -240,20 +281,21 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 \end{frame}
 
 
+
 %------------------------------------------------
 
 \begin{frame}[fragile]
 \frametitle{How \textbf{gridGraphics} works?}
-<<Intro_3, echo=FALSE>>=
+<<Intro_3, echo=FALSE, eval = FALSE>>=
 pdf('plot/persp_%0d.pdf', onefile = FALSE)
 dev.control('enable')
 par(mar = c(0,2,0,2))
 Sinc_Curve = function(){
-  x <- seq(-10, 10, length= 30)
-  y <- x
-  f <- function(x, y) { r <- sqrt(x^2+y^2); 10 * sin(r)/r }
-  z <- outer(x, y, f)
-  z[is.na(z)] <- 1
+  x = seq(-10, 10, length= 30)
+  y = x
+  f = function(x, y) { r = sqrt(x^2+y^2); 10 * sin(r)/r }
+  z = outer(x, y, f)
+  z[is.na(z)] = 1
   
   persp(x, y, z, theta = 30, phi = 30, expand = 0.5, col = "lightblue",
       ltheta = 120, shade = 0.75, ticktype = "detailed",
@@ -267,11 +309,18 @@ Sinc_Curve()
 <<Problem_2, echo=FALSE, results=hide>>=
 dev.off()
 @
-\begin{center}
+
+\begin{columns}
+
+\column{0.4\textwidth}
+\begin{flalign*}
+f(x, y) = \frac{10sin(\sqrt{x^2 + y^2})}{\sqrt{x^2 + y^2}}
+\end{flalign*}
+
+\column{0.6\textwidth}
   \includegraphics[height = 7.5cm, width = 7.5cm]{plot/persp_1}
-\end{center}
 
-
+\end{columns}
 
 \end{frame}
 
@@ -284,14 +333,31 @@ pdf('plot/persp_2.pdf', onefile = FALSE)
 dev.control('enable')
 Sinc_Curve()
 @
-<<Problem_1, echo=TRUE>>=
-x <- recordPlot()
-lapply(x[[1]], function(y) y[[2]][[1]]$name)
-@
 <<Intro_2, echo=FALSE, results=hide>>=
 dev.off()
 @
 \begin{center}
+\begin{lstlisting}[language = R]
+> x = recordPlot()
+> persp_call = x[[1]][[3]]
+
+## Display the x coordinates
+> head(persp_call[[2]])
+[1] -10.00  -9.31  -8.62  -7.93  -7.24  -6.55
+
+## Display the y coordinates
+> head(persp_call[[3]])
+[1] -10.00  -9.31  -8.62  -7.93  -7.24  -6.55
+
+## Display the z coordinates
+> persp_call[[4]][1:3, 1:3]
+     [,1] [,2]  [,3]
+[1,] 0.71 0.65  0.45
+[2,] 0.65 0.43  0.10
+[3,] 0.45 0.10 -0.30
+
+\end{lstlisting}
+
 \end{center}
 
 \end{frame}
@@ -357,20 +423,42 @@ xc = LimitCheck(xr)[2]
 
 
 %------------------------------------------------
+<<Rcopy, echo = FALSE, results=hide>>=
+pdf('plot/Rcopy.pdf', width = 7, height = 3)
+dev.control('enable')
+
+plot.new()
+plot.window(x = c(0, 1), y = c(0.2, 0.6))
+graphics::segments(x0 = 0, y0 = 0.5, x1 = 1, y1 = 0.5, lty = 1331, lwd = 5)
+graphics::segments(x0 = 1, y0 = 0.3, x1 = 0, y1 = 0.3, lty = 1331, lwd = 5)
+dev.off()
+
+@
 
 \begin{frame}[fragile]
 \frametitle{Copy or not copy?}
-\begin{block}{Why just 'copy'?}
-FILL IT!!
-\end{block}
+Why just 'copy'?
 
-\begin{block}{Why just not 'copy'?}
-FILL IT!!
-\end{block}
+\begin{enumerate}
+  \item To make sure the \textbf{graphics}-plot is identical to the \textbf{grid}-plot\\~\\
+\end{enumerate}
+
+\texttt{segments(\textcolor{red}{x0 = 0}, 0.5, \textcolor{red}{x1 = 1}, 0.5, lty = 1331, lwd = 5)}
+\texttt{segments(\textcolor{red}{x0 = 1}, 0.5, \textcolor{red}{x1 = 0}, 0.5, lty = 1331, lwd = 5)}
+\includegraphics[height = 3cm, width = 7cm]{plot/Rcopy.pdf}
+
+Why just not 'copy'?
+\begin{enumerate}
+  \item Speeding
+\end{enumerate}
+
+
 \end{frame}
 
 
 %------------------------------------------------
+
+
 
 \begin{frame}[fragile]
 \frametitle{Why just not 'copy'?}
@@ -411,14 +499,17 @@ There are at most (87 - 1) * (61 - 1) * (22 - 1) =  108360 polygons.
 \begin{lstlisting}[language = R]
 volcano_filled.contour()
 
-## time comparison
-## time for loop version
+
+## For loop 
 system.time(grid.echo())
+
 # user system elapsed
 # 10.03 0.23 10.32
 
-## time for vectorizetion
+
+## vectorizetion
 system.time(grid.echo())
+
 # user system elapsed
 # 1.28 0.53 1.82
 \end{lstlisting}
@@ -431,6 +522,52 @@ system.time(grid.echo())
 \end{columns}
 \end{frame}
 
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Solution to persp}
+\includegraphics[height = 7cm, width = 12cm]{plot/persp_step_by_step.png}
+
+\end{frame}
+
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Final solution}
+
+\only<1>{
+  The points...
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_1.pdf}
+  \end{center}
+}
+
+\only<2>{
+  The lines...
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_2.pdf}
+  \end{center}
+}
+
+\only<3>{
+  The polygons(unordered)...
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_3.pdf}
+  \end{center}
+}
+
+\only<4>{
+  And the polygons(Solution)
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_4.pdf}
+  \end{center}
+}
+
+\end{frame}
 
 
 %------------------------------------------------
@@ -474,27 +611,9 @@ Sinc_Curve(col = ??)
 \end{frame}
 
 
-%------------------------------------------------
-
-\begin{frame}[fragile]
-\frametitle{The solustions}
-
-\texttt{\textcolor{codegreen}{\#\# color for left plot}}\\
-\texttt{col = rgb(0, \textcolor{red}{191}, 255, maxColorValue = 255)} \\
-
-\texttt{\textcolor{codegreen}{\#\# extra diff color for right plot}}\\
-\texttt{col = rgb(0, \textcolor{red}{190}, 255, maxColorValue = 255)} \\
-
-\begin{center}
-\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_3.pdf}
-\end{center}
-
-\end{frame}
-
-
 
 %------------------------------------------------
-<<persp_solution, echo = FALSE, results = hide>>=
+<<persp_solution, echo = FALSE, results = hide, eval = FALSE>>=
 Torus = function(theta=120, phi = 20, expand = 0.5, col = 'orange ',
                       box = TRUE, border = 'NA', 
                       ticktype = 'simple', nticks = 5, ...) {
@@ -578,7 +697,7 @@ dev.off()
 %------------------------------------------------
 
 
-<<R3, echo = FALSE, results = hide>>=
+<<R3, echo = FALSE, results = hide, eval = FALSE>>=
 x = 10*1:nrow(volcano)
 y = 10*1:ncol(volcano)
 volcano_filled.contour = function()
@@ -631,20 +750,43 @@ volcano_filled.contour()
 box('outer', col = 'red')
 dev.off()
 
+volcano_filled.contours = function()
+{
+    filled.contour(x, y, volcano, color = terrain.colors,
+        plot.axes = { axis(1, seq(100, 800, by = 100))
+        axis(2, seq(100, 600, by = 100)) },
+        key.title = (main = "Height\n(meters)"),
+        key.axes = axis(4, seq(90, 190, by = 20)))  }
 
-pdf('plot/demo_grid_example_%d.pdf', width = 10, height = 5, onefile = FALSE)
+
+pdf('plot/demo_grid_example_3.pdf', width = 14, height = 7, onefile = FALSE)
 
 grid.newpage()
-vp = viewport(y=1, height=.5, just="top", width = 1)
+vp = viewport(x = 0.22, y = 0.6, width = 1, height = 0.65)
 pushViewport(vp)
+grid.echo(Volcano.persp, newpage=FALSE)
+upViewport()
 
-pushViewport(viewport(x = 0.56, y=0.25, height=.5, width = 1))
+vp = viewport(x = 0.72, y = 0.5, width = 0.5, height = 0.7)
+pushViewport(vp)
+grid.echo(volcano_filled.contours, newpage=FALSE)
+upViewport()
+
+grid.text(label = 'The Shape and Topography of Maunga Whau', 
+          x = 0.5, y = 0.9, 
+          gp = gpar(cex = 1.5, font = 2))
+
+grid.rect(gp = gpar(col = 'red'))
+dev.off()
+
+
+
 
 
 @
 
 \begin{frame}[fragile]
-\frametitle{Final solution}
+\frametitle{Why is \textbf{grid}?}
 
 \only<1>{
   \texttt{> par(mfrow = c(1,2))}\\
@@ -667,6 +809,44 @@ pushViewport(viewport(x = 0.56, y=0.25, height=.5, width = 1))
 }
 
 \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Why is \textbf{grid}?}
+
+\begin{lstlisting}[language = R]
+> vp = viewport(...)
+> pushViewport(vp)
+> grid.echo(Volcano.persp, newpage=FALSE)
+> upViewport()
+\end{lstlisting}
+
+\begin{center}
+  \includegraphics[height = 5cm, width = 10cm]{plot/demo_grid_example_3.pdf}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Why is \textbf{grid} (Advance)?}
+
+\begin{lstlisting}[language = R]
+> surface()
+> addFeatures()
+> grid.script(file = "example.js")
+> grid.export("example.svg")
+
+\end{lstlisting}
+
+\begin{center}
+  \includegraphics[height = 6cm, width = 7.5cm]{plot/origin_1.PNG}
+\end{center}
+
+\end{frame}
+
+
+
 
 
 

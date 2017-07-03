@@ -1,22 +1,14 @@
-\frametitle{Final solution}
+\frametitle{Why is \textbf{grid} (Advance)?}
 
-\only<1>{
-  \texttt{> par(mfrow = c(1,2))}\\
-  \texttt{> Volcano.persp()}\\
-  \texttt{> box('outer', col = 'red')}\\
+\begin{lstlisting}[language = R]
+> surface()
+> addFeatures()
+> grid.script(file = "example.js")
+> grid.export("example.svg")
 
-  \begin{center}
-  \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_1.pdf}
-  \end{center}
-}
+\end{lstlisting}
 
-\only<2>{
-  \texttt{> par(mfrow = c(1,2))}\\
-  \texttt{> Volcano.persp()}\\
-  \texttt{> box('outer', col = 'red')}\\
-  \texttt{> volcano\_filled.contour()}\\
-  \begin{center}
-  \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_2.pdf}
-  \end{center}
-}
+\begin{center}
+  \includegraphics[height = 6cm, width = 7.5cm]{plot/origin_1.PNG}
+\end{center}
 
