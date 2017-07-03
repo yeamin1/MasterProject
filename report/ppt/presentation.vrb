@@ -1,14 +1,6 @@
-\frametitle{Why is \textbf{grid} (Advance)?}
-
-\begin{lstlisting}[language = R]
-> surface()
-> addFeatures()
-> grid.script(file = "example.js")
-> grid.export("example.svg")
-
-\end{lstlisting}
 
 \begin{center}
-  \includegraphics[height = 6cm, width = 7.5cm]{plot/origin_1.PNG}
+\Huge Any Question(s)?
 \end{center}
+
 

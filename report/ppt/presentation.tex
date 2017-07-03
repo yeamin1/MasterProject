@@ -112,14 +112,18 @@ University of Auckland \\ % Your institution for the title page
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\begin{center}
+  \Huge Introduction
+\end{center}
+\end{frame}
 
 %------------------------------------------------
 
@@ -200,6 +204,7 @@ What is \textbf{gridGraphics}?
 
 
 \begin{frame}[fragile]
+\frametitle{The problem}
 \begin{Schunk}
 \begin{Sinput}
 > Sinc_Curve() ##persp()
@@ -213,13 +218,20 @@ What is \textbf{gridGraphics}?
   
 \end{frame}
 
-%------------------------------------------------
-
-
 
 
 \begin{frame}[fragile]
-\frametitle{How \textbf{gridGraphics} works?}
+\begin{center}
+  \Huge{The graphics engine display list}
+\end{center}
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{The graphics engine display list}
+How \textbf{gridGraphics} works?
 \begin{center}
   \includegraphics[height = 7.2cm, width = 12.2cm]{plot/display_list.PNG}
 \end{center}
@@ -227,7 +239,7 @@ What is \textbf{gridGraphics}?
 
 %------------------------------------------------
 \begin{frame}[fragile]
-\frametitle{How \textbf{gridGraphics} works?}
+\frametitle{The graphics engine display list}
 
 
 \begin{lstlisting}[language = R]
@@ -261,7 +273,7 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 %------------------------------------------------
 
 \begin{frame}[fragile]
-\frametitle{How \textbf{gridGraphics} works?}
+\frametitle{The graphics engine display list}
 \begin{Schunk}
 \begin{Sinput}
 > Sinc_Curve()
@@ -285,7 +297,7 @@ f(x, y) = \frac{10sin(\sqrt{x^2 + y^2})}{\sqrt{x^2 + y^2}}
 %------------------------------------------------
 
 \begin{frame}[fragile]
-\frametitle{How \textbf{gridGraphics} works?}
+\frametitle{The graphics engine display list}
 \begin{center}
 \begin{lstlisting}[language = R]
 > x = recordPlot()
@@ -314,6 +326,13 @@ f(x, y) = \frac{10sin(\sqrt{x^2 + y^2})}{\sqrt{x^2 + y^2}}
 
 
 %------------------------------------------------
+
+\begin{frame}[fragile]
+\begin{center}
+\Huge Structure of the C code
+\end{center}
+\end{frame}
+
 
 \begin{frame}[fragile]
 \frametitle{Structure of the \textbf{C} code (\textif{pointers})}
@@ -372,6 +391,12 @@ xc = LimitCheck(xr)[2]
 
 
 
+\begin{frame}[fragile]
+\begin{center}
+\Huge Copy or not copy?
+\end{center}
+\end{frame}
+
 %------------------------------------------------
 
 \begin{frame}[fragile]
@@ -384,7 +409,10 @@ Why just 'copy'?
 
 \texttt{segments(\textcolor{red}{x0 = 0}, 0.5, \textcolor{red}{x1 = 1}, 0.5, lty = 1331, lwd = 5)}
 \texttt{segments(\textcolor{red}{x0 = 1}, 0.5, \textcolor{red}{x1 = 0}, 0.5, lty = 1331, lwd = 5)}
-\includegraphics[height = 3cm, width = 7cm]{plot/Rcopy.pdf}
+\begin{center}
+  \includegraphics[height = 2cm, width = 7cm]{plot/Rcopy.pdf}
+\end{center}
+
 
 Why just not 'copy'?
 \begin{enumerate}
@@ -464,9 +492,15 @@ system.time(grid.echo())
 
 
 %------------------------------------------------
+\begin{frame}[fragile]
+\begin{center}
+  \Huge Solution to \texttt{persp()}
+\end{center}
+\end{frame}
+
 
 \begin{frame}[fragile]
-\frametitle{Solution to persp}
+\frametitle{Solution to \texttt{persp()}}
 \includegraphics[height = 7cm, width = 12cm]{plot/persp_step_by_step.png}
 
 \end{frame}
@@ -476,7 +510,7 @@ system.time(grid.echo())
 %------------------------------------------------
 
 \begin{frame}[fragile]
-\frametitle{Final solution}
+\frametitle{Solution to \texttt{persp()}}
 
 \only<1>{
   The points...
@@ -510,6 +544,12 @@ system.time(grid.echo())
 
 
 %------------------------------------------------
+\begin{frame}
+\begin{center}
+\Huge Testing
+\end{center}
+\end{frame}
+
 
 \begin{frame}[fragile]
 \frametitle{Any difference?}
@@ -537,15 +577,24 @@ Sinc_Curve(col = ??)
 \begin{frame}[fragile]
 \frametitle{Answers}
 
+\begin{columns}
+
+\column{0.5\textwidth}
 \texttt{\textcolor{codegreen}{\#\# color for left plot}}\\
-\texttt{col = rgb(0, \textcolor{red}{191}, 255, maxColorValue = 255)} \\
+\texttt{col = rgb(0, \textcolor{red}{191}, 255)} \\~\\
 
 \texttt{\textcolor{codegreen}{\#\# extra diff color for right plot}}\\
-\texttt{col = rgb(0, \textcolor{red}{190}, 255, maxColorValue = 255)} \\
+\texttt{col = rgb(0, \textcolor{red}{190}, 255)}
 
+
+\column{0.5\textwidth}
 \begin{center}
 \includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_3.pdf}
 \end{center}
+
+\end{columns}
+
+\hfill \textit{*Difference dected by using the sorftware \textbf{ImageMagick}}
 
 \end{frame}
 
@@ -604,6 +653,7 @@ Sinc_Curve(col = ??)
   \texttt{> par(mfrow = c(1,2))}\\
   \texttt{> Volcano.persp()}\\
   \texttt{> box('outer', col = 'red')}\\
+  \texttt{\textcolor{codegreen}{\#\# volcano\_filled.contour()}}\\
 
   \begin{center}
   \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_1.pdf}
@@ -657,6 +707,15 @@ Sinc_Curve(col = ??)
 
 \end{frame}
 
+
+\begin{frame}[fragile]
+
+\begin{center}
+\Huge Any Question(s)?
+\end{center}
+
+
+\end{frame}
 
 
 
