@@ -231,7 +231,7 @@ What is \textbf{gridGraphics}?
 
 \begin{frame}[fragile]
 \frametitle{The graphics engine display list}
-How \textbf{gridGraphics} works?
+How does \textbf{gridGraphics} works?
 \begin{center}
   \includegraphics[height = 7.2cm, width = 12.2cm]{plot/display_list.PNG}
 \end{center}
@@ -271,58 +271,53 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 
 
 %------------------------------------------------
-
 \begin{frame}[fragile]
-\frametitle{The graphics engine display list}
-\begin{Schunk}
-\begin{Sinput}
-> Sinc_Curve()
-\end{Sinput}
-\end{Schunk}
+\frametitle{\texttt{C\_plot\_new} from \textbf{graphics}}
 
-\begin{columns}
-
-\column{0.4\textwidth}
-\begin{flalign*}
-f(x, y) = \frac{10sin(\sqrt{x^2 + y^2})}{\sqrt{x^2 + y^2}}
-\end{flalign*}
-
-\column{0.6\textwidth}
-  \includegraphics[height = 7.5cm, width = 7.5cm]{plot/persp_1}
-
-\end{columns}
+\begin{block}{The \textbf{C} code}
+\begin{lstlisting}
+SEXP C_plot_new(SEXP call, SEXP op, SEXP args, SEXP rho)
+{
+    ...
+    dd = GNewPlot(GRecording(call, dd));
+    ...
+    GScale(0.0, 1.0, 1, dd);
+    GScale(0.0, 1.0, 2, dd);
+    GMapWin2Fig(dd);
+    GSetState(1, dd);
+    ...
+}
+\end{lstlisting}
+\end{block}
 
 \end{frame}
+
 
 %------------------------------------------------
-
 \begin{frame}[fragile]
-\frametitle{The graphics engine display list}
-\begin{center}
-\begin{lstlisting}[language = R]
-> x = recordPlot()
-> persp_call = x[[1]][[3]]
+\frametitle{\texttt{C\_plot\_new} from \textbf{gridGraphics}}
 
-## Display the x coordinates
-> head(persp_call[[2]])
-[1] -10.00  -9.31  -8.62  -7.93  -7.24  -6.55
-
-## Display the y coordinates
-> head(persp_call[[3]])
-[1] -10.00  -9.31  -8.62  -7.93  -7.24  -6.55
-
-## Display the z coordinates
-> persp_call[[4]][1:3, 1:3]
-     [,1] [,2]  [,3]
-[1,] 0.71 0.65  0.45
-[2,] 0.65 0.43  0.10
-[3,] 0.45 0.10 -0.30
-
+\begin{block}{The \textbf{R} code}
+\begin{lstlisting}
+C_plot_new <- function(x) {
+    ...
+    if (page) {
+        ...
+        if (get("newpage", .gridGraphicsEnv))
+            grid.newpage()
+        ...
+        pushViewport(viewport(name=vpname("root")))
+        upViewport()
+        setUpInner(par)
+    } else {
+        setUpFigure(par)
+    }
+}
 \end{lstlisting}
-
-\end{center}
+\end{block}
 
 \end{frame}
+
 
 
 %------------------------------------------------
@@ -414,9 +409,9 @@ Why just 'copy'?
 \end{center}
 
 
-Why just not 'copy'?
+Why not just 'copy'?
 \begin{enumerate}
-  \item Speeding
+  \item Speed
 \end{enumerate}
 
 
@@ -428,7 +423,7 @@ Why just not 'copy'?
 
 
 \begin{frame}[fragile]
-\frametitle{Why just not 'copy'?}
+\frametitle{Why not just 'copy'?}
 
 \begin{columns}[c]
 \column{0.4\textwidth}
@@ -459,7 +454,7 @@ There are at most (87 - 1) * (61 - 1) * (22 - 1) =  108360 polygons.
 %------------------------------------------------
 
 \begin{frame}[fragile]
-\frametitle{Why just not 'copy'?}
+\frametitle{Why not just 'copy'?}
 
 \begin{columns}[c]
 \column{0.4\textwidth}
@@ -619,6 +614,14 @@ Sinc_Curve(col = ??)
   \end{center}
 }
 
+\only<3>{
+  Difference
+  \begin{center}
+  \includegraphics[height = 8cm, width = 8cm]{plot/persp_torus_diff.pdf}
+  \end{center}
+}
+
+
 \end{frame}
 
 %------------------------------------------------
@@ -640,6 +643,14 @@ Sinc_Curve(col = ??)
   \end{center}
 }
 
+\only<3>{
+  Difference
+  \begin{center}
+  \includegraphics[height = 7cm, width = 7cm]{plot/filled_solution_diff.pdf}
+  \end{center}
+}
+
+
 \end{frame}
 
 %------------------------------------------------
@@ -647,7 +658,7 @@ Sinc_Curve(col = ??)
 
 
 \begin{frame}[fragile]
-\frametitle{Why is \textbf{grid}?}
+\frametitle{Why use \textbf{grid}?}
 
 \only<1>{
   \texttt{> par(mfrow = c(1,2))}\\
@@ -691,7 +702,7 @@ Sinc_Curve(col = ??)
 
 
 \begin{frame}[fragile]
-\frametitle{Why is \textbf{grid} (Advance)?}
+\frametitle{Why use \textbf{grid} (Advance)?}
 
 \begin{lstlisting}[language = R]
 > surface()
