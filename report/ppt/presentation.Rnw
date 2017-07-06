@@ -522,55 +522,55 @@ system.time(grid.echo())
 
 
 %------------------------------------------------
-\begin{frame}[fragile]
-\begin{center}
-  \Huge Solution to \texttt{persp()}
-\end{center}
-\end{frame}
+%\begin{frame}[fragile]
+%\begin{center}
+%  \Huge Solution to \texttt{persp()}
+%\end{center}
+%\end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Solution to \texttt{persp()}}
-\includegraphics[height = 7cm, width = 12cm]{plot/persp_step_by_step.png}
+%\begin{frame}[fragile]
+%\frametitle{Solution to \texttt{persp()}}
+%\includegraphics[height = 7cm, width = 12cm]{plot/persp_step_by_step.png}
 
-\end{frame}
+%\end{frame}
 
 
 
 %------------------------------------------------
 
-\begin{frame}[fragile]
-\frametitle{Solution to \texttt{persp()}}
+%\begin{frame}[fragile]
+%\frametitle{Solution to \texttt{persp()}}
 
-\only<1>{
-  The points...
-  \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_1.pdf}
-  \end{center}
-}
+%\only<1>{
+%  The points...
+%  \begin{center}
+%  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_1.pdf}
+%  \end{center}
+%}
 
-\only<2>{
-  The lines...
-  \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_2.pdf}
-  \end{center}
-}
+%\only<2>{
+%  The lines...
+%  \begin{center}
+%  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_2.pdf}
+%  \end{center}
+%}
 
-\only<3>{
-  The polygons(unordered)...
-  \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_3.pdf}
-  \end{center}
-}
+%\only<3>{
+%  The polygons(unordered)...
+%  \begin{center}
+%  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_3.pdf}
+%  \end{center}
+%}
 
-\only<4>{
-  And the polygons(Solution)
-  \begin{center}
-  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_4.pdf}
-  \end{center}
-}
+%\only<4>{
+%  And the polygons(Solution)
+%  \begin{center}
+%  \includegraphics[height = 7cm, width = 7cm]{plot/standalone_p_4.pdf}
+%  \end{center}
+%}
 
-\end{frame}
+%\end{frame}
 
 
 %------------------------------------------------
@@ -671,6 +671,13 @@ filled.contour(cos(r^2)*exp(-r/(2*pi)))
 grid.echo()
 dev.off()
 @
+
+\begin{frame}
+\begin{center}
+\Huge Final solution
+\end{center}
+\end{frame}
+
 
 \begin{frame}[fragile]
 \frametitle{Final solution}
@@ -847,7 +854,7 @@ dev.off()
 
 
 \begin{frame}[fragile]
-\frametitle{Why is \textbf{grid}?}
+\frametitle{Why use \textbf{grid}?}
 
 \begin{lstlisting}[language = R]
 > vp = viewport(...)
