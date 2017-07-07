@@ -91,7 +91,7 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Short title]{
+\title[]{
 Emulate the \texttt{persp()} plot and \texttt{filled.contour()} plot on \textbf{gridGraphics}
 } % The short title appears at the bottom of every slide, the full title is only on the title page
 
@@ -358,9 +358,9 @@ if(!LimitCheck(REAL(xlim), &xc, &xs))
 \begin{block}{Solution}
 \begin{lstlisting}{C}
 LimitCheck = function(lim){
-    if(!is.finite(lim[1]) || !is.finite(lim[2]) 
-            || lim[1] >= lim[2])
-        stop("invalid limits");
+    if(!(is.finite(lim[1]) & is.finite(lim[2]) 
+            & lim[1] < lim[2]))
+        stop("invalid limits")
       
     s = 0.5 * abs (lim[2] - lim[1])
     c = 0.5 * (lim[2] + lim[1])

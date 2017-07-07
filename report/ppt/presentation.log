@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  6 JUL 2017 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  7 JUL 2017 14:35
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1542,7 +1542,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  20693 strings out of 493335
  378831 string characters out of 3147021
- 491907 words of memory out of 3000000
+ 491896 words of memory out of 3000000
  23531 multiletter control sequences out of 15000+200000
  41991 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1561,7 +1561,7 @@ C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on presentation.pdf (36 pages, 2077303 bytes).
+Output written on presentation.pdf (36 pages, 2076151 bytes).
 PDF statistics:
  1177 PDF objects out of 1200 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)

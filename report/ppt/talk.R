@@ -151,3 +151,36 @@ Page extra = {
     }
     
 }
+
+
+## Important
+
+page 10 = {
+    + every plot drawn in R can be saved as an R object, by using the recordPlot().
+    + This object is called the graphics-display-list
+    + within the display list, you can see that the information of the C function will be recorded
+    + example...
+    + what gridGraphics dose is that it will pull out all the useful information.
+    + then use this information to provides an identical plot on grid.
+}
+
+page 15~16 = {
+    + function for checking the limit of the persp plot
+    + within the function, it will check the condiction
+    + if false, then return an error message
+    + if true, then continuous to do the calculation
+    + within the calculation, it will modify the xc and xs
+    + where xc and xs are the memory address
+    
+    + instead of return an error message outside the funciton, I do it inside the function
+    + instead of modified the xs and xs within the function, I do the assignment outsider the function
+    
+    + simliar jobs but different steps
+}
+
+page 22 = {
+    + The reason for doing the testing is to make sure the plot drawn by grid will be identical to the plot drawn by graphics
+    + It is not a good idea to to the test by our eyes because 
+    + it is waste time and it is difficult to distignish some tiny difference 
+    + therefore, we need a software to support us to do the testing
+}
