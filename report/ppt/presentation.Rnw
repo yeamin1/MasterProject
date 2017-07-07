@@ -136,21 +136,6 @@ What is \textbf{graphics} and what is \textbf{grid} ?
 
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}[fragile]
-\frametitle{Introduction}
-Then, what is \textbf{gridGraphics}? \\
-
-\begin{enumerate}
-	\item A \textbf{R} package 
-	\item A ``translator'' that translates a \textbf{graphics}-plot to a \textbf{grid}-plot 
-	\item With a main function \texttt{grid.echo()}.
-\end{enumerate}
-
-\end{frame}
-
-
 
 %------------------------------------------------
 

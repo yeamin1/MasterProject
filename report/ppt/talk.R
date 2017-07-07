@@ -164,7 +164,13 @@ page 10 = {
     + then use this information to provides an identical plot on grid.
 }
 
-page 15~16 = {
+page 14~16 = {
+	+ Since the persp plot and filled contoru plot is structured under the C code
+	+ therefore if we want to emulate these two kinds of plot
+	+ we need understand the structure of the C code
+	+ One major difference between C and R is that the C code has the pointer data structure
+	+ But R doesn't
+
     + function for checking the limit of the persp plot
     + within the function, it will check the condiction
     + if false, then return an error message
