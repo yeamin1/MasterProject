@@ -92,10 +92,12 @@
 %----------------------------------------------------------------------------------------
 
 \title[Master Presentation]{
-Emulate the \texttt{persp()} plot and \texttt{filled.contour()} plot on \textbf{gridGraphics}
+\Large{Emulate the \texttt{persp()} plot and \texttt{filled.contour()} plot on \textbf{gridGraphics}}
 } % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Zhijian Wen} % Your name
+\author{Zhijian Wen \\~\\
+Supervisor: Associate Professor Paul Murrell
+} % Your name
 \institute[UOA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
 University of Auckland \\ % Your institution for the title page
@@ -280,6 +282,8 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 
 
 %------------------------------------------------
+\lstset{escapeinside={<@}{@>}}
+
 \begin{frame}[fragile]
 \frametitle{\texttt{C\_plot\_new} from \textbf{graphics}}
 
@@ -288,10 +292,10 @@ unlist(lapply(x[[1]], function(y) y[[2]][[1]]$name))
 SEXP C_plot_new(SEXP call, SEXP op, SEXP args, SEXP rho)
 {
     ...
-    dd = GNewPlot(GRecording(call, dd));
+    <@\textcolor{red}{dd = GNewPlot(GRecording(call, dd));}@>
     ...
-    GScale(0.0, 1.0, 1, dd);
-    GScale(0.0, 1.0, 2, dd);
+    <@\textcolor{red}{GScale(0.0, 1.0, 1, dd);}@>
+    <@\textcolor{red}{GScale(0.0, 1.0, 2, dd);}@>
     GMapWin2Fig(dd);
     GSetState(1, dd);
     ...
@@ -340,22 +344,43 @@ C_plot_new <- function(x) {
 
 \begin{frame}[fragile]
 \frametitle{Structure of the \textbf{C} code (\textif{pointers})}
+
+
+\begin{columns}[c]
+
+\column{0.5\textwidth}
 \begin{block}{The problems}
-\begin{lstlisting}{C}
-static int LimitCheck(double *lim, double *c, double *s)
-{
-    if(!R_FINITE(lim[0]) || !R_FINITE(lim[1]) || 
-          lim[0] >= lim[1])
-    return 0;
-    *s = 0.5 * fabs(lim[1] - lim[0]) ;
-    *c = 0.5 * (lim[1] + lim[0]) ;
+\begin{lstlisting}[basicstyle=\tiny]
+static int LimitCheck(double *lim, 
+                      double *c, 
+                      double *s){
+    ...
+    *s = 0.5 * fabs(lim[1] - lim[0]);
+    *c = 0.5 * (lim[1] + lim[0]);
     return 1;
 }
 ...
-if(!LimitCheck(REAL(xlim), &xc, &xs))
-	error(_("invalid 'x' limits"));
+LimitCheck(REAL(xlim), &xc, &xs)
 \end{lstlisting}
 \end{block}
+
+\column{0.5\textwidth}
+\begin{block}{Solution}
+\begin{lstlisting}{C}
+LimitCheck = function(lim){
+    ...
+    s = 0.5 * abs(lim[2] - lim[1])
+    c = 0.5 * (lim[2] + lim[1])
+    c(s, c)
+}
+xs = LimitCheck(xr)[1]
+xc = LimitCheck(xr)[2]
+...
+\end{lstlisting}
+\end{block}
+
+\end{columns}
+
 
 \end{frame}
 
@@ -364,22 +389,6 @@ if(!LimitCheck(REAL(xlim), &xc, &xs))
 
 \begin{frame}[fragile]
 \frametitle{Structure of the \textbf{C} code (\textif{pointers})}
-\begin{block}{Solution}
-\begin{lstlisting}{C}
-LimitCheck = function(lim){
-    if(!(is.finite(lim[1]) & is.finite(lim[2]) 
-            & lim[1] < lim[2]))
-        stop("invalid limits")
-      
-    s = 0.5 * abs (lim[2] - lim[1])
-    c = 0.5 * (lim[2] + lim[1])
-    c(s , c)
-}
-xs = LimitCheck(xr)[1]
-xc = LimitCheck(xr)[2]
-...
-\end{lstlisting}
-\end{block}
 
 \end{frame}
 
@@ -416,7 +425,7 @@ dev.off()
 
 \begin{frame}[fragile]
 \frametitle{Copy or not copy?}
-Why just 'copy'?
+Why 'copy'?
 
 \begin{enumerate}
   \item To make sure the \textbf{graphics}-plot is identical to the \textbf{grid}-plot\\~\\
@@ -489,7 +498,7 @@ system.time(grid.echo())
 # 10.03 0.23 10.32
 
 
-## vectorizetion
+## vectorization
 system.time(grid.echo())
 
 # user system elapsed
