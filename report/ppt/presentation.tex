@@ -95,11 +95,12 @@
 \Large{Emulate the \texttt{persp()} plot and \texttt{filled.contour()} plot on \textbf{gridGraphics}}
 } % The short title appears at the bottom of every slide, the full title is only on the title page
 
-\author{Zhijian Wen \\~\\
-Supervisor: Associate Professor Paul Murrell
+\author{Zhijian Wen
 } % Your name
 \institute[UOA] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
+{\small Supervisor: Associate Professor Paul Murrell}
+\\~\\
 University of Auckland \\ % Your institution for the title page
 \medskip
 \textit{jwen246@aucklanduni.ac.nz} % Your email address
@@ -283,29 +284,29 @@ SEXP C_plot_new(SEXP call, SEXP op, SEXP args, SEXP rho)
 
 
 %------------------------------------------------
-\begin{frame}[fragile]
-\frametitle{\texttt{C\_plot\_new} from \textbf{gridGraphics}}
+%\begin{frame}[fragile]
+%\frametitle{\texttt{C\_plot\_new} from \textbf{gridGraphics}}
 
-\begin{block}{The \textbf{R} code}
-\begin{lstlisting}
-C_plot_new <- function(x) {
-    ...
-    if (page) {
-        ...
-        if (get("newpage", .gridGraphicsEnv))
-            grid.newpage()
-        ...
-        pushViewport(viewport(name=vpname("root")))
-        upViewport()
-        setUpInner(par)
-    } else {
-        setUpFigure(par)
-    }
-}
-\end{lstlisting}
-\end{block}
+%\begin{block}{The \textbf{R} code}
+%\begin{lstlisting}
+%C_plot_new <- function(x) {
+%    ...
+%    if (page) {
+%        ...
+%        if (get("newpage", .gridGraphicsEnv))
+%            grid.newpage()
+%        ...
+%        pushViewport(viewport(name=vpname("root")))
+%        upViewport()
+%       setUpInner(par)
+%    } else {
+%        setUpFigure(par)
+%    }
+%}
+%\end{lstlisting}
+%\end{block}
 
-\end{frame}
+%\end{frame}
 
 
 
@@ -322,51 +323,36 @@ C_plot_new <- function(x) {
 \frametitle{Structure of the \textbf{C} code (\textif{pointers})}
 
 
-\begin{columns}[c]
 
-\column{0.5\textwidth}
-\begin{block}{The problems}
-\begin{lstlisting}[basicstyle=\tiny]
-static int LimitCheck(double *lim, 
-                      double *c, 
-                      double *s){
-    ...
-    *s = 0.5 * fabs(lim[1] - lim[0]);
-    *c = 0.5 * (lim[1] + lim[0]);
-    return 1;
+
+
+\begin{block}{The \textbf{C} code}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
+static int LimitCheck(double *lim, double *c, double *s){
+  ...
+  *s = 0.5 * fabs(lim[1] - lim[0]);
+  *c = 0.5 * (lim[1] + lim[0]);
+  return 1;
 }
-...
 LimitCheck(REAL(xlim), &xc, &xs)
 \end{lstlisting}
 \end{block}
 
-\column{0.5\textwidth}
-\begin{block}{Solution}
-\begin{lstlisting}{C}
+
+\begin{block}{The \textbf{R} code}
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
 LimitCheck = function(lim){
     ...
     s = 0.5 * abs(lim[2] - lim[1])
     c = 0.5 * (lim[2] + lim[1])
     c(s, c)
 }
-xs = LimitCheck(xr)[1]
-xc = LimitCheck(xr)[2]
-...
+xs = LimitCheck(xr)[1]; xc = LimitCheck(xr)[2]
 \end{lstlisting}
 \end{block}
 
-\end{columns}
-
-
 \end{frame}
 
-
-%------------------------------------------------
-
-\begin{frame}[fragile]
-\frametitle{Structure of the \textbf{C} code (\textif{pointers})}
-
-\end{frame}
 
 
 %------------------------------------------------
@@ -389,11 +375,11 @@ xc = LimitCheck(xr)[2]
 %------------------------------------------------
 
 \begin{frame}[fragile]
-\frametitle{Copy or not copy?}
-Why 'copy'?
+\frametitle{``Copy'' or not ``copy''?}
+Why ``copy''?
 
 \begin{enumerate}
-  \item To make sure the \textbf{graphics}-plot is identical to the \textbf{grid}-plot\\~\\
+  \item To make sure the \textbf{graphics}-plot is identical to the \textbf{grid}-plot (accuracy)\\~\\
 \end{enumerate}
 
 \texttt{segments(\textcolor{red}{x0 = 0}, 0.5, \textcolor{red}{x1 = 1}, 0.5, lty = 1331, lwd = 5)}
@@ -403,9 +389,9 @@ Why 'copy'?
 \end{center}
 
 
-Why not just 'copy'?
+Why not just ``copy''?
 \begin{enumerate}
-  \item Speed
+  \item Speed (efficiency)
 \end{enumerate}
 
 
@@ -417,7 +403,7 @@ Why not just 'copy'?
 
 
 \begin{frame}[fragile]
-\frametitle{Why not just 'copy'?}
+\frametitle{Why not just ``copy''?}
 
 \begin{columns}[c]
 \column{0.4\textwidth}
@@ -448,7 +434,7 @@ There are at most (87 - 1) * (61 - 1) * (22 - 1) =  108360 polygons.
 %------------------------------------------------
 
 \begin{frame}[fragile]
-\frametitle{Why not just 'copy'?}
+\frametitle{Why not just ``copy''?}
 
 \begin{columns}[c]
 \column{0.4\textwidth}
@@ -539,6 +525,17 @@ system.time(grid.echo())
 \end{center}
 \end{frame}
 
+\begin{frame}
+\frametitle{Why doing the testing by using a software?}
+
+\begin{itemize}
+  \item Ensure the plot drawn by \textbf{graphics} is identical to the plot drawn by \textbf{grid}
+  \item Use our eyes to check the identity will be wasting time and not reliable
+  
+\end{itemize}
+
+\end{frame}
+
 
 \begin{frame}[fragile]
 \frametitle{Any difference?}
@@ -569,12 +566,21 @@ Sinc_Curve(col = ??)
 \begin{columns}
 
 \column{0.5\textwidth}
-\texttt{\textcolor{codegreen}{\#\# color for left plot}}\\
-\texttt{col = rgb(0, \textcolor{red}{191}, 255)} \\~\\
+\begin{lstlisting}[language = R]
+## color for left plot
+col = rgb(red = 0, 
+          <@\textcolor{red}{blue = 191}@>, 
+          green = 255,
+          maxColorValue = 255)
+      
+## extra diff color for 
+## right plot
+col = rgb(red = 0, 
+          <@\textcolor{red}{blue = 190}@>, 
+          green = 255, 
+          maxColorValue = 255)
 
-\texttt{\textcolor{codegreen}{\#\# extra diff color for right plot}}\\
-\texttt{col = rgb(0, \textcolor{red}{190}, 255)}
-
+\end{lstlisting}
 
 \column{0.5\textwidth}
 \begin{center}
@@ -655,7 +661,13 @@ Sinc_Curve(col = ??)
 \end{frame}
 
 %------------------------------------------------
-
+\begin{frame}[fragile]
+\frametitle{Why use \textbf{grid}?}
+\begin{itemize}
+  \item \textbf{grid} is more flexible
+  \item A compelex plot cannot produced by \textbf{graphics} but it might be produced by \textbf{grid}
+\end{itemize}
+\end{frame}
 
 
 \begin{frame}[fragile]
@@ -685,6 +697,8 @@ Sinc_Curve(col = ??)
 \end{frame}
 
 
+
+
 \begin{frame}[fragile]
 \frametitle{Why use \textbf{grid}?}
 
@@ -703,11 +717,24 @@ Sinc_Curve(col = ??)
 
 
 \begin{frame}[fragile]
-\frametitle{Why use \textbf{grid} (Advance)?}
+\frametitle{Why use \textbf{grid}?}
+\begin{itemize}
+  \item A \textbf{grid}-plot can be export to SVG image by using the \textbf{gridSVG}
+  \item The animation and interaction of this SVG image can produced easily.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width = 8cm, height = 6cm]{plot/grid_graphics.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Why use \textbf{grid}?}
 
 \begin{lstlisting}[language = R]
-> surface()
-> addFeatures()
+> surface(); addFeatures()
+> library(gridSVG)
 > grid.script(file = "example.js")
 > grid.export("example.svg")
 
