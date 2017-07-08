@@ -529,8 +529,8 @@ system.time(grid.echo())
 \frametitle{Why doing the testing by using a software?}
 
 \begin{itemize}
-  \item Ensure the plot drawn by \textbf{graphics} is identical to the plot drawn by \textbf{grid}
-  \item Use our eyes to check the identity will be wasting time and not reliable
+  \item To ensure the plot drawn by \textbf{graphics} is identical to the plot drawn by \textbf{grid}
+  \item Using our eyes to check the identity will be wasting time and not reliable
   
 \end{itemize}
 
@@ -676,7 +676,6 @@ col = rgb(red = 0,
 \only<1>{
   \texttt{> par(mfrow = c(1,2))}\\
   \texttt{> Volcano.persp()}\\
-  \texttt{> box('outer', col = 'red')}\\
   \texttt{\textcolor{codegreen}{\#\# volcano\_filled.contour()}}\\
 
   \begin{center}
@@ -687,7 +686,6 @@ col = rgb(red = 0,
 \only<2>{
   \texttt{> par(mfrow = c(1,2))}\\
   \texttt{> Volcano.persp()}\\
-  \texttt{> box('outer', col = 'red')}\\
   \texttt{> volcano\_filled.contour()}\\
   \begin{center}
   \includegraphics[height = 5cm, width = 10cm]{plot/demo_example_2.pdf}
