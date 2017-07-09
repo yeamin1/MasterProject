@@ -356,7 +356,7 @@ static int LimitCheck(double *lim, double *c, double *s){
   ...
   *s = 0.5 * fabs(lim[1] - lim[0]);
   *c = 0.5 * (lim[1] + lim[0]);
-  return 1;
+  ...
 }
 LimitCheck(REAL(xlim), &xc, &xs)
 \end{lstlisting}
@@ -365,13 +365,13 @@ LimitCheck(REAL(xlim), &xc, &xs)
 
 \begin{block}{The \textbf{R} code}
 \begin{lstlisting}[basicstyle=\ttfamily\scriptsize]
-LimitCheck = function(lim){
+LimitCheck <- function(lim){
     ...
-    s = 0.5 * abs(lim[2] - lim[1])
-    c = 0.5 * (lim[2] + lim[1])
+    s <- 0.5 * abs(lim[2] - lim[1])
+    c <- 0.5 * (lim[2] + lim[1])
     c(s, c)
 }
-xs = LimitCheck(xr)[1]; xc = LimitCheck(xr)[2]
+xs <- LimitCheck(xr)[1]; xc <- LimitCheck(xr)[2]
 \end{lstlisting}
 \end{block}
 
@@ -444,8 +444,8 @@ Why not just ``copy''?
 \column{0.4\textwidth}
 \begin{lstlisting}[language = R]
 volcano_filled.contour()
-xx = recordPlot()
-info = xx[[1]][[12]][[2]]
+xx <- recordPlot()
+info <- xx[[1]][[12]][[2]]
 
 dim(info[[4]])
 [1] 87 61
@@ -576,17 +576,17 @@ system.time(grid.echo())
 \frametitle{Any difference?}
 \begin{lstlisting}[language = R]
 ## left plot
-Sinc_Curve(col = ??)
+Sinc_Curve(col = rgb(red = 0, <@\textcolor{red}{blue = 191}@>, green = 255, ...))
 ## right plot
-Sinc_Curve(col = ??)
+Sinc_Curve(col = rgb(red = 0, <@\textcolor{red}{blue = 190}@>, green = 255, ...))
 \end{lstlisting}
 
 \begin{columns}[c]
 \column{0.5\textwidth}
-\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_1.pdf}
+\includegraphics[height = 6cm, width = 6cm]{plot/diff_1.pdf}
 
 \column{0.5\textwidth}
-\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_2.pdf}
+\includegraphics[height = 6cm, width = 6cm]{plot/diff_2.pdf}
 
 \end{columns}
 \end{frame}
@@ -601,30 +601,21 @@ Sinc_Curve(col = ??)
 \begin{columns}
 
 \column{0.5\textwidth}
-\begin{lstlisting}[language = R]
-## color for left plot
-col = rgb(red = 0, 
-          <@\textcolor{red}{blue = 191}@>, 
-          green = 255,
-          maxColorValue = 255)
-      
-## extra diff color for 
-## right plot
-col = rgb(red = 0, 
-          <@\textcolor{red}{blue = 190}@>, 
-          green = 255, 
-          maxColorValue = 255)
-
+\begin{lstlisting}
+cmd <- 'compare diff_1.pdf 
+        diff_2.pdf 
+        diff_out.pdf'
+system(cmd)
 \end{lstlisting}
 
 \column{0.5\textwidth}
 \begin{center}
-\includegraphics[height = 6cm, width = 6cm]{plot/persp_diff_3.pdf}
+\includegraphics[height = 6cm, width = 6cm]{plot/diff_out.pdf}
 \end{center}
 
 \end{columns}
 
-\hfill \textit{*Difference dected by using the sorftware \textbf{ImageMagick}}
+\hfill \textit{*Difference dected by using the software \textbf{ImageMagick}}
 
 \end{frame}
 
@@ -863,7 +854,7 @@ dev.off()
 \frametitle{Why use \textbf{grid}?}
 
 \begin{lstlisting}[language = R]
-> vp = viewport(...)
+> vp <- viewport(...)
 > pushViewport(vp)
 > grid.echo(Volcano.persp, newpage=FALSE)
 > upViewport()
