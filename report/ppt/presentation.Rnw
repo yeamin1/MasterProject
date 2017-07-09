@@ -899,6 +899,18 @@ dev.off()
 
 
 \begin{frame}[fragile]
+\frametitle{Conclusion}
+\begin{center}
+The \textbf{gridGraphics} now supports \texttt{persp()} and \texttt{filled.contour()}
+\end{center}
+\hfill \small{\textit{*http://cran.stat.auckland.ac.nz/web/packages/gridGraphics}}
+
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]
 
 \begin{center}
 \Huge Any Question(s)?

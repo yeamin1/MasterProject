@@ -131,15 +131,15 @@ surface()
 grid.text('Reset',x = 0.1, y = 0.93, just = c('left', 'top'), name = 'reset')
 grid.text('Shading',x = 0.1, y = 0.9, just = c('left', 'top'), name = 'shading')
 grid.text('Change opacity',x = 0.1, y = 0.87, just = c('left', 'top'), name = 'alpha')
-grid.text('Chagne color',x = 0.1, y = 0.84, just = c('left', 'top'), name = 'color')
+grid.text('Change color',x = 0.1, y = 0.84, just = c('left', 'top'), name = 'color')
 
 
 grid.rect(x = c(0.1, 0.13, 0.16, 0.19, 0.22), y = rep(0.81, 5), width = 0.02, height = 0.02, 
-          just = c('left', 'top'), gp = gpar(fill = c('#FF4500', '#00008B', '#D3D3D3', '#F8F8FF', '#9932CC'), col = NA),
+          just = c('left', 'top'), gp = gpar(fill = c('#00ffbf', '#ff00ff', '#D3D3D3', '#F8F8FF', '#9932CC'), col = NA),
           name = 'color')
 
 grid.script(file="example.js")
-grid.export("example.svg", strict = FALSE)
+grid.export("example_other.svg", strict = FALSE)
 
 
 ##output

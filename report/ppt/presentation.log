@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  9 JUL 2017 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  9 JUL 2017 16:52
 entering extended mode
 **./presentation.tex
 (presentation.tex
@@ -1505,7 +1505,15 @@ Overfull \vbox (8.95116pt too high) detected at line 736
  <./plot/origin_1.PNG>]
 \openout4 = `presentation.vrb'.
 
- (presentation.vrb) [36
+ (presentation.vrb
+LaTeX Font Info:    Font shape `T1/aess/m/it' in size <10> not available
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 5.
+) [36
+
+]
+\openout4 = `presentation.vrb'.
+
+ (presentation.vrb) [37
 
 ]
 \tf@nav=\write7
@@ -1517,11 +1525,12 @@ Overfull \vbox (8.95116pt too high) detected at line 736
 \tf@snm=\write9
 \openout9 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 752.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 752.
- (presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 752.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 752.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
+
+(presentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 764.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1530,11 +1539,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20703 strings out of 493335
- 378939 string characters out of 3147021
- 492089 words of memory out of 3000000
- 23538 multiletter control sequences out of 15000+200000
- 44862 words of font info for 97 fonts, out of 3000000 for 9000
+ 20712 strings out of 493335
+ 379043 string characters out of 3147021
+ 492125 words of memory out of 3000000
+ 23542 multiletter control sequences out of 15000+200000
+ 46617 words of font info for 99 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,16n,61p,780b,1725s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\yeamin\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
@@ -1552,9 +1561,9 @@ C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on presentation.pdf (36 pages, 2090591 bytes).
+Output written on presentation.pdf (37 pages, 2097410 bytes).
 PDF statistics:
- 1181 PDF objects out of 1200 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
+ 1210 PDF objects out of 1440 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
  202 words of extra memory for PDF output out of 10000 (max. 10000000)
 
