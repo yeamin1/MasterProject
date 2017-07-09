@@ -8,6 +8,7 @@ Page 3 = {
 
 Page 4 = {
     There is an other package, called gridgraphics package, which allows us to convert at plot drawn by graphics package to a identical plot drawn by grid. The package has a main function, called grid.echo().
+	 allowing the plot to be manipulated using all of the tools available in grid
 }
 
 Page 5 = {
