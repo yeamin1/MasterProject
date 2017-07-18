@@ -74,7 +74,7 @@ addAlpha = function()
     // hide the shaded surface
     reset();
     show_shaded(0);
-    animate(Surface_id = nSurface, action = 'alpha', alpha = 0.12);
+    animate(Surface_id = nSurface, action = 'alpha', alpha = 0.25);
     
 }
 
