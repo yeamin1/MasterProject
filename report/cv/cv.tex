@@ -1,0 +1,163 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\usepackage[utf8]{inputenc}
+\moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{courier}
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Zhijian} % Your first name
+\familyname{Wen} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{Unit 304, 20 Upper Queen Street}{Auckland}
+\mobile{021-0799395}
+
+
+\email{zhijianwen1992@gmail.com}
+% \homepage{alannungaray.com.mx/}{alannungaray.com.mx} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+% \extrainfo{https://www.facebook.com/AlanDNungaray}
+% \photo[60pt][0.4pt]{pictures/foto} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Personal Summary}
+I am a graduate with Master major in Statistics, with experiences in data analysis/modelling, programming including developing \textbf{R}-package and data mining. I am interesting in programming and I am enjoying to ``talk'' with computer. I am keen to join your company where I want to  utilize my skills in creative. \\
+
+\section{Education}
+\cventry{2016--Present}{Msc - Statistics}{University of Auckland}{}{}{
+	\textit{Key course: Multivariate Analysis, Data Science Practice, Statistical Inference} \\
+}
+	
+\cventry{2015--2016}{BSc(Hons) - Statistics}{University of Auckland}{}{}{
+	\textit{Key course: Bayesian Inference, Statistical Computing, Statistical Modelling}\\
+	\textit{class representation of \textbf{Stats 779} } \\
+}
+\cventry{2012--2015}{BSc - Mathematics and Statistics}{University of Auckland}{}{}{~\\}
+
+\section{Projects}
+\cventry{Master}{Emulate the \texttt{persp} plot and \texttt{filled.contour} plot in \texttt{gridGraphics}}{}{}{}{
+		\textit{The \texttt{persp()} is use for drawing 3-D surface and the \texttt{filled.contour()} is use for drawing filled level contour plot in the \textbf{graphics} package, which is the based package in \textbf{R}. My job is to convert(redraw) these two kinds of plot(functions) to \textbf{grid}}.\\
+		\textit{Supervisor: Associate Professor Paul Murrell} \\
+}
+
+\cventry{Honours}{Bayesian inference on forensic glass evidence}{}{}{}{
+		\textit{The aim of this project is to fit a zero inflated poisson mixture model and zero inflated negative mixture model to different situations (e.g. The breaker's distance from the window, Proportion of high persistence fragments)}. \\
+		\textit{Supervisor: Professor James Curran} \\
+}
+
+\newpage
+\section{Work Experience}
+% Arguments not required can be left empty
+\cventry{2016-2017}{Teaching assistant}  {}{}{}{
+	~\\
+	\textbf{Tutor and Marker of Stats 220}: This course introduces a variety of computer technologies relevant to storing, managing, and processing data. My job is to help students to understand and solve the questions about the coding. Such as \texttt{HTML/CSS}, \texttt{SQL} and \texttt{R} \\~\\
+	\textbf{Marker of Stats 380}: A course of statistical computing using the \texttt{R} statistical computing environment\\}
+
+\cventry{2015-2016}{Summer Scholarship}  {}{Working on the iNZightMaps package, used in the mapping module for iNZight}{}{}
+%------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+
+\cvitem{Advance:}{\textsc{R}, \textsc{HTML}, \LaTeX} 
+\cvitem{Fair:}{SAS, SQL,jags, Linux, Lua, JavaScript}
+\cvitem{Basic:}{C, C++, JAON, XML, \textsc{Matlab}, Excel}
+
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+\cvitemwithcomment{}{English, Mandarin, Cantonese}{}
+
+\section{Interest}
+\cvlistdoubleitem{Game Computing}{Statistical Computing}
+\cvlistdoubleitem{Table tennis}{Physics}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+\clearpage
+
+\recipient{HR}{Blue Trail Software\\Niños Heroes 115\\47600 Tepatitlán de Morelos, Jalisco} % Letter recipient
+\date{\today} % Letter date
+\opening{Estimated BTS} % Opening greeting
+\closing{.} % Closing phrase
+\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+%\makelettertitle % Print letter title
+I am writing this letter to express my desire to work and innovate for you, for the world.
+
+I enjoying on programming. Since my first year at University, I starting learning some programming language such as html/css, Matlab. During the Bachelor Degree of my university life, I learned html, xml, latex, matlab and R. R is one of my favorite programming language therefore I starting doing my Honours and Master degree to learn deeper about R.\\
+
+During the summer of 2016, I was doing the summer scholarship which working on the \texttt{iNZightMaps} package which used for the mapping module for iNZight. I leaned a lot of graphics on R, specially the high-level graphics - the \texttt{grid} package. \\
+
+Although I am a statistic student, I coding a lots and I used R to help me to analysis data to defeat any assignments and projects.
+I started my master dissertation with my supervisor, Dr.Paul Merrel who is a member of R core team, and now I still working on my dissertation.\\
+
+Talking with computer is interesting. Although I'm not a front-line of programmer, I would like to use my coding experience to solve messy problem, and also willing to learn any other computing language in the future.\\
+
+\makeletterclosing % Print letter signature
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
