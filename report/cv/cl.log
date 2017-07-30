@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  30 JUL 2017 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.7.22)  30 JUL 2017 14:30
 entering extended mode
 **./cl.tex
 (cl.tex
@@ -1077,11 +1077,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 20783 strings out of 493335
- 343402 string characters out of 3147021
- 414079 words of memory out of 3000000
+ 20785 strings out of 493335
+ 343424 string characters out of 3147021
+ 413983 words of memory out of 3000000
  24086 multiletter control sequences out of 15000+200000
- 43752 words of font info for 49 fonts, out of 3000000 for 9000
+ 43868 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  51i,11n,45p,10356b,338s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
@@ -1092,7 +1092,7 @@ am Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmss12.pfb><C:/Program Files (x
 86)/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/public/lm/lmsso12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/lm/lmtt12.pfb>
-Output written on cl.pdf (1 page, 108899 bytes).
+Output written on cl.pdf (1 page, 108465 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  2 named destinations out of 1000 (max. 500000)
