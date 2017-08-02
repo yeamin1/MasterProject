@@ -29,9 +29,10 @@
 \moderncvcolor{orange} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 \usepackage{courier}
-\usepackage[scale=0.75]{geometry} % Reduce document margins
+\usepackage[scale=0.825]{geometry} % Reduce document margins
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\usepackage[export]{adjustbox}
 
 \usepackage{setspace}
 \setstretch{1.3}
@@ -70,7 +71,8 @@ to utilize my skills in creative. \\
 
 \section{Education}
 \cventry{2016--2017}{Msc - Statistics}{University of Auckland}{}{}{
-	\textit{Key course: Multivariate Analysis, Data Science Practice, Statistical Inference} 
+	\textit{Key course: Multivariate Analysis, Data Science Practice, Statistical Inference} \\
+	\textit{Master of Science with First Class Honours}
 }
 	
 \cventry{2015--2016}{BSc(Hons) - Statistics}{University of Auckland}{}{}{
@@ -82,15 +84,18 @@ to utilize my skills in creative. \\
 	}
 
 \section{Projects}
-\cventry{Master}{Emulate the \texttt{persp} plot and \texttt{filled.contour} plot in \texttt{gridGraphics}}{}{}{}{
-		\textit{The \texttt{persp()} is used for drawing 3-D surface and the \texttt{filled.contour()} is used for
-			drawing filled level contour plot in the \textbf{graphics}-package, which is the based package in
-			\textbf{R}. My job is to convert (redraw) these two kinds of plots (functions) to \textbf{grid}. \\
-			Supervisor: Associate Professor Paul Murrell} \\
+\cventry{Master \\ 
+		\includegraphics[height = 2.6cm]{persp.pdf}
+	}{Emulate the \texttt{persp} plot and \texttt{filled.contour} plot in \texttt{gridGraphics}}{}{}{}{
+		\textit{
+			The core graphics system in \textbf{R} can be divided into two main packages, the older package called \textbf{graphics} and the newer package called \textbf{grid}. \\
+			The \texttt{persp()} is used for drawing 3-D surface and the \texttt{filled.contour()} is used for
+			drawing filled level contours in the \textbf{graphics}-package. The aim of this project is to implement these two kinds of plots on the \textbf{grid}-package. \\
+			Supervisor: Associate Professor Paul Murrell}
 }
-
 \cventry{Honours}{Bayesian inference on forensic glass evidence}{}{}{}{
-		\textit{The aim of this project is to fit a zero inflated Poisson mixture model and zero inflated negative mixture model to different situations (e.g. The breaker's distance from the window, Proportion of high persistence fragments)}. \\
+		\textit{If a person breaks glass, the tiny broken fragments will transfer to the person. If the glass is broken during the commission of the crime, then these tiny fragments can be used as forensic evidence. \\
+			The aim of this project is to fit a zero inflated Poisson mixture model and zero inflated negative mixture model under different situations (e.g. The breaker's distance from the window, Proportion of high persistence fragments)}. \\
 		\textit{Supervisor: Professor James Curran} \\
 }
 
@@ -99,13 +104,27 @@ to utilize my skills in creative. \\
 % Arguments not required can be left empty
 \cventry{2016-Present}{Teaching assistant}  {University of Auckland}{}{}{
 	~\\
-	\textbf{Tutor of Stats 210}: It that introduces the theory that underlies the statistical methods used in practical statistics courses. My job is to help students to understand the course concepts during the tutorials and workshops. \\~\\
-	\textbf{Tutor and Marker of Stats 220}: This course introduces a variety of computer technologies relevant to storing, managing, and processing data. My job is to help students to understand and solve the questions about the coding. Such as \texttt{HTML/CSS}, \texttt{SQL} and \texttt{R} \\~\\
+	\textbf{Tutor of Stats 210}: This course introduces the theory that underlies the statistical methods used in practical statistics courses. My job is:
+		\begin{itemize}
+			\item To help students to understand the concepts of the course
+			\item To help students to solve the problems of tutorials and workshops. \\
+		\end{itemize}	
+	\textbf{Tutor and Marker of Stats 220}: This course introduces a variety of computer technologies relevant to storing, managing, and processing data. My job is to help students to understand and solve the ``technical'' problems:
+		\begin{itemize}
+			\item The World-Wide Web (HTML), Data Description (XML)
+			\item Data Storage (Spreadsheets, Databases), Data Management and Queries (SQL)
+			\item Data Processing (Scripting, Pattern Matching, R) \\
+		\end{itemize}
 	\textbf{Marker of Stats 380}: A course of statistical computing using the \texttt{R} statistical computing environment\\}
 
 \cventry{2015-2016}{Summer Scholarship}  {University of Auckland}{}{}{
-	Working on the \texttt{iNZightMaps}-package, used in the mapping module for \textbf{iNZight}\\
-	I am one of the authors of the \texttt{iNZightMaps}-package. I was working on the functions for plotting the geographical data and also made it handle coordinate and country data.
+	Working on the \texttt{iNZightMaps}-package, used in the mapping module for \textbf{iNZight} I am one of the authors of the \texttt{iNZightMaps}-package. The works that I have done as follows:
+	\begin{itemize}
+		\item Map Creation, request a topographic map from Google Maps' API
+		\item Visualization of the geographical data. For example, the size of the data points are determined by Magnitude of the earth quakes.
+		\item Map Creation, draw the map by using the geographic information system (GIS)
+		\item Visualization of the geographical data. For example, the colors of the counties are determined by the ratio of the Population ratio.
+	\end{itemize}
 }
 
 
@@ -115,9 +134,6 @@ to utilize my skills in creative. \\
 %----------------------------------------------------------------------------------------
 %	AWARDS SECTION
 %----------------------------------------------------------------------------------------
-\section{Award}
-\cvitem{2017}{Master of Science with First Class Honours
-}  {}
 
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS SECTION

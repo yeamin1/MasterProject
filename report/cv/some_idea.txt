@@ -1,0 +1,4 @@
+cl
+	+ add 220
+	+ add teamwork
+	+ add communication
