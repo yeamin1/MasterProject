@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.25)  2 AUG 2017 04:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.25)  2 AUG 2017 04:41
 entering extended mode
 **./cv.tex
 (cv.tex
@@ -1390,44 +1390,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--71
 <persp.pdf, id=39, 505.89pt x 505.89pt>
 File: persp.pdf Graphic file (type pdf)
  <use persp.pdf>
-Package pdftex.def Info: persp.pdf used on input line 95.
+Package pdftex.def Info: persp.pdf used on input line 94.
 (pdftex.def)             Requested size: 73.97356pt x 73.97733pt.
 
-Overfull \hbox (10.97246pt too wide) in paragraph at lines 95--95
+Overfull \hbox (10.97246pt too wide) in paragraph at lines 94--94
  [][]
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 95.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 94.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 95.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 94.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 95.
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 
  []
 
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./persp.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
 
  []
 
@@ -1435,22 +1433,22 @@ Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 183.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 183.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 181.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 181.
  (cv.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 183.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 183.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 181.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 181.
 Package rerunfilecheck Info: File `cv.out' has not changed.
 (rerunfilecheck)             Checksum: 2892C4797DC3590BE47DF6CC01663CE1;758.
  ) 
 Here is how much of TeX's memory you used:
- 30539 strings out of 493328
- 563391 string characters out of 3139124
+ 30535 strings out of 493328
+ 563319 string characters out of 3139124
  740015 words of memory out of 3000000
- 33570 multiletter control sequences out of 15000+200000
- 603630 words of font info for 91 fonts, out of 3000000 for 9000
+ 33566 multiletter control sequences out of 15000+200000
+ 602835 words of font info for 90 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,13n,58p,10383b,340s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 69i,13n,58p,10383b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/M
 iKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10
@@ -1462,11 +1460,10 @@ rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/public/lm/lmro10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/lm/lmro17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/marvosym
 /marvosym.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on cv.pdf (2 pages, 307813 bytes).
+C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on cv.pdf (2 pages, 294600 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)
- 24146 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23634 words of extra memory for PDF output out of 24883 (max. 10000000)
 
